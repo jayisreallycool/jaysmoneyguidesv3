@@ -1,0 +1,371 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale3d(1.15, 1.15, 1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulseGlowTeal {
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale3d(1.2, 1.2, 1);
+    opacity: 0.55;
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(6px, -14px, 0) rotate(8deg);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-glow-emerald {
+  animation: pulseGlow 10s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-hero-glow-teal {
+  animation: pulseGlowTeal 12s ease-in-out infinite 1.5s;
+  will-change: transform, opacity;
+}
+
+.animate-hero-float {
+  animation: floatParticle 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes ebookGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.25), 0 0 6px -2px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 28px 2px rgba(16, 185, 129, 0.45), 0 0 12px 1px rgba(52, 211, 153, 0.35);
+  }
+}
+
+@keyframes shimmerPass {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.animate-ebook-glow {
+  animation: ebookGlow 3.5s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmerPass 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrolling announcement marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* "Notice me" wiggle for the free ebook — periodic attention-grabbing shake */
+@keyframes wiggle-notice {
+  0%, 92%, 100% { transform: rotate(0deg) scale(1); }
+  93% { transform: rotate(-2.5deg) scale(1.02); }
+  94% { transform: rotate(2.5deg) scale(1.02); }
+  95% { transform: rotate(-2deg) scale(1.02); }
+  96% { transform: rotate(2deg) scale(1.02); }
+  97% { transform: rotate(-1.5deg) scale(1.01); }
+  98% { transform: rotate(1.5deg) scale(1.01); }
+  99% { transform: rotate(0deg) scale(1); }
+}
+.animate-wiggle-notice {
+  animation: wiggle-notice 5s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-wiggle-notice:hover {
+  animation-play-state: paused;
+}
+
+/* --- Accessibility improvements --- */
+
+/* Visible keyboard focus for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip-to-content link — hidden until focused */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  z-index: 100;
+  background: #34d399;
+  color: #04120c;
+  font-weight: 800;
+  padding: 10px 16px;
+  border-radius: 0 0 10px 10px;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Respect reduced-motion: disable wiggle/marquee/pulse for sensitive users */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee,
+  .animate-wiggle-notice {
+    animation: none !important;
+  }
+}
+
+/* Ensure minimum tap-target size on small screens (WCAG 2.5.5) */
+@media (max-width: 640px) {
+  button,
+  a[role="button"],
+  .tap-target {
+    min-height: 40px;
+  }
+}
+
+/* Article images with bottom captions (alt text shown below) */
+.content-figure { margin: 2rem 0; }
+.content-figure .content-img {
+  width: 100%; height: auto; border-radius: 0.75rem;
+  border: 1px solid #1e293b;
+}
+.content-figure .img-caption {
+  margin-top: 0.5rem; text-align: center;
+  font-size: 0.85rem; font-style: italic; color: #94a3b8;
+}
+
+/* ── Scrollbar hide utility for drag-scroll containers ── */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Touch pan for draggable ebook tabs ── */
+.touch-pan-x {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+/* ── Article / guide body prose ── */
+.post-body {
+  color: #cbd5e1; /* slate-300 */
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.post-body h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f1f5f9; /* slate-100 */
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1e293b; /* slate-800 */
+}
+
+.post-body h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e2e8f0; /* slate-200 */
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.post-body h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  margin-top: 1.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.post-body p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.post-body strong {
+  color: #f1f5f9;
+  font-weight: 700;
+}
+
+.post-body em {
+  color: #94a3b8;
+}
+
+.post-body a {
+  color: #34d399; /* emerald-400 */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #34d39960;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.post-body a:hover {
+  color: #6ee7b7; /* emerald-300 */
+  text-decoration-color: #6ee7b7;
+}
+
+.post-body ul,
+.post-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.post-body ul {
+  list-style-type: disc;
+}
+
+.post-body ol {
+  list-style-type: decimal;
+}
+
+.post-body li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.25rem;
+}
+
+.post-body li::marker {
+  color: #34d399;
+}
+
+.post-body blockquote {
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #34d399;
+  background: #0f2a1e;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.post-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.post-body code {
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 0.875em;
+  color: #6ee7b7; /* emerald-300 */
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.3rem;
+  padding: 0.125em 0.4em;
+}
+
+.post-body pre {
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.post-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #e2e8f0;
+  font-size: inherit;
+}
+
+.post-body hr {
+  border: none;
+  border-top: 1px solid #1e293b;
+  margin: 2rem 0;
+}
+
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.9375rem;
+}
+
+.post-body th {
+  text-align: left;
+  padding: 0.625rem 1rem;
+  background: #1e293b;
+  color: #f1f5f9;
+  font-weight: 700;
+  border-bottom: 1px solid #334155;
+}
+
+.post-body td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid #1e293b;
+  color: #cbd5e1;
+}
+
+.post-body tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .post-body { font-size: 1rem; }
+  .post-body h2 { font-size: 1.3rem; margin-top: 2rem; }
+  .post-body h3 { font-size: 1.1rem; }
+  .post-body pre { padding: 1rem; font-size: 0.8125rem; }
+  .post-body table { font-size: 0.875rem; }
+  .post-body th, .post-body td { padding: 0.5rem 0.75rem; }
+}
