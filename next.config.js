@@ -37,13 +37,21 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Security headers on all routes
+        // Security + performance headers on all routes
         source: '/(.*)',
         headers: [
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'X-Content-Type-Options',     value: 'nosniff' },
+          { key: 'X-Frame-Options',             value: 'SAMEORIGIN' },
+          { key: 'X-DNS-Prefetch-Control',      value: 'on' },
+          { key: 'Referrer-Policy',             value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy',          value: 'camera=(), microphone=(), geolocation=()' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
         ],
+      },
+      {
+        // All static HTML/RSC pages — short TTL + fast SWR revalidation
+        source: '/:path*',
+        headers: [{ key: 'Cache-Control', value: 's-maxage=300, stale-while-revalidate=600' }],
       },
       // ── Hero image set — 7 day cache (these rarely change) ──────────────────
       {

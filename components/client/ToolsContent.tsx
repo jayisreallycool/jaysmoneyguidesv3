@@ -1,24 +1,28 @@
 'use client';
 
-import React, { useState } from 'react';
-import { 
-  Globe, 
-  Mail, 
-  ShoppingCart, 
-  BarChart3, 
-  Zap, 
-  Palette, 
-  CreditCard, 
-  Brain, 
-  Users, 
-  BookOpen, 
+import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
+import {
+  Globe,
+  Mail,
+  ShoppingCart,
+  BarChart3,
+  Zap,
+  Palette,
+  CreditCard,
+  Brain,
+  Users,
+  BookOpen,
   Hammer,
   ExternalLink,
   Check,
   DollarSign,
   TrendingUp,
   ArrowRight,
-  Heart
+  Heart,
+  RefreshCw,
+  Filter,
+  Star,
 } from 'lucide-react';
 
 interface Tool {
@@ -325,152 +329,194 @@ const CATEGORIES = [
   'Affiliate Networks',
 ];
 
+const CATEGORY_ICONS: Record<string, React.ElementType> = {
+  'Web Hosting & E-Commerce': ShoppingCart,
+  'Email Marketing': Mail,
+  'Analytics & SEO Tools': BarChart3,
+  'AI & Automation Tools': Brain,
+  'Web Design & No-Code': Palette,
+  'Productivity & Management': Hammer,
+  'Affiliate Networks': Globe,
+};
+
 export function ToolsContent() {
   const [selectedCategory, setSelectedCategory] = useState('All Programs');
 
-  const filteredTools = selectedCategory === 'All Programs'
-    ? TOOLS_DATA
-    : TOOLS_DATA.filter(tool => tool.category === selectedCategory);
+  const filteredTools = useMemo(() =>
+    selectedCategory === 'All Programs'
+      ? TOOLS_DATA
+      : TOOLS_DATA.filter((t) => t.category === selectedCategory),
+    [selectedCategory]
+  );
+
+  const highTicketCount = TOOLS_DATA.filter((t) => t.badge === 'HIGH TICKET').length;
+  const recurringCount = TOOLS_DATA.filter((t) => t.badge === 'RECURRING').length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100">
-      {/* Hero Section */}
-      <section className="pt-8 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-sm font-semibold text-emerald-400">
-            <Heart className="w-4 h-4" />
-            Tools I Actually Use & Recommend
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-black tracking-tight">
-            Recommended Tools &{' '}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-              Affiliate Programs
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+
+      {/* ── Hero ── */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-8 pb-10">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/25 rounded-full text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            <Heart className="w-3 h-3" aria-hidden="true" />
+            Personally Recommended
+          </span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
+          Tools &amp; Affiliate Programs
+        </h1>
+        <p className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
+          {TOOLS_DATA.length}+ curated platforms I use to run JaysMoneyGuides. Commission rates, payout structures, and what I actually think about each one.
+        </p>
+
+        {/* Quick stats */}
+        <div className="flex flex-wrap gap-3 mb-6">
+          {[
+            { icon: Star,       label: `${TOOLS_DATA.length} Programs`,     color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' },
+            { icon: TrendingUp, label: `${highTicketCount} High-Ticket`,    color: 'text-amber-400  bg-amber-500/10  border-amber-500/20' },
+            { icon: RefreshCw,  label: `${recurringCount} Recurring`,       color: 'text-sky-400    bg-sky-500/10    border-sky-500/20' },
+          ].map(({ icon: Icon, label, color }) => (
+            <span key={label} className={`inline-flex items-center gap-1.5 text-xs font-bold border rounded-full px-3 py-1 ${color}`}>
+              <Icon className="w-3 h-3" aria-hidden="true" />
+              {label}
             </span>
-          </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Curated collection of platforms, tools, and affiliate programs I personally use and recommend to build your online business. Every link supports JaysMoneyGuides at no extra cost to you.
-          </p>
+          ))}
         </div>
 
         {/* FTC Disclosure */}
-        <div className="mb-12 bg-amber-500/10 border border-amber-500/30 rounded-xl p-4">
-          <p className="text-sm text-amber-200 flex items-start gap-2">
-            <Check className="w-5 h-5 shrink-0 mt-0.5" />
-            <span><strong>FTC Disclosure:</strong> Some links are affiliate links. If you purchase through these links, I earn a small commission at no extra cost to you. This helps support JaysMoneyGuides. Thank you for your support!</span>
-          </p>
+        <div className="bg-amber-950/30 border border-amber-500/20 rounded-xl px-4 py-3 text-sm text-amber-200/80 flex items-start gap-2">
+          <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" aria-hidden="true" />
+          <span>
+            <strong className="text-amber-300">FTC Disclosure:</strong> Some links are affiliate links — I earn a small commission at no extra cost to you. I only list programs I&apos;d genuinely recommend.
+          </span>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-12">
-        <div className="flex flex-wrap gap-2 sm:gap-3">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
-                selectedCategory === category
-                  ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/50'
-                  : 'bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+      {/* ── Category filter ── */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-8">
+        <div className="flex items-center gap-2 mb-3">
+          <Filter className="w-3.5 h-3.5 text-slate-500" aria-hidden="true" />
+          <span className="text-xs font-bold uppercase tracking-widest text-slate-500">Filter by category</span>
         </div>
-      </section>
-
-      {/* Tools Grid */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredTools.map((tool) => (
-            <div
-              key={tool.id}
-              className="group relative bg-slate-900/80 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/50 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
-            >
-              {/* Badge */}
-              {tool.badge && (
-                <div className={`absolute -top-3 -right-3 px-3 py-1 rounded-full text-xs font-black border ${tool.badgeColor}`}>
-                  {tool.badge}
-                </div>
-              )}
-
-              {/* Header */}
-              <div className="mb-4">
-                <h3 className="text-xl font-black text-white mb-2 group-hover:text-emerald-400 transition">
-                  {tool.name}
-                </h3>
-                <p className="text-sm text-slate-400">{tool.description}</p>
-              </div>
-
-              {/* Commission Info */}
-              <div className="space-y-2 mb-5 pb-5 border-b border-slate-700">
-                <div className="flex items-center gap-2">
-                  <DollarSign className="w-4 h-4 text-emerald-400" />
-                  <div>
-                    <p className="text-xs text-slate-500">Commission</p>
-                    <p className="text-sm font-semibold text-emerald-400">{tool.commission}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-teal-400" />
-                  <div>
-                    <p className="text-xs text-slate-500">Payout</p>
-                    <p className="text-sm font-semibold text-teal-400">{tool.payout}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Features */}
-              <div className="mb-6">
-                <p className="text-xs font-semibold text-slate-400 uppercase mb-3 tracking-wider">Key Features</p>
-                <ul className="space-y-2">
-                  {tool.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
-                      <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* CTA Button */}
-              <a
-                href={tool.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-2.5 rounded-lg transition-all transform hover:scale-105 active:scale-95"
+        <div className="flex flex-wrap gap-2">
+          {CATEGORIES.map((cat) => {
+            const Icon = cat === 'All Programs' ? Zap : (CATEGORY_ICONS[cat] ?? Globe);
+            const active = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all ${
+                  active
+                    ? 'bg-emerald-500 border-emerald-500 text-slate-950'
+                    : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-600'
+                }`}
               >
-                <span>Get Started</span>
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          ))}
+                <Icon className="w-3 h-3" aria-hidden="true" />
+                {cat}
+              </button>
+            );
+          })}
         </div>
+      </section>
 
-        {/* Empty State */}
-        {filteredTools.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-slate-400 text-lg">No tools found in this category.</p>
+      {/* ── Tools grid ── */}
+      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
+        {filteredTools.length === 0 ? (
+          <div className="text-center py-20 text-slate-400">
+            <p className="text-lg font-semibold">No programs in this category yet.</p>
           </div>
+        ) : (
+          <>
+            <p className="text-xs text-slate-500 mb-5 font-medium">
+              {filteredTools.length} program{filteredTools.length !== 1 ? 's' : ''}
+              {selectedCategory !== 'All Programs' ? ` in ${selectedCategory}` : ''}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredTools.map((tool) => (
+                <div
+                  key={tool.id}
+                  className="group relative flex flex-col bg-slate-900 border border-slate-800 hover:border-emerald-500/40 rounded-2xl overflow-hidden transition-all hover:shadow-lg hover:shadow-emerald-500/5"
+                >
+                  {/* Badge */}
+                  {tool.badge && (
+                    <span className={`absolute top-4 right-4 text-[10px] font-black px-2 py-0.5 rounded-full border ${tool.badgeColor}`}>
+                      {tool.badge}
+                    </span>
+                  )}
+
+                  <div className="p-5 flex flex-col flex-1">
+                    {/* Header */}
+                    <div className="mb-4 pr-16">
+                      <h3 className="text-base font-extrabold text-white group-hover:text-emerald-300 transition-colors mb-1">
+                        {tool.name}
+                      </h3>
+                      <p className="text-xs text-slate-400 leading-relaxed">{tool.description}</p>
+                    </div>
+
+                    {/* Commission row */}
+                    <div className="flex gap-3 mb-4 bg-slate-800/50 rounded-xl p-3">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-0.5">Commission</p>
+                        <p className="text-xs font-bold text-emerald-400 truncate">{tool.commission}</p>
+                      </div>
+                      <div className="w-px bg-slate-700 shrink-0" aria-hidden="true" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-0.5">Payout</p>
+                        <p className="text-xs font-bold text-teal-400 truncate">{tool.payout}</p>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="space-y-1.5 mb-5 flex-1">
+                      {tool.features.map((f, i) => (
+                        <li key={i} className="flex items-center gap-2 text-xs text-slate-300">
+                          <Check className="w-3 h-3 text-emerald-400 shrink-0" aria-hidden="true" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <a
+                      href={tool.link}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-slate-950 font-bold text-sm py-2.5 rounded-xl transition-colors"
+                    >
+                      Get Started
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </section>
 
-      {/* CTA Section */}
+      {/* ── Bottom CTA ── */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pb-20">
-        <div className="bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-emerald-500/20 border border-emerald-500/30 rounded-2xl p-8 sm:p-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-black">Still Looking for More?</h2>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-              Check out the detailed guides on each of these tools in our blog. I've written in-depth reviews and tutorials to help you get started.
-            </p>
-            <a
-              href="/blog"
-              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-lg transition-all transform hover:scale-105"
+        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-xl font-extrabold text-white mb-1">Want in-depth guides on these tools?</h2>
+            <p className="text-sm text-slate-400">I&apos;ve written step-by-step tutorials for the most popular programs above.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <Link
+              href="/category/Affiliate%20Marketing"
+              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm transition-colors"
             >
-              <span>Read Our Guides</span>
-              <ArrowRight className="w-5 h-5" />
-            </a>
+              Browse Affiliate Guides
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href="/ebooks"
+              className="inline-flex items-center gap-2 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-colors"
+            >
+              Free eBooks
+            </Link>
           </div>
         </div>
       </section>

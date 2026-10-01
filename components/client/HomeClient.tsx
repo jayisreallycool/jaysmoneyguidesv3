@@ -7,12 +7,15 @@ import { HeroHeader } from '@/components/ui/HeroHeader';
 import { PostCard } from '@/components/ui/PostCard';
 import { CategoryTabs } from '@/components/ui/CategoryTabs';
 import { StoreSection } from '@/components/ui/StoreSection';
-import { EbooksBanner } from '@/components/ui/SectionIntro';
+import { EbooksBanner, BlogIntro, ToolsBanner } from '@/components/ui/SectionIntro';
+import { ReviewsSection } from '@/components/ui/ReviewsSection';
 import { ToolsHomepageSection } from '@/components/ui/ToolsHomepageSection';
 import { CheckoutModal } from '@/components/client/CheckoutModal';
 import { AdUnit } from '@/components/client/AdUnit';
 import dynamic from 'next/dynamic';
 import { ProductPreviewModal } from '@/components/ui/ProductPreviewModal';
+import Link from 'next/link';
+import { ArrowRight, Clock, TrendingUp } from 'lucide-react';
 
 const EbookViewer = dynamic(
   () => import('@/components/client/EbookViewer').then((m) => m.EbookViewer),
@@ -49,6 +52,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
   const [previewProduct, setPreviewProduct] = useState<Product | null>(null);
   const [viewerEmail, setViewerEmail] = useState<string>('');
 
+  const featured = useMemo(() => posts.find((p) => p.featured) ?? posts[0], [posts]);
   const shuffled = useMemo(() => shuffle(posts, 1), [posts]);
   const filtered = useMemo(
     () => (category === 'All' ? shuffled : shuffled.filter((p) => p.category === category)),
@@ -100,12 +104,61 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       {/* 1. Hero */}
       <HeroHeader onSubscribeSuccess={() => {}} />
 
-      {/* 2. Guides — direct navigation to /guide/[slug] */}
+      {/* 2. Blog section intro banner */}
+      <BlogIntro />
+
+      {/* 3. Guides — direct navigation to /guide/[slug] */}
       <section id="guides" className="mx-auto max-w-7xl px-4 pt-12 pb-10" aria-label="Blog guides and articles">
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">Latest Guides</h2>
           <p className="text-slate-400 text-sm">In-depth tutorials on affiliate marketing, SEO, blogging and more.</p>
         </div>
+
+        {/* Featured guide — prominent conversion card */}
+        {featured && (
+          <Link
+            href={`/guide/${featured.slug}`}
+            className="group relative flex flex-col sm:flex-row gap-0 bg-slate-900 border border-emerald-500/20 hover:border-emerald-500/50 rounded-2xl overflow-hidden mb-8 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
+            aria-label={`Featured guide: ${featured.title}`}
+          >
+            {/* Cover image */}
+            <div className="relative w-full sm:w-64 md:w-80 shrink-0 aspect-video sm:aspect-auto sm:min-h-[200px] overflow-hidden bg-slate-950">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={featured.coverImage}
+                alt={featured.title}
+                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                loading="eager"
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                fetchPriority={"high" as any}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/40 sm:block hidden" aria-hidden="true" />
+              <span className="absolute top-3 left-3 flex items-center gap-1.5 bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
+                <TrendingUp className="w-3 h-3" aria-hidden="true" />
+                Featured
+              </span>
+            </div>
+            {/* Text */}
+            <div className="flex flex-col justify-center px-5 py-5 sm:px-6 flex-1">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-emerald-400 mb-2">{featured.category}</p>
+              <h3 className="text-lg sm:text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors leading-snug mb-2">
+                {featured.title}
+              </h3>
+              <p className="text-sm text-slate-400 leading-relaxed line-clamp-2 mb-4">
+                {featured.excerpt}
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-1.5 text-xs text-slate-500">
+                  <Clock className="w-3.5 h-3.5 text-emerald-400/60" aria-hidden="true" />
+                  {featured.readTimeMinutes} min read · {featured.difficulty}
+                </span>
+                <span className="flex items-center gap-1.5 text-sm font-bold text-emerald-400 group-hover:text-emerald-300 transition-colors">
+                  Read guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </span>
+              </div>
+            </div>
+          </Link>
+        )}
         <CategoryTabs
           selectedCategory={category}
           onSelectCategory={(c) => onSelectCategory(c)}
@@ -141,12 +194,12 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
         )}
       </section>
 
-      {/* Ad: Leaderboard between guides and ebooks (high-traffic natural break) */}
+      {/* Ad: Leaderboard between guides and ebooks */}
       <div className="max-w-4xl mx-auto px-4 pb-2">
         <AdUnit slot="HOME_MID_LEADERBOARD" format="leaderboard" />
       </div>
 
-      {/* 3. Ebooks */}
+      {/* 4. Ebooks */}
       <EbooksBanner />
       <section id="ebooks" className="mx-auto max-w-7xl px-4 py-10" aria-label="eBook store">
         <div id="ebooks-grid">
@@ -161,10 +214,16 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
         </div>
       </section>
 
-      {/* 4. Tools & Affiliate Programs */}
-      <section className="mx-auto max-w-7xl px-4 pb-14" aria-label="Recommended tools and affiliate programs">
+      {/* 5. Tools & Affiliate Programs intro banner */}
+      <ToolsBanner />
+
+      {/* 6. Tools & Affiliate Programs */}
+      <section id="tools" className="mx-auto max-w-7xl px-4 pb-14" aria-label="Recommended tools and affiliate programs">
         <ToolsHomepageSection />
       </section>
+
+      {/* Reviews */}
+      <ReviewsSection />
 
       {/* Modals */}
       {previewProduct && (

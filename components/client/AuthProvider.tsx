@@ -13,7 +13,7 @@ const AuthContext = createContext<AuthContextValue>({
   user: null, loading: true, refresh: () => {}, logout: async () => ({ ok: true }),
 });
 
-const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+import { isAdminEmailClient } from '@/lib/admin-config';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -36,7 +36,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             avatar: fbUser.photoURL || undefined,
             provider: fbUser.providerData[0]?.providerId?.includes('google') ? 'google' : 'email',
             createdAt: fbUser.metadata.creationTime || new Date().toISOString(),
-            role: ADMIN_EMAILS.includes((fbUser.email || '').toLowerCase()) ? 'admin' : 'user',
+            role: isAdminEmailClient(fbUser.email) ? 'admin' : 'user',
           } as User);
         } else {
           setUser(null);

@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Clock, ArrowRight } from 'lucide-react';
+import { Clock, ArrowRight, Calendar } from 'lucide-react';
 import type { BlogPost, BlogPostSummary } from '@/lib/types';
+
+function formatDate(iso: string) {
+  try {
+    return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  } catch { return iso; }
+}
 
 const CATEGORY_COLORS: Record<string, string> = {
   'Affiliate Marketing': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/25',
@@ -73,7 +79,7 @@ export function PostCard({
       </div>
 
       {/* Body */}
-      <div className="flex flex-col flex-1 px-4 pt-4 pb-3 gap-2">
+      <div className="flex flex-col flex-1 px-4 pt-4 pb-4 gap-2">
         <h2 className="text-[15px] sm:text-base font-bold text-slate-100 group-hover:text-emerald-300 transition-colors leading-snug line-clamp-2">
           {post.title}
         </h2>
@@ -81,11 +87,18 @@ export function PostCard({
           {post.excerpt}
         </p>
 
-        {/* Read CTA */}
-        <div className="flex items-center justify-end pt-1 mt-auto">
-          <span className="flex items-center gap-1 text-[12px] font-semibold text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity">
-            Read guide
-            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+        {/* Footer row — always visible */}
+        <div className="flex items-center justify-between pt-2 mt-auto border-t border-slate-800/60">
+          <time
+            dateTime={post.publishedAt}
+            className="flex items-center gap-1 text-[11px] text-slate-500"
+          >
+            <Calendar className="w-3 h-3" aria-hidden="true" />
+            {formatDate(post.publishedAt)}
+          </time>
+          <span className="flex items-center gap-1 text-[12px] font-semibold text-emerald-500 group-hover:text-emerald-400 transition-colors">
+            Read
+            <ArrowRight className="w-3 h-3" aria-hidden="true" />
           </span>
         </div>
       </div>

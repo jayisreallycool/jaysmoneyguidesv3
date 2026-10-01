@@ -44,3 +44,8 @@ coverage/
 # Misc
 *.pem
 *.key
+
+# Local tooling
+.claude/
+.wget-hsts
+*.tsbuildinfo

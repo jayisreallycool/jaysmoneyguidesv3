@@ -1,11 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getAllCategories, getPostsByCategory, getPostSummaries } from '@/lib/posts';
 import { PostCard } from '@/components/server/PostCard';
 import { JsonLd } from '@/components/server/JsonLd';
 import { SITE, SITE_NAME, categoryPageSchema, categoryItemListSchema, personSchema } from '@/lib/seo';
-import { BookOpen, ArrowRight, Home, ChevronRight } from 'lucide-react';
+import { BookOpen, ArrowRight, Home, ChevronRight, Clock, Star } from 'lucide-react';
 
 export const dynamicParams = false;
 
@@ -44,12 +45,19 @@ const CATEGORY_META: Record<string, { description: string; blurb: string; emoji:
     blurb:
       'Build something that earns. Business models, growth frameworks, and real strategies from an independent operator.',
   },
-  'E-Commerce': {
-    emoji: '🛍️',
+  'Tech': {
+    emoji: '⚙️',
     description:
-      'Free e-commerce guides by Jay Lopez — Shopify, dropshipping, product research, and store optimization strategies for building profitable online stores.',
+      'Free tech guides by Jay Lopez — no-code automation, AI tools, developer resources, and analytics platforms for building and scaling online businesses without a tech team.',
     blurb:
-      'Start and scale an online store. Shopify, dropshipping, product sourcing, and store optimization — all free.',
+      'The tech stack that runs modern online businesses. No-code tools, AI workflows, and analytics — built for solopreneurs.',
+  },
+  'SoFi Bank': {
+    emoji: '🏦',
+    description:
+      'Free SoFi Bank guides by Jay Lopez — high-yield savings, refinancing, personal loans, and smart money moves that help online business owners manage and grow their income.',
+    blurb:
+      'Make your money work harder. SoFi banking, savings, and loan strategies for independent business owners.',
   },
 };
 
@@ -111,6 +119,10 @@ export default async function CategoryPage({
   const posts = await getPostsByCategory(name);
 
   if (posts.length === 0) notFound();
+
+  // Featured post: explicitly marked, else most recent
+  const featuredPost = posts.find((p) => p.featured) ?? posts[0];
+  const remainingPosts = posts.filter((p) => p.id !== featuredPost.id);
 
   const { description, blurb, emoji } = getCategoryMeta(name);
 
@@ -230,11 +242,60 @@ export default async function CategoryPage({
           aria-label={`${name} guides`}
         >
           {posts.length > 0 ? (
+            <>
+            {/* Featured post hero */}
+            <Link
+              href={`/guide/${featuredPost.slug}`}
+              className="group mb-8 flex flex-col sm:flex-row gap-0 rounded-2xl border border-slate-800 hover:border-slate-600 bg-slate-900 overflow-hidden transition-all hover:shadow-lg hover:shadow-emerald-500/5"
+              aria-label={`Featured guide: ${featuredPost.title}`}
+            >
+              {/* Cover image */}
+              {featuredPost.coverImage && (
+                <div className="relative w-full sm:w-72 lg:w-80 h-48 sm:h-auto shrink-0 overflow-hidden">
+                  <Image
+                    src={featuredPost.coverImage}
+                    alt={featuredPost.title}
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 100vw, 320px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/30 sm:block hidden" />
+                  <span className="absolute top-3 left-3 inline-flex items-center gap-1 bg-emerald-500 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wide">
+                    <Star className="w-2.5 h-2.5" aria-hidden="true" />
+                    Featured
+                  </span>
+                </div>
+              )}
+              {/* Content */}
+              <div className="flex flex-col justify-center p-5 sm:p-6 lg:p-8 flex-1 min-w-0">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400 mb-2">{name}</span>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-white group-hover:text-emerald-300 leading-snug transition-colors mb-3 line-clamp-3">
+                  {featuredPost.title}
+                </h2>
+                <p className="text-sm text-slate-400 leading-relaxed line-clamp-2 mb-4">{featuredPost.excerpt}</p>
+                <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3 h-3" aria-hidden="true" />
+                    {featuredPost.readTimeMinutes} min read
+                  </span>
+                  {featuredPost.difficulty && (
+                    <span className="border border-slate-700 rounded-full px-2 py-0.5">{featuredPost.difficulty}</span>
+                  )}
+                  <span className="ml-auto flex items-center gap-1 font-semibold text-emerald-500 group-hover:text-emerald-400 transition-colors">
+                    Read guide <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Remaining guides grid */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {posts.map((p, i) => (
+              {remainingPosts.map((p, i) => (
                 <PostCard key={p.id} post={p} priority={i < 3} />
               ))}
             </div>
+            </>
           ) : (
             <div className="text-center py-20 text-slate-400">
               <p className="text-lg font-semibold">No guides yet in this category.</p>

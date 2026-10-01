@@ -1,11 +1,19 @@
 import Link from 'next/link';
 import {
   Mail, ArrowUp, TrendingUp, Zap, BookOpen, DollarSign,
-  ShoppingBag, Shield, FileText, AlertTriangle, Cookie, User
+  ShoppingBag, Shield, FileText, AlertTriangle, Cookie, User,
+  Gift, Star, BookMarked,
 } from 'lucide-react';
 import { FooterNewsletter } from '@/components/client/FooterNewsletter';
 
 const YEAR = new Date().getFullYear();
+
+const STATS = [
+  { value: '57+', label: 'Free Guides', icon: BookMarked },
+  { value: '5',   label: 'eBooks',      icon: BookOpen },
+  { value: '30+', label: 'Affiliate Reviews', icon: Star },
+  { value: '100%', label: 'Free to Read', icon: Gift },
+];
 
 const GUIDE_LINKS = [
   { label: 'Affiliate Marketing', href: '/category/Affiliate%20Marketing', icon: TrendingUp },
@@ -36,6 +44,25 @@ const LEGAL_LINKS = [
 export function Footer() {
   return (
     <footer className="bg-slate-950 border-t border-slate-800/60 text-slate-300" role="contentinfo">
+
+      {/* ── Stats strip ── */}
+      <div className="bg-slate-900/60 border-b border-slate-800/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+            {STATS.map(({ value, label, icon: Icon }) => (
+              <div key={label} className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                  <Icon className="w-4 h-4 text-emerald-400" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-base font-black text-white leading-none">{value}</p>
+                  <p className="text-[11px] text-slate-500 font-medium mt-0.5">{label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* ── Newsletter strip ── */}
       <div className="border-b border-slate-800/60 bg-gradient-to-r from-emerald-950/30 via-slate-950 to-emerald-950/20">
@@ -77,19 +104,42 @@ export function Footer() {
           <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
             Actionable blueprints for building profitable online businesses — affiliate marketing, SEO, blogging, and smart money moves.
           </p>
-          {/* TikTok */}
-          <a
-            href="https://www.tiktok.com/@jaysmoneyguides"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/60 hover:border-emerald-500/40 text-slate-300 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all"
-            aria-label="JaysMoneyGuides on TikTok (opens in new tab)"
+          {/* Social links */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <a
+              href="https://www.tiktok.com/@jaysmoneyguides"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/60 hover:border-emerald-500/40 text-slate-300 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all"
+              aria-label="JaysMoneyGuides on TikTok (opens in new tab)"
+            >
+              <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.07 8.07 0 004.73 1.52V6.75a4.85 4.85 0 01-.97-.06z"/>
+              </svg>
+              TikTok
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700/60 hover:border-emerald-500/40 text-slate-300 hover:text-white px-3 py-2 rounded-xl text-xs font-bold transition-all"
+            >
+              <Mail className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+              Contact
+            </a>
+          </div>
+
+          {/* Free ebook promo */}
+          <Link
+            href="/ebooks/affiliate-marketing-beginners"
+            className="group flex items-start gap-3 bg-emerald-950/40 hover:bg-emerald-950/60 border border-emerald-500/20 hover:border-emerald-500/40 rounded-xl p-3 transition-all"
           >
-            <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.07 8.07 0 004.73 1.52V6.75a4.85 4.85 0 01-.97-.06z"/>
-            </svg>
-            @jaysmoneyguides
-          </a>
+            <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5">
+              <Gift className="w-4 h-4 text-emerald-400" aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-[11px] font-extrabold text-emerald-400 uppercase tracking-wider leading-none mb-0.5">Free Download</p>
+              <p className="text-xs font-semibold text-slate-200 group-hover:text-white transition-colors leading-snug">Affiliate Marketing Beginner&rsquo;s Guide PDF</p>
+            </div>
+          </Link>
         </div>
 
         {/* Guides column */}

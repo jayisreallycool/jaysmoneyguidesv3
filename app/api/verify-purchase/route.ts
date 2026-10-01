@@ -30,6 +30,19 @@ export async function GET(req: Request) {
     const paid = session.payment_status === 'paid';
     const email = (session.metadata?.email || session.customer_email || '').toLowerCase();
 
+    // Cross-validate: the productId in session metadata must match the URL param.
+    // This prevents session replay attacks where a valid session_id for product A
+    // is reused with product B in the URL to gain unauthorized access.
+    const sessionProductId = session.metadata?.productId;
+    if (sessionProductId && sessionProductId !== productId) {
+      console.warn('[verify-purchase] product mismatch — possible replay attack', {
+        sessionProductId,
+        requestedProductId: productId,
+        sessionId,
+      });
+      return Response.json({ error: 'Product mismatch' }, { status: 403 });
+    }
+
     if (paid && email) {
       const db = adminDb();
       if (db) {

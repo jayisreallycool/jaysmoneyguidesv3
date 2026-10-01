@@ -89,22 +89,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           as="image"
           href="/jay-affiliate-marketing-guides-hero-480.webp"
           type="image/webp"
-          // @ts-expect-error — imagesrcset is valid HTML but not yet in React types
-          imagesrcset="/jay-affiliate-marketing-guides-hero-480.webp 480w, /jay-affiliate-marketing-guides-hero-800.webp 800w, /jay-affiliate-marketing-guides-hero-1200.webp 1200w, /jay-affiliate-marketing-guides-hero.webp 1536w"
-          imagesizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1536px"
+          imageSrcSet="/jay-affiliate-marketing-guides-hero-480.webp 480w, /jay-affiliate-marketing-guides-hero-800.webp 800w, /jay-affiliate-marketing-guides-hero-1200.webp 1200w, /jay-affiliate-marketing-guides-hero.webp 1536w"
+          imageSizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1536px"
         />
         {/* Preload character avatar used in navbar */}
         <link rel="preload" as="image" href="/jay-character-small.webp" type="image/webp" />
         {/* Preconnect Firebase Storage for ebook covers */}
         <link rel="preconnect" href="https://firebasestorage.googleapis.com" />
+        <link rel="preconnect" href="https://firestore.googleapis.com" />
+        <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />
         {/* dns-prefetch fallback */}
         <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />
+        <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
         {/*
           Google AdSense script — loaded only after approval.
           To activate: set NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX in .env.local
           and in Vercel project settings. Script is omitted entirely when the env var is unset,
           so there is zero performance cost before approval.
         */}
+        {/*
+          Google Analytics 4 — loaded only when NEXT_PUBLIC_GA_ID is set.
+          To activate: set NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX in .env.local
+          and in Vercel project settings. Zero performance cost before activation.
+        */}
+        {process.env.NEXT_PUBLIC_GA_ID?.startsWith('G-') && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true });
+                `,
+              }}
+            />
+          </>
+        )}
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.startsWith('ca-pub-') && (
           <script
             async

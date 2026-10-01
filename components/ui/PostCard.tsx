@@ -133,15 +133,18 @@ export const PostCard: React.FC<PostCardProps> = React.memo(({
         <div className="flex items-center justify-between pt-2 mt-auto border-t border-slate-800/80">
           {/* Author */}
           <div className="flex items-center gap-2 min-w-0">
-            <SafeImage
-              src={post.author.avatar || ''}
-              alt={post.author.name}
-              className="w-6 h-6 rounded-full object-cover border border-emerald-500/20 shrink-0"
-              loading="lazy"
-              decoding="async"
-              width="24"
-              height="24"
-            />
+            {post.author.avatar ? (
+              <SafeImage
+                src={post.author.avatar}
+                alt={post.author.name}
+                className="w-6 h-6 rounded-full object-cover border border-emerald-500/20 shrink-0"
+                loading="lazy"
+                width="24"
+                height="24"
+              />
+            ) : (
+              <div className="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/20 shrink-0" aria-hidden="true" />
+            )}
             <div className="min-w-0">
               <p className="text-[11px] font-semibold text-slate-300 truncate">{post.author.name}</p>
               <p className="text-[10px] text-slate-500 truncate">{post.publishedAt}</p>

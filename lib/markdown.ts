@@ -4,37 +4,100 @@ import 'server-only';
  * Minimal, dependency-free markdown → HTML renderer that runs on the SERVER
  * (React Server Component), so article bodies ship as HTML with zero client JS.
  *
- * Supports: h1–h4, bold, italic, inline code, links (external → rel="nofollow
- * sponsored"), plain images, clickable-image banners [![alt](img)](href),
- * blockquotes, bulleted and numbered lists, code fences, and paragraphs.
+ * Supports: h1–h4 (with id anchors), bold, italic, inline code, links
+ * (external → rel="nofollow sponsored"), plain images, clickable-image banners
+ * [![alt](img)](href), blockquotes, bulleted and numbered lists, code fences,
+ * horizontal rules, tables, and paragraphs.
  */
+
+export interface TocItem { level: number; text: string; id: string; }
+
+function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+/** Extract h2/h3 headings for table of contents. */
+export function extractToc(md: string): TocItem[] {
+  const toc: TocItem[] = [];
+  const seen: Record<string, number> = {};
+  for (const line of md.split('\n')) {
+    const m = line.match(/^(#{2,3})\s+(.+)$/);
+    if (!m) continue;
+    const text = m[2].replace(/\*\*?([^*]+)\*\*?/g, '$1').replace(/`([^`]+)`/g, '$1');
+    let id = slugify(text);
+    seen[id] = (seen[id] ?? 0) + 1;
+    if (seen[id] > 1) id = `${id}-${seen[id]}`;
+    toc.push({ level: m[1].length, text, id });
+  }
+  return toc;
+}
 
 function esc(s: string): string {
   return s
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/** Escape for use inside an HTML attribute value (href, src, alt). */
+function escAttr(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
+}
+
+/** Return the URL only if it's a safe scheme; otherwise return fallback. */
+function safeUrl(url: string, fallback = '#'): string {
+  const trimmed = url.trim();
+  if (
+    /^https?:\/\//i.test(trimmed) ||
+    trimmed.startsWith('/') ||
+    trimmed.startsWith('#')
+  ) {
+    return trimmed;
+  }
+  return fallback;
 }
 
 const SITE = 'https://www.jaysmoneyguides.com';
 
 function inline(text: string): string {
-  let t = esc(text);
+  // NOTE: We process on the RAW text for markdown patterns first, then escape
+  // individual parts. This avoids double-escaping while keeping XSS safety.
+
   // inline images first (so links don't mangle them)
-  t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_m, alt, src) => {
-    const safe = /^https?:\/\//i.test(src) || src.startsWith('/') ? src : '';
-    return safe ? `<img src="${safe}" alt="${alt}" loading="lazy" class="inline-img" />` : '';
+  // Pattern captures before HTML escaping so we can properly escape each part.
+  let t = text.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, (_m, alt, src) => {
+    const safeSrc = safeUrl(src, '');
+    if (!safeSrc) return '';
+    return `<img src="${escAttr(safeSrc)}" alt="${escAttr(alt)}" loading="lazy" class="inline-img" />`;
   });
-  // links
+
+  // links — capture raw, escape each attribute part individually
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_m, label, url) => {
-    const safe = /^https?:\/\//i.test(url) || url.startsWith('/') || url.startsWith('#') ? url : '#';
-    const external = /^https?:\/\//i.test(url) && !safe.startsWith(SITE);
+    const safe = safeUrl(url);
+    const external = /^https?:\/\//i.test(url) && !url.startsWith(SITE);
     const attrs = external ? ' target="_blank" rel="nofollow sponsored noopener noreferrer"' : '';
-    return `<a href="${safe}"${attrs}>${label}</a>`;
+    // label may contain markdown (bold/italic/code) — escape it then process
+    return `<a href="${escAttr(safe)}"${attrs}>${esc(label)}</a>`;
   });
+
+  // Now escape remaining text (non-link, non-image portions)
+  // We need to escape only the literal text parts, not the HTML we injected.
+  // Split on injected tags and escape the non-tag parts.
+  t = t.replace(/(<[^>]+>)|([^<]+)/g, (_m, tag, txt) => {
+    if (tag) return tag; // already valid HTML
+    return esc(txt ?? '');
+  });
+
   t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   t = t.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
-  t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
+  t = t.replace(/`([^`]+)`/g, (_m, code) => `<code>${esc(code)}</code>`);
   return t;
 }
 
@@ -57,14 +120,14 @@ export function markdownToHtml(md: string): string {
     const click = block.match(/^\[!\[([^\]]*)\]\(([^)\s]+)\)\]\(([^)\s]+)\)/);
     if (click) {
       const [, alt, img, href] = click;
-      const safeImg = /^https?:\/\//i.test(img) || img.startsWith('/') ? img : '';
-      const safeHref = /^https?:\/\//i.test(href) || href.startsWith('/') ? href : '#';
+      const safeSrc = safeUrl(img, '');
+      const safeHref = safeUrl(href);
       const external = /^https?:\/\//i.test(href);
       const attrs = external ? ' target="_blank" rel="nofollow sponsored noopener noreferrer"' : '';
-      if (safeImg) {
+      if (safeSrc) {
         out.push(
-          `<a href="${safeHref}"${attrs} class="banner-link">` +
-            `<img src="${safeImg}" alt="${alt}" loading="lazy" class="banner-img" />` +
+          `<a href="${escAttr(safeHref)}"${attrs} class="banner-link">` +
+            `<img src="${escAttr(safeSrc)}" alt="${escAttr(alt)}" loading="lazy" class="banner-img" />` +
           `</a>`
         );
         continue;
@@ -75,22 +138,48 @@ export function markdownToHtml(md: string): string {
     const img = block.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/);
     if (img) {
       const [, alt, src] = img;
-      const safe = /^https?:\/\//i.test(src) || src.startsWith('/') ? src : '';
+      const safe = safeUrl(src, '');
       if (safe) {
         const caption = alt
           ? `<figcaption class="img-caption">${esc(alt)}</figcaption>`
           : '';
-        out.push(`<figure class="content-figure"><img src="${safe}" alt="${esc(alt)}" loading="lazy" class="content-img" />${caption}</figure>`);
+        out.push(`<figure class="content-figure"><img src="${escAttr(safe)}" alt="${escAttr(alt)}" loading="lazy" class="content-img" />${caption}</figure>`);
         continue;
       }
     }
 
-    // headings
-    const h = block.match(/^(#{1,4})\s+(.*)$/);
+    // headings (with anchor ids for TOC)
+    const h = block.match(/^(#{1,4})\s+(.+)$/);
     if (h) {
       const level = h[1].length;
-      out.push(`<h${level}>${inline(h[2])}</h${level}>`);
+      const text = h[2];
+      // slugify strips all non-alphanumeric chars so id is always safe
+      const id = slugify(text.replace(/\*\*?([^*]+)\*\*?/g, '$1').replace(/`([^`]+)`/g, '$1'));
+      out.push(`<h${level} id="${id}">${inline(text)}</h${level}>`);
       continue;
+    }
+
+    // horizontal rule
+    if (/^(-{3,}|\*{3,}|_{3,})$/.test(block)) {
+      out.push('<hr />');
+      continue;
+    }
+
+    // table (pipe-delimited)
+    if (block.includes('|') && block.split('\n').length >= 2) {
+      const rows = block.split('\n').filter(Boolean);
+      const isTable = rows[0].includes('|') && rows.length >= 2 && /^\|?[\s:-]+\|/.test(rows[1]);
+      if (isTable) {
+        const headerCells = rows[0].split('|').map(c => c.trim()).filter(Boolean);
+        const bodyRows = rows.slice(2);
+        const header = `<thead><tr>${headerCells.map(c => `<th>${inline(c)}</th>`).join('')}</tr></thead>`;
+        const body = bodyRows.map(r => {
+          const cells = r.split('|').map(c => c.trim()).filter(Boolean);
+          return `<tr>${cells.map(c => `<td>${inline(c)}</td>`).join('')}</tr>`;
+        }).join('');
+        out.push(`<table>${header}<tbody>${body}</tbody></table>`);
+        continue;
+      }
     }
 
     // blockquote

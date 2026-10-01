@@ -7,6 +7,7 @@ import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import {
   getAuth,
   signInWithRedirect,
+  getRedirectResult,
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -358,10 +359,21 @@ export async function signInWithGoogle(): Promise<AuthResult> {
     };
   } catch (error) {
     const firebaseError = getFirebaseError(error);
-    console.error('GOOGLE SIGN-IN ERROR:', { code: firebaseError.code, message: firebaseError.message, error });
+    console.error('GOOGLE SIGN-IN ERROR:', {
+      code: firebaseError.code,
+      message: firebaseError.message,
+      rawError: error,
+      // Log all enumerable properties so we can see exactly what Firebase returned
+      rawJson: JSON.stringify(error, Object.getOwnPropertyNames(error instanceof Error ? error : Object(error))),
+    });
 
-    // If the browser blocks the popup, use Firebase's redirect flow instead.
-    if (firebaseError.code === 'auth/popup-blocked') {
+    // Popup was blocked or failed — fall back to redirect flow automatically.
+    if (
+      firebaseError.code === 'auth/popup-blocked' ||
+      firebaseError.code === 'auth/internal-error' ||
+      firebaseError.code === 'auth/cancelled-popup-request' ||
+      firebaseError.code === 'unknown'
+    ) {
       try {
         await signInWithRedirect(auth, new GoogleAuthProvider());
         return { ok: false, error: 'Redirecting to Google…' };
@@ -598,6 +610,16 @@ export function watchAuth(
     cb(null);
     return () => {};
   }
+
+  // Complete any pending Google redirect sign-in (popup fallback flow).
+  // getRedirectResult resolves with null when there's no pending redirect.
+  getRedirectResult(auth).then((result) => {
+    if (result?.user) {
+      console.log('[auth] Redirect sign-in completed:', result.user.email);
+    }
+  }).catch((err) => {
+    console.warn('[auth] getRedirectResult error:', err?.code, err?.message);
+  });
 
   return onAuthStateChanged(
     auth,

@@ -171,6 +171,24 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" aria-hidden="true" />
             No spam ever. Unsubscribe anytime.
           </p>
+
+          {/* Secondary CTAs */}
+          <div className="flex items-center justify-center gap-3 mt-4">
+            <a
+              href="#guides"
+              className="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 underline underline-offset-4 decoration-emerald-500/40"
+            >
+              Browse guides
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </a>
+            <span className="text-slate-700" aria-hidden="true">·</span>
+            <a
+              href="#ebooks"
+              className="text-sm font-semibold text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5"
+            >
+              Free eBooks
+            </a>
+          </div>
         </div>
 
         {/* Stats grid */}

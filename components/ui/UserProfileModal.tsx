@@ -16,6 +16,10 @@ import {
   KeyRound
 } from 'lucide-react';
 import { User, BlogPost } from '@/lib/types';
+// Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
+const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+const isAdminEmailClient = (email?: string | null) =>
+  !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 
 interface UserProfileModalProps {
   isOpen: boolean;
@@ -92,7 +96,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-xl font-extrabold text-white">{user.name}</h2>
-                {user.email?.toLowerCase() === 'jayisreallycool@gmail.com' ? (
+                {isAdminEmailClient(user.email) ? (
                   <span className="bg-gradient-to-r from-amber-500/20 to-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
                     <ShieldCheck className="w-3 h-3 text-emerald-400" />
                     Admin Founder · All Ebooks Unlocked
@@ -188,7 +192,7 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                       <div>
                         <p className="text-[11px] uppercase font-bold text-slate-500 tracking-wider">Status</p>
                         <p className="text-xs text-white font-semibold mt-0.5">
-                          {user.email?.toLowerCase() === 'jayisreallycool@gmail.com' ? 'Admin & Full Ebook Access' : 'Active Member'}
+                          {isAdminEmailClient(user.email) ? 'Admin & Full Ebook Access' : 'Active Member'}
                         </p>
                       </div>
                     </div>

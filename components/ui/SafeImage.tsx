@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { getFirebaseStorageUrl } from '@/config/storageConfig';
 
 interface SafeImageProps {
@@ -15,20 +14,19 @@ interface SafeImageProps {
   sizes?: string;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
-  // legacy props accepted for compatibility with existing call sites
-  decoding?: string;
+  // legacy props accepted for compatibility
+  decoding?: 'auto' | 'async' | 'sync';
   fetchPriority?: 'high' | 'low' | 'auto';
   referrerPolicy?: string;
 }
 
 /**
- * Resilient image component.
+ * Resilient image component using a plain <img> tag.
  *
- * Images are intentionally served directly instead of through Next's
- * /_next/image optimizer. Firebase Storage URLs can otherwise return 502s
- * from the optimizer, and local fallback assets can return optimizer 400s.
- * The browser can load both sources directly and Firebase still handles the
- * actual image delivery/caching.
+ * Next/Image is intentionally avoided here — Firebase Storage URLs can
+ * return 502s through the Vercel optimizer, and the unoptimized + fill
+ * combination causes hydration mismatches that produce console noise.
+ * The browser loads these URLs directly; Firebase handles delivery/caching.
  */
 export const SafeImage: React.FC<SafeImageProps> = ({
   src,
@@ -41,47 +39,62 @@ export const SafeImage: React.FC<SafeImageProps> = ({
   sizes,
   priority = false,
   loading,
+  decoding,
+  fetchPriority,
 }) => {
-  const resolve = (s?: string) => (s ? getFirebaseStorageUrl(s) || s : fallbackSrc);
-  const [imgSrc, setImgSrc] = useState<string>(resolve(src));
+  const resolve = (s?: string): string => {
+    if (!s) return fallbackSrc;
+    try {
+      return getFirebaseStorageUrl(s) || s;
+    } catch {
+      return s;
+    }
+  };
+
+  const [imgSrc, setImgSrc] = useState<string>(() => resolve(src));
   const [stage, setStage] = useState<0 | 1 | 2>(0);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     setImgSrc(resolve(src));
     setStage(0);
+    setFailed(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
 
   const handleError = () => {
     if (stage === 0 && src && imgSrc !== src) {
       setStage(1);
       setImgSrc(src);
-    } else if (stage <= 1 && imgSrc !== fallbackSrc) {
+    } else if (stage <= 1 && fallbackSrc && imgSrc !== fallbackSrc) {
       setStage(2);
       setImgSrc(fallbackSrc);
+    } else {
+      // All fallbacks exhausted — unmount the element entirely
+      setFailed(true);
     }
   };
 
-  // Coerce string dimensions (e.g. width="1440") to numbers for next/image.
-  const w = width == null ? undefined : Number(width);
-  const h = height == null ? undefined : Number(height);
-  const useFill = fill ?? (w == null || h == null || Number.isNaN(w) || Number.isNaN(h));
+  // Nothing to render
+  if (!imgSrc || failed) return null;
 
-  const common = {
-    src: imgSrc,
-    alt,
-    className,
-    onError: handleError,
-    priority,
-    ...(priority ? {} : { loading: loading ?? ('lazy' as const) }),
-    // Firebase Storage images are served directly because their signed/media
-    // URLs can fail through Vercel's optimizer. Local /public images use
-    // Next's optimizer for smaller responsive downloads.
-    unoptimized: imgSrc.startsWith('https://firebasestorage.googleapis.com/'),
-  };
+  const style: React.CSSProperties = fill
+    ? { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }
+    : {};
 
-  if (useFill) {
-    return <Image {...common} fill sizes={sizes ?? '(max-width: 768px) 100vw, 50vw'} />;
-  }
-
-  return <Image {...common} width={w!} height={h!} sizes={sizes} />;
+  return (
+    <img
+      src={imgSrc}
+      alt={alt}
+      className={className}
+      onError={handleError}
+      loading={priority ? 'eager' : (loading ?? 'lazy')}
+      decoding={decoding ?? 'async'}
+      fetchPriority={priority ? 'high' : (fetchPriority ?? 'auto')}
+      width={width}
+      height={height}
+      sizes={sizes}
+      style={style}
+    />
+  );
 };

@@ -1,3 +1,5 @@
+import 'server-only';
+import { adminAuth, adminDb, isAdminEmail } from '@/lib/firebase-admin';
 import {
   getProductConfig,
   getTokenUrl,
@@ -13,9 +15,7 @@ export const runtime = 'nodejs';
  */
 
 async function isUserAdmin(email: string | null | undefined): Promise<boolean> {
-  if (!email) return false;
-  const adminEmails = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
-  return adminEmails.includes(email.toLowerCase().trim());
+  return isAdminEmail(email);
 }
 
 async function getAuthenticatedEmail(req: Request): Promise<string | null> {
@@ -26,8 +26,7 @@ async function getAuthenticatedEmail(req: Request): Promise<string | null> {
     if (!token) return null;
 
     try {
-      const { adminAuth } = require('@/lib/firebase-admin');
-      const auth = adminAuth?.();
+      const auth = adminAuth();
       if (auth) {
         const decoded = await auth.verifyIdToken(token);
         return decoded.email?.toLowerCase().trim() || null;
@@ -44,8 +43,7 @@ async function getAuthenticatedEmail(req: Request): Promise<string | null> {
 
 async function userHasPurchase(email: string, productId: string): Promise<boolean> {
   try {
-    const { adminDb } = require('@/lib/firebase-admin');
-    const db = adminDb?.();
+    const db = adminDb();
     if (!db) return false;
 
     const doc = await db

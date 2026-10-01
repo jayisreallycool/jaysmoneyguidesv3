@@ -36,7 +36,6 @@ export const TECH_POSTS: BlogPost[] = [
 When new creators ask me how much money they need to start an online business, they are often shocked when I tell them: **Under $20 for a domain name.**
 
 
-Automate your workflow further with our guide on AI productivity tools and no-code automation. <a href="/blog/ai-productivity" className="text-emerald-500 hover:text-emerald-400 underline">AI productivity tools</a> <a href="/blog/no-code-automation" className="text-emerald-500 hover:text-emerald-400 underline">no-code automation</a>
 In 2026, cloud infrastructure, open-source software, and developer tools have matured to a point where a solo founder can run a high-traffic media site, host an email list, and automate operations using powerful free tiers.
 
 I'm Jay Lopez. In this guide, I am pulling back the curtain on my exact hardware and software tech stack.
@@ -48,7 +47,7 @@ I'm Jay Lopez. In this guide, I am pulling back the curtain on my exact hardware
 ## 1. Web Hosting & CDN: Cloudflare Pages + Vercel ($0/mo)
 
 Forget expensive $30/month shared hosting plans that crash when your article gets shared on Reddit or X.
-* **Vercel / Cloudflare Pages**: Deploy static sites directly from GitHub repositories. Your pages load globally in under 100 milliseconds with automatic SSL certificates and infinite scalability.
+* **[Vercel](https://vercel.com/?ref=jaysmoneyguides) / [Cloudflare Pages](https://pages.cloudflare.com/?ref=jaysmoneyguides)**: Deploy static sites directly from GitHub repositories. Your pages load globally in under 100 milliseconds with automatic SSL certificates and infinite scalability.
 
 ---
 
@@ -57,7 +56,7 @@ Forget expensive $30/month shared hosting plans that crash when your article get
 Notion is my central command center:
 * **Content Calendar**: Tracking article status from outline to draft to published.
 * **Sponsorship CRM**: Managing brand contacts, pitch emails, and active invoice deals.
-* **SOP Archive**: Standard operating procedures for recurring weekly tasks.
+* **SOP Archive**: Standard operating procedures for recurring weekly tasks — the kind that [no-code automation tools like Make and Zapier](/guide/no-code-automation-guide-make-zapier) can handle without human attention.
 
 ![AI Productivity Stack Graphic](/images/the-ai-productivity-stack-5-ai-tools-that-save-me-15-hours-e-tech-guide.webp)
 
@@ -65,7 +64,7 @@ Notion is my central command center:
 
 ## 3. Email Automation: Kit Free Tier ($0/mo)
 
-Start building your subscriber list for free up to your first 1,000 subscribers. You get access to landing page builders, opt-in forms, and broadcast emails.
+Start building your subscriber list for free up to your first 1,000 subscribers. You get access to landing page builders, opt-in forms, and broadcast emails. Once your list is live, pair it with an [automated affiliate email funnel](/guide/build-automated-affiliate-email-funnel) to turn subscribers into passive income without manual outreach.
 
 ---
 
@@ -299,8 +298,7 @@ AI will not replace creators, but **creators who master AI tools will replace cr
 The secret to using AI effectively is simple: **Do not use AI to generate finished articles.** Readers and search engines spot generic AI fluff instantly.
 
 
-Combine AI tools with automation frameworks for maximum productivity. <a href="/blog/no-code-automation" className="text-emerald-500 hover:text-emerald-400 underline">no-code automation framework</a>
-Instead, treat AI as a tireless junior research assistant that cleans datasets, outlines structures, transcribes interviews, and reviews code.
+Instead, treat AI as a tireless junior research assistant that cleans datasets, outlines structures, transcribes interviews, and reviews code. Combine these AI tools with a [no-code automation framework](/guide/no-code-automation-guide-make-zapier) and you can eliminate entire categories of repetitive work from your week.
 
 ![AI Productivity Stack Graphic](/images/the-ai-productivity-stack-5-ai-tools-that-save-me-15-hours-e-tech-guide.webp)
 
@@ -1101,10 +1099,10 @@ The hardest part of launching a Custom GPT is actually launching. Everything els
 
 # No-Code Automation 101: How to Connect Apps and Save 5+ Hours Every Week
 
-The most underrated productivity multiplier isn't a new tool or app — it's automation. Specifically, using no-code automation platforms like Zapier or Make to connect your existing apps and eliminate repetitive manual tasks. Building 5–10 strategic automations saves roughly 5+ hours weekly while removing the cognitive burden of remembering to do routine tasks.
+The most underrated productivity multiplier isn't a new tool or app — it's automation. Specifically, using [no-code automation](/guide/no-code-automation-guide-make-zapier) platforms like Zapier or Make to connect your existing apps and eliminate repetitive manual tasks. Building 5–10 strategic automations saves roughly 5+ hours weekly while removing the cognitive burden of remembering to do routine tasks.
 
 
-Track your automation success with proper analytics and monitoring tools. <a href="/blog/analytics-tools" className="text-emerald-500 hover:text-emerald-400 underline">analytics and monitoring</a>
+Track your automation success with proper analytics and monitoring tools. [analytics and monitoring](/guide/privacy-friendly-web-analytics-fathom-plausible)
 The barrier to entry used to be high — automation required coding skills or hiring developers. Today, no-code platforms make automation accessible to anyone comfortable with if-then logic. And the ROI is absurd: spending 2 hours building an automation that saves 1 hour weekly pays for itself within two weeks.
 
 ## What No-Code Automation Actually Does
@@ -1323,7 +1321,7 @@ This is why teams that embrace automation save exponentially more time over year
     id: 'post-tech-6',
     title: 'Web Analytics Beyond Google: Why I Switched to Privacy-Friendly Fathom & Plausible',
     slug: 'privacy-friendly-web-analytics-fathom-plausible',
-    excerpt: 'Ditch bloated Google Analytics 4 (GA4). How simple, privacy-friendly analytics give you clean data without annoying cookie banners.',
+    excerpt: 'Ditch bloated Google Analytics 4 (GA4). How simple, [privacy-friendly analytics](/guide/privacy-friendly-web-analytics-fathom-plausible) give you clean data without annoying cookie banners.',
     category: 'Tech',
     tags: ['Analytics', 'Privacy', 'Fathom', 'Plausible', 'Web Performance'],
     coverImage: '/images/web-analytics-beyond-google-why-i-switched-to-privacy-friend-tech-guide.webp',
@@ -1711,7 +1709,7 @@ If you work 4+ hours daily at a desk, yes. Typing comfort compounds over years. 
 
 ## The Business Case for Continued Performance Investment
 
-While optimizing Core Web Vitals requires real time and resources, the return on that investment extends beyond search rankings. Sites with strong performance tend to see meaningful improvements in conversion rates, customer satisfaction, and user retention independent of any ranking benefit. A faster, more responsive site simply keeps visitors engaged longer and reduces the likelihood they'll abandon for a competitor.
+While optimizing [Core Web Vitals](/guide/core-web-vitals-optimization-guide) requires real time and resources, the return on that investment extends beyond search rankings. Sites with strong performance tend to see meaningful improvements in conversion rates, customer satisfaction, and user retention independent of any ranking benefit. A faster, more responsive site simply keeps visitors engaged longer and reduces the likelihood they'll abandon for a competitor.
 
 ## Ergonomics: When to Invest
 
@@ -2613,6 +2611,19 @@ Yes, and many people do for personal projects — the tradeoff is that a home-ho
 
 **How many services can realistically run on one small VPS?**
 A 1 GB RAM tier comfortably handles two to three lightweight services like Plausible and Vaultwarden together; pushing much beyond that on the smallest tier tends to produce slowdowns, at which point upgrading to a 2 GB plan (often just a few dollars more per month) is the simpler fix rather than trying to squeeze more out of an undersized server.
+
+
+---
+
+## Build Your Stack Piece by Piece
+
+- **[No-Code Automation Guide: Connect Your Tech Stack Without Writing Code](/guide/no-code-automation-guide-make-zapier)** — automate the workflows between the tools in your stack
+- **[Privacy-Friendly Web Analytics: Lighter, GDPR-Compliant Alternatives to Google Analytics](/guide/privacy-friendly-web-analytics-fathom-plausible)** — replace the heaviest analytics script in most creator stacks
+- **[AI Productivity Tools for Solopreneurs 2026: The Best AI Additions to Your Stack](/guide/ai-productivity-tools-solopreneurs-2026)** — the AI layer on top of your core tool stack
+- **[Bluehost](https://www.bluehost.com/wordpress/hosting/?ref=jaysmoneyguides)** — entry-level WordPress hosting that keeps early stack costs minimal
+- **[Kinsta](https://kinsta.com/?ref=jaysmoneyguides)** — managed WordPress hosting for when traffic growth justifies premium infrastructure
+- **[ConvertKit](https://convertkit.com?ref=jaysmoneyguides)** — the email platform that fits cleanest into a creator-focused stack
+- **[SEMrush](https://www.semrush.com/?ref=jaysmoneyguides)** — replaces 3–4 specialized SEO tools with one subscription
 `
   }
 ];

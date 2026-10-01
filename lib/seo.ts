@@ -6,6 +6,30 @@ const AUTHOR_NAME = 'Jay Lopez';
 const AUTHOR_URL = `${SITE}/about`;
 const LOGO_URL = `${SITE}/jay-character-small.webp`;
 
+// ─── HowTo schema (tutorial/guide pages with keyTakeaways as steps) ──────────
+export function howToSchema(post: BlogPost) {
+  const steps = post.keyTakeaways ?? [];
+  if (steps.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: post.title,
+    description: (post as { metaDescription?: string }).metaDescription ?? post.excerpt,
+    image: post.coverImage ? [post.coverImage] : undefined,
+    author: {
+      '@type': 'Person',
+      name: post.author?.name ?? AUTHOR_NAME,
+      url: AUTHOR_URL,
+    },
+    step: steps.map((step, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: `Step ${i + 1}`,
+      text: step,
+    })),
+  };
+}
+
 // ─── Article (BlogPost) ───────────────────────────────────────────────────────
 export function articleSchema(post: BlogPost) {
   return {

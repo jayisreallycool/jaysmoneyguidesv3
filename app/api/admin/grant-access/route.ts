@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     if (!email || !productId) return Response.json({ error: 'email and productId required' }, { status: 400 });
 
     const cleanEmail = email.trim().toLowerCase();
-    const docId = `${cleanEmail}_${productId}`;
+    const docId = `${cleanEmail}__${productId}`; // double underscore — must match verify-purchase and download-ebook
 
     await db.collection('entitlements').doc(docId).set({
       email: cleanEmail,

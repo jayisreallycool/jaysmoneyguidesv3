@@ -35,6 +35,10 @@ import {
 } from 'lucide-react';
 import { Category, ModalView, User, Product, BlogPost } from '@/lib/types';
 import { PRODUCTS } from '@/lib/products';
+// Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
+const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+const isAdminEmailClient = (email?: string | null) =>
+  !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 
 interface ModernMenuWidgetProps {
   selectedCategory: Category | 'All';
@@ -74,7 +78,7 @@ export const ModernMenuWidget: React.FC<ModernMenuWidgetProps> = ({
   const [activeSection, setActiveSection] = useState<'all' | 'destinations' | 'categories' | 'ebooks'>('all');
   const searchInputRef = useRef<HTMLInputElement>(null);
 
-  const isAdmin = currentUser?.email?.toLowerCase() === 'jayisreallycool@gmail.com';
+  const isAdmin = isAdminEmailClient(currentUser?.email);
 
   const categories: Category[] = [
     'Affiliate Marketing',

@@ -4,13 +4,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/posts';
 import { PostBody } from '@/components/server/PostBody';
+import { AffiliateClickTracker } from '@/components/client/AffiliateClickTracker';
+import { ViewTracker } from '@/components/client/ViewTracker';
+import { TableOfContents } from '@/components/server/TableOfContents';
+import { extractToc } from '@/lib/markdown';
 import { JsonLd } from '@/components/server/JsonLd';
-import { articleSchema, breadcrumbSchema, SITE } from '@/lib/seo';
+import { articleSchema, breadcrumbSchema, howToSchema, SITE } from '@/lib/seo';
 import {
   Clock, BookOpen, ChevronRight, Home, ArrowLeft,
-  CheckCircle2, TrendingUp, ArrowRight
+  CheckCircle2, TrendingUp, ArrowRight, Gift,
 } from 'lucide-react';
 import { AdUnit } from '@/components/client/AdUnit';
+import { PRODUCTS } from '@/lib/products';
 
 export const dynamicParams = false;
 
@@ -85,11 +90,17 @@ export default async function GuidePage(
   const catColor = CATEGORY_COLORS[post.category] ?? fallbackColor;
   const diff = DIFFICULTY[post.difficulty] ?? DIFFICULTY.Beginner;
   const keyTakeaways = post.keyTakeaways ?? [];
+  const toc = extractToc(post.content);
+
+  // Pick a relevant ebook for sidebar promo — free one first, else first paid
+  const freeEbook = PRODUCTS.find((p) => p.isFree);
+  const sidebarEbook = freeEbook ?? PRODUCTS[0];
 
   return (
     <>
       <JsonLd data={articleSchema(post)} />
       <JsonLd data={breadcrumbSchema(post)} />
+      {howToSchema(post) && <JsonLd data={howToSchema(post)!} />}
 
       <div className="bg-slate-950 min-h-screen">
 
@@ -133,7 +144,11 @@ export default async function GuidePage(
         </div>
 
         {/* ── Article container ── */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-10">
+          <div className="flex gap-8 xl:gap-12 items-start">
+
+          {/* ── Main content column ── */}
+          <div className="min-w-0 flex-1 max-w-3xl">
 
           {/* ── Header card ── */}
           <header className="mb-8">
@@ -184,6 +199,9 @@ export default async function GuidePage(
           {/* ── Ad: Leaderboard below article header (high viewability) ── */}
           <AdUnit slot="GUIDE_TOP_LEADERBOARD" format="leaderboard" className="mb-8" />
 
+          {/* ── Table of contents ── */}
+          <TableOfContents items={toc} />
+
           {/* ── Key takeaways ── */}
           {keyTakeaways.length > 0 && (
             <aside
@@ -208,6 +226,10 @@ export default async function GuidePage(
           {/* ── Article body ── */}
           <article>
             <PostBody markdown={post.content} />
+            {/* Tracks affiliate link clicks → GA4 event: affiliate_link_click */}
+            <AffiliateClickTracker />
+            {/* Tracks article views → Firestore article_views collection */}
+            <ViewTracker slug={post.slug} type="article" />
           </article>
 
           {/* ── Ad: Rectangle after article body (high RPM placement) ── */}
@@ -243,7 +265,7 @@ export default async function GuidePage(
           {/* ── Related guides ── */}
           {related.length > 0 && (
             <aside aria-label="Related guides" className="mt-12 mb-10">
-              <h2 className="text-xl font-extrabold text-white mb-5 flex items-center gap-2">
+              <h2 className="text-xl font-extrabold text-white mb-5">
                 More in {post.category}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -282,6 +304,76 @@ export default async function GuidePage(
               </div>
             </aside>
           )}
+          </div>{/* end main content column */}
+
+          {/* ── Sidebar ── */}
+          <aside
+            aria-label="Guide sidebar"
+            className="hidden lg:block w-72 xl:w-80 shrink-0 sticky top-28 self-start space-y-5 pb-10"
+          >
+            {/* Related guides */}
+            {related.length > 0 && (
+              <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+                <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-4">
+                  More in {post.category}
+                </h2>
+                <ul className="space-y-3">
+                  {related.map((r) => {
+                    const rc = CATEGORY_COLORS[r.category] ?? fallbackColor;
+                    return (
+                      <li key={r.id}>
+                        <Link
+                          href={`/guide/${r.slug}`}
+                          className="group flex items-start gap-2.5"
+                        >
+                          <span className={`w-1.5 h-1.5 rounded-full ${rc.dot} mt-1.5 shrink-0`} aria-hidden="true" />
+                          <span className="text-sm text-slate-300 group-hover:text-emerald-400 leading-snug transition-colors line-clamp-2">
+                            {r.title}
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+                <Link
+                  href={`/category/${encodeURIComponent(post.category)}`}
+                  className="mt-4 flex items-center gap-1 text-xs font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
+                >
+                  All {post.category} guides
+                  <ArrowRight className="w-3 h-3" aria-hidden="true" />
+                </Link>
+              </div>
+            )}
+
+            {/* Free ebook promo */}
+            {sidebarEbook && (
+              <Link
+                href={`/ebooks/${sidebarEbook.slug}`}
+                className="group block bg-emerald-950/40 hover:bg-emerald-950/60 border border-emerald-500/25 hover:border-emerald-500/50 rounded-2xl p-5 transition-all"
+              >
+                <div className="flex items-center gap-1.5 mb-3">
+                  <Gift className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
+                    {sidebarEbook.isFree ? 'Free Download' : 'eBook'}
+                  </span>
+                </div>
+                <p className="text-sm font-bold text-white group-hover:text-emerald-300 leading-snug transition-colors mb-1">
+                  {sidebarEbook.title}
+                </p>
+                <p className="text-xs text-slate-400 leading-relaxed line-clamp-2 mb-3">
+                  {sidebarEbook.description}
+                </p>
+                <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 group-hover:gap-2 transition-all">
+                  {sidebarEbook.isFree ? 'Download free →' : 'Get the eBook →'}
+                </span>
+              </Link>
+            )}
+
+            {/* Ad slot */}
+            <AdUnit slot="GUIDE_SIDEBAR_RECTANGLE" format="rectangle" className="w-full" />
+          </aside>
+
+          </div>{/* end flex row */}
         </div>
       </div>
     </>

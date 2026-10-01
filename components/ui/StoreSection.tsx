@@ -28,15 +28,17 @@ function useDragScroll<T extends HTMLElement>() {
   const state = useRef({ down: false, startX: 0, scrollLeft: 0, moved: false });
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
+    // Only handle mouse (not touch — touch-pan-x CSS handles touch natively)
+    if (e.pointerType === 'touch') return;
     const el = ref.current;
     if (!el) return;
     state.current = { down: true, moved: false, startX: e.clientX, scrollLeft: el.scrollLeft };
-    el.setPointerCapture?.(e.pointerId);
     el.style.cursor = 'grabbing';
     el.style.userSelect = 'none';
   }, []);
 
   const onPointerMove = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType === 'touch') return;
     const el = ref.current;
     if (!el || !state.current.down) return;
     const dx = e.clientX - state.current.startX;
@@ -45,10 +47,10 @@ function useDragScroll<T extends HTMLElement>() {
   }, []);
 
   const end = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType === 'touch') return;
     const el = ref.current;
     if (!el) return;
     state.current.down = false;
-    el.releasePointerCapture?.(e.pointerId);
     el.style.cursor = '';
     el.style.userSelect = '';
   }, []);
@@ -151,7 +153,11 @@ const ProductCard: React.FC<{
 
   return (
     <div
-      className="group relative bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl overflow-hidden transition-all duration-200 flex flex-col hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+      className={`group relative bg-slate-900 border rounded-2xl overflow-hidden transition-all duration-200 flex flex-col hover:-translate-y-0.5 hover:shadow-xl hover:shadow-black/30 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+        product.featured
+          ? 'border-amber-500/40 hover:border-amber-400/70 shadow-md shadow-amber-500/5'
+          : 'border-slate-800 hover:border-slate-700'
+      }`}
       onClick={() => onPreview(product)}
       role="button"
       tabIndex={0}
@@ -366,37 +372,43 @@ const EbookModal: React.FC<{
             ))}
           </div>
 
-          <div className="flex items-center gap-3 pt-1">
-            <div>
-              <span className="text-2xl font-black text-white">{priceLabel}</span>
-              {!product.isFree && <span className="text-xs text-slate-400 block">One-time purchase</span>}
-            </div>
-            <div className="flex-1">
-              {product.isFree ? (
-                <button
-                  onClick={() => { onOpenFree(product); onClose(); }}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-emerald-400 hover:bg-emerald-300 active:scale-95 text-slate-950 font-black px-5 py-3 rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/20 cursor-pointer touch-manipulation"
-                >
-                  <BookOpen className="w-4 h-4" aria-hidden="true" /> Read Free Now
-                </button>
-              ) : isPurchased ? (
-                <button
-                  onClick={() => { onOpenFree(product); onClose(); }}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-emerald-400 hover:bg-emerald-300 active:scale-95 text-slate-950 font-black px-5 py-3 rounded-xl text-sm transition-all shadow-lg cursor-pointer touch-manipulation"
-                >
-                  <BookOpen className="w-4 h-4" aria-hidden="true" /> Open Ebook
-                </button>
-              ) : (
-                <button
-                  onClick={() => onBuy(product)}
-                  disabled={isCheckingOut}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-slate-950 font-black px-5 py-3 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 cursor-pointer disabled:opacity-60 touch-manipulation"
-                >
-                  {isCheckingOut ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" /> : <ShoppingBag className="w-4 h-4" aria-hidden="true" />}
-                  {isCheckingOut ? 'Redirecting...' : `Buy Ebook — ${priceLabel}`}
-                </button>
-              )}
-            </div>
+          {/* CTA block */}
+          <div className="space-y-3 pt-1">
+            {product.isFree ? (
+              <button
+                onClick={() => { onOpenFree(product); onClose(); }}
+                className="w-full inline-flex items-center justify-center gap-2 bg-emerald-400 hover:bg-emerald-300 active:scale-95 text-slate-950 font-black px-5 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-emerald-500/20 cursor-pointer touch-manipulation"
+              >
+                <BookOpen className="w-4 h-4" aria-hidden="true" /> Read Free Now — No Sign-Up Required
+              </button>
+            ) : isPurchased ? (
+              <button
+                onClick={() => { onOpenFree(product); onClose(); }}
+                className="w-full inline-flex items-center justify-center gap-2 bg-emerald-400 hover:bg-emerald-300 active:scale-95 text-slate-950 font-black px-5 py-3.5 rounded-xl text-sm transition-all shadow-lg cursor-pointer touch-manipulation"
+              >
+                <BookOpen className="w-4 h-4" aria-hidden="true" /> Open Your Ebook
+              </button>
+            ) : (
+              <>
+                <div className="flex items-center gap-3">
+                  <div>
+                    <span className="text-2xl font-black text-white">{priceLabel}</span>
+                    <span className="text-xs text-slate-400 block">One-time · instant download</span>
+                  </div>
+                  <button
+                    onClick={() => onBuy(product)}
+                    disabled={isCheckingOut}
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-400 to-amber-300 hover:from-amber-300 hover:to-amber-200 active:scale-95 text-slate-950 font-black px-5 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-amber-500/20 cursor-pointer disabled:opacity-60 touch-manipulation"
+                  >
+                    {isCheckingOut ? <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" /> : <ShoppingBag className="w-4 h-4" aria-hidden="true" />}
+                    {isCheckingOut ? 'Redirecting...' : 'Buy Now'}
+                  </button>
+                </div>
+                <p className="text-center text-[11px] text-slate-500">
+                  🔒 Secure payment via Stripe · Immediate PDF access after purchase
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -526,13 +538,18 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
       {/* ── Header ── */}
       <div className="flex items-start justify-between gap-3 flex-wrap">
         <div>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full">
+              <BookOpen className="w-3 h-3" aria-hidden="true" /> Free & Paid Guides
+            </span>
+          </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">eBook Store</h2>
-          <p className="text-slate-400 text-sm">Practical guides with instant access.</p>
+          <p className="text-slate-400 text-sm">Actionable blueprints with instant PDF access — start reading in seconds.</p>
         </div>
         {onRestorePurchases && (
           <button
             onClick={onRestorePurchases}
-            className="px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-emerald-300 border border-slate-700/60 hover:border-emerald-500/40 transition-all cursor-pointer mt-1"
+            className="px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-emerald-300 border border-slate-700/60 hover:border-emerald-500/40 transition-all cursor-pointer mt-1 shrink-0"
           >
             Restore purchases
           </button>
@@ -684,15 +701,16 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
             {/* Grid */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  isPurchased={purchasedIds.includes(product.id)}
-                  onPreview={setModalProduct}
-                  onOpenFree={onOpenFree}
-                  onBuy={onBuy}
-                  isCheckingOut={checkingOutId === product.id}
-                />
+                <div key={product.id} className={product.featured && activeTab === 'All' ? 'lg:col-span-1' : ''}>
+                  <ProductCard
+                    product={product}
+                    isPurchased={purchasedIds.includes(product.id)}
+                    onPreview={setModalProduct}
+                    onOpenFree={onOpenFree}
+                    onBuy={onBuy}
+                    isCheckingOut={checkingOutId === product.id}
+                  />
+                </div>
               ))}
             </div>
           </div>

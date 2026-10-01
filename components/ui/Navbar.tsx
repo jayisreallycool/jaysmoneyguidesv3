@@ -12,7 +12,10 @@ import { Category, ModalView, User, Product } from '@/lib/types';
 import { PRODUCTS } from '@/lib/products';
 import { GoogleAdSenseBanner } from './GoogleAdSenseBanner';
 
-const ADMIN_EMAIL = 'jayisreallycool@gmail.com';
+// Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
+const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+const isAdminEmailClient = (email?: string | null) =>
+  !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 
 interface NavbarProps {
   selectedCategory: Category | 'All';
@@ -64,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'SoFi Bank', description: 'Loans, refinancing & smart money moves', icon: Award, color: 'emerald' },
   ];
 
-  const isAdmin = currentUser?.email?.toLowerCase() === ADMIN_EMAIL;
+  const isAdmin = isAdminEmailClient(currentUser?.email);
   const freeProduct = PRODUCTS.find((p) => p.isFree) || PRODUCTS[0];
   const paidProduct = PRODUCTS.find((p) => !p.isFree) || PRODUCTS[1];
   const quickSearchTags = ['Affiliate Marketing', 'Programmatic SEO', 'Free eBook', 'Newsletter Funnels', 'Tech Stack', 'Cash Flow'];

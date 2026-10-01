@@ -1,19 +1,25 @@
 'use client';
 
 /**
- * Sticky announcement bar — 3 messages, infinite CSS marquee, non-interactive,
- * single line height, cannot be paused or clicked. Pinned via FixedHeader.
+ * Sticky announcement bar — infinite CSS marquee, iOS-safe.
+ *
+ * iOS Safari stutters on translateX animations unless the element is
+ * promoted to its own GPU layer. We force this with translate3d in the
+ * keyframe and -webkit-transform on the element, plus transform: translateZ(0)
+ * on the container to create a stacking context that Safari respects.
+ *
+ * Two identical track copies sit side-by-side; animation moves left by
+ * exactly -50% then snaps — seamless loop at any viewport width.
  */
 
 const MESSAGES = [
-  '🔥 LIMITED TIME: Get up to $125 with SoFi when you refer a friend — New SoFi Bank guides just dropped!',
+  '🔥 LIMITED TIME: Get up to $125 with SoFi when you refer a friend — new guides just dropped!',
   '📚 FREE EBOOK: Download our Affiliate Marketing for Beginners guide — no email required!',
-  '💰 NEW RELEASE: Affiliate Marketing Blueprint Vol. 1 now in the eBook Store — $9.99 instant access!',
+  '💰 NEW RELEASE: Affiliate Marketing Blueprint Vol. 1 — $9.99 instant access in the eBook Store!',
 ];
 
-const SEP = '   •   ';
-// All 3 messages on one track, duplicated 4× for seamless loop
-const TRACK = (MESSAGES.join(SEP) + SEP).repeat(4);
+const SEP = '     •     ';
+const TRACK = MESSAGES.join(SEP) + SEP;
 
 export function AnnouncementBar() {
   return (
@@ -21,47 +27,80 @@ export function AnnouncementBar() {
       role="region"
       aria-label="Site announcements"
       style={{
-        height: '34px',
+        height: '36px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        background: 'linear-gradient(90deg, #065f46, #047857, #065f46)',
-        borderBottom: '1px solid rgba(6,95,70,0.5)',
+        background:
+          'linear-gradient(90deg, #064e3b 0%, #065f46 40%, #047857 60%, #065f46 80%, #064e3b 100%)',
+        borderBottom: '1px solid rgba(6,95,70,0.4)',
         userSelect: 'none',
-        pointerEvents: 'none',
+        WebkitUserSelect: 'none',
+        /* Force GPU layer on iOS so the child animation composites smoothly */
+        transform: 'translateZ(0)',
+        WebkitTransform: 'translateZ(0)',
       }}
     >
-      {/* Screen-reader text — static, visually hidden */}
+      {/* Screen-reader: static text, visually hidden */}
       <span className="sr-only">{MESSAGES.join(' — ')}</span>
 
-      {/* Single scrolling track — pointer-events:none prevents ALL interaction */}
       <span
         aria-hidden="true"
+        className="ann-track"
         style={{
-          display: 'inline-block',
+          display: 'inline-flex',
           whiteSpace: 'nowrap',
-          fontSize: '12px',
-          fontWeight: 700,
-          color: '#fff',
-          letterSpacing: '0.02em',
-          animation: 'annScroll 55s linear infinite',
-          willChange: 'transform',
-          transform: 'translateZ(0)',
-          backfaceVisibility: 'hidden',
           pointerEvents: 'none',
-          paddingLeft: '100vw',
+          /* willChange promotes to compositor thread — critical on iOS */
+          willChange: 'transform',
+          WebkitBackfaceVisibility: 'hidden',
+          backfaceVisibility: 'hidden',
         }}
       >
-        {TRACK}
+        <span className="ann-text">{TRACK}</span>
+        <span className="ann-text">{TRACK}</span>
       </span>
 
       <style>{`
+        /* iOS-safe keyframe: use translate3d (not translateX) to force GPU layer */
         @keyframes annScroll {
-          from { transform: translateX(0) translateZ(0); }
-          to   { transform: translateX(-50%) translateZ(0); }
+          0%   { transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); -webkit-transform: translate3d(-50%, 0, 0); }
         }
+
+        .ann-track {
+          animation: annScroll 55s linear infinite;
+          -webkit-animation: annScroll 55s linear infinite;
+        }
+
+        .ann-text {
+          display: inline-block;
+          font-size: 11px;
+          font-weight: 700;
+          color: #fff;
+          letter-spacing: 0.02em;
+          line-height: 1;
+          padding-right: 2rem;
+        }
+
+        /* Larger screens: bigger text, faster scroll */
+        @media (min-width: 640px) {
+          .ann-track {
+            animation-duration: 42s;
+            -webkit-animation-duration: 42s;
+          }
+          .ann-text {
+            font-size: 12.5px;
+            letter-spacing: 0.025em;
+          }
+        }
+
+        /* Reduced motion: freeze, show text statically */
         @media (prefers-reduced-motion: reduce) {
-          [style*="annScroll"] { animation: none !important; }
+          .ann-track {
+            animation: none !important;
+            -webkit-animation: none !important;
+          }
         }
       `}</style>
     </div>

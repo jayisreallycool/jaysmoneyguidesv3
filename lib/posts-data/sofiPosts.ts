@@ -147,6 +147,15 @@ So before you borrow, ask yourself the honest question: is this a reset I'm read
 **[→ Check your rate on a SoFi personal loan](${PERSONAL})**
 
 *Bonus: SoFi also runs a referral program on its money products — you and a friend can each earn a bonus when they open and fund an eligible account. [See official rules](${RULES}) for the current terms and eligibility.*
+
+
+---
+
+## More SoFi and Personal Finance Guides
+
+- **[SoFi Student Loan Refinancing Guide: When Refinancing Makes Sense (and When It Doesn't)](/guide/sofi-student-loan-refinancing-guide)** — SoFi's student lending products explained clearly
+- **[SoFi Referral Bonus Guide: Get Paid for Recommending SoFi to Friends](/guide/sofi-referral-bonus-guide)** — how the [referral bonus program](/guide/sofi-referral-bonus-guide) works and how to maximize it
+- **[Manage Cash Flow as a Solo Founder: The 50/30/20 Framework for Variable Income](/guide/manage-cash-flow-solo-founder-50-30-20-rule)** — financial discipline that pairs with smart borrowing decisions
 `,
   },
 
@@ -269,7 +278,16 @@ If you've weighed the trade-offs and they work in your favor, checking your rate
 
 **[→ Explore SoFi student loan refinancing](${STUDENT_REFI})**
 
-*SoFi also offers referral bonuses on its money products for you and a friend when an eligible account is opened and funded. [See official rules](${RULES}).*
+*SoFi also offers [referral bonuses](/guide/sofi-referral-bonus-guide) on its money products for you and a friend when an eligible account is opened and funded. [See official rules](${RULES}).*
+
+
+---
+
+## Related SoFi and Personal Finance Guides
+
+- **[SoFi Personal Loans Guide: SoFi's Broader Lending Products Beyond Student Loans](/guide/sofi-personal-loans-guide)** — understand the full SoFi lending product lineup before deciding
+- **[SoFi Referral Bonus Guide: Earn While You Help Friends Refinance Their Loans](/guide/sofi-referral-bonus-guide)** — once you're a SoFi customer, the referral program is worth understanding
+- **[Manage Cash Flow as a Variable-Income Earner: The 50/30/20 Framework](/guide/manage-cash-flow-solo-founder-50-30-20-rule)** — financial planning that makes loan repayment predictable on irregular income
 `,
   },
 
@@ -393,6 +411,15 @@ If refinancing fits your career stage and your plans, it's worth seeing your rea
 **[→ Explore SoFi refinancing for doctors and dentists](${MEDICAL})**
 
 *SoFi runs referral bonuses on its money products, too — you and a friend can each earn a bonus on an eligible funded account. [See official rules](${RULES}).*
+
+
+---
+
+## Related SoFi Guides
+
+- **[SoFi Student Loan Refinancing Guide: The Complete Refinancing Decision Framework](/guide/sofi-student-loan-refinancing-guide)** — covers all student loan refinancing decisions, not just medical/dental
+- **[SoFi Personal Loans Guide: SoFi's Other Lending Products](/guide/sofi-personal-loans-guide)** — understand the full SoFi product lineup beyond student loans
+- **[SoFi Referral Bonus Guide: Earn Referral Bonuses After You've Refinanced](/guide/sofi-referral-bonus-guide)** — how to benefit from referring others to SoFi once you're a customer
 `,
   },
 
@@ -514,6 +541,15 @@ If you've done the free-money and federal steps and still have a gap to fill, he
 **[→ Explore SoFi private student loans](${PRIVATE})**
 
 *SoFi also offers referral bonuses on its money products for you and a friend on an eligible funded account. [See official rules](${RULES}).*
+
+
+---
+
+## Related SoFi and Student Finance Guides
+
+- **[SoFi Student Loan Refinancing Guide: Refinance After You Graduate](/guide/sofi-student-loan-refinancing-guide)** — what to do with SoFi private loans after graduation
+- **[SoFi Personal Loans Guide: SoFi's Non-Student Lending Options](/guide/sofi-personal-loans-guide)** — SoFi's personal loan products for other financial needs
+- **[SoFi Referral Bonus Guide: How the SoFi Referral Program Works](/guide/sofi-referral-bonus-guide)** — earn referral bonuses once you're a SoFi customer
 `,
   },
 
@@ -631,6 +667,15 @@ There's a certain kind of person who leaves easy money on the table because grab
 **[→ Join SoFi and start your bonus](${MONEY})**
 
 *Bonus amounts, timelines, and eligibility are set by SoFi and can change. [See official rules](${RULES}) for the current terms.*
+
+
+---
+
+## Explore More SoFi Guides
+
+- **[SoFi Personal Loans Guide: Is a SoFi Personal Loan Right for You?](/guide/sofi-personal-loans-guide)** — the product your referrals will most often be considering
+- **[SoFi Student Loan Refinancing Guide: Help Graduate Friends Save on Their Loans](/guide/sofi-student-loan-refinancing-guide)** — high-value referral opportunity for recent graduates
+- **[Affiliate Marketing Viability Guide: How Referral Programs Fit in a Broader Income Strategy](/guide/affiliate-marketing-viable-solution-2026)** — how bank referral programs compare to affiliate marketing as an income model
 `,
   },
 ];

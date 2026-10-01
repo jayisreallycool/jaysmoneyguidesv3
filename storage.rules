@@ -95,9 +95,13 @@ service firebase.storage {
     // FALLBACK (Deny All for Security)
     // ====================================================================
 
-    // Explicit fallback: deny all other paths unless explicitly allowed
+    // Explicit fallback: deny ALL reads and writes for any path not
+    // explicitly matched above. This is the secure default — paid ebooks
+    // under ebooks/downloads/ are protected by the rule above and are NOT
+    // reachable via this fallback. The previous `allow read: if true` here
+    // was a critical bug: it overrode the ebooks/downloads/ restriction.
     match /{allPaths=**} {
-      allow read: if true; // Default: public read for safety (media files)
+      allow read: if false;
       allow write: if isAdmin();
       allow delete: if isAdmin();
     }
