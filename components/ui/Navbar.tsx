@@ -119,12 +119,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="relative z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-slate-100 shadow-md">
       {/* ── Top bar ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-3">
+        <div className="flex items-center justify-between h-16 gap-2 sm:gap-3">
 
           {/* Logo */}
           <button
             onClick={() => { onSelectCategory('All'); if (showBookmarksOnly) onToggleBookmarksOnly(); }}
-            className="flex items-center gap-2.5 text-left group focus:outline-none cursor-pointer shrink-0"
+            className="flex items-center gap-2 sm:gap-2.5 text-left group focus:outline-none cursor-pointer min-w-0"
             aria-label="JaysMoneyGuides home"
           >
             <div className="w-9 h-9 rounded-xl overflow-hidden border border-emerald-500/40 shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform shrink-0">
@@ -138,11 +138,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 decoding="async"
               />
             </div>
-            <div>
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-white flex items-center gap-1">
+            <div className="min-w-0">
+              <span className="font-extrabold text-base sm:text-xl tracking-tight text-white flex items-center gap-1 truncate">
                 Jays<span className="text-emerald-400">Money</span>Guides
               </span>
-              <span className="block text-[9px] text-slate-400 font-medium tracking-wider uppercase -mt-0.5">
+              <span className="hidden sm:block text-[9px] text-slate-400 font-medium tracking-wider uppercase -mt-0.5">
                 Actionable Business Blueprints
               </span>
             </div>
@@ -213,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={onToggleBookmarksOnly}
               className={`relative p-2 rounded-xl border transition-all cursor-pointer ${showBookmarksOnly ? 'bg-emerald-500 text-slate-950 border-emerald-400 shadow-md shadow-emerald-500/20' : 'bg-slate-800 text-slate-300 border-slate-700 hover:text-white hover:border-slate-600'}`}
@@ -227,10 +227,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {!currentUser ? (
-              <button onClick={() => openModal('auth')} className="flex bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 font-extrabold px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm items-center gap-2 transition-all shadow-lg shadow-emerald-500/25 cursor-pointer">
+              <button onClick={() => openModal('auth')} aria-label="Sign in" className="flex bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 font-extrabold px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm items-center gap-2 transition-all shadow-lg shadow-emerald-500/25 cursor-pointer">
                 <LogIn className="w-4 h-4 shrink-0" />
                 <span className="hidden sm:inline">Login</span>
-                <span className="sm:hidden">Sign In</span>
               </button>
             ) : (
               <div className="relative">

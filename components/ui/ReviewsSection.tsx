@@ -174,7 +174,8 @@ function MarqueeRow({ reviews, reverse = false }: { reviews: Review[]; reverse?:
   return (
     <div className="relative flex overflow-hidden">
       <div
-        className={`flex gap-4 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
+        // pr-4 matches gap-4 so each half is exactly one copy + its gaps → -50% loops with no jump
+        className={`flex w-max gap-4 pr-4 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}
         style={{ willChange: 'transform' }}
       >
         {items.map((r, i) => (
