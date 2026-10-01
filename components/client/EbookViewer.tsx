@@ -94,7 +94,8 @@ export function EbookViewer({
           { method: 'GET', headers, cache: 'no-store' }
         );
 
-        const data = await res.json();
+        // Tolerate an empty/non-JSON body (e.g. a crashed function) instead of throwing
+        const data = await res.json().catch(() => ({} as { url?: string; error?: string; code?: string }));
         if (!active) return;
 
         if (!res.ok) {
