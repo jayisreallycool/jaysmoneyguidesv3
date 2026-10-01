@@ -64,7 +64,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
       </div>
 
       <div className="relative w-full">
-        <div ref={drag.ref} {...drag.handlers} style={{ cursor: 'grab' }} className="w-full overflow-x-auto pb-2 scrollbar-none select-none after:absolute after:right-0 after:top-0 after:bottom-0 after:w-16 after:bg-gradient-to-l after:from-slate-950 after:to-transparent after:pointer-events-none">
+        <div ref={drag.ref} {...drag.handlers} className="w-full overflow-x-auto pb-2 scrollbar-none select-none touch-pan-x snap-x snap-proximity [@media(pointer:fine)]:cursor-grab after:absolute after:right-0 after:top-0 after:bottom-0 after:w-16 after:bg-gradient-to-l after:from-slate-950 after:to-transparent after:pointer-events-none">
           <div className="flex items-center gap-2 min-w-max py-1 pr-12">
             {tabs.map((tab) => {
               const isActive = selectedCategory === tab.id;
@@ -74,7 +74,7 @@ export const CategoryTabs: React.FC<CategoryTabsProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => { if (!drag.didDrag()) onSelectCategory(tab.id); }}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                  className={`snap-start flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl text-sm font-semibold transition-all ${
                     isActive
                       ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
                       : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:text-white'

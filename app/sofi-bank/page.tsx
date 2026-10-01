@@ -410,7 +410,7 @@ export default async function SofiBankPage() {
               </div>
               <Link
                 href="/category/SoFi%20Bank"
-                className="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                className="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] px-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 All guides
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />

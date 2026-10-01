@@ -257,7 +257,7 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto overscroll-contain"
           onClick={(e) => { if (e.target === e.currentTarget) setOpen(false); }}
           role="dialog"
           aria-modal="true"
@@ -265,11 +265,11 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
         >
           <div
             ref={dialogRef}
-            className="relative w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl"
+            className="relative w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900 p-6 shadow-2xl my-auto"
           >
             <button
               onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full text-slate-500 hover:text-white hover:bg-slate-800 transition-colors"
+              className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full text-slate-500 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="Close"
             >
               <X className="h-4 w-4" />

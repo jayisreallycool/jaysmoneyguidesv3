@@ -138,7 +138,7 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ onSubscribeSuc
       {/* Click backdrop to dismiss */}
       <div className="absolute inset-0" onClick={handleDismiss} />
 
-      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl shadow-emerald-950/40 p-5 sm:p-8 overflow-y-auto max-h-[90vh] my-auto z-10 transition-all scale-100 animate-slideUp">
+      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl shadow-emerald-950/40 p-5 sm:p-8 overflow-y-auto max-h-[90dvh] my-auto z-10 transition-all scale-100 animate-slideUp">
         {/* Glow ambient background element */}
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />

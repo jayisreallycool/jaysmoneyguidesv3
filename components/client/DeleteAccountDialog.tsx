@@ -18,8 +18,8 @@ export function DeleteAccountDialog({ onClose, onDeleted }: { onClose: () => voi
   };
 
   return (
-    <div className="fixed inset-0 z-[95] flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md" onClick={onClose}>
-      <div className="w-full max-w-md rounded-2xl border border-red-500/40 bg-slate-900 p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+    <div className="fixed inset-0 z-[95] flex justify-center p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto overscroll-contain" onClick={onClose}>
+      <div className="w-full max-w-md rounded-2xl border border-red-500/40 bg-slate-900 p-6 shadow-2xl my-auto" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <AlertTriangle className="h-6 w-6 text-red-400" />

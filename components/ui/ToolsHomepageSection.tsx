@@ -253,7 +253,7 @@ export function ToolsHomepageSection() {
 
       <a
         href="/tools"
-        className="sm:hidden mt-4 flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
+        className="sm:hidden mt-3 flex items-center justify-center gap-1.5 min-h-[44px] text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
         aria-label="View all affiliate programs"
       >
         View all {TOOLS.length}+ programs <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />

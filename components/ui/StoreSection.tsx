@@ -35,6 +35,7 @@ function useDragScroll<T extends HTMLElement>() {
     state.current = { down: true, moved: false, startX: e.clientX, scrollLeft: el.scrollLeft };
     el.style.cursor = 'grabbing';
     el.style.userSelect = 'none';
+    el.style.scrollSnapType = 'none'; // snapping fights a mouse drag
   }, []);
 
   const onPointerMove = useCallback((e: React.PointerEvent) => {
@@ -49,10 +50,11 @@ function useDragScroll<T extends HTMLElement>() {
   const end = useCallback((e: React.PointerEvent) => {
     if (e.pointerType === 'touch') return;
     const el = ref.current;
-    if (!el) return;
+    if (!el || !state.current.down) return;
     state.current.down = false;
     el.style.cursor = '';
     el.style.userSelect = '';
+    el.style.scrollSnapType = '';
   }, []);
 
   const scrollBy = useCallback((amount: number) => {
@@ -282,28 +284,32 @@ const EbookModal: React.FC<{
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', handler);
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', handler);
-      document.body.style.overflow = '';
+      document.body.style.overflow = prevOverflow;
     };
   }, [onClose]);
 
   return (
     <div
-      className="fixed inset-0 z-[90] bg-slate-950/85 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 overflow-y-auto"
+      className="fixed inset-0 z-[90] bg-slate-950/85 backdrop-blur-sm flex justify-center p-0 sm:p-4 pt-10 sm:pt-4 overflow-y-auto overscroll-contain"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={`Details for ${product.title}`}
     >
       <div
-        className="relative bg-slate-900 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-lg shadow-2xl"
+        // mt-auto = bottom sheet on phones, my-auto = centered on larger screens.
+        // Auto margins (unlike items-end/items-center) never push the top of a
+        // tall sheet off-screen, so the cover + close button stay reachable.
+        className="relative bg-slate-900 border border-slate-800 rounded-t-2xl sm:rounded-2xl w-full max-w-lg shadow-2xl mt-auto sm:my-auto pb-[env(safe-area-inset-bottom)]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-20 w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-all"
+          className="absolute top-3 right-3 z-20 w-10 h-10 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all"
           aria-label="Close ebook details"
         >
           <X className="w-4 h-4" aria-hidden="true" />
@@ -462,14 +468,13 @@ const NetflixRow: React.FC<{
       <div
         ref={drag.ref}
         {...drag.handlers}
-        className="overflow-x-auto scrollbar-none touch-pan-x select-none px-4 sm:px-0"
-        style={{ cursor: 'grab' }}
+        className="overflow-x-auto scrollbar-none touch-pan-x select-none px-4 sm:px-0 snap-x snap-proximity scroll-px-4 sm:scroll-px-0 [@media(pointer:fine)]:cursor-grab"
         aria-label={label}
         role="list"
       >
         <div className="flex gap-3 pb-2 min-w-max">
           {products.map((p) => (
-            <div key={p.id} role="listitem">
+            <div key={p.id} role="listitem" className="snap-start">
               <PosterCard
                 product={p}
                 isPurchased={purchasedIds.includes(p.id)}
@@ -574,8 +579,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
               <div
                 ref={tabDrag.ref}
                 {...tabDrag.handlers}
-                className="overflow-x-auto scrollbar-none touch-pan-x px-4"
-                style={{ cursor: 'grab' }}
+                className="overflow-x-auto scrollbar-none touch-pan-x px-4 [@media(pointer:fine)]:cursor-grab"
                 role="tablist"
                 aria-label="Filter ebooks by type"
               >
@@ -588,7 +592,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
                         role="tab"
                         aria-selected={isActive}
                         onClick={() => { if (!tabDrag.didDrag()) setActiveTab(tab); }}
-                        className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all touch-manipulation whitespace-nowrap ${
+                        className={`flex items-center gap-1.5 px-3.5 py-2.5 min-h-[44px] rounded-xl text-sm font-semibold transition-all touch-manipulation whitespace-nowrap ${
                           isActive
                             ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20'
                             : 'bg-slate-800/80 text-slate-300 border border-slate-700/60 hover:text-white'
@@ -719,7 +723,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
           <div className="flex justify-center pt-1">
             <a
               href="/ebooks"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
+              className="inline-flex items-center gap-2 min-h-[44px] px-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors group"
             >
               Browse all ebooks in the store
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />

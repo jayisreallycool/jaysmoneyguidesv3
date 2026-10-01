@@ -231,10 +231,39 @@ input:focus-visible,
   display: none;
 }
 
-/* ── Touch pan for draggable ebook tabs ── */
+/* ── Horizontal swipe rows (ebook tabs/rows) ──
+   pan-x AND pan-y: the row swipes sideways, but a vertical swipe that starts on
+   it still scrolls the page. (pan-x alone trapped the page — it couldn't be
+   scrolled up/down while the finger was on an ebook row.)
+   overscroll-behavior-x stops a sideways swipe at the row's end from
+   triggering the browser's back/forward gesture. */
 .touch-pan-x {
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-x;
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
+}
+
+/* Alias — several components use .no-scrollbar, which was never defined */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Mobile baseline ── */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  /* clip (not hidden) stops sideways page wobble without breaking sticky */
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+}
+/* No 300ms double-tap-zoom delay on controls; pinch-zoom still works */
+a, button, [role="button"], [role="tab"], input, select, textarea, label {
+  touch-action: manipulation;
+}
+/* Modal scrollers: keep the scroll inside the dialog, never chain to the page */
+[role="dialog"], [aria-modal="true"] {
+  overscroll-behavior: contain;
 }
 
 /* ── Article / guide body prose ── */

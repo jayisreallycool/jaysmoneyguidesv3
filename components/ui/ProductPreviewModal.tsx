@@ -24,8 +24,8 @@ export const ProductPreviewModal: React.FC<ProductPreviewModalProps> = ({
   const priceLabel = product.isFree ? 'Free' : `$${(product.priceCents / 100).toFixed(2)}`;
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl">
+    <div className="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-2xl max-h-[90dvh] overflow-y-auto bg-slate-900 border border-slate-700 rounded-3xl shadow-2xl">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 p-2 rounded-xl bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700"

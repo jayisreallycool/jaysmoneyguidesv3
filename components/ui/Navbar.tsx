@@ -81,7 +81,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
-      setTimeout(() => menuSearchRef.current?.focus(), 150);
+      // Auto-focus search only with a real mouse/trackpad — on phones it popped
+      // the keyboard up over the menu the moment it opened.
+      if (window.matchMedia('(pointer: fine)').matches) {
+        setTimeout(() => menuSearchRef.current?.focus(), 150);
+      }
     } else {
       document.body.style.overflow = '';
       setMenuSearch('');
@@ -311,7 +315,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
               className="absolute top-full left-0 right-0 z-50 bg-slate-950 border-b border-emerald-500/20 shadow-2xl overflow-hidden"
-              style={{ maxHeight: 'calc(100vh - 98px)', overflowY: 'auto' }}
+              style={{ maxHeight: 'calc(100dvh - 98px)', overscrollBehavior: 'contain', overflowY: 'auto' }}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-5">
 

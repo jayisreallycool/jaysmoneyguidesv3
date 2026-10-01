@@ -325,7 +325,7 @@ export const ModernMenuWidget: React.FC<ModernMenuWidgetProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] z-10"
+              className="relative w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85dvh] z-10"
             >
               {/* Widget Header & Instant Search */}
               <div className="p-4 sm:p-5 border-b border-slate-800/90 bg-slate-950/90">

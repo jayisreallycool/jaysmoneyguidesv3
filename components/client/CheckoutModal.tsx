@@ -24,8 +24,9 @@ export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
 
   // Lock body scroll while modal is open
   useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
+    return () => { document.body.style.overflow = prevOverflow; };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,7 +64,7 @@ export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-[90] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[90] flex justify-center p-0 sm:p-4 pt-10 sm:pt-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto overscroll-contain"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -71,7 +72,7 @@ export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
     >
       {/* Panel */}
       <div
-        className="relative w-full sm:max-w-md bg-slate-900 border border-slate-700/80 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-full sm:max-w-md bg-slate-900 border border-slate-700/80 rounded-t-2xl sm:rounded-2xl shadow-2xl overflow-hidden mt-auto sm:my-auto pb-[env(safe-area-inset-bottom)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

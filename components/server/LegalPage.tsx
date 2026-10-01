@@ -78,7 +78,7 @@ export function LegalPage({
         <nav aria-label="Breadcrumb" className="mb-8">
           <Link
             href="/"
-            className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${a.back}`}
+            className={`inline-flex items-center gap-1.5 min-h-[44px] text-sm font-medium transition-colors ${a.back}`}
           >
             <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
             Back to JaysMoneyGuides

@@ -47,7 +47,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
   };
 
   return (
-    <div className="relative w-full min-h-[85vh] sm:min-h-[82vh] lg:min-h-[88vh] flex flex-col justify-center items-center text-center text-white py-10 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 border-b border-emerald-500/25 overflow-hidden bg-slate-950">
+    <div className="relative w-full min-h-[85svh] sm:min-h-[82svh] lg:min-h-[88svh] flex flex-col justify-center items-center text-center text-white py-10 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 border-b border-emerald-500/25 overflow-hidden bg-slate-950">
 
       {/* ── Hero background image — CSS parallax, zero JS scroll listeners ── */}
       {/*
@@ -176,7 +176,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
           <div className="flex items-center justify-center gap-3 mt-4">
             <a
               href="#guides"
-              className="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 underline underline-offset-4 decoration-emerald-500/40"
+              className="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1.5 min-h-[44px] px-2 underline underline-offset-4 decoration-emerald-500/40"
             >
               Browse guides
               <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -184,7 +184,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
             <span className="text-slate-700" aria-hidden="true">·</span>
             <a
               href="#ebooks"
-              className="text-sm font-semibold text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5"
+              className="text-sm font-semibold text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5 min-h-[44px] px-2"
             >
               Free eBooks
             </a>
