@@ -75,7 +75,7 @@ export const EbookViewerModal: React.FC<EbookViewerModalProps> = ({
     // the purchase-authorized URL resolves). Start empty and show the loader;
     // the effect below fills in the authorized URL. Free books can use their
     // token URL immediately.
-    if (product && !product.isFree) return fileUrl && fileUrl.includes('token=') ? fileUrl : '';
+    if (product && !product.isFree) return fileUrl && (fileUrl.includes('token=') || fileUrl.includes('X-Goog-Signature=')) ? fileUrl : '';
     return fileUrl || getLocalEbookPdfPath(product);
   });
   const readerContainerRef = useRef<HTMLDivElement>(null);

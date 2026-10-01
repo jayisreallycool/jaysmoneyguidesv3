@@ -1,9 +1,11 @@
 import 'server-only';
-import { adminAuth, adminDb, isAdminEmail } from '@/lib/firebase-admin';
+import { adminAuth, adminBucket, adminDb, isAdminEmail } from '@/lib/firebase-admin';
 import {
   getProductConfig,
+  getSignedDownloadUrl,
   getTokenUrl,
   resolveDownloadUrl,
+  PRODUCTS_CONFIG,
 } from '@/lib/ebook-access.server';
 
 export const runtime = 'nodejs';
@@ -63,6 +65,15 @@ export async function GET(req: Request) {
     const url = new URL(req.url);
     const productId = url.searchParams.get('productId')?.trim();
 
+    // Health check: /api/download-ebook?check=1 → { signedUrls: true|false }.
+    // Says whether short-lived signed links work with the configured service
+    // account. Reveals no URL or secret (it probes the free ebook's file).
+    if (url.searchParams.get('check') === '1') {
+      const free = Object.values(PRODUCTS_CONFIG).find((p) => p.isFree);
+      const signed = free ? await getSignedDownloadUrl(free.storagePath, adminBucket()) : '';
+      return Response.json({ signedUrls: Boolean(signed) }, { headers: { 'Cache-Control': 'no-store' } });
+    }
+
     if (!productId) {
       return Response.json({ error: 'Missing productId' }, { status: 400 });
     }
@@ -95,6 +106,17 @@ export async function GET(req: Request) {
       }
     }
 
+    // Preferred: a signed link that expires in 1 hour, so a shared link stops
+    // working instead of unlocking the book forever.
+    const signedUrl = await getSignedDownloadUrl(product.storagePath, adminBucket());
+    if (signedUrl) {
+      return Response.json(
+        { url: signedUrl, filename: `${product.id}.pdf` },
+        { headers: { 'Cache-Control': 'no-store' } }
+      );
+    }
+
+    // Fallback while signed links are unavailable: the permanent token URL.
     const tokenUrl = getTokenUrl(product.storagePath);
     if (tokenUrl) {
       return Response.json({ url: tokenUrl, filename: `${product.id}.pdf` });

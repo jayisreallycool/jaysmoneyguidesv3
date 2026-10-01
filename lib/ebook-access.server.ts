@@ -114,3 +114,49 @@ export async function resolveDownloadUrl(
   // Fallback 2: tokenless public URL (works only if the file is public).
   return `https://firebasestorage.googleapis.com/v0/b/${BUCKET}/o/${encodeURIComponent(clean)}?alt=media`;
 }
+
+// ── Short-lived signed URLs (preferred for paid ebooks) ─────────────────────
+const SIGNED_TTL_MS = 60 * 60 * 1000; // links expire after 1 hour
+const signedCache = new Map<string, { url: string; expires: number }>();
+
+/**
+ * A 1-hour signed URL for a Storage file, created with the Firebase Admin
+ * service account (FIREBASE_SERVICE_ACCOUNT_KEY). The URL is test-fetched once
+ * before it is handed out, because a malformed private key can produce a URL
+ * that looks fine but is rejected by Storage ("SignatureDoesNotMatch").
+ * Returns '' when Admin isn't configured or the URL doesn't work.
+ */
+export async function getSignedDownloadUrl(
+  storagePath: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bucket: any | null
+): Promise<string> {
+  if (!bucket) return '';
+  const clean = storagePath.replace(/^\/+/, '');
+
+  const cached = signedCache.get(clean);
+  // Reuse only while at least 30 minutes of validity remain
+  if (cached && cached.expires - Date.now() > SIGNED_TTL_MS / 2) return cached.url;
+
+  try {
+    const expires = Date.now() + SIGNED_TTL_MS;
+    const [url] = await bucket.file(clean).getSignedUrl({ version: 'v4', action: 'read', expires });
+    if (!url) return '';
+
+    const probe = await fetch(url as string, {
+      headers: { Range: 'bytes=0-0' },
+      signal: AbortSignal.timeout(5000),
+      cache: 'no-store',
+    });
+    if (!probe.ok) {
+      console.warn('[ebook] signed URL rejected by Storage:', probe.status);
+      return '';
+    }
+
+    signedCache.set(clean, { url: url as string, expires });
+    return url as string;
+  } catch (err) {
+    console.warn('[ebook] signed URL unavailable:', err instanceof Error ? err.message : err);
+    return '';
+  }
+}
