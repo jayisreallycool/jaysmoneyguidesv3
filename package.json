@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/gen-public-manifest.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/gen-public-manifest.mjs",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint"

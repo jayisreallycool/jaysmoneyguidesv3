@@ -532,10 +532,10 @@ export const PostReaderModal: React.FC<PostReaderModalProps> = ({
           {/* Hero Cover Image */}
           <div className="rounded-2xl overflow-hidden border border-slate-800 aspect-[21/9] bg-slate-950">
             <img
-              src={post.coverImage || '/images/affiliate-marketing-guide-cover.webp'}
+              src={post.coverImage || '/jay-affiliate-marketing-guides-hero-800.webp'}
               alt={post.title}
               onError={(e) => {
-                (e.target as HTMLImageElement).src = '/images/affiliate-marketing-guide-cover.webp';
+                (e.target as HTMLImageElement).src = '/jay-affiliate-marketing-guides-hero-800.webp';
               }}
               className="w-full h-full object-cover"
             />

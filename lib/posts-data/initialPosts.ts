@@ -5,6 +5,7 @@ import { BLOGGING_POSTS } from './bloggingPosts';
 import { TECH_POSTS } from './techPosts';
 import { ENTREPRENEURSHIP_POSTS } from './entrepreneurshipPosts';
 import { SOFI_POSTS } from './sofiPosts';
+import { safeCover, stripMissingImages } from '../public-image';
 
 const ALL_RAW_POSTS: BlogPost[] = [
   ...AFFILIATE_POSTS,
@@ -18,6 +19,9 @@ const ALL_RAW_POSTS: BlogPost[] = [
 // Reset all mock data viewed, liked, rating, and votes to 0 baseline
 export const INITIAL_POSTS: BlogPost[] = ALL_RAW_POSTS.map(post => ({
   ...post,
+  // Never point at a local image that isn't deployed (see lib/public-image.ts)
+  coverImage: safeCover(post.coverImage),
+  content: stripMissingImages(post.content),
   views: 0,
   likes: 0,
   rating: 0,

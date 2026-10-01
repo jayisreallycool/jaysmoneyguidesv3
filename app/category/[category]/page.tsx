@@ -12,7 +12,10 @@ export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const cats = await getAllCategories();
-  return cats.map((c) => ({ category: encodeURIComponent(c) }));
+  // Return the raw name — Next encodes it for the URL itself. Pre-encoding here
+  // double-encoded names with spaces, so /category/Affiliate%20Marketing and
+  // /category/SoFi%20Bank returned 404 (dynamicParams is false).
+  return cats.map((c) => ({ category: c }));
 }
 
 // ── Per-category SEO copy ──────────────────────────────────────────────────────

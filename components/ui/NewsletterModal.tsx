@@ -158,10 +158,10 @@ export const NewsletterModal: React.FC<NewsletterModalProps> = ({ onSubscribeSuc
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <div className="w-24 sm:w-28 shrink-0 rounded-xl overflow-hidden border border-emerald-500/30 shadow-xl shadow-emerald-950/40 hidden sm:block">
                 <img 
-                  src="/images/affiliate-marketing-guide-cover.webp" 
+                  src="/jay-affiliate-marketing-guides-hero-800.webp" 
                   alt="Affiliate Marketing for Beginners Guide Cover" 
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/images/jaysmoneyguides-hero-banner.webp';
+                    (e.target as HTMLImageElement).src = '/jay-affiliate-marketing-guides-hero-800.webp';
                   }}
                   width="112"
                   height="160"

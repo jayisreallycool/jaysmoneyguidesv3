@@ -54,7 +54,7 @@ export const PostCard: React.FC<PostCardProps> = React.memo(({
       {/* Cover image */}
       <div className="relative aspect-[16/9] overflow-hidden bg-slate-950 shrink-0">
         <SafeImage
-          src={post.coverImage || '/images/affiliate-marketing-guide-cover.webp'}
+          src={post.coverImage || '/jay-affiliate-marketing-guides-hero-800.webp'}
           alt={post.title}
           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
           loading="lazy"

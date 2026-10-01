@@ -57,7 +57,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ post, category = 'All', search
 
     // 3. Set Open Graph & Twitter Cards
     const ogTitle = post ? post.title : title;
-    const ogImage = post ? post.coverImage : 'https://www.jaysmoneyguides.com/images/jaysmoneyguides-hero-banner.webp';
+    const ogImage = post ? post.coverImage : 'https://www.jaysmoneyguides.com/jay-affiliate-marketing-guides-hero-1200.webp';
     const canonicalUrl = post ? `https://www.jaysmoneyguides.com/guide/${post.slug}` : 'https://www.jaysmoneyguides.com';
 
     setMetaTag('property', 'og:title', ogTitle);
