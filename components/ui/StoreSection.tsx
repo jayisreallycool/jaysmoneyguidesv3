@@ -5,6 +5,7 @@ import {
   ChevronLeft, ChevronRight, X, CheckCircle2, Star,
   FileText, ShieldCheck, Zap, ArrowRight,
 } from 'lucide-react';
+import { useAutoScroll } from '@/components/client/useAutoScroll';
 import { Product } from '@/lib/types';
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -75,13 +76,16 @@ const PosterCard: React.FC<{
   isPurchased: boolean;
   onSelect: (p: Product) => void;
   isCheckingOut: boolean;
-}> = ({ product, isPurchased, onSelect, isCheckingOut }) => {
+  /** Duplicate card in an auto-scrolling loop: tappable, but skipped by keyboard/screen readers */
+  inert?: boolean;
+}> = ({ product, isPurchased, onSelect, isCheckingOut, inert }) => {
   const [imgErr, setImgErr] = useState(false);
   const priceLabel = product.isFree ? 'Free' : `$${(product.priceCents / 100).toFixed(2)}`;
 
   return (
     <button
       onClick={() => onSelect(product)}
+      tabIndex={inert ? -1 : undefined}
       className="group relative flex-shrink-0 w-[148px] sm:w-[168px] rounded-xl overflow-hidden border border-slate-800 hover:border-emerald-500/60 transition-all duration-200 bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 text-left"
       aria-label={`View details: ${product.title}`}
     >
@@ -434,6 +438,25 @@ const NetflixRow: React.FC<{
   const [canLeft, setCanLeft] = useState(false);
   const [canRight, setCanRight] = useState(true);
 
+  // Auto-scroll: only when one set of covers is wider than the row, so there
+  // is something to scroll. The covers are then rendered twice for an endless loop.
+  const measureRef = useRef<HTMLDivElement | null>(null);
+  const [loop, setLoop] = useState(false);
+  useEffect(() => {
+    const el = drag.ref.current;
+    const track = measureRef.current;
+    if (!el || !track) return;
+    const check = () => {
+      const copies = loop ? 2 : 1;
+      setLoop(products.length >= 3 && track.scrollWidth / copies > el.clientWidth + 8);
+    };
+    check();
+    const ro = new ResizeObserver(check);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [drag.ref, products, loop]);
+  useAutoScroll(drag.ref, { enabled: loop });
+
   const updateArrows = useCallback(() => {
     const el = drag.ref.current;
     if (!el) return;
@@ -468,21 +491,31 @@ const NetflixRow: React.FC<{
       <div
         ref={drag.ref}
         {...drag.handlers}
-        className="overflow-x-auto scrollbar-none touch-pan-x select-none px-4 sm:px-0 snap-x snap-proximity scroll-px-4 sm:scroll-px-0 [@media(pointer:fine)]:cursor-grab"
+        // No scroll-snap while auto-scrolling — snapping would fight the motion
+        className={`overflow-x-auto scrollbar-none touch-pan-x select-none px-4 sm:px-0 [@media(pointer:fine)]:cursor-grab ${loop ? '' : 'snap-x snap-proximity scroll-px-4 sm:scroll-px-0'}`}
         aria-label={label}
         role="list"
       >
-        <div className="flex gap-3 pb-2 min-w-max">
-          {products.map((p) => (
-            <div key={p.id} role="listitem" className="snap-start">
-              <PosterCard
-                product={p}
-                isPurchased={purchasedIds.includes(p.id)}
-                onSelect={(product) => { if (!drag.didDrag()) onSelect(product); }}
-                isCheckingOut={checkingOutId === p.id}
-              />
-            </div>
-          ))}
+        <div ref={measureRef} className="flex gap-3 pb-2 w-max">
+          {(loop ? [...products, ...products] : products).map((p, i) => {
+            const isCopy = i >= products.length;
+            return (
+              <div
+                key={`${p.id}-${i}`}
+                role={isCopy ? undefined : 'listitem'}
+                aria-hidden={isCopy || undefined}
+                className="snap-start"
+              >
+                <PosterCard
+                  product={p}
+                  isPurchased={purchasedIds.includes(p.id)}
+                  onSelect={(product) => { if (!drag.didDrag()) onSelect(product); }}
+                  isCheckingOut={checkingOutId === p.id}
+                  inert={isCopy}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 

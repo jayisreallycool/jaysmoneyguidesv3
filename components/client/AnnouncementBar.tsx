@@ -69,8 +69,8 @@ export function AnnouncementBar() {
         }
 
         .ann-track {
-          animation: annScroll 55s linear infinite;
-          -webkit-animation: annScroll 55s linear infinite;
+          animation: annScroll 38s linear infinite;
+          -webkit-animation: annScroll 38s linear infinite;
         }
 
         .ann-text {
@@ -95,11 +95,17 @@ export function AnnouncementBar() {
           }
         }
 
-        /* Reduced motion: freeze, show text statically */
+        /* Keep scrolling even when the phone has Reduce Motion / battery saver on.
+           The site-wide reduced-motion rule (globals.css) cuts every animation to
+           a single 0.001ms run, which left this bar frozen on those phones. It is
+           a slow, constant, sideways text scroll, so it runs at a gentler speed
+           instead of stopping. */
         @media (prefers-reduced-motion: reduce) {
           .ann-track {
-            animation: none !important;
-            -webkit-animation: none !important;
+            animation-duration: 60s !important;
+            -webkit-animation-duration: 60s !important;
+            animation-iteration-count: infinite !important;
+            -webkit-animation-iteration-count: infinite !important;
           }
         }
       `}</style>
