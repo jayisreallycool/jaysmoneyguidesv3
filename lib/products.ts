@@ -106,7 +106,7 @@ export const PRODUCTS: Product[] = [
     title: 'SEO & Digital Empire Blueprint',
     subtitle: 'Build a scalable, search-driven online business',
     author: 'Jay',
-    coverImage: getFirebaseStorageUrl('ebooks/covers/affiliate marketing complete guide with 30 day program.webp'),
+    coverImage: '/images/ebooks/seo-digital-empire-blueprint-ebook-cover.webp',
     priceCents: 999,
     isFree: false,
     category: 'Ebooks',

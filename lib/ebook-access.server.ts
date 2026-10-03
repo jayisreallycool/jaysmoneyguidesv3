@@ -57,6 +57,7 @@ export const PRODUCTS_CONFIG: Record<string, EbookConfig> = {
     priceCents: 999,
     isFree: false,
     storagePath: 'ebooks/downloads/Jaysmoneyguides_SEO & Digital Empire Blueprint.pdf',
+    coverImage: 'https://www.jaysmoneyguides.com/images/ebooks/seo-digital-empire-blueprint-ebook-cover.webp',
   },
 };
 
