@@ -25,7 +25,7 @@ interface AdminData { stats: Stats; orders: Order[]; subscribers: Subscriber[]; 
 interface ArticleStat { slug: string; title: string; category: string; views: number; }
 interface EbookStat { id: string; title: string; isFree: boolean; priceCents: number; opens: number; }
 interface AnalyticsData { articleStats: ArticleStat[]; ebookStats: EbookStat[]; traffic?: TrafficDay[]; }
-interface Review { id: string; name: string; avatar: string; role?: string; rating: number; text: string; date: string; approved: boolean; createdAt: string; ip?: string; }
+interface Review { id: string; name: string; avatar: string; role?: string; about?: string; rating: number; text: string; date: string; approved: boolean; createdAt: string; ip?: string; }
 
 // ── Affiliate program tracker (local config — edit as needed) ─────────────────
 interface AffiliateProgram {
@@ -77,7 +77,7 @@ function OverviewTab({ data, analyticsData }: { data: AdminData | null; analytic
     <div className="space-y-6">
       {/* KPI cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard label="Total Revenue" value={data ? `$${data.stats.revenue}` : '—'} sub="all time from ebooks" icon={TrendingUp} accent="emerald" />
+        <StatCard label="Total Revenue" value={data ? `$${data.stats.revenue}` : '—'} sub="estimate at list price" icon={TrendingUp} accent="emerald" />
         <StatCard label="Paid Orders" value={data?.stats.paidOrders ?? '—'} sub="ebook purchases" icon={ShoppingBag} accent="amber" />
         <StatCard label="Free Entitlements" value={data ? data.stats.totalOrders - data.stats.paidOrders : '—'} sub="free access granted" icon={BookOpen} accent="sky" />
         <StatCard label="Subscribers" value={data?.stats.totalSubscribers ?? '—'} sub="newsletter list" icon={Mail} accent="violet" />
@@ -283,6 +283,7 @@ function ReviewsTab({ token }: { token: string }) {
     setLoading(true);
     try {
       const res = await fetch('/api/admin/reviews', { headers: { Authorization: `Bearer ${token}` } });
+      if (!res.ok) throw new Error(String(res.status));
       const data = await res.json() as { reviews: Review[] };
       setReviews(data.reviews || []);
     } catch { showToast('Failed to load reviews', 'error'); }
@@ -294,13 +295,14 @@ function ReviewsTab({ token }: { token: string }) {
   async function approve(id: string, approved: boolean) {
     setActing(id);
     try {
-      await fetch('/api/admin/reviews', {
+      const res = await fetch('/api/admin/reviews', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ id, approved }),
       });
+      if (!res.ok) throw new Error(String(res.status));
       setReviews(prev => prev.map(r => r.id === id ? { ...r, approved } : r));
-      showToast(approved ? 'Review approved' : 'Review hidden', 'success');
+      showToast(approved ? 'Review approved — it appears on the site within about 10 minutes' : 'Review hidden', 'success');
     } catch { showToast('Failed', 'error'); }
     finally { setActing(null); }
   }
@@ -309,11 +311,12 @@ function ReviewsTab({ token }: { token: string }) {
     if (!confirm('Delete this review permanently?')) return;
     setActing(id);
     try {
-      await fetch('/api/admin/reviews', {
+      const res = await fetch('/api/admin/reviews', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ id }),
       });
+      if (!res.ok) throw new Error(String(res.status));
       setReviews(prev => prev.filter(r => r.id !== id));
       showToast('Review deleted', 'success');
     } catch { showToast('Failed', 'error'); }
@@ -364,6 +367,7 @@ function ReviewsTab({ token }: { token: string }) {
                     <StarRow rating={r.rating} />
                     <Badge color={r.approved ? 'emerald' : 'amber'}>{r.approved ? 'Live' : 'Pending'}</Badge>
                   </div>
+                  {r.about && <p className="text-[11px] text-slate-500 mb-1">About: {r.about}</p>}
                   <p className="text-sm text-slate-300 leading-relaxed mb-2">{r.text}</p>
                   <p className="text-[11px] text-slate-600">{r.date} · Submitted {formatDate(r.createdAt)}</p>
                 </div>
@@ -518,34 +522,62 @@ function OrdersTab({ data }: { data: AdminData | null }) {
 
 // ── Tab: Subscribers ──────────────────────────────────────────────────────────
 function SubscribersTab({ data }: { data: AdminData | null }) {
+  const [query, setQuery] = useState('');
+  const list = data?.subscribers ?? [];
+  const shown = query ? list.filter(s => s.email.includes(query.trim().toLowerCase())) : list;
+
+  function downloadCsv() {
+    const esc = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
+    const rows = [['email', 'signed_up', 'source'], ...list.map(s => [s.email, s.subscribedAt, s.source || 'website'])];
+    const blob = new Blob([rows.map(r => r.map(esc).join(',')).join('\n')], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `subscribers-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <Card>
-      <SectionHeader title="Newsletter Subscribers" sub="Everyone who signed up for email updates" />
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <SectionHeader title="Newsletter Subscribers" sub={data ? `${data.stats.totalSubscribers.toLocaleString()} on the list` : 'Everyone who signed up for email updates'} />
+        {list.length > 0 && (
+          <button onClick={downloadCsv} className="rounded-lg bg-slate-800 hover:bg-slate-700 px-3 py-2 text-xs font-semibold text-slate-200 cursor-pointer">
+            Download CSV
+          </button>
+        )}
+      </div>
       {!data ? (
         <p className="text-slate-500 text-sm">Loading…</p>
-      ) : data.subscribers.length === 0 ? (
+      ) : list.length === 0 ? (
         <p className="text-slate-500 text-sm">No subscribers yet</p>
       ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-slate-500 text-xs border-b border-slate-800">
-                <th className="text-left pb-3 pr-4 font-medium">Email</th>
-                <th className="text-left pb-3 pr-4 font-medium hidden sm:table-cell">Signed up</th>
-                <th className="text-left pb-3 font-medium hidden md:table-cell">Source</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800/60">
-              {data.subscribers.map(sub => (
-                <tr key={sub.email} className="hover:bg-slate-800/30 transition-colors">
-                  <td className="py-3 pr-4 text-white text-xs">{sub.email}</td>
-                  <td className="py-3 pr-4 text-slate-400 text-xs hidden sm:table-cell">{formatDate(sub.subscribedAt)}</td>
-                  <td className="py-3 text-slate-500 text-xs hidden md:table-cell">{sub.source || 'website'}</td>
+        <>
+          <input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Search by email" aria-label="Search subscribers"
+            className="mb-3 w-full sm:max-w-xs bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-emerald-500" />
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-slate-500 text-xs border-b border-slate-800">
+                  <th className="text-left pb-3 pr-4 font-medium">Email</th>
+                  <th className="text-left pb-3 pr-4 font-medium">Signed up</th>
+                  <th className="text-left pb-3 font-medium hidden sm:table-cell">Where</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody className="divide-y divide-slate-800/60">
+                {shown.map(sub => (
+                  <tr key={sub.email} className="hover:bg-slate-800/30 transition-colors">
+                    <td className="py-3 pr-4 text-white text-xs break-all">{sub.email}</td>
+                    <td className="py-3 pr-4 text-slate-400 text-xs whitespace-nowrap">{formatDate(sub.subscribedAt)}</td>
+                    <td className="py-3 text-slate-500 text-xs hidden sm:table-cell">{sub.source || 'website'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {shown.length === 0 && <p className="text-slate-500 text-sm mt-3">No subscriber matches that search.</p>}
+        </>
       )}
     </Card>
   );

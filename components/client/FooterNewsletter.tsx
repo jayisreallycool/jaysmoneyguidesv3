@@ -1,45 +1,29 @@
 'use client';
 import { useState } from 'react';
 import { Mail, ArrowRight, CheckCircle2, Shield } from 'lucide-react';
-import { sanitizeInput, checkRateLimit } from '@/utils/security';
+import Link from 'next/link';
+import { subscribeToNewsletter } from '@/lib/newsletter-client';
 
 export function FooterNewsletter() {
   const [email, setEmail] = useState('');
   const [msg, setMsg] = useState('');
+  const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const clean = sanitizeInput(email.trim().toLowerCase());
-    if (!clean || !clean.includes('@')) return;
-    const rl = checkRateLimit('newsletter_sub', 3, 60000);
-    if (!rl.allowed) { setMsg(`Too many requests. Wait ${rl.retryAfterSec}s.`); return; }
+    if (submitting) return;
+    setError('');
     setSubmitting(true);
-    try {
-      const res = await fetch('/api/subscribers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: clean }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setMsg('🎉 Subscribed! Check your inbox.');
-        setEmail('');
-      } else {
-        setMsg(data.error || 'Already subscribed or error.');
-      }
-    } catch {
-      setMsg('Subscribed! Welcome.');
-      setEmail('');
-    } finally {
-      setSubmitting(false);
-    }
+    const r = await subscribeToNewsletter(email, 'footer');
+    setSubmitting(false);
+    if (r.ok) { setMsg(r.message); setEmail(''); } else setError(r.message);
   };
 
   return (
     <div className="w-full sm:w-auto sm:min-w-[340px]">
       {msg ? (
-        <div className="flex items-center gap-2 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 rounded-xl px-4 py-3 text-sm font-semibold">
+        <div role="status" className="flex items-center gap-2 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 rounded-xl px-4 py-3 text-sm font-semibold">
           <CheckCircle2 className="w-4 h-4 shrink-0" aria-hidden="true" />
           {msg}
         </div>
@@ -69,9 +53,10 @@ export function FooterNewsletter() {
           </button>
         </form>
       )}
+      {error && <p role="alert" className="mt-2 text-xs font-medium text-rose-400">{error}</p>}
       <p className="text-[11px] text-slate-500 mt-2 flex items-center gap-1.5">
         <Shield className="w-3 h-3 text-emerald-500/60 shrink-0" aria-hidden="true" />
-        No spam. Unsubscribe anytime.
+        <span>No spam. <Link href="/unsubscribe" className="underline underline-offset-2 hover:text-slate-300">Unsubscribe</Link> anytime.</span>
       </p>
     </div>
   );

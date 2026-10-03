@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { adminDb } from '@/lib/firebase-admin';
 
+export const runtime = 'nodejs';
+
 // Rate-limit: simple in-memory per-IP counter (resets on cold start).
 // Good enough for a personal site — no Redis needed.
 const SUBMIT_LIMIT = 3; // max submissions per window
@@ -25,14 +27,15 @@ export async function GET() {
     const db = adminDb();
     if (!db) return NextResponse.json({ reviews: [] });
 
-    const snap = await db
-      .collection('reviews')
-      .where('approved', '==', true)
-      .orderBy('createdAt', 'desc')
-      .limit(50)
-      .get();
+    // Filter only, then sort here. Filtering AND ordering in the query needs a
+    // hand-made Firestore index; without it the query fails and the site
+    // would silently show no reviews at all.
+    const snap = await db.collection('reviews').where('approved', '==', true).limit(300).get();
+    const millis = (v: unknown) =>
+      typeof (v as { toMillis?: () => number })?.toMillis === 'function' ? (v as { toMillis: () => number }).toMillis() : 0;
+    const docs = [...snap.docs].sort((x, y) => millis(y.data().createdAt) - millis(x.data().createdAt)).slice(0, 50);
 
-    const reviews = snap.docs.map((d) => {
+    const reviews = docs.map((d) => {
       const data = d.data();
       return {
         id: d.id,

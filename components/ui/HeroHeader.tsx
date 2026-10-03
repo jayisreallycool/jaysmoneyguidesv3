@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import { TrendingUp, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Mail, DollarSign } from 'lucide-react';
+import { subscribeToNewsletter } from '@/lib/newsletter-client';
 import { AnimatePresence, motion } from 'motion/react';
 
 interface HeroHeaderProps {
@@ -18,6 +19,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribedMsg, setSubscribedMsg] = useState('');
+  const [subscribeError, setSubscribeError] = useState('');
   const heroRef = useRef<HTMLDivElement | null>(null);
 
   // Parallax fallback. Modern browsers run the hero parallax as a CSS
@@ -59,28 +61,17 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !email.includes('@')) return;
+    if (isSubmitting) return;
+    setSubscribeError('');
     setIsSubmitting(true);
-    try {
-      const res = await fetch('/api/subscribers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSubscribedMsg('🎉 You\'re subscribed! Check your inbox.');
-        onSubscribeSuccess(email);
-        setEmail('');
-      } else {
-        setSubscribedMsg(data.error || 'Subscription failed');
-      }
-    } catch {
-      setSubscribedMsg('Subscribed! Welcome.');
-      onSubscribeSuccess(email);
+    const r = await subscribeToNewsletter(email, 'hero');
+    setIsSubmitting(false);
+    if (r.ok) {
+      setSubscribedMsg(r.message);
+      onSubscribeSuccess(email.trim().toLowerCase());
       setEmail('');
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      setSubscribeError(r.message);
     }
   };
 
@@ -199,9 +190,12 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
               </motion.form>
             )}
           </AnimatePresence>
+          {subscribeError && (
+            <p role="alert" className="mt-2.5 rounded-lg bg-slate-950/70 px-3 py-2 text-sm font-semibold text-rose-300">{subscribeError}</p>
+          )}
           <p className="text-[11px] text-slate-300/80 mt-3 flex items-center justify-center gap-1.5">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" aria-hidden="true" />
-            No spam ever. Unsubscribe anytime.
+            <span>No spam ever. <a href="/unsubscribe" className="underline underline-offset-2 hover:text-white">Unsubscribe</a> anytime.</span>
           </p>
 
           {/* Secondary CTAs */}

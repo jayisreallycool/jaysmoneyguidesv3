@@ -1,4 +1,5 @@
 import { adminDb, verifyAdminRequest } from '@/lib/firebase-admin';
+import { PRODUCTS } from '@/lib/products';
 
 export const runtime = 'nodejs';
 
@@ -16,35 +17,37 @@ export async function GET(req: Request) {
       db.collection('subscribers').get(),
     ]);
 
-    // Revenue: count paid entitlements × $9.99
-    const paidEntitlements = entSnap.docs.filter(d => !d.data()?.isFree);
-    const revenue = paidEntitlements.length * 9.99;
+    // Revenue estimate: each paid order at that ebook's current list price
+    // (discounts, refunds and Stripe fees are not included — Stripe has the exact figure).
+    const priceOf = new Map(PRODUCTS.map(p => [p.id, p.isFree ? 0 : p.priceCents]));
+    const paidEntitlements = entSnap.docs.filter(d => !d.data()?.isFree && (priceOf.get(d.data()?.productId) ?? 1) > 0);
+    const revenue = paidEntitlements.reduce((sum, d) => sum + (priceOf.get(d.data()?.productId) ?? 0), 0) / 100;
 
-    // Recent orders (last 10)
+    // Orders, newest first
     const orders = entSnap.docs
       .sort((a, b) => {
         const aTime = a.data()?.purchasedAt || a.data()?.grantedAt || '';
         const bTime = b.data()?.purchasedAt || b.data()?.grantedAt || '';
         return bTime.localeCompare(aTime);
       })
-      .slice(0, 10)
+      .slice(0, 2000)
       .map(doc => ({
         id: doc.id,
         email: doc.data()?.email || '',
         productId: doc.data()?.productId || '',
         purchasedAt: doc.data()?.purchasedAt || doc.data()?.grantedAt || '',
-        isFree: doc.data()?.isFree || false,
+        isFree: doc.data()?.isFree || (priceOf.get(doc.data()?.productId) ?? 1) === 0,
         stripeSessionId: doc.data()?.stripeSessionId || '',
       }));
 
-    // Subscribers list (last 10)
+    // Subscribers, newest first
     const subscribers = subSnap.docs
       .sort((a, b) => {
         const aTime = a.data()?.subscribedAt || '';
         const bTime = b.data()?.subscribedAt || '';
         return bTime.localeCompare(aTime);
       })
-      .slice(0, 10)
+      .slice(0, 2000)
       .map(doc => ({
         email: doc.data()?.email || doc.id,
         subscribedAt: doc.data()?.subscribedAt || '',

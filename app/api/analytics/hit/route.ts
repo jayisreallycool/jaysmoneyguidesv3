@@ -21,7 +21,7 @@ const BOT = /bot|crawl|spider|slurp|preview|headless|lighthouse|pagespeed|monito
 
 const STATIC_PAGES = new Set([
   '/', '/ebooks', '/tools', '/about', '/contact', '/sofi-bank',
-  '/privacy', '/terms', '/disclaimer', '/cookie-policy',
+  '/privacy', '/terms', '/disclaimer', '/cookie-policy', '/unsubscribe',
 ]);
 const GUIDE_SLUGS = new Set(INITIAL_POSTS.map((p) => p.slug));
 const EBOOK_IDS = new Set(PRODUCTS.map((p) => p.id));
