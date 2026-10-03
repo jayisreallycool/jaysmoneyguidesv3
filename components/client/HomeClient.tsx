@@ -15,7 +15,8 @@ import { AdUnit } from '@/components/client/AdUnit';
 import dynamic from 'next/dynamic';
 import { ProductPreviewModal } from '@/components/ui/ProductPreviewModal';
 import Link from 'next/link';
-import { ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { ArrowRight, Clock, TrendingUp, CheckCircle2, AlertCircle, Loader2, X } from 'lucide-react';
+import { getReceipts, saveReceipt } from '@/lib/checkout-client';
 
 const EbookViewer = dynamic(
   () => import('@/components/client/EbookViewer').then((m) => m.EbookViewer),
@@ -51,6 +52,9 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
   const [viewerProduct, setViewerProduct] = useState<Product | null>(null);
   const [previewProduct, setPreviewProduct] = useState<Product | null>(null);
   const [viewerEmail, setViewerEmail] = useState<string>('');
+  // Stripe receipts saved in this browser: productId -> checkout session id
+  const [receipts, setReceipts] = useState<Record<string, string>>({});
+  const [notice, setNotice] = useState<{ kind: 'pending' | 'success' | 'error' | 'info'; text: string } | null>(null);
 
   const featured = useMemo(() => posts.find((p) => p.featured) ?? posts[0], [posts]);
   const shuffled = useMemo(() => shuffle(posts, 1), [posts]);
@@ -82,6 +86,78 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       .catch((err) => console.error('Ebook entitlement load failed:', err));
     return () => { cancelled = true; };
   }, [user]);
+
+  useEffect(() => { setReceipts(getReceipts()); }, []);
+
+  // Owned = entitlements on the signed-in account + purchases made in this browser
+  const ownedIds = useMemo(
+    () => Array.from(new Set([...purchasedIds, ...Object.keys(receipts)])),
+    [purchasedIds, receipts]
+  );
+
+  // Return from Stripe (/?purchase=success&session_id=…&product=…), a cancelled
+  // checkout, or a "read my ebook" link (/?read=<productId>).
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const purchase = q.get('purchase');
+    const read = q.get('read');
+    if (!purchase && !read) return;
+
+    const product = products.find((p) => p.id === (q.get('product') || read));
+    const sessionId = q.get('session_id') || '';
+    const cleanUrl = () => window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+
+    if (read) {
+      cleanUrl();
+      if (product) { setViewerEmail(''); setViewerProduct(product); }
+      return;
+    }
+    if (purchase === 'cancel') {
+      cleanUrl();
+      setNotice({ kind: 'info', text: 'Checkout cancelled — you have not been charged.' });
+      return;
+    }
+    if (purchase !== 'success' || !product || !sessionId) return;
+
+    let cancelled = false;
+    setNotice({ kind: 'pending', text: 'Confirming your payment…' });
+    (async () => {
+      // Some payment methods confirm a few seconds after the redirect — retry briefly.
+      for (let attempt = 0; attempt < 6 && !cancelled; attempt++) {
+        try {
+          const res = await fetch(
+            `/api/verify-purchase?session_id=${encodeURIComponent(sessionId)}&product=${encodeURIComponent(product.id)}`,
+            { cache: 'no-store' }
+          );
+          const data = (await res.json().catch(() => ({}))) as { verified?: boolean; email?: string };
+          if (cancelled) return;
+          if (res.ok && data.verified) {
+            saveReceipt(product.id, sessionId);
+            setReceipts(getReceipts());
+            cleanUrl();
+            setNotice({
+              kind: 'success',
+              text: `Payment confirmed — "${product.title}" is yours.${data.email ? ` Sign in with ${data.email} to read it on any device.` : ''}`,
+            });
+            setViewerEmail(data.email || '');
+            setViewerProduct(product);
+            return;
+          }
+          if (res.status !== 402 && res.status < 500) break; // definite "no"
+        } catch {
+          // network blip — retry
+        }
+        await new Promise((r) => setTimeout(r, 2000));
+      }
+      if (!cancelled) {
+        setNotice({
+          kind: 'error',
+          text: 'We could not confirm your payment yet. If you were charged, refresh this page in a minute or use the Contact page — your purchase is safe.',
+        });
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [products]);
 
   const toggleBookmark = (postId: string, e: React.MouseEvent) => {
     e.preventDefault(); e.stopPropagation();
@@ -205,7 +281,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
         <div id="ebooks-grid">
           <StoreSection
             products={products}
-            purchasedIds={purchasedIds}
+            purchasedIds={ownedIds}
             onPreview={() => {}}
             onOpenFree={handleOpenFree}
             onBuy={handleBuy}
@@ -224,6 +300,29 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
 
       {/* Reviews */}
       <ReviewsSection />
+
+      {/* Purchase status */}
+      {notice && (
+        <div
+          role="status"
+          aria-live="polite"
+          className={`fixed left-3 right-3 sm:left-auto sm:right-5 sm:max-w-sm bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-[95] flex items-start gap-2.5 rounded-xl border px-4 py-3 text-sm shadow-2xl backdrop-blur-md ${
+            notice.kind === 'success' ? 'bg-emerald-950/95 border-emerald-500/50 text-emerald-100'
+            : notice.kind === 'error' ? 'bg-rose-950/95 border-rose-500/50 text-rose-100'
+            : 'bg-slate-900/95 border-slate-700 text-slate-100'
+          }`}
+        >
+          {notice.kind === 'pending' ? <Loader2 className="w-4 h-4 mt-0.5 shrink-0 animate-spin" aria-hidden="true" />
+            : notice.kind === 'success' ? <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-emerald-400" aria-hidden="true" />
+            : <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />}
+          <p className="flex-1 leading-snug">{notice.text}</p>
+          {notice.kind !== 'pending' && (
+            <button onClick={() => setNotice(null)} aria-label="Dismiss" className="shrink-0 -m-1.5 p-1.5 rounded-lg hover:bg-white/10 cursor-pointer">
+              <X className="w-4 h-4" aria-hidden="true" />
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Modals */}
       {previewProduct && (
@@ -263,7 +362,12 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
                 Close
               </button>
             </div>
-            <EbookViewer productId={viewerProduct.id} email={viewerEmail || undefined} isFree={!!viewerProduct.isFree} />
+            <EbookViewer
+              productId={viewerProduct.id}
+              email={viewerEmail || undefined}
+              isFree={!!viewerProduct.isFree}
+              sessionId={receipts[viewerProduct.id]}
+            />
           </div>
         </div>
       )}

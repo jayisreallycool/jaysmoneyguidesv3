@@ -6,6 +6,7 @@ import {
   FileText, ShieldCheck, Zap, ArrowRight,
 } from 'lucide-react';
 import { useAutoScroll } from '@/components/client/useAutoScroll';
+import { EbookCover } from '@/components/ui/EbookCover';
 import { Product } from '@/lib/types';
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -79,7 +80,6 @@ const PosterCard: React.FC<{
   /** Duplicate card in an auto-scrolling loop: tappable, but skipped by keyboard/screen readers */
   inert?: boolean;
 }> = ({ product, isPurchased, onSelect, isCheckingOut, inert }) => {
-  const [imgErr, setImgErr] = useState(false);
   const priceLabel = product.isFree ? 'Free' : `$${(product.priceCents / 100).toFixed(2)}`;
 
   return (
@@ -91,22 +91,7 @@ const PosterCard: React.FC<{
     >
       {/* Poster image — portrait ratio */}
       <div className="relative aspect-[2/3] w-full overflow-hidden bg-slate-950">
-        {!imgErr ? (
-          <img
-            src={product.coverImage}
-            alt={`${product.title} ebook cover`}
-            loading="lazy"
-            decoding="async"
-            width={168}
-            height={252}
-            onError={() => setImgErr(true)}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-slate-900">
-            <FileText className="w-8 h-8 text-emerald-400/30" />
-          </div>
-        )}
+        <EbookCover src={product.coverImage} title={product.title} isFree={product.isFree} alt={`${product.title} ebook cover`} compact className="w-full h-full transition-transform duration-300 group-hover:scale-[1.04]" />
 
         {/* Gradient overlay — bottom fade for title */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />
@@ -155,7 +140,6 @@ const ProductCard: React.FC<{
   isCheckingOut: boolean;
 }> = ({ product, isPurchased, onPreview, onOpenFree, onBuy, isCheckingOut }) => {
   const priceLabel = product.isFree ? 'Free' : `$${(product.priceCents / 100).toFixed(2)}`;
-  const [imgErr, setImgErr] = useState(false);
 
   return (
     <div
@@ -172,22 +156,7 @@ const ProductCard: React.FC<{
     >
       {/* Cover */}
       <div className="relative aspect-[3/2] w-full overflow-hidden bg-slate-950">
-        {!imgErr ? (
-          <img
-            src={product.coverImage}
-            alt={`${product.title} — ${product.subtitle} ebook cover`}
-            loading="lazy"
-            decoding="async"
-            width={400}
-            height={267}
-            onError={() => setImgErr(true)}
-            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-slate-900">
-            <FileText className="w-10 h-10 text-emerald-400/40" />
-          </div>
-        )}
+        <EbookCover src={product.coverImage} title={product.title} isFree={product.isFree} alt={`${product.title} — ${product.subtitle} ebook cover`} compact className="w-full h-full group-hover:scale-[1.03] transition-transform duration-500" />
 
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-slate-950/10 to-transparent" aria-hidden="true" />
@@ -283,7 +252,6 @@ const EbookModal: React.FC<{
   onBuy: (p: Product) => void;
 }> = ({ product, isPurchased, isCheckingOut, onClose, onOpenFree, onBuy }) => {
   const priceLabel = product.isFree ? 'Free' : `$${(product.priceCents / 100).toFixed(2)}`;
-  const [imgErr, setImgErr] = useState(false);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -320,20 +288,7 @@ const EbookModal: React.FC<{
         </button>
 
         <div className="relative w-full aspect-[16/7] overflow-hidden rounded-t-2xl bg-slate-950">
-          {!imgErr ? (
-            <img
-              src={product.coverImage}
-              alt={`${product.title} — ebook cover`}
-              loading="eager"
-              decoding="async"
-              onError={() => setImgErr(true)}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-slate-900">
-              <FileText className="w-14 h-14 text-emerald-400/30" />
-            </div>
-          )}
+          <EbookCover src={product.coverImage} title={product.title} isFree={product.isFree} alt={`${product.title} — ebook cover`} compact priority className="w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
           <div className="absolute bottom-3 left-4">
             {product.isFree ? (

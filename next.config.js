@@ -49,8 +49,10 @@ const nextConfig = {
         ],
       },
       {
-        // All static HTML/RSC pages — short TTL + fast SWR revalidation
-        source: '/:path*',
+        // All static HTML/RSC pages — short TTL + fast SWR revalidation.
+        // /api is excluded: purchase, entitlement and download responses are
+        // per-user and must never be served from a shared CDN cache.
+        source: '/((?!api/).*)',
         headers: [{ key: 'Cache-Control', value: 's-maxage=300, stale-while-revalidate=600' }],
       },
       // ── Hero image set — 7 day cache (these rarely change) ──────────────────

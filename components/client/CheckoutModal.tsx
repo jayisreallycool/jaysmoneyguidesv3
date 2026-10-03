@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { X, Mail, ShieldCheck, ArrowRight, Loader2, Lock } from 'lucide-react';
 import type { Product } from '@/lib/types';
+import { useAuth } from '@/components/client/AuthProvider';
+import { startCheckout } from '@/lib/checkout-client';
 
 interface CheckoutModalProps {
   product: Product;
@@ -9,7 +11,10 @@ interface CheckoutModalProps {
 }
 
 export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
-  const [email, setEmail] = useState('');
+  const { user } = useAuth();
+  // Signed-in buyers get their account email pre-filled, so the purchase
+  // lands on the account they will read it with.
+  const [email, setEmail] = useState(user?.email || '');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -38,23 +43,10 @@ export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
     }
     setError('');
     setLoading(true);
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: product.id, email: trimmed, origin: window.location.origin }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-        return; // navigation in progress — keep loading state
-      }
-      setError(data.error || 'Checkout failed. Please try again.');
-    } catch {
-      setError('Checkout failed. Please check your connection and try again.');
-    } finally {
-      setLoading(false);
-    }
+    // Only returns if checkout could not start; otherwise the page navigates to Stripe.
+    const result = await startCheckout(product.id, trimmed);
+    setError(result.error);
+    setLoading(false);
   };
 
   const price = product.priceCents > 0
@@ -102,7 +94,7 @@ export function CheckoutModal({ product, onClose }: CheckoutModalProps) {
               Email address
             </label>
             <p className="text-xs text-slate-400 mb-2.5 leading-relaxed">
-              Your download link and receipt will be sent here. Double-check it before continuing.
+              Your purchase is tied to this email. After paying you can read the ebook right away, and sign in with this email to open it on any device.
             </p>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" aria-hidden="true" />

@@ -14,10 +14,13 @@ export function EbookViewer({
   productId,
   email,
   isFree = false,
+  sessionId,
 }: {
   productId: string;
   email?: string;
   isFree?: boolean;
+  /** Stripe receipt (paid checkout session id) — lets a buyer read without a site account */
+  sessionId?: string;
 }) {
   const [url, setUrl] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
@@ -65,6 +68,7 @@ export function EbookViewer({
 
         const headers: HeadersInit = {};
         const params = new URLSearchParams({ productId });
+        if (!isFree && sessionId) params.set('session_id', sessionId);
 
         // Only bother with auth for PAID books. Free books never need it.
         if (!isFree) {
@@ -127,7 +131,7 @@ export function EbookViewer({
     return () => {
       active = false;
     };
-  }, [productId, email, isFree]);
+  }, [productId, email, isFree, sessionId]);
 
   if (loading) {
     return (
@@ -152,9 +156,8 @@ export function EbookViewer({
           </p>
 
           <p className="text-slate-500 text-xs">
-            If you purchased this ebook, make sure you are
-            signed in with the same Firebase account/email
-            used at checkout.
+            If you purchased this ebook, sign in with the
+            email you used at checkout, then open it again.
           </p>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import 'server-only';
+import Stripe from 'stripe';
+import { isPaidSessionFor } from '@/lib/purchases.server';
 import { adminAuth, adminBucket, adminDb, isAdminEmail } from '@/lib/firebase-admin';
 import {
   getProductConfig,
@@ -87,21 +89,31 @@ export async function GET(req: Request) {
     if (product.isFree) {
       const tokenUrl = getTokenUrl(product.storagePath);
       if (tokenUrl) {
+        // ?redirect=1 → go straight to the PDF (used by plain links/buttons)
+        if (url.searchParams.get('redirect') === '1') return Response.redirect(tokenUrl, 302);
         return Response.json({ url: tokenUrl, filename: `${product.id}.pdf` });
       }
       return Response.json({ error: 'File unavailable' }, { status: 404 });
     }
 
-    // PAID EBOOKS
-    const email = await getAuthenticatedEmail(req);
-    if (!email) {
-      return Response.json({ error: 'Please sign in', code: 'AUTH_REQUIRED' }, { status: 401 });
+    // PAID EBOOKS — access is granted by ANY of:
+    //  1. a Stripe receipt (the paid checkout session id for this product), so
+    //     a buyer without a site account can read right after paying;
+    //  2. a signed-in account that is an admin or has an entitlement.
+    const sessionId = url.searchParams.get('session_id')?.trim();
+    let allowed = false;
+
+    if (sessionId && process.env.STRIPE_SECRET_KEY) {
+      allowed = await isPaidSessionFor(new Stripe(process.env.STRIPE_SECRET_KEY), sessionId, productId);
     }
 
-    const isAdmin = await isUserAdmin(email);
-    if (!isAdmin) {
-      const hasPurchase = await userHasPurchase(email, productId);
-      if (!hasPurchase) {
+    if (!allowed) {
+      const email = await getAuthenticatedEmail(req);
+      if (!email) {
+        return Response.json({ error: 'Please sign in', code: 'AUTH_REQUIRED' }, { status: 401 });
+      }
+      allowed = (await isUserAdmin(email)) || (await userHasPurchase(email, productId));
+      if (!allowed) {
         return Response.json({ error: 'Purchase required', code: 'PURCHASE_REQUIRED' }, { status: 403 });
       }
     }

@@ -1,4 +1,5 @@
 'use client';
+import { EbookCover } from '@/components/ui/EbookCover';
 import React from 'react';
 import { X, BookOpen, User, FileText, Lock, Sparkles, ShoppingCart } from 'lucide-react';
 import { Product } from '@/lib/types';
@@ -37,17 +38,7 @@ export const ProductPreviewModal: React.FC<ProductPreviewModalProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-0">
           <div className="sm:col-span-2 bg-slate-950 p-6 flex items-center justify-center">
             <div className="w-40 sm:w-full aspect-[2/3] rounded-2xl overflow-hidden shadow-2xl border border-emerald-500/40 bg-slate-950 animate-ebook-glow relative group">
-              <SafeImage 
-                src={product.coverImage} 
-                alt={`${product.title} - ${product.subtitle}`}
-                width={800}
-                height={1200}
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover" 
-              />
+              <EbookCover src={product.coverImage} title={product.title} subtitle={product.subtitle} isFree={product.isFree} alt={`${product.title} - ${product.subtitle}`} priority className="w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 via-transparent to-white/10 pointer-events-none" />
             </div>
           </div>

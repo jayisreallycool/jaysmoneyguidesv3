@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PRODUCTS, getProductBySlug, formatPrice } from '@/lib/products';
 import { CheckoutButton } from '@/components/client/CheckoutButton';
+import { EbookCover } from '@/components/ui/EbookCover';
 import { ViewTracker } from '@/components/client/ViewTracker';
 import { JsonLd } from '@/components/server/JsonLd';
 import { SITE, ebookProductSchema, ebookBreadcrumbSchema, personSchema } from '@/lib/seo';
@@ -123,14 +124,7 @@ export default async function EbookPage(
                 {/* Cover */}
                 <div className="relative mx-auto sm:mx-0 w-48 sm:w-52 shrink-0">
                   <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-slate-800 shadow-2xl shadow-black/60 bg-slate-950">
-                    <Image
-                      src={p.coverImage}
-                      alt={`${p.title} — ${p.subtitle}`}
-                      fill
-                      sizes="(max-width: 640px) 192px, 208px"
-                      priority
-                      className="object-cover"
-                    />
+                    <EbookCover src={p.coverImage} title={p.title} subtitle={p.subtitle} isFree={p.isFree} alt={`${p.title} — ${p.subtitle}`} priority className="absolute inset-0 w-full h-full" />
                   </div>
                   {/* Free badge */}
                   {p.isFree && (
@@ -416,13 +410,7 @@ export default async function EbookPage(
                     className="group bg-slate-900 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 rounded-xl overflow-hidden transition-all hover:-translate-y-0.5"
                   >
                     <div className="relative aspect-[3/2] bg-slate-950 overflow-hidden">
-                      <Image
-                        src={r.coverImage}
-                        alt={r.title}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                      />
+                      <EbookCover src={r.coverImage} title={r.title} isFree={r.isFree} alt={r.title} compact className="absolute inset-0 w-full h-full group-hover:scale-[1.03] transition-transform duration-500" />
                     </div>
                     <div className="p-4">
                       <p className="text-sm font-bold text-slate-200 group-hover:text-emerald-300 transition-colors line-clamp-2 leading-snug mb-1">

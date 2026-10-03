@@ -1,13 +1,19 @@
 import Stripe from 'stripe';
 import { adminDb } from '@/lib/firebase-admin';
+import { getProductConfig } from '@/lib/ebook-access.server';
+import { grantEntitlements, isPaid, sessionEmails } from '@/lib/purchases.server';
 
 export const runtime = 'nodejs';
 
 /**
  * Stripe webhook. MUST read the RAW request body for signature verification —
  * App Router gives us that via req.text() (do not parse as JSON first).
- * On a completed checkout, records a permanent entitlement in Firestore so the
- * buyer can re-download anytime.
+ * On a paid checkout, records a permanent entitlement in Firestore so the
+ * buyer can re-download anytime from any device after signing in.
+ *
+ * Stripe dashboard → Developers → Webhooks: endpoint
+ *   https://www.jaysmoneyguides.com/api/stripe-webhook
+ * events: checkout.session.completed, checkout.session.async_payment_succeeded
  */
 export async function POST(req: Request) {
   if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
@@ -27,33 +33,36 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
-  if (event.type === 'checkout.session.completed') {
+  if (
+    event.type === 'checkout.session.completed' ||
+    event.type === 'checkout.session.async_payment_succeeded'
+  ) {
     const session = event.data.object as Stripe.Checkout.Session;
-    const email = (session.metadata?.email || session.customer_email || '').toLowerCase();
     const productId = session.metadata?.productId;
 
-    if (email && productId) {
-      const db = adminDb();
-      if (db) {
-        try {
-          // Permanent entitlement — keyed by email+product, never expires.
-          await db
-            .collection('entitlements')
-            .doc(`${email}__${productId}`)
-            .set(
-              {
-                email,
-                productId,
-                sessionId: session.id,
-                purchasedAt: new Date().toISOString(),
-              },
-              { merge: true }
-            );
-        } catch (err) {
-          console.error('[webhook] failed to record entitlement', err);
-          // Still 200 so Stripe doesn't retry forever; investigate via logs.
-        }
-      }
+    // Sessions from other products/sites on the same Stripe account: ignore.
+    if (!productId || !getProductConfig(productId)) return Response.json({ received: true });
+    // Delayed payment methods complete first and get paid later (second event).
+    if (!isPaid(session)) return Response.json({ received: true, pending: true });
+
+    const emails = sessionEmails(session);
+    if (emails.length === 0) {
+      console.error('[webhook] paid session has no email', session.id);
+      return Response.json({ received: true });
+    }
+
+    const db = adminDb();
+    if (!db) {
+      // 500 → Stripe retries for up to 3 days, so the sale isn't lost while
+      // FIREBASE_SERVICE_ACCOUNT_KEY is missing or broken.
+      console.error('[webhook] Firebase Admin not configured — cannot record purchase', session.id);
+      return Response.json({ error: 'Storage unavailable' }, { status: 500 });
+    }
+    try {
+      await grantEntitlements(db, emails, productId, session.id);
+    } catch (err) {
+      console.error('[webhook] failed to record entitlement', session.id, err);
+      return Response.json({ error: 'Failed to record purchase' }, { status: 500 });
     }
   }
 

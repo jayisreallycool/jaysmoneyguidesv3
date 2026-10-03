@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
+import { EbookCover } from '@/components/ui/EbookCover';
 import { PRODUCTS, formatPrice } from '@/lib/products';
 import { SITE, ebookItemListSchema, personSchema } from '@/lib/seo';
 import { JsonLd } from '@/components/server/JsonLd';
@@ -39,14 +39,7 @@ export default function EbooksPage() {
               aria-label={`${p.title} — ${p.isFree ? 'Free' : formatPrice(p.priceCents)}`}
             >
               <div className="relative aspect-[3/4] bg-slate-950">
-                <Image
-                  src={p.coverImage}
-                  alt={`${p.title} ebook cover — by Jay Lopez`}
-                  fill
-                  sizes="(max-width:768px) 100vw, 33vw"
-                  className="object-cover"
-                  loading="lazy"
-                />
+                <EbookCover src={p.coverImage} title={p.title} subtitle={p.subtitle} isFree={p.isFree} alt={`${p.title} ebook cover — by Jay Lopez`} className="absolute inset-0 w-full h-full" />
               </div>
               <div className="p-4">
                 <h2 className="font-bold text-slate-100 group-hover:text-emerald-400 transition-colors">{p.title}</h2>

@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AlertCircle, Loader2 } from 'lucide-react';
+import { getReceipt, startCheckout } from '@/lib/checkout-client';
 
 export function CheckoutButton({
   productId, isFree, className,
@@ -8,6 +9,9 @@ export function CheckoutButton({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showError, setShowError] = useState(false);
+  // Already bought on this device? Offer to read instead of buying again.
+  const [owned, setOwned] = useState(false);
+  useEffect(() => { if (!isFree) setOwned(Boolean(getReceipt(productId))); }, [productId, isFree]);
 
   async function handleClick() {
     setError(null);
@@ -24,36 +28,19 @@ export function CheckoutButton({
       return;
     }
     
-    // Paid book: Go straight to Stripe checkout without email prompt.
-    // Stripe will collect email at checkout instead (better UX).
-    setLoading(true);
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, origin: window.location.origin }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || `HTTP ${res.status}`);
-      }
-
-      const data = await res.json();
-      if (data.url) {
-        // Use location.href for better mobile compatibility
-        window.location.href = data.url;
-        return;
-      }
-      throw new Error(data.error || 'No checkout URL returned');
-    } catch (err) {
-      const errorMsg = err instanceof Error ? err.message : 'Checkout failed. Please try again.';
-      setError(errorMsg);
-      setShowError(true);
-      console.error('[CheckoutButton] error:', err);
-    } finally {
-      setLoading(false);
+    if (owned) {
+      // The home page opens the reader for ?read=<productId>
+      window.location.assign(`/?read=${encodeURIComponent(productId)}`);
+      return;
     }
+
+    // Paid book: straight to Stripe (Stripe collects the email; a signed-in
+    // buyer's account email is attached automatically).
+    setLoading(true);
+    const result = await startCheckout(productId);
+    setError(result.error);
+    setShowError(true);
+    setLoading(false);
   }
 
   return (
@@ -71,6 +58,8 @@ export function CheckoutButton({
           </>
         ) : isFree ? (
           'Download free guide'
+        ) : owned ? (
+          'Read your ebook'
         ) : (
           'Get access now'
         )}

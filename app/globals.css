@@ -251,8 +251,16 @@ input:focus-visible,
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Dark site: native form controls, scrollbars and overscroll areas match */
+  color-scheme: dark;
+  background: #020617;
 }
 body {
+  /* The whole design is light text on dark, but no page background was ever
+     set — pages rendered on white, so white headings ("eBook Store",
+     "Latest Guides"…) were invisible. slate-950 / slate-200 are the base. */
+  background: #020617;
+  color: #e2e8f0;
   /* clip (not hidden) stops sideways page wobble without breaking sticky */
   overflow-x: clip;
   -webkit-tap-highlight-color: transparent;
