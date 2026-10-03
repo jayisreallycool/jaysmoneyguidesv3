@@ -14,7 +14,7 @@ import { EbookCover } from '@/components/ui/EbookCover';
  */
 
 const PAPER =
-  'relative shrink-0 snap-start w-[236px] sm:w-[264px] aspect-[3/4] rounded-lg overflow-hidden bg-[#f6f4ee] text-slate-800 shadow-xl shadow-black/50 ring-1 ring-black/10';
+  'relative shrink-0 snap-start w-[246px] sm:w-[264px] aspect-[3/4] rounded-lg overflow-hidden bg-[#f6f4ee] text-slate-800 shadow-xl shadow-black/50 ring-1 ring-black/10';
 
 function PageShell({
   n,
@@ -46,14 +46,14 @@ function StepDiagram({ title, items }: { title?: string; items: string[] }) {
           {title.replace(/:$/, '')}
         </figcaption>
       )}
-      <ol className="relative space-y-1.5">
+      <ol className="relative space-y-1">
         <span className="absolute left-[9px] top-2 bottom-2 w-px bg-emerald-600/40" aria-hidden="true" />
         {items.slice(0, 5).map((item, i) => (
           <li key={item} className="relative flex items-center gap-2.5">
             <span className="relative z-10 grid h-[19px] w-[19px] shrink-0 place-items-center rounded-full bg-emerald-700 text-[9px] font-black text-white">
               {i + 1}
             </span>
-            <span className="flex-1 rounded-md border border-emerald-700/25 bg-white px-2 py-1 text-[10.5px] font-semibold leading-tight text-slate-700">
+            <span className="flex-1 rounded-md border border-emerald-700/25 bg-white px-2 py-[3px] text-[10.5px] font-semibold leading-tight text-slate-700">
               {item}
             </span>
           </li>
@@ -66,15 +66,15 @@ function StepDiagram({ title, items }: { title?: string; items: string[] }) {
 /** An unordered list from the book drawn as a branch diagram: one topic, its parts. */
 function BranchDiagram({ title, items }: { title?: string; items: string[] }) {
   return (
-    <figure className="mt-3">
+    <figure className="mt-2.5">
       <figcaption className="inline-block rounded-md bg-emerald-700 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider text-white">
         {title?.replace(/:$/, '') || 'Overview'}
       </figcaption>
-      <ul className="ml-3 border-l border-emerald-600/50 pt-2 space-y-1.5">
+      <ul className="ml-3 border-l border-emerald-600/50 pt-1.5 space-y-1">
         {items.slice(0, 6).map((item) => (
           <li key={item} className="flex items-center">
             <span className="h-px w-3.5 shrink-0 bg-emerald-600/50" aria-hidden="true" />
-            <span className="flex-1 rounded-md border border-emerald-700/25 bg-white px-2 py-1 text-[10.5px] font-semibold leading-tight text-slate-700">
+            <span className="flex-1 rounded-md border border-emerald-700/25 bg-white px-2 py-[3px] text-[10.5px] font-semibold leading-tight text-slate-700">
               {item}
             </span>
           </li>
