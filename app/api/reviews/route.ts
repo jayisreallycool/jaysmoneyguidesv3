@@ -38,7 +38,8 @@ export async function GET() {
         id: d.id,
         name: data.name as string,
         avatar: data.avatar as string,
-        role: data.role as string | undefined,
+        role: (data.role as string | null) || undefined,
+        about: (data.about as string | null) || undefined,
         rating: data.rating as number,
         text: data.text as string,
         date: data.date as string,
@@ -71,6 +72,8 @@ export async function POST(req: NextRequest) {
 
   const name = typeof body.name === 'string' ? body.name.trim().slice(0, 50) : '';
   const role = typeof body.role === 'string' ? body.role.trim().slice(0, 40) : '';
+  // Which guide/ebook the review is about (set when the form is opened from a reading prompt)
+  const about = typeof body.about === 'string' ? body.about.trim().slice(0, 80) : '';
   const rating = typeof body.rating === 'number' ? Math.round(body.rating) : 0;
   const text = typeof body.text === 'string' ? body.text.trim().slice(0, 500) : '';
 
@@ -90,6 +93,7 @@ export async function POST(req: NextRequest) {
       name,
       avatar,
       role: role || null,
+      about: about || null,
       rating,
       text,
       date,

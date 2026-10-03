@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Star, Send, CheckCircle, X, MessageSquarePlus } from 'lucide-react';
-import { useAutoScroll } from '@/components/client/useAutoScroll';
+import Link from 'next/link';
+import { Star, Send, CheckCircle, X, MessageSquarePlus, Quote, ArrowRight, Clock, BadgeCheck } from 'lucide-react';
+import { AutoScrollRow } from '@/components/client/AutoScrollRow';
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -14,6 +15,8 @@ interface Review {
   rating: number;
   text: string;
   role?: string;
+  /** what the review is about (a guide or ebook title), when the reader said */
+  about?: string;
   date: string;
   /** the visitor's own just-submitted review, waiting for approval */
   pending?: boolean;
@@ -23,6 +26,18 @@ interface Review {
 // the form below and approved in the admin dashboard). There is no built-in
 // sample data: a section labelled "community reviews" must only ever show
 // what real readers wrote.
+
+/** A key takeaway quoted from one of Jay's own guides (not a review). */
+export interface GuideHighlight {
+  slug: string;
+  title: string;
+  category: string;
+  takeaway: string;
+  readTimeMinutes: number;
+}
+
+/** The review form can be opened from anywhere: window.dispatchEvent(new CustomEvent(REVIEW_PROMPT_EVENT, { detail: { about } })) */
+export const REVIEW_PROMPT_EVENT = 'jmg:review-prompt';
 
 // ─── Star component ───────────────────────────────────────────────────────────
 
@@ -53,72 +68,84 @@ function StarRating({ rating, interactive = false, onRate }: { rating: number; i
 
 // ─── Review card ─────────────────────────────────────────────────────────────
 
-function ReviewCard({ review, inert }: { review: Review; inert?: boolean }) {
+/** Gradient hairline + soft glow shared by both card types */
+const CARD_FRAME =
+  'relative shrink-0 w-[82vw] max-w-[330px] sm:w-[360px] sm:max-w-none rounded-2xl p-px shadow-xl shadow-black/40';
+const CARD_BODY = 'relative h-full rounded-[15px] bg-slate-900/95 backdrop-blur-sm p-5 flex flex-col';
+
+function ReviewCard({ review }: { review: Review }) {
   return (
-    <article
-      aria-hidden={inert || undefined}
-      className="flex w-[78vw] max-w-[300px] sm:w-80 sm:max-w-none shrink-0 flex-col gap-3 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:p-5 shadow-lg"
-    >
-      <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400/30 to-emerald-400/20 border border-amber-400/30 text-xs font-bold text-amber-300">
-          {review.avatar}
+    <article className={`${CARD_FRAME} bg-gradient-to-br from-amber-400/50 via-slate-700/40 to-emerald-400/30`}>
+      <div className={`${CARD_BODY} gap-3`}>
+        <div className="flex items-center justify-between gap-3">
+          <StarRating rating={review.rating} />
+          {review.pending ? (
+            <span className="shrink-0 rounded-full bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 text-[10px] font-bold text-amber-300">
+              Pending approval
+            </span>
+          ) : (
+            <span className="text-xs text-slate-500">{review.date}</span>
+          )}
         </div>
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-white truncate">{review.name}</p>
-          {review.role && <p className="text-xs text-slate-400 truncate">{review.role}</p>}
+        <p className="text-[15px] leading-relaxed text-slate-100 line-clamp-6">{review.text}</p>
+        <div className="mt-auto pt-3 border-t border-slate-800 flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400/30 to-emerald-400/20 border border-amber-400/30 text-xs font-bold text-amber-300">
+            {review.avatar}
+          </div>
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-white truncate">{review.name}</p>
+            <p className="text-xs text-slate-400 truncate">
+              {[review.role, review.about && `on ${review.about}`].filter(Boolean).join(' · ') || 'Reader'}
+            </p>
+          </div>
         </div>
-        {review.pending && (
-          <span className="ml-auto shrink-0 rounded-full bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 text-[10px] font-bold text-amber-300">
-            Pending approval
-          </span>
-        )}
       </div>
-      <StarRating rating={review.rating} />
-      <p className="text-sm leading-relaxed text-slate-300 line-clamp-6">{review.text}</p>
-      <p className="text-xs text-slate-500 mt-auto">{review.date}</p>
     </article>
   );
 }
 
-// ─── Review row: swipeable, auto-scrolling when it overflows ─────────────────
+// ─── Guide highlight card ────────────────────────────────────────────────────
+// Quotes a key takeaway from a guide on this site and links to it. Styled as
+// the author's own words — no stars, no customer name — so it can't be
+// mistaken for a reader review.
 
-function ReviewRow({ reviews, speed }: { reviews: Review[]; speed: number }) {
-  const scroller = useRef<HTMLDivElement | null>(null);
-  const track = useRef<HTMLDivElement | null>(null);
-  const [loop, setLoop] = useState(false);
-
-  // Loop only when one set of cards is wider than the row; otherwise the
-  // cards simply sit centred.
-  useEffect(() => {
-    const el = scroller.current;
-    const tr = track.current;
-    if (!el || !tr) return;
-    const check = () => setLoop(reviews.length >= 3 && tr.scrollWidth / (loop ? 2 : 1) > el.clientWidth + 8);
-    check();
-    const ro = new ResizeObserver(check);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [reviews, loop]);
-
-  // Real scroll position (not a CSS transform): the row stays swipeable, pauses
-  // under a finger, and keeps moving on phones with Reduce Motion / battery saver.
-  useAutoScroll(scroller, { enabled: loop, speed });
-
+function HighlightCard({ item, copy }: { item: GuideHighlight; copy: boolean }) {
   return (
-    <div
-      ref={scroller}
-      className={`overflow-x-auto scrollbar-none touch-pan-x px-4 ${loop ? '' : 'sm:flex sm:justify-center'}`}
-      role="list"
-      aria-label="Reader reviews"
+    <Link
+      href={`/guide/${item.slug}`}
+      tabIndex={copy ? -1 : undefined}
+      className={`${CARD_FRAME} group bg-gradient-to-br from-emerald-400/60 via-slate-700/40 to-teal-400/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400`}
     >
-      <div ref={track} className="flex w-max gap-3 sm:gap-4 py-1">
-        {(loop ? [...reviews, ...reviews] : reviews).map((r, i) => (
-          <div key={`${r.id}-${i}`} role={i < reviews.length ? 'listitem' : undefined}>
-            <ReviewCard review={r} inert={i >= reviews.length} />
+      <div className={`${CARD_BODY} gap-3`}>
+        <div className="flex items-center justify-between gap-3">
+          <span className="rounded-full bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-300 truncate">
+            {item.category}
+          </span>
+          <span className="shrink-0 inline-flex items-center gap-1 text-xs text-slate-500">
+            <Clock className="h-3 w-3" aria-hidden="true" /> {item.readTimeMinutes} min read
+          </span>
+        </div>
+        <Quote className="h-6 w-6 text-emerald-400/50 -mb-1" aria-hidden="true" />
+        <p className="text-[15px] leading-relaxed font-medium text-slate-100 line-clamp-5">{item.takeaway}</p>
+        <div className="mt-auto pt-3 border-t border-slate-800 flex items-center gap-3">
+          <img
+            src="/jay-character-small.webp"
+            alt=""
+            width={40}
+            height={40}
+            loading="lazy"
+            className="h-10 w-10 shrink-0 rounded-full object-cover object-top border border-emerald-400/40"
+          />
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-semibold text-white flex items-center gap-1">
+              Jay Lopez <BadgeCheck className="h-3.5 w-3.5 text-emerald-400" aria-label="Author" />
+            </p>
+            <p className="text-xs text-slate-400 truncate">From: {item.title}</p>
           </div>
-        ))}
+          <ArrowRight className="h-4 w-4 shrink-0 text-emerald-400 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -132,7 +159,20 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
   const [text, setText] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [about, setAbout] = useState(''); // guide/ebook the review is about, when opened from a prompt
   const dialogRef = useRef<HTMLDivElement>(null);
+
+  // Let other parts of the page (e.g. the "how was it?" prompt after reading
+  // an ebook) open this form.
+  useEffect(() => {
+    const onPrompt = (e: Event) => {
+      const detail = (e as CustomEvent<{ about?: string }>).detail;
+      setAbout(detail?.about?.slice(0, 80) || '');
+      setOpen(true);
+    };
+    window.addEventListener(REVIEW_PROMPT_EVENT, onPrompt);
+    return () => window.removeEventListener(REVIEW_PROMPT_EVENT, onPrompt);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -154,6 +194,7 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
       name: name.trim(),
       avatar: name.trim().split(' ').map((w: string) => w[0]).slice(0, 2).join('').toUpperCase(),
       role: role.trim() || undefined,
+      about: about || undefined,
       rating,
       text: text.trim(),
       date: new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
@@ -165,7 +206,7 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
       const res = await fetch('/api/reviews', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: optimistic.name, role: optimistic.role ?? '', rating, text: optimistic.text }),
+        body: JSON.stringify({ name: optimistic.name, role: optimistic.role ?? '', about, rating, text: optimistic.text }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -179,13 +220,13 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
 
     onSubmit(optimistic);
     setSubmitted(true);
-    setTimeout(() => { setOpen(false); setSubmitted(false); setName(''); setRole(''); setRating(0); setText(''); }, 2200);
+    setTimeout(() => { setOpen(false); setSubmitted(false); setName(''); setRole(''); setRating(0); setText(''); setAbout(''); }, 2200);
   };
 
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => { setAbout(''); setOpen(true); }}
         className="inline-flex items-center justify-center gap-2 min-h-[48px] w-full max-w-xs sm:w-auto rounded-full bg-amber-400 px-6 py-2.5 text-sm font-bold text-slate-950 shadow-lg shadow-amber-500/25 transition-all hover:bg-amber-300 hover:scale-105 active:scale-95"
       >
         <Star className="h-4 w-4 fill-slate-950" />
@@ -220,8 +261,8 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
               </div>
             ) : (
               <>
-                <h3 className="text-lg font-bold text-white mb-1">Share your experience</h3>
-                <p className="text-sm text-slate-400 mb-5">How has JaysMoneyGuides helped you?</p>
+                <h3 className="text-lg font-bold text-white mb-1 pr-8">{about ? `How was “${about}”?` : 'Share your experience'}</h3>
+                <p className="text-sm text-slate-400 mb-5">Honest feedback helps other readers — good or bad.</p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -286,7 +327,7 @@ function SubmitReview({ onSubmit }: { onSubmit: (r: Review) => void }) {
 
 // ─── Main export ─────────────────────────────────────────────────────────────
 
-export function ReviewsSection() {
+export function ReviewsSection({ highlights = [] }: { highlights?: GuideHighlight[] }) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [mine, setMine] = useState<Review[]>([]); // this visitor's pending submissions
   const [loaded, setLoaded] = useState(false);
@@ -309,73 +350,106 @@ export function ReviewsSection() {
   // Summary counts approved reviews only
   const avg = hasReviews ? (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1) : '';
 
-  // Two rows once there are enough cards to fill both
-  const twoRows = shown.length >= 8;
-  const half = Math.ceil(shown.length / 2);
+  const EDGE_FADES = (
+    <>
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-5 sm:w-24 bg-gradient-to-r from-slate-950 to-transparent" aria-hidden="true" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-5 sm:w-24 bg-gradient-to-l from-slate-950 to-transparent" aria-hidden="true" />
+    </>
+  );
 
   return (
     <section
-      className="w-full overflow-clip border-y border-amber-500/15 bg-gradient-to-b from-slate-950 via-amber-950/10 to-slate-950 py-10 sm:py-16"
+      className="relative w-full overflow-clip border-y border-amber-500/15 bg-slate-950 py-12 sm:py-20"
       aria-labelledby="reviews-heading"
     >
-      {/* Header */}
-      <div className="mx-auto mb-7 sm:mb-10 max-w-2xl px-4 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-amber-300">
-          <Star className="h-3 w-3 fill-amber-400 text-amber-400" aria-hidden="true" /> Community Reviews
-        </span>
-        <h2 id="reviews-heading" className="mt-4 text-2xl sm:text-4xl font-extrabold text-white text-balance">
-          What readers are saying
-        </h2>
-        {hasReviews ? (
-          <div className="mt-4 flex items-center justify-center gap-2">
-            <div className="flex" aria-hidden="true">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <Star
-                  key={n}
-                  className={`h-5 w-5 ${n <= Math.round(Number(avg)) ? 'fill-amber-400 text-amber-400' : 'text-slate-700'}`}
-                />
-              ))}
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[36rem] max-w-[140%] -translate-x-1/2 rounded-full bg-amber-500/10 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-64 w-[36rem] max-w-[140%] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" aria-hidden="true" />
+
+      <div className="relative">
+        {/* ── Reader reviews ── */}
+        <div className="mx-auto mb-7 sm:mb-10 max-w-2xl px-4 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-500/10 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-amber-300">
+            <Star className="h-3 w-3 fill-amber-400 text-amber-400" aria-hidden="true" /> Community Reviews
+          </span>
+          <h2 id="reviews-heading" className="mt-4 text-[1.7rem] leading-tight sm:text-4xl font-extrabold text-white text-balance">
+            What readers are saying
+          </h2>
+          {hasReviews ? (
+            <div className="mt-4 flex items-center justify-center gap-2">
+              <div className="flex" aria-hidden="true">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <Star
+                    key={n}
+                    className={`h-5 w-5 ${n <= Math.round(Number(avg)) ? 'fill-amber-400 text-amber-400' : 'text-slate-700'}`}
+                  />
+                ))}
+              </div>
+              <span className="text-2xl font-black text-white">{avg}</span>
+              <span className="text-sm text-slate-400">
+                / 5 · {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
+              </span>
             </div>
-            <span className="text-2xl font-black text-white">{avg}</span>
-            <span className="text-sm text-slate-400">
-              / 5 · {reviews.length} {reviews.length === 1 ? 'review' : 'reviews'}
-            </span>
+          ) : (
+            <p className="mt-3 text-sm text-slate-400 max-w-md mx-auto">
+              Honest feedback from people who have used the guides and ebooks.
+            </p>
+          )}
+        </div>
+
+        {shown.length > 0 ? (
+          <div className="relative">
+            {EDGE_FADES}
+            <AutoScrollRow
+              items={shown}
+              getKey={(r) => r.id}
+              renderItem={(r) => <ReviewCard review={r} />}
+              speed={30}
+              label="Reader reviews"
+            />
           </div>
         ) : (
-          <p className="mt-3 text-sm text-slate-400 max-w-md mx-auto">
-            Honest feedback from people who have used the guides and ebooks.
-          </p>
+          loaded && (
+            <div className="mx-auto max-w-md px-4">
+              <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-900/60 p-5 text-center">
+                <MessageSquarePlus className="mx-auto h-7 w-7 text-amber-300/80" aria-hidden="true" />
+                <p className="mt-2.5 text-base font-bold text-white">No reviews yet — be the first</p>
+                <p className="mt-1 text-sm text-slate-400 leading-relaxed">
+                  Read a guide or an ebook? Tell other readers what you thought.
+                </p>
+              </div>
+            </div>
+          )
         )}
-      </div>
 
-      {/* Reviews */}
-      {shown.length > 0 ? (
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 sm:w-20 bg-gradient-to-r from-slate-950 to-transparent" aria-hidden="true" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 sm:w-20 bg-gradient-to-l from-slate-950 to-transparent" aria-hidden="true" />
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <ReviewRow reviews={twoRows ? shown.slice(0, half) : shown} speed={26} />
-            {twoRows && <ReviewRow reviews={shown.slice(half)} speed={34} />}
-          </div>
+        <div className="mt-6 sm:mt-8 flex flex-col items-center gap-3 px-4 text-center">
+          <SubmitReview onSubmit={(r) => setMine((prev) => [r, ...prev])} />
         </div>
-      ) : (
-        loaded && (
-          <div className="mx-auto max-w-md px-4">
-            <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-900/60 p-6 text-center">
-              <MessageSquarePlus className="mx-auto h-8 w-8 text-amber-300/80" aria-hidden="true" />
-              <p className="mt-3 text-base font-bold text-white">No reviews yet</p>
-              <p className="mt-1.5 text-sm text-slate-400 leading-relaxed">
-                Read a guide or an ebook? Be the first to tell other readers what you thought.
-              </p>
+
+        {/* ── From the guides: real takeaways, auto-scrolling ── */}
+        {highlights.length > 0 && (
+          <div className="mt-12 sm:mt-16">
+            <div className="mx-auto mb-5 sm:mb-7 max-w-2xl px-4 text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-emerald-300">
+                <Quote className="h-3 w-3" aria-hidden="true" /> From the guides
+              </span>
+              <h3 className="mt-3 text-xl sm:text-2xl font-extrabold text-white text-balance">
+                Key takeaways, straight from Jay&apos;s playbooks
+              </h3>
+              <p className="mt-2 text-sm text-slate-400">Tap a card to read the full guide — all free.</p>
+            </div>
+            <div className="relative">
+              {EDGE_FADES}
+              <AutoScrollRow
+                items={highlights}
+                getKey={(h) => h.slug}
+                renderItem={(h, copy) => <HighlightCard item={h} copy={copy} />}
+                speed={34}
+                label="Key takeaways from the guides"
+              />
             </div>
           </div>
-        )
-      )}
-
-      {/* CTA */}
-      <div className="mt-7 sm:mt-10 flex flex-col items-center gap-3 px-4 text-center">
-        {shown.length > 0 && <p className="text-sm text-slate-400">Used one of the guides? Share your experience.</p>}
-        <SubmitReview onSubmit={(r) => setMine((prev) => [r, ...prev])} />
+        )}
       </div>
     </section>
   );

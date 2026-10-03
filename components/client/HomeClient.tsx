@@ -2,13 +2,13 @@
 
 import { useAuth } from '@/components/client/AuthProvider';
 import { getFirebaseAuth } from '@/lib/firebase-client';
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { HeroHeader } from '@/components/ui/HeroHeader';
 import { PostCard } from '@/components/ui/PostCard';
 import { CategoryTabs } from '@/components/ui/CategoryTabs';
 import { StoreSection } from '@/components/ui/StoreSection';
 import { EbooksBanner, BlogIntro, ToolsBanner } from '@/components/ui/SectionIntro';
-import { ReviewsSection } from '@/components/ui/ReviewsSection';
+import { ReviewsSection, REVIEW_PROMPT_EVENT, type GuideHighlight } from '@/components/ui/ReviewsSection';
 import { ToolsHomepageSection } from '@/components/ui/ToolsHomepageSection';
 import { CheckoutModal } from '@/components/client/CheckoutModal';
 import { AdUnit } from '@/components/client/AdUnit';
@@ -88,6 +88,45 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
   }, [user]);
 
   useEffect(() => { setReceipts(getReceipts()); }, []);
+
+  // "From the guides" cards: one real key takeaway per guide, mixed across
+  // categories so the row doesn't show five cards on the same topic in a row.
+  const highlights = useMemo<GuideHighlight[]>(() => {
+    const byCategory = new Map<string, GuideHighlight[]>();
+    for (const p of posts) {
+      const takeaway = (p.keyTakeaways ?? []).find((t) => t.length >= 50 && t.length <= 210);
+      if (!takeaway) continue;
+      const list = byCategory.get(p.category) ?? [];
+      list.push({ slug: p.slug, title: p.title, category: p.category, takeaway, readTimeMinutes: p.readTimeMinutes });
+      byCategory.set(p.category, list);
+    }
+    const out: GuideHighlight[] = [];
+    const lists = [...byCategory.values()];
+    for (let i = 0; out.length < 12 && lists.some((l) => l[i]); i++) {
+      for (const l of lists) if (l[i] && out.length < 12) out.push(l[i]);
+    }
+    return out;
+  }, [posts]);
+
+  // Ask for a real review after someone has actually spent time reading an
+  // ebook — once per ebook per browser, and only as a dismissible prompt.
+  const viewerOpenedAt = useRef(0);
+  const [reviewPrompt, setReviewPrompt] = useState<Product | null>(null);
+  useEffect(() => { if (viewerProduct) viewerOpenedAt.current = Date.now(); }, [viewerProduct]);
+  const closeViewer = useCallback(() => {
+    const product = viewerProduct;
+    setViewerProduct(null);
+    if (!product || Date.now() - viewerOpenedAt.current < 30_000) return;
+    try {
+      const KEY = 'jmg_review_prompted_v1';
+      const seen = JSON.parse(localStorage.getItem(KEY) || '{}') as Record<string, boolean>;
+      if (seen[product.id]) return;
+      localStorage.setItem(KEY, JSON.stringify({ ...seen, [product.id]: true }));
+    } catch {
+      return; // storage blocked — don't risk asking repeatedly
+    }
+    setReviewPrompt(product);
+  }, [viewerProduct]);
 
   // Owned = entitlements on the signed-in account + purchases made in this browser
   const ownedIds = useMemo(
@@ -299,7 +338,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       </section>
 
       {/* Reviews */}
-      <ReviewsSection />
+      <ReviewsSection highlights={highlights} />
 
       {/* Purchase status */}
       {notice && (
@@ -321,6 +360,37 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
               <X className="w-4 h-4" aria-hidden="true" />
             </button>
           )}
+        </div>
+      )}
+
+      {/* Review request — shown after reading, never automatically opens the form */}
+      {reviewPrompt && !viewerProduct && (
+        <div
+          role="dialog"
+          aria-label="Leave a review"
+          className="fixed left-3 right-3 sm:left-auto sm:right-5 sm:max-w-sm bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-[94] rounded-2xl border border-amber-400/40 bg-slate-900/95 backdrop-blur-md p-4 shadow-2xl"
+        >
+          <p className="text-sm font-bold text-white">How was “{reviewPrompt.title}”?</p>
+          <p className="mt-1 text-sm text-slate-400 leading-snug">
+            An honest review — good or bad — helps other readers decide.
+          </p>
+          <div className="mt-3 flex gap-2">
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent(REVIEW_PROMPT_EVENT, { detail: { about: reviewPrompt.title } }));
+                setReviewPrompt(null);
+              }}
+              className="flex-1 min-h-[44px] rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-sm font-black cursor-pointer"
+            >
+              Leave a review
+            </button>
+            <button
+              onClick={() => setReviewPrompt(null)}
+              className="min-h-[44px] px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-bold border border-slate-700 cursor-pointer"
+            >
+              Not now
+            </button>
+          </div>
         </div>
       )}
 
@@ -346,7 +416,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       {viewerProduct && (
         <div
           className="fixed inset-0 z-[80] bg-slate-950/90 backdrop-blur p-4 overflow-y-auto"
-          onClick={() => setViewerProduct(null)}
+          onClick={closeViewer}
           role="dialog"
           aria-modal="true"
           aria-label={`Reading: ${viewerProduct.title}`}
@@ -355,7 +425,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
             <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-bold text-white">{viewerProduct.title}</h3>
               <button
-                onClick={() => setViewerProduct(null)}
+                onClick={closeViewer}
                 className="px-3 py-1 rounded-lg bg-slate-800 text-slate-200 hover:bg-slate-700 cursor-pointer"
                 aria-label="Close ebook viewer"
               >
