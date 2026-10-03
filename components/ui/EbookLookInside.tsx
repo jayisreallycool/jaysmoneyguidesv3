@@ -187,7 +187,7 @@ export function EbookLookInside({ product }: { product: Product }) {
               </p>
               <p className="text-[11px] leading-relaxed text-slate-400">
                 {product.isFree
-                  ? 'No sign-up needed — use the download button on this page.'
+                  ? 'No sign-up needed — tap “Read free guide” on this page.'
                   : `${product.pageCount ? `${product.pageCount} pages. ` : ''}Instant PDF access after checkout.`}
               </p>
             </div>

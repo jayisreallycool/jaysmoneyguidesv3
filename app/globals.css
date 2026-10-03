@@ -476,9 +476,24 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
   .hero-bg img { opacity: 0.55; }
 }
 
+/* Parallax + zoom: as the hero scrolls away the image falls behind the page
+   (moves at ~85% of scroll speed) and zooms in. */
 @keyframes heroBgDrift {
   from { transform: translate3d(0, 0, 0) scale(1); }
-  to   { transform: translate3d(0, 14svh, 0) scale(1.06); }
+  to   { transform: translate3d(0, 14svh, 0) scale(1.14); }
+}
+/* Gentler version for phones with Reduce Motion on: half the travel and zoom */
+@keyframes heroBgDriftSoft {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(0, 6svh, 0) scale(1.07); }
+}
+/* One-time settle on page load: the image eases back from a slight zoom */
+@keyframes heroIntroZoom {
+  from { transform: scale(1.1); }
+  to   { transform: scale(1); }
+}
+.hero-bg img {
+  animation: heroIntroZoom 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes heroContentLift {
   from { opacity: 1; transform: translate3d(0, 0, 0); }
@@ -517,8 +532,15 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
     }
   }
 
-  /* Reduce Motion: no movement — a plain fade-in only */
+  /* Reduce Motion: reveals are a plain fade-in; the hero keeps a softer
+     parallax (requested by the site owner — it is tied to the visitor's own
+     scrolling, not autoplaying). */
   @media (prefers-reduced-motion: reduce) {
+    .hero-bg {
+      animation: heroBgDriftSoft linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100svh;
+    }
     .reveal,
     .reveal-children > * {
       animation: revealFade linear both;
@@ -526,4 +548,19 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
       animation-range: entry 0% entry 160px;
     }
   }
+}
+
+/* Parallax for browsers without scroll-driven CSS animations (e.g. iPhones on
+   iOS 18 and earlier). HeroHeader adds .hero-js and updates --hero-p (0→1 as
+   the hero scrolls away) and --hero-c (content fade) once per frame. */
+.hero-js .hero-bg {
+  animation: none;
+  transform: translate3d(0, calc(var(--hero-p, 0) * var(--hero-k, 1) * 14svh), 0)
+    scale(calc(1 + var(--hero-p, 0) * var(--hero-k, 1) * 0.14));
+  will-change: transform;
+}
+.hero-js .hero-content {
+  animation: none;
+  opacity: calc(1 - var(--hero-c, 0) * 0.7);
+  transform: translate3d(0, calc(var(--hero-c, 0) * -28px), 0);
 }

@@ -17,17 +17,13 @@ export function CheckoutButton({
     setError(null);
     setShowError(false);
     
-    // Free book: hit the download route directly, no email needed.
+    // Free book: open the reader — no account, no email. (The reader shows a
+    // clear message if the file can't be served, instead of a raw error tab.)
     if (isFree) {
-      try {
-        window.open(`/api/download-ebook?productId=${encodeURIComponent(productId)}&redirect=1`, '_blank');
-      } catch (err) {
-        setError('Failed to open download. Please try again.');
-        setShowError(true);
-      }
+      window.location.assign(`/?read=${encodeURIComponent(productId)}`);
       return;
     }
-    
+
     if (owned) {
       // The home page opens the reader for ?read=<productId>
       window.location.assign(`/?read=${encodeURIComponent(productId)}`);
@@ -57,7 +53,7 @@ export function CheckoutButton({
             <span className="sm:hidden">Loading...</span>
           </>
         ) : isFree ? (
-          'Download free guide'
+          'Read free guide'
         ) : owned ? (
           'Read your ebook'
         ) : (

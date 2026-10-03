@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TrendingUp, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Mail, DollarSign } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -18,6 +18,44 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [subscribedMsg, setSubscribedMsg] = useState('');
+  const heroRef = useRef<HTMLDivElement | null>(null);
+
+  // Parallax fallback. Modern browsers run the hero parallax as a CSS
+  // scroll-driven animation (globals.css). Where that isn't supported —
+  // notably iPhones before iOS 26 — drive the same effect from scroll
+  // position: one passive listener, one style write per frame.
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el || (typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()'))) return;
+
+    el.classList.add('hero-js');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const setStrength = () => el.style.setProperty('--hero-k', reduce.matches ? '0.45' : '1');
+    setStrength();
+    reduce.addEventListener?.('change', setStrength);
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const vh = window.innerHeight || 1;
+      const y = window.scrollY;
+      const clamp = (n: number) => Math.min(1, Math.max(0, n));
+      el.style.setProperty('--hero-p', clamp(y / vh).toFixed(4));
+      // content starts lifting at 38% of a screen, done at 95% (not with Reduce Motion)
+      el.style.setProperty('--hero-c', reduce.matches ? '0' : clamp((y - vh * 0.38) / (vh * 0.57)).toFixed(4));
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      reduce.removeEventListener?.('change', setStrength);
+      if (raf) cancelAnimationFrame(raf);
+      el.classList.remove('hero-js');
+    };
+  }, []);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,7 +85,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
   };
 
   return (
-    <div className="relative w-full min-h-[85svh] sm:min-h-[82svh] lg:min-h-[88svh] flex flex-col justify-center items-center text-center text-white py-10 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 border-b border-emerald-500/25 overflow-hidden bg-slate-950">
+    <div ref={heroRef} className="relative w-full min-h-[85svh] sm:min-h-[82svh] lg:min-h-[88svh] flex flex-col justify-center items-center text-center text-white py-10 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 border-b border-emerald-500/25 overflow-hidden bg-slate-950">
 
       {/* ── Hero background: translucent image with CSS scroll-driven parallax
           (see .hero-bg in globals.css). Loaded eagerly at high priority for LCP. ── */}
