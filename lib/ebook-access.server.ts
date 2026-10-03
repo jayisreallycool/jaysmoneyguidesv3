@@ -41,7 +41,7 @@ export const PRODUCTS_CONFIG: Record<string, EbookConfig> = {
     priceCents: 0,
     isFree: true,
     storagePath: 'ebooks/free/2.jaysmoneyguides Affiliate_Marketing_for_Beginners_free_book.pdf',
-    coverImage: 'https://firebasestorage.googleapis.com/v0/b/jaysmoneyguides.firebasestorage.app/o/ebooks%2Fcovers%2FAffiliate%20Marketing%20Cover%20Page%20Jaysmoneyguides%20ebook.webp?alt=media',
+    coverImage: 'https://www.jaysmoneyguides.com/images/ebooks/affiliate-marketing-for-beginners-ebook-cover.webp',
   },
   'ebook-start-successful-blog': {
     id: 'ebook-start-successful-blog',

@@ -3,12 +3,10 @@
  */
 
 import { Product } from './types';
-const getFirebaseStorageUrl = (p: string) => `https://firebasestorage.googleapis.com/v0/b/jaysmoneyguides.firebasestorage.app/o/${encodeURIComponent(p)}?alt=media`;
 
-// Covers: three books use artwork committed to /public/images/ebooks (always
-// available, no Firebase dependency). The others still point at Firebase
-// Storage (ebooks/covers/<name>); if that file is missing, EbookCover draws a
-// typeset cover instead.
+// Covers: every book uses artwork committed to /public/images/ebooks, so the
+// store never depends on Firebase Storage for images. If a file is ever
+// missing, EbookCover draws a typeset cover instead.
 
 export const PRODUCTS: Product[] = [
   {
@@ -62,7 +60,7 @@ export const PRODUCTS: Product[] = [
     title: 'Affiliate Marketing for Beginners',
     subtitle: 'Your first steps into profitable affiliate marketing',
     author: 'Jay',
-    coverImage: getFirebaseStorageUrl('ebooks/covers/Affiliate Marketing Cover Page Jaysmoneyguides ebook.webp'),
+    coverImage: '/images/ebooks/affiliate-marketing-for-beginners-ebook-cover.webp',
     priceCents: 0,
     isFree: true,
     category: 'Ebooks',
