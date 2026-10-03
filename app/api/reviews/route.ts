@@ -50,7 +50,7 @@ export async function GET() {
     });
 
     return NextResponse.json({ reviews }, {
-      headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' },
+      headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=60' },
     });
   } catch (err) {
     console.error('[reviews GET]', err);

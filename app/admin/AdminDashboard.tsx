@@ -270,7 +270,7 @@ function AnalyticsTab({ analyticsData }: { analyticsData: AnalyticsData | null }
 }
 
 // ── Tab: Reviews ──────────────────────────────────────────────────────────────
-function ReviewsTab({ token }: { token: string }) {
+function ReviewsTab({ getToken, onPending }: { getToken: () => Promise<string>; onPending: (n: number) => void }) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [acting, setActing] = useState<string | null>(null);
@@ -282,13 +282,13 @@ function ReviewsTab({ token }: { token: string }) {
   const fetchReviews = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/reviews', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await fetch('/api/admin/reviews', { headers: { Authorization: `Bearer ${await getToken()}` } });
       if (!res.ok) throw new Error(String(res.status));
       const data = await res.json() as { reviews: Review[] };
       setReviews(data.reviews || []);
     } catch { showToast('Failed to load reviews', 'error'); }
     finally { setLoading(false); }
-  }, [token]);
+  }, [getToken]);
 
   useEffect(() => { fetchReviews(); }, [fetchReviews]);
 
@@ -297,12 +297,12 @@ function ReviewsTab({ token }: { token: string }) {
     try {
       const res = await fetch('/api/admin/reviews', {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await getToken()}` },
         body: JSON.stringify({ id, approved }),
       });
       if (!res.ok) throw new Error(String(res.status));
       setReviews(prev => prev.map(r => r.id === id ? { ...r, approved } : r));
-      showToast(approved ? 'Review approved — it appears on the site within about 10 minutes' : 'Review hidden', 'success');
+      showToast(approved ? 'Review approved — it shows on the home page within a couple of minutes' : 'Review hidden', 'success');
     } catch { showToast('Failed', 'error'); }
     finally { setActing(null); }
   }
@@ -313,7 +313,7 @@ function ReviewsTab({ token }: { token: string }) {
     try {
       const res = await fetch('/api/admin/reviews', {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${await getToken()}` },
         body: JSON.stringify({ id }),
       });
       if (!res.ok) throw new Error(String(res.status));
@@ -330,6 +330,7 @@ function ReviewsTab({ token }: { token: string }) {
   });
 
   const pendingCount = reviews.filter(r => !r.approved).length;
+  useEffect(() => { if (!loading) onPending(pendingCount); }, [loading, pendingCount, onPending]);
 
   return (
     <div className="space-y-4">
@@ -661,6 +662,7 @@ export default function AdminDashboard() {
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [idToken, setIdToken] = useState('');
   const [unread, setUnread] = useState(0);
+  const [pending, setPending] = useState(0);
   const [googleBusy, setGoogleBusy] = useState(false);
   const getToken = useCallback(async () => (user ? user.getIdToken() : ''), [user]);
 
@@ -681,11 +683,16 @@ export default function AdminDashboard() {
     try {
       const token = await user.getIdToken();
       setIdToken(token);
-      const [statsRes, analyticsRes, messagesRes] = await Promise.all([
+      const [statsRes, analyticsRes, messagesRes, reviewsRes] = await Promise.all([
         fetch('/api/admin/stats', { headers: { Authorization: `Bearer ${token}` } }),
         fetch('/api/admin/analytics', { headers: { Authorization: `Bearer ${token}` } }),
         fetch('/api/admin/messages', { headers: { Authorization: `Bearer ${token}` } }),
+        fetch('/api/admin/reviews', { headers: { Authorization: `Bearer ${token}` } }),
       ]);
+      if (reviewsRes.ok) {
+        const r = await reviewsRes.json() as { reviews?: { approved: boolean }[] };
+        setPending((r.reviews || []).filter(x => !x.approved).length);
+      }
       if (statsRes.ok) setData(await statsRes.json() as AdminData);
       if (analyticsRes.ok) setAnalyticsData(await analyticsRes.json() as AnalyticsData);
       else setAnalyticsData({ articleStats: [], ebookStats: [], traffic: [] });
@@ -819,7 +826,7 @@ export default function AdminDashboard() {
     { id: 'traffic', label: 'Traffic', icon: Activity },
     { id: 'messages', label: 'Messages', icon: MessageSquare, badge: unread },
     { id: 'analytics', label: 'Content', icon: BarChart2 },
-    { id: 'reviews', label: 'Reviews', icon: Star },
+    { id: 'reviews', label: 'Reviews', icon: Star, badge: pending },
     { id: 'orders', label: 'Orders', icon: ShoppingBag },
     { id: 'subscribers', label: 'Subscribers', icon: Mail },
     { id: 'affiliate', label: 'Affiliate', icon: Link2 },
@@ -879,7 +886,7 @@ export default function AdminDashboard() {
         {tab === 'traffic' && <TrafficTab traffic={analyticsData ? analyticsData.traffic ?? [] : null} />}
         {tab === 'messages' && <MessagesTab getToken={getToken} onUnread={setUnread} />}
         {tab === 'analytics' && <AnalyticsTab analyticsData={analyticsData} />}
-        {tab === 'reviews' && <ReviewsTab token={idToken} />}
+        {tab === 'reviews' && <ReviewsTab getToken={getToken} onPending={setPending} />}
         {tab === 'orders' && <OrdersTab data={data} />}
         {tab === 'subscribers' && <SubscribersTab data={data} />}
         {tab === 'affiliate' && <AffiliateTab />}
