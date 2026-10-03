@@ -10,7 +10,7 @@ export default function Page() {
       <h2>Purchases &amp; downloads</h2>
       <ul>
         <li>Ebook purchases are processed securely via Stripe.</li>
-        <li>Digital products are delivered as downloads/links to the email provided at checkout.</li>
+        <li>Digital products are available to read and download on this site immediately after payment. Sign in with the email used at checkout to open them on any device.</li>
         <li>Because products are digital and delivered immediately, all sales are generally final. Contact us if you experience a delivery problem.</li>
       </ul>
       <h2>Intellectual property</h2>

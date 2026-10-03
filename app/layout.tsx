@@ -3,6 +3,8 @@ import './globals.css';
 import { SITE, SITE_NAME, organizationSchema, websiteSchema, personSchema } from '@/lib/seo';
 import { FixedHeader } from '@/components/client/FixedHeader';
 import { Footer } from '@/components/server/Footer';
+import { ConsentBanner } from '@/components/client/ConsentBanner';
+import { ADSENSE_CLIENT, ADSENSE_PUBLISHER, CONSENT_BOOTSTRAP } from '@/lib/consent';
 import { AuthProvider } from '@/components/client/AuthProvider';
 import { AuthModals } from '@/components/client/AuthModals';
 import { JsonLd } from '@/components/server/JsonLd';
@@ -95,42 +97,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* dns-prefetch fallback */}
         <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />
         <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
+        {/* AdSense site ownership — lets AdSense verify the site and match ads.txt */}
+        <meta name="google-adsense-account" content={ADSENSE_PUBLISHER} />
         {/*
-          Google AdSense script — loaded only after approval.
-          To activate: set NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX in .env.local
-          and in Vercel project settings. Script is omitted entirely when the env var is unset,
-          so there is zero performance cost before approval.
+          Consent first. This inline script must stay ABOVE every Google tag: it
+          sets Consent Mode v2 defaults from the visitor's stored choice, pauses
+          or de-personalises AdSense requests, and only downloads Google
+          Analytics once analytics is allowed. See lib/consent.ts.
         */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOTSTRAP }} />
         {/*
-          Google Analytics 4 — loaded only when NEXT_PUBLIC_GA_ID is set.
-          To activate: set NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX in .env.local
-          and in Vercel project settings. Zero performance cost before activation.
+          AdSense loader. It stays in the static HTML so AdSense can verify the
+          site; whether it may request ads, and whether they are personalised,
+          is controlled by the consent script above.
         */}
-        {process.env.NEXT_PUBLIC_GA_ID?.startsWith('G-') && (
-          <>
-            <script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            />
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { send_page_view: true });
-                `,
-              }}
-            />
-          </>
-        )}
-        {process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.startsWith('ca-pub-') && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-          />
-        )}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         {/* Sitewide structured data — server-rendered, zero JS cost */}
@@ -152,6 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {children}
             </main>
             <Footer />
+            <ConsentBanner />
           </AuthModals>
         </AuthProvider>
       </body>

@@ -1,3 +1,4 @@
+import { ConsentLinks } from '@/components/client/ConsentBanner';
 import Link from 'next/link';
 import {
   Mail, ArrowUp, TrendingUp, Zap, BookOpen, DollarSign,
@@ -197,6 +198,13 @@ export function Footer() {
         </nav>
       </div>
 
+      {/* ── Privacy choices: always one tap away, on every page ── */}
+      <div className="border-t border-slate-800/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 text-xs text-slate-400 text-center sm:text-left">
+          <ConsentLinks />
+        </div>
+      </div>
+
       {/* ── Bottom bar ── */}
       <div className="border-t border-slate-800/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
@@ -209,7 +217,6 @@ export function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-emerald-600/60 font-semibold hidden sm:inline">AdSense & FTC Compliant</span>
             <a
               href="#top"
               className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-emerald-500/20 border border-slate-700 hover:border-emerald-500/40 text-slate-400 hover:text-emerald-400 flex items-center justify-center transition-all"
