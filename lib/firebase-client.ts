@@ -26,26 +26,19 @@ import {
 |--------------------------------------------------------------------------
 */
 
+// Values pasted into Vercel sometimes carry quotes, spaces or "https://".
+// Any of those in authDomain makes the Google sign-in helper fail to load,
+// which Firebase reports only as auth/internal-error.
+const clean = (v?: string) => (v || '').trim().replace(/^["']|["']$/g, '');
+const hostOnly = (v?: string) => clean(v).replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
+
 const config = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-
-  authDomain:
-    process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ||
-    'jaysmoneyguides.firebaseapp.com',
-
-  projectId:
-    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
-    'jaysmoneyguides',
-
-  storageBucket:
-    process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ||
-    'jaysmoneyguides.firebasestorage.app',
-
-  messagingSenderId:
-    process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-
-  appId:
-    process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: clean(process.env.NEXT_PUBLIC_FIREBASE_API_KEY) || undefined,
+  authDomain: hostOnly(process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN) || 'jaysmoneyguides.firebaseapp.com',
+  projectId: clean(process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID) || 'jaysmoneyguides',
+  storageBucket: clean(process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET) || 'jaysmoneyguides.firebasestorage.app',
+  messagingSenderId: clean(process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID) || undefined,
+  appId: clean(process.env.NEXT_PUBLIC_FIREBASE_APP_ID) || undefined,
 };
 
 let app: FirebaseApp | null = null;
