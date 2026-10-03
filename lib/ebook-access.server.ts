@@ -25,7 +25,7 @@ export const PRODUCTS_CONFIG: Record<string, EbookConfig> = {
     priceCents: 999,
     isFree: false,
     storagePath: 'ebooks/downloads/1.JaysMoneyGuides_Affiliate_Marketing_For_Beginners_Vol_1.pdf',
-    coverImage: 'https://firebasestorage.googleapis.com/v0/b/jaysmoneyguides.firebasestorage.app/o/ebooks%2Fcovers%2Faffiliate%20marketing%20complete%20guide%20with%2030%20day%20program.webp?alt=media',
+    coverImage: 'https://www.jaysmoneyguides.com/images/ebooks/affiliate-marketing-in-2026-volume-1-ebook-cover.webp',
   },
   'ebook-seo-mastery-guide': {
     id: 'ebook-seo-mastery-guide',
@@ -33,7 +33,7 @@ export const PRODUCTS_CONFIG: Record<string, EbookConfig> = {
     priceCents: 999,
     isFree: false,
     storagePath: 'ebooks/downloads/3.Jaysmoneyguides complete seo guide.pdf',
-    coverImage: 'https://firebasestorage.googleapis.com/v0/b/jaysmoneyguides.firebasestorage.app/o/ebooks%2Fcovers%2Faffiliatemarketing jaysmoneyguides%20seo%20guide%20for%20beginners.webp?alt=media',
+    coverImage: 'https://www.jaysmoneyguides.com/images/ebooks/seo-a-beginners-guide-ebook-cover.webp',
   },
   'ebook-affiliate-beginners-free': {
     id: 'ebook-affiliate-beginners-free',
@@ -49,6 +49,7 @@ export const PRODUCTS_CONFIG: Record<string, EbookConfig> = {
     priceCents: 999,
     isFree: false,
     storagePath: 'ebooks/downloads/JaysMoneyGuides-How-to-Start-a-Successful-Blog.pdf',
+    coverImage: 'https://www.jaysmoneyguides.com/images/ebooks/how-to-build-a-blog-ebook-cover.webp',
   },
   'ebook-seo-digital-empire-blueprint': {
     id: 'ebook-seo-digital-empire-blueprint',

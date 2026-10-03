@@ -321,6 +321,12 @@ const EbookModal: React.FC<{
                   </li>
                 ))}
               </ul>
+              <a
+                href={`/ebooks/${product.slug}#look-inside-heading`}
+                className="mt-3 inline-flex items-center gap-1.5 min-h-[44px] text-sm font-semibold text-emerald-400 hover:text-emerald-300"
+              >
+                <Eye className="w-4 h-4" aria-hidden="true" /> Look inside — sample pages
+              </a>
             </div>
           )}
 

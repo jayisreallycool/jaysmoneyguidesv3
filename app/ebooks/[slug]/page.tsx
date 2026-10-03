@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { PRODUCTS, getProductBySlug, formatPrice } from '@/lib/products';
 import { CheckoutButton } from '@/components/client/CheckoutButton';
 import { EbookCover } from '@/components/ui/EbookCover';
+import { EbookLookInside } from '@/components/ui/EbookLookInside';
 import { ViewTracker } from '@/components/client/ViewTracker';
 import { JsonLd } from '@/components/server/JsonLd';
 import { SITE, ebookProductSchema, ebookBreadcrumbSchema, personSchema } from '@/lib/seo';
@@ -117,7 +118,8 @@ export default async function EbookPage(
           <div className="grid lg:grid-cols-[1fr_340px] gap-8 lg:gap-12 items-start">
 
             {/* ── LEFT: cover + details ── */}
-            <div>
+            {/* min-w-0: lets the swipeable Look Inside strip scroll inside the column instead of widening the page */}
+            <div className="min-w-0">
               {/* Mobile: cover + buy stacked */}
               <div className="flex flex-col sm:flex-row gap-6 mb-8">
 
@@ -202,6 +204,9 @@ export default async function EbookPage(
                   </div>
                 </section>
               )}
+
+              {/* ── Look inside: cover, contents, sample pages and diagrams ── */}
+              <EbookLookInside product={p} />
 
               {/* ── Who this is for ── */}
               <section className="mb-8">

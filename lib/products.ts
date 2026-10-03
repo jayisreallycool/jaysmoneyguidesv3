@@ -5,12 +5,10 @@
 import { Product } from './types';
 const getFirebaseStorageUrl = (p: string) => `https://firebasestorage.googleapis.com/v0/b/jaysmoneyguides.firebasestorage.app/o/${encodeURIComponent(p)}?alt=media`;
 
-// Ebook covers are served from Firebase Storage (bucket
-// jaysmoneyguides.firebasestorage.app) via getFirebaseStorageUrl, which builds
-// a tokenless ?alt=media URL against the real bucket. NOTE: for these to
-// render, the cover files must actually exist at ebooks/covers/<name> in
-// Storage AND Storage rules must allow public read of that path. If a cover is
-// missing the card falls back to its onError placeholder.
+// Covers: three books use artwork committed to /public/images/ebooks (always
+// available, no Firebase dependency). The others still point at Firebase
+// Storage (ebooks/covers/<name>); if that file is missing, EbookCover draws a
+// typeset cover instead.
 
 export const PRODUCTS: Product[] = [
   {
@@ -20,7 +18,7 @@ export const PRODUCTS: Product[] = [
     title: 'Affiliate Marketing Blueprint',
     subtitle: 'Complete guide to building profitable affiliate businesses',
     author: 'Jay',
-    coverImage: getFirebaseStorageUrl('ebooks/covers/affiliate marketing complete guide with 30 day program.webp'),
+    coverImage: '/images/ebooks/affiliate-marketing-in-2026-volume-1-ebook-cover.webp',
     priceCents: 999,
     isFree: false,
     category: 'Ebooks',
@@ -42,7 +40,7 @@ export const PRODUCTS: Product[] = [
     title: 'Complete SEO Mastery Guide',
     subtitle: 'Advanced techniques to rank on Google and drive organic traffic',
     author: 'Jay',
-    coverImage: getFirebaseStorageUrl('ebooks/covers/affiliatemarketingjaysmoneyguides seo guide for beginners.webp'),
+    coverImage: '/images/ebooks/seo-a-beginners-guide-ebook-cover.webp',
     priceCents: 999,
     isFree: false,
     category: 'Ebooks',
@@ -86,7 +84,7 @@ export const PRODUCTS: Product[] = [
     title: 'How to Start a Successful Blog',
     subtitle: 'Launch, grow, and monetize a blog that lasts',
     author: 'Jay',
-    coverImage: getFirebaseStorageUrl('ebooks/covers/affiliatemarketingjaysmoneyguides seo guide for beginners.webp'),
+    coverImage: '/images/ebooks/how-to-build-a-blog-ebook-cover.webp',
     priceCents: 999,
     isFree: false,
     category: 'Ebooks',
