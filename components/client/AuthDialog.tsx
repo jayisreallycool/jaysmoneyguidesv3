@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   X,
   Mail,
@@ -14,6 +14,7 @@ import {
   signInWithEmail,
   registerWithEmail,
   sendReset,
+  inAppBrowserName,
 } from '@/lib/firebase-client';
 
 type Mode = 'login' | 'register' | 'forgot';
@@ -34,6 +35,28 @@ export function AuthDialog({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
+
+  // Google refuses sign-in inside app browsers (TikTok, Instagram…), so say so
+  // up front instead of letting the visitor hit Google's error page.
+  const [inApp, setInApp] = useState('');
+  const [copied, setCopied] = useState(false);
+  useEffect(() => { setInApp(inAppBrowserName()); }, []);
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  };
+
+  // Close on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
 
   const changeMode = (newMode: Mode) => {
     setMode(newMode);
@@ -56,7 +79,7 @@ export function AuthDialog({
         return;
       }
 
-      setError(result.error);
+      setError(result.error || null); // empty = the visitor closed the Google window
     } catch (error) {
       console.error('Google login UI error:', error);
       setError('Google sign-in failed. Please try again.');
@@ -119,7 +142,10 @@ export function AuthDialog({
   return (
     <div
       className="fixed inset-0 z-[90] flex justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto overscroll-contain"
-      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Sign in"
+      onClick={loading ? undefined : onClose}
     >
       <div
         className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl my-auto"
@@ -145,7 +171,23 @@ export function AuthDialog({
           </button>
         </div>
 
-        {mode !== 'forgot' && (
+        {mode !== 'forgot' && inApp && (
+          <div className="mb-4 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 text-sm text-amber-100">
+            <p className="font-semibold text-white">Google sign-in is blocked {inApp === 'this app' ? 'inside apps' : `inside ${inApp}`}</p>
+            <p className="mt-1 leading-relaxed text-amber-100/90">
+              Open this page in Safari or Chrome (menu <span aria-hidden="true">⋯</span> → “Open in browser”), or use email and password below.
+            </p>
+            <button
+              type="button"
+              onClick={copyLink}
+              className="mt-2.5 rounded-lg bg-slate-900/70 px-3 py-2 text-xs font-bold text-white hover:bg-slate-900"
+            >
+              {copied ? 'Link copied — paste it in your browser' : 'Copy page link'}
+            </button>
+          </div>
+        )}
+
+        {mode !== 'forgot' && !inApp && (
           <>
             <button
               type="button"

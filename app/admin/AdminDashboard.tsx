@@ -693,7 +693,7 @@ export default function AdminDashboard() {
     setGoogleBusy(true);
     setLoginError('');
     const r = await signInWithGoogle();
-    if (!r.ok) setLoginError(r.error || 'Google sign-in did not complete');
+    if (!r.ok) setLoginError(r.error);
     setGoogleBusy(false);
   }
 
