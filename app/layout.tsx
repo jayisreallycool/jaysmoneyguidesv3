@@ -83,15 +83,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Preload critical hero image — reduces LCP */}
-        <link
-          rel="preload"
-          as="image"
-          href="/jay-affiliate-marketing-guides-hero-480.webp"
-          type="image/webp"
-          imageSrcSet="/jay-affiliate-marketing-guides-hero-480.webp 480w, /jay-affiliate-marketing-guides-hero-800.webp 800w, /jay-affiliate-marketing-guides-hero-1200.webp 1200w, /jay-affiliate-marketing-guides-hero.webp 1536w"
-          imageSizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1536px"
-        />
+        {/* The hero image is not preloaded here: this layout wraps every page, so a
+            preload made guide/legal pages download a hero they never show. On the
+            home page the <picture> is in the server HTML with fetchPriority="high". */}
         {/* Preload character avatar used in navbar */}
         <link rel="preload" as="image" href="/jay-character-small.webp" type="image/webp" />
         {/* Preconnect Firebase Storage for ebook covers */}

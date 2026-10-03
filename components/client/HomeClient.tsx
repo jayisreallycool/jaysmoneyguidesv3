@@ -109,7 +109,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
 
       {/* 3. Guides — direct navigation to /guide/[slug] */}
       <section id="guides" className="mx-auto max-w-7xl px-4 pt-12 pb-10" aria-label="Blog guides and articles">
-        <div className="mb-8">
+        <div className="mb-8 reveal">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-1">Latest Guides</h2>
           <p className="text-slate-400 text-sm">In-depth tutorials on affiliate marketing, SEO, blogging and more.</p>
         </div>
@@ -118,7 +118,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
         {featured && (
           <Link
             href={`/guide/${featured.slug}`}
-            className="group relative flex flex-col sm:flex-row gap-0 bg-slate-900 border border-emerald-500/20 hover:border-emerald-500/50 rounded-2xl overflow-hidden mb-8 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
+            className="reveal group relative flex flex-col sm:flex-row gap-0 bg-slate-900 border border-emerald-500/20 hover:border-emerald-500/50 rounded-2xl overflow-hidden mb-8 transition-all hover:shadow-xl hover:shadow-emerald-500/10"
             aria-label={`Featured guide: ${featured.title}`}
           >
             {/* Cover image */}
@@ -164,7 +164,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
           onSelectCategory={(c) => onSelectCategory(c)}
           postCounts={counts}
         />
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-children mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((post) => (
             <PostCard
               key={post.id}
@@ -218,7 +218,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       <ToolsBanner />
 
       {/* 6. Tools & Affiliate Programs */}
-      <section id="tools" className="mx-auto max-w-7xl px-4 pb-14" aria-label="Recommended tools and affiliate programs">
+      <section id="tools" className="reveal mx-auto max-w-7xl px-4 pb-14" aria-label="Recommended tools and affiliate programs">
         <ToolsHomepageSection />
       </section>
 

@@ -3,9 +3,9 @@ import { BookOpen, Sparkles, TrendingUp, Download, Zap, ArrowRight, Newspaper, S
 /** Slim full-width banner introducing the ebooks section. */
 export function EbooksBanner() {
   return (
-    <div className="relative w-full overflow-hidden border-y border-emerald-500/20 bg-gradient-to-r from-slate-950 via-emerald-950/40 to-slate-950">
+    <div className="relative w-full overflow-clip border-y border-emerald-500/20 bg-gradient-to-r from-slate-950 via-emerald-950/40 to-slate-950">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(16,185,129,0.08),transparent)]" aria-hidden />
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
+      <div className="reveal relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
         {/* Left: label + heading */}
         <div className="flex items-center gap-3 min-w-0">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500/15 border border-emerald-500/25">
@@ -32,9 +32,9 @@ export function EbooksBanner() {
 /** Slim full-width banner introducing the blog articles section. */
 export function BlogIntro() {
   return (
-    <div className="relative w-full overflow-hidden border-y border-sky-500/20 bg-gradient-to-r from-slate-950 via-sky-950/30 to-slate-950">
+    <div className="relative w-full overflow-clip border-y border-sky-500/20 bg-gradient-to-r from-slate-950 via-sky-950/30 to-slate-950">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(14,165,233,0.06),transparent)]" aria-hidden />
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
+      <div className="reveal relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
         {/* Left: label + heading */}
         <div className="flex items-center gap-3 min-w-0">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-500/15 border border-sky-500/25">
@@ -61,9 +61,9 @@ export function BlogIntro() {
 /** Slim full-width banner introducing the affiliate programs & tools section. */
 export function ToolsBanner() {
   return (
-    <div className="relative w-full overflow-hidden border-y border-amber-500/20 bg-gradient-to-r from-slate-950 via-amber-950/30 to-slate-950">
+    <div className="relative w-full overflow-clip border-y border-amber-500/20 bg-gradient-to-r from-slate-950 via-amber-950/30 to-slate-950">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(245,158,11,0.07),transparent)]" aria-hidden />
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
+      <div className="reveal relative mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-6 sm:flex-row sm:justify-between sm:gap-6 sm:py-5">
         {/* Left: label + heading */}
         <div className="flex items-center gap-3 min-w-0">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 border border-amber-500/25">

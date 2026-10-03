@@ -49,37 +49,31 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
   return (
     <div className="relative w-full min-h-[85svh] sm:min-h-[82svh] lg:min-h-[88svh] flex flex-col justify-center items-center text-center text-white py-10 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8 border-b border-emerald-500/25 overflow-hidden bg-slate-950">
 
-      {/* ── Hero background image — CSS parallax, zero JS scroll listeners ── */}
-      {/*
-        background-attachment:fixed creates native CSS parallax with no JS.
-        Disabled on mobile (bg-scroll) via Tailwind since iOS ignores fixed attachment.
-        fetchpriority="high" + loading="eager" ensures LCP loads first.
-        Responsive srcset: 800w mobile → 1200w tablet → 1440w desktop (88% smaller than source PNG).
-        Descriptive alt text for SEO and accessibility.
-      */}
-      <div
-        className="absolute inset-0 w-full h-full pointer-events-none z-0"
-        aria-hidden="true"
-      >
+      {/* ── Hero background: translucent image with CSS scroll-driven parallax
+          (see .hero-bg in globals.css). Loaded eagerly at high priority for LCP. ── */}
+      <div className="hero-bg z-0" aria-hidden="true">
+        <picture>
+          {/* One fixed file per breakpoint. A srcset with width descriptors made
+              3x phones download the full 1536px file (381 KB); behind a
+              translucent overlay the 800px file (110 KB) looks the same. */}
+          <source media="(max-width: 640px)" srcSet="/jay-affiliate-marketing-guides-hero-800.webp" type="image/webp" />
+          <source media="(max-width: 1280px)" srcSet="/jay-affiliate-marketing-guides-hero-1200.webp" type="image/webp" />
         <img
           src="/jay-affiliate-marketing-guides-hero.webp"
-          srcSet="/jay-affiliate-marketing-guides-hero-480.webp 480w, /jay-affiliate-marketing-guides-hero-800.webp 800w, /jay-affiliate-marketing-guides-hero-1200.webp 1200w, /jay-affiliate-marketing-guides-hero.webp 1536w"
-          sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 1536px"
           alt="JaysMoneyGuides by Jay Lopez — Affiliate Marketing Guides, Headless Shopify Stores, SaaS Solutions, Blogger and WordPress tutorials"
           width={1536}
           height={1024}
           fetchPriority="high"
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover object-center"
-          style={{
-            filter: 'brightness(1.15) contrast(1.05) saturate(1.08)',
-          }}
         />
+        </picture>
       </div>
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/10 to-slate-950/55 z-[1]" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/25 to-slate-950 z-[1]" aria-hidden="true" />
+      {/* Soft dark pool behind the headline for contrast */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_42%,rgba(2,6,23,0.55),transparent_75%)] z-[1]" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(16,185,129,0.12),_transparent_70%)] z-[1]" aria-hidden="true" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(16,185,129,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,185,129,0.08)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black_90%)] z-[2]" aria-hidden="true" />
 
@@ -96,7 +90,7 @@ export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) =>
       </div>
 
       {/* Content */}
-      <div className="max-w-5xl mx-auto text-center relative z-10 w-full">
+      <div className="hero-content max-w-5xl mx-auto text-center relative z-10 w-full">
 
         {/* Founder pill */}
         <div className="inline-flex items-center gap-2.5 bg-slate-900/90 border border-emerald-400/40 rounded-full px-4 py-1.5 text-xs text-slate-100 mb-6 shadow-xl backdrop-blur-xl animate-fadeIn">

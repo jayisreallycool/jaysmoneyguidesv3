@@ -574,7 +574,7 @@ export const StoreSection: React.FC<StoreSectionProps> = ({
     <section id="store" className="space-y-5 scroll-mt-24" aria-label="eBook store">
 
       {/* ── Header ── */}
-      <div className="flex items-start justify-between gap-3 flex-wrap">
+      <div className="reveal flex items-start justify-between gap-3 flex-wrap">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2.5 py-1 rounded-full">
