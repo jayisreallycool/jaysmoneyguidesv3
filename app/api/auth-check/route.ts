@@ -37,11 +37,13 @@ export async function GET(req: Request) {
   const apiKey = clean(process.env.NEXT_PUBLIC_FIREBASE_API_KEY);
   const rawAuthDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN;
   const authDomain = host(rawAuthDomain) || 'jaysmoneyguides.firebaseapp.com';
+  const appCheckKeySet = Boolean(clean(process.env.NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY));
   const problems: string[] = [];
 
   const settings = {
     apiKeySet: Boolean(apiKey),
     appIdSet: Boolean(clean(process.env.NEXT_PUBLIC_FIREBASE_APP_ID)),
+    appCheckKeySet: Boolean(clean(process.env.NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY)),
     projectId: clean(process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID) || 'jaysmoneyguides (default)',
     authDomain,
     authDomainAsTypedInVercel: rawAuthDomain ?? '(not set — using default)',
@@ -105,7 +107,13 @@ export async function GET(req: Request) {
     let started = false;
     try { started = Boolean(JSON.parse(g.body)?.authUri); } catch { /* error body */ }
     googleProvider = { status: g.status, canStart: started, error: started ? '' : apiError(g.body) };
-    if (!started) {
+    if (!started && /app check/i.test(g.body)) {
+      problems.push(
+        'App Check enforcement is switched ON for Authentication, and the site is not passing it' +
+        (appCheckKeySet ? ' (the reCAPTCHA key in NEXT_PUBLIC_FIREBASE_APPCHECK_SITE_KEY is being rejected).' : ' (no App Check key is set in Vercel).') +
+        ' This blocks every sign-in. Fix: Firebase console → App Check → APIs → Authentication → Unenforce.'
+      );
+    } else if (!started) {
       problems.push(`Firebase could not start a Google sign-in (${g.status}${apiError(g.body) ? ` — ${apiError(g.body)}` : ''}). Check Authentication → Sign-in method → Google: it must be enabled and have a support email.`);
     }
   }
