@@ -80,6 +80,9 @@ function localFreeFile(product: EbookConfig): string {
   return product.isFree && publicFileExists(path) ? path : '';
 }
 
+/** Emails proven verified during this request cycle (admin shortcut needs a verified address). */
+const verifiedEmails = new Set<string>();
+
 async function authenticatedEmail(req: Request): Promise<string | null> {
   const header = req.headers.get('authorization') || '';
   if (!header.startsWith('Bearer ')) return null;
@@ -89,6 +92,7 @@ async function authenticatedEmail(req: Request): Promise<string | null> {
     const auth = (await admin())?.adminAuth();
     if (!auth) return null;
     const decoded = await auth.verifyIdToken(token);
+    verifiedEmails.add(decoded.email_verified === true ? decoded.email?.toLowerCase().trim() || '' : '');
     return decoded.email?.toLowerCase().trim() || null;
   } catch {
     return null;
@@ -179,7 +183,7 @@ export async function GET(req: Request) {
         return json({ error: 'Please sign in with the email you used at checkout.', code: 'AUTH_REQUIRED' }, 401);
       }
       const fb = await admin();
-      allowed = Boolean(fb?.isAdminEmail(email)) || (await hasEntitlement(email, productId));
+      allowed = (verifiedEmails.has(email) && Boolean(fb?.isAdminEmail(email))) || (await hasEntitlement(email, productId));
       if (!allowed) {
         return json({ error: 'This ebook has not been purchased on this account.', code: 'PURCHASE_REQUIRED' }, 403);
       }

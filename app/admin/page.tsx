@@ -1,39 +1,16 @@
-import { redirect } from 'next/navigation';
-import { adminAuth, isAdminEmail } from '@/lib/firebase-admin';
-import { cookies } from 'next/headers';
 import AdminDashboard from './AdminDashboard';
 
-export const metadata = { title: 'Admin — JaysMoneyGuides', robots: 'noindex,nofollow' };
+export const metadata = { title: 'Admin', robots: { index: false, follow: false } };
 
 /**
- * Server-side admin guard. Firebase ID tokens are short-lived (1 hour) and
- * must be sent as a __session cookie for server-side verification here.
- * The AdminDashboard client component handles the actual auth flow and
- * refreshes the cookie via its existing Firebase session.
+ * The admin console.
  *
- * On first load, if no valid admin session cookie is present we redirect to
- * /login. The client re-verifies on mount anyway — this is defence-in-depth.
+ * This page itself holds no data. Everything it shows is fetched from
+ * /api/admin/* and every one of those routes checks, on the server, that the
+ * request carries a valid Firebase sign-in for the single admin account with a
+ * verified email (verifyAdminRequest in lib/firebase-admin.ts). Anyone else
+ * sees only the sign-in screen or a "not available" notice.
  */
-async function verifyAdminSession(): Promise<boolean> {
-  try {
-    const auth = adminAuth();
-    if (!auth) return false;
-
-    const cookieStore = await cookies();
-    const sessionToken = cookieStore.get('__session')?.value;
-    if (!sessionToken) return false;
-
-    const decoded = await auth.verifyIdToken(sessionToken);
-    return isAdminEmail(decoded.email);
-  } catch {
-    return false;
-  }
-}
-
-export default async function AdminPage() {
-  const isAdmin = await verifyAdminSession();
-  if (!isAdmin) {
-    redirect('/login?from=admin');
-  }
+export default function AdminPage() {
   return <AdminDashboard />;
 }

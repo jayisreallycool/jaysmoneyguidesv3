@@ -108,15 +108,29 @@ export function adminBucket() {
 }
 
 /**
- * Admin emails allowed to access any ebook.
+ * The site has exactly one admin. This is the single server-side source of
+ * truth; keep lib/admin-config.ts, firestore.rules and storage.rules in step.
  */
+export const ADMIN_EMAIL = 'jayisreallycool@gmail.com';
+
 export function isAdminEmail(email?: string | null): boolean {
-  if (!email) return false;
+  return !!email && email.trim().toLowerCase() === ADMIN_EMAIL;
+}
 
-  const admins = [
-    'jayisreallycool@gmail.com',
-    'buddhacmd02@gmail.com',
-  ];
-
-  return admins.includes(email.toLowerCase());
+/**
+ * True only for a signed-in, EMAIL-VERIFIED admin. The verified check
+ * matters: without it, anyone could create a password account using the
+ * admin's address (before the admin ever registered it) and be let in.
+ */
+export async function verifyAdminRequest(req: Request): Promise<boolean> {
+  const auth = adminAuth();
+  if (!auth) return false;
+  const authorization = req.headers.get('authorization') || '';
+  if (!authorization.startsWith('Bearer ')) return false;
+  try {
+    const decoded = await auth.verifyIdToken(authorization.slice(7).trim());
+    return decoded.email_verified === true && isAdminEmail(decoded.email);
+  } catch {
+    return false;
+  }
 }

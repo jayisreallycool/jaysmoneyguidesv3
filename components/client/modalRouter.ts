@@ -11,6 +11,7 @@ export const MODAL_TO_ROUTE: Record<string, string> = {
   disclaimer: '/disclaimer',
   'cookie-policy': '/cookie-policy',
   contact: '/contact',
+  admin: '/admin',
   ebooks: '/#ebooks',
   store: '/#ebooks',
 };

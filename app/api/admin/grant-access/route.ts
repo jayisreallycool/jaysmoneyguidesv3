@@ -1,19 +1,8 @@
-import { adminAuth, adminDb, isAdminEmail } from '@/lib/firebase-admin';
+import { adminDb, verifyAdminRequest } from '@/lib/firebase-admin';
 
 export const runtime = 'nodejs';
 
-async function verifyAdmin(req: Request): Promise<boolean> {
-  const auth = adminAuth();
-  if (!auth) return false;
-  const authorization = req.headers.get('authorization') || '';
-  if (!authorization.startsWith('Bearer ')) return false;
-  try {
-    const decoded = await auth.verifyIdToken(authorization.slice(7).trim());
-    return isAdminEmail(decoded.email);
-  } catch {
-    return false;
-  }
-}
+const verifyAdmin = (req: Request) => verifyAdminRequest(req);
 
 export async function POST(req: Request) {
   if (!(await verifyAdmin(req))) return Response.json({ error: 'Unauthorized' }, { status: 401 });

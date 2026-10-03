@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     const email = decoded.email?.trim().toLowerCase();
     if (!email) return Response.json({ productIds: [] });
 
-    if (isAdminEmail(email)) return Response.json({ productIds: Object.keys(PRODUCTS_CONFIG) });
+    if (decoded.email_verified === true && isAdminEmail(email)) return Response.json({ productIds: Object.keys(PRODUCTS_CONFIG) });
 
     const snapshot = await db.collection('entitlements').where('email', '==', email).get();
     const productIds = snapshot.docs

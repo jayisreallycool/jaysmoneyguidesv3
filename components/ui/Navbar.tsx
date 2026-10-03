@@ -13,7 +13,7 @@ import { PRODUCTS } from '@/lib/products';
 import { GoogleAdSenseBanner } from './GoogleAdSenseBanner';
 
 // Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
-const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+const ADMIN_EMAILS = ['jayisreallycool@gmail.com'];
 const isAdminEmailClient = (email?: string | null) =>
   !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 

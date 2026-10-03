@@ -4,6 +4,7 @@ import { SITE, SITE_NAME, organizationSchema, websiteSchema, personSchema } from
 import { FixedHeader } from '@/components/client/FixedHeader';
 import { Footer } from '@/components/server/Footer';
 import { ConsentBanner } from '@/components/client/ConsentBanner';
+import { TrafficTracker } from '@/components/client/TrafficTracker';
 import { ADSENSE_CLIENT, ADSENSE_PUBLISHER, CONSENT_BOOTSTRAP } from '@/lib/consent';
 import { AuthProvider } from '@/components/client/AuthProvider';
 import { AuthModals } from '@/components/client/AuthModals';
@@ -138,6 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </main>
             <Footer />
             <ConsentBanner />
+            <TrafficTracker />
           </AuthModals>
         </AuthProvider>
       </body>

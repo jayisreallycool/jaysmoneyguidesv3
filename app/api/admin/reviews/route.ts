@@ -1,18 +1,9 @@
-import { adminAuth, adminDb, isAdminEmail } from '@/lib/firebase-admin';
+import { adminDb, verifyAdminRequest } from '@/lib/firebase-admin';
 import { NextRequest } from 'next/server';
 
 export const runtime = 'nodejs';
 
-async function verifyAdmin(req: NextRequest): Promise<boolean> {
-  const auth = adminAuth();
-  if (!auth) return false;
-  const authorization = req.headers.get('authorization') || '';
-  if (!authorization.startsWith('Bearer ')) return false;
-  try {
-    const decoded = await auth.verifyIdToken(authorization.slice(7).trim());
-    return isAdminEmail(decoded.email);
-  } catch { return false; }
-}
+const verifyAdmin = (req: Request) => verifyAdminRequest(req);
 
 // GET — list all pending + approved reviews
 export async function GET(req: NextRequest) {

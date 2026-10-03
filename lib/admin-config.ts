@@ -10,7 +10,6 @@
  */
 export const ADMIN_EMAILS: readonly string[] = [
   'jayisreallycool@gmail.com',
-  'buddhacmd02@gmail.com',
 ];
 
 /** UI helper — returns true if email belongs to an admin. */

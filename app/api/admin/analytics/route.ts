@@ -1,20 +1,28 @@
-import { adminAuth, adminDb, isAdminEmail } from '@/lib/firebase-admin';
+import { adminDb, verifyAdminRequest } from '@/lib/firebase-admin';
 import { NextRequest } from 'next/server';
 import { INITIAL_POSTS } from '@/lib/posts-data/initialPosts';
 import { PRODUCTS } from '@/lib/products';
 
 export const runtime = 'nodejs';
 
-async function verifyAdmin(req: NextRequest): Promise<boolean> {
-  const auth = adminAuth();
-  if (!auth) return false;
-  const authorization = req.headers.get('authorization') || '';
-  if (!authorization.startsWith('Bearer ')) return false;
-  try {
-    const decoded = await auth.verifyIdToken(authorization.slice(7).trim());
-    return isAdminEmail(decoded.email);
-  } catch { return false; }
+interface TrafficDay {
+  date: string;
+  views: number;
+  visits: number;
+  pages: Record<string, number>;
+  referrers: Record<string, number>;
+  devices: Record<string, number>;
+  countries: Record<string, number>;
 }
+
+const num = (v: unknown) => (typeof v === 'number' && Number.isFinite(v) ? v : 0);
+function counts(v: unknown): Record<string, number> {
+  const out: Record<string, number> = {};
+  if (v && typeof v === 'object') for (const [k, n] of Object.entries(v)) if (num(n) > 0) out[k] = num(n);
+  return out;
+}
+
+const verifyAdmin = (req: Request) => verifyAdminRequest(req);
 
 export async function GET(req: NextRequest) {
   if (!(await verifyAdmin(req))) return Response.json({ error: 'Unauthorized' }, { status: 401 });
@@ -57,7 +65,33 @@ export async function GET(req: NextRequest) {
       opens: opensByProduct[p.id] ?? 0,
     })).sort((a, b) => b.opens - a.opens);
 
-    return Response.json({ articleStats, ebookStats });
+    // Site traffic: the last 30 days of daily totals (written by /api/analytics/hit).
+    // Kept separate so a problem here never hides the stats above.
+    let traffic: TrafficDay[] = [];
+    try {
+      const days: string[] = [];
+      const today = new Date();
+      for (let i = 29; i >= 0; i--) {
+        days.push(new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate() - i)).toISOString().slice(0, 10));
+      }
+      const snaps = await db.getAll(...days.map(d => db.collection('traffic_daily').doc(d)));
+      traffic = snaps.map((snap, i) => {
+        const d = snap.exists ? snap.data() ?? {} : {};
+        return {
+          date: days[i],
+          views: num(d.views),
+          visits: num(d.visits),
+          pages: counts(d.pages),
+          referrers: counts(d.referrers),
+          devices: counts(d.devices),
+          countries: counts(d.countries),
+        };
+      });
+    } catch (err) {
+      console.error('[admin analytics] traffic', err);
+    }
+
+    return Response.json({ articleStats, ebookStats, traffic });
   } catch (err) {
     console.error('[admin analytics]', err);
     return Response.json({ error: 'Failed' }, { status: 500 });

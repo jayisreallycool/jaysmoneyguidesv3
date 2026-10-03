@@ -1,18 +1,21 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
-import { getFirebaseAuth } from '@/lib/firebase-client';
+import { getFirebaseAuth, signInWithGoogle } from '@/lib/firebase-client';
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut, User } from 'firebase/auth';
 import {
   LayoutDashboard, ShoppingBag, Users, BookOpen,
   LogOut, RefreshCw, Gift, TrendingUp, Mail, X, CheckCircle, AlertCircle,
   BarChart2, Star, Check, Trash2, Eye, ExternalLink, ChevronUp, ChevronDown,
-  FileText, Link2,
+  FileText, Link2, Activity, MessageSquare, ShieldAlert,
 } from 'lucide-react';
 import { PRODUCTS } from '@/lib/products';
 import { isAdminEmailClient } from '@/lib/admin-config';
+import { Toast, StatCard, SectionHeader, Badge, Card, formatDate } from './ui';
+import { TrafficTab, type TrafficDay } from './TrafficTab';
+import { MessagesTab } from './MessagesTab';
 
-type Tab = 'overview' | 'analytics' | 'reviews' | 'orders' | 'subscribers' | 'affiliate' | 'access';
+type Tab = 'overview' | 'traffic' | 'messages' | 'analytics' | 'reviews' | 'orders' | 'subscribers' | 'affiliate' | 'access';
 
 // ── Shared types ──────────────────────────────────────────────────────────────
 interface Stats { totalOrders: number; totalSubscribers: number; revenue: string; paidOrders: number; }
@@ -21,7 +24,7 @@ interface Subscriber { email: string; subscribedAt: string; source: string; }
 interface AdminData { stats: Stats; orders: Order[]; subscribers: Subscriber[]; }
 interface ArticleStat { slug: string; title: string; category: string; views: number; }
 interface EbookStat { id: string; title: string; isFree: boolean; priceCents: number; opens: number; }
-interface AnalyticsData { articleStats: ArticleStat[]; ebookStats: EbookStat[]; }
+interface AnalyticsData { articleStats: ArticleStat[]; ebookStats: EbookStat[]; traffic?: TrafficDay[]; }
 interface Review { id: string; name: string; avatar: string; role?: string; rating: number; text: string; date: string; approved: boolean; createdAt: string; ip?: string; }
 
 // ── Affiliate program tracker (local config — edit as needed) ─────────────────
@@ -50,79 +53,6 @@ const AFFILIATE_PROGRAMS: AffiliateProgram[] = [
   { name: 'Zapier', domain: 'zapier.com', network: 'Direct', commission: '15% recurring', cookieDays: 30, status: 'active', notes: 'Featured in automation and no-code guides.', signupUrl: 'https://zapier.com/affiliate' },
   { name: 'Namecheap', domain: 'namecheap.com', network: 'Direct', commission: '35% first purchase', cookieDays: 30, status: 'active', notes: 'Domain + hosting rec for new bloggers.', signupUrl: 'https://www.namecheap.com/affiliates/' },
 ];
-
-// ── Utility components ────────────────────────────────────────────────────────
-function Toast({ message, type, onClose }: { message: string; type: 'success' | 'error'; onClose: () => void }) {
-  useEffect(() => { const t = setTimeout(onClose, 3500); return () => clearTimeout(t); }, [onClose]);
-  return (
-    <div className={`fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium shadow-xl ${type === 'success' ? 'bg-emerald-600 text-white' : 'bg-red-600 text-white'}`}>
-      {type === 'success' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}
-      {message}
-      <button onClick={onClose} className="ml-2 opacity-70 hover:opacity-100"><X size={14} /></button>
-    </div>
-  );
-}
-
-function StatCard({ label, value, sub, icon: Icon, accent = 'emerald' }: {
-  label: string; value: string | number; sub?: string; icon: React.ElementType; accent?: 'emerald' | 'amber' | 'sky' | 'violet';
-}) {
-  const colors: Record<string, string> = {
-    emerald: 'bg-emerald-500/10 text-emerald-400',
-    amber: 'bg-amber-500/10 text-amber-400',
-    sky: 'bg-sky-500/10 text-sky-400',
-    violet: 'bg-violet-500/10 text-violet-400',
-  };
-  return (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-      <div className="flex items-start justify-between mb-3">
-        <span className="text-slate-400 text-xs font-medium uppercase tracking-wide">{label}</span>
-        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${colors[accent]}`}>
-          <Icon size={16} />
-        </div>
-      </div>
-      <div className="text-2xl font-bold text-white">{value}</div>
-      {sub && <div className="text-xs text-slate-500 mt-1">{sub}</div>}
-    </div>
-  );
-}
-
-function SectionHeader({ title, sub }: { title: string; sub?: string }) {
-  return (
-    <div className="mb-4">
-      <h2 className="font-bold text-white text-base">{title}</h2>
-      {sub && <p className="text-slate-400 text-xs mt-0.5">{sub}</p>}
-    </div>
-  );
-}
-
-function Badge({ children, color }: { children: React.ReactNode; color: 'emerald' | 'amber' | 'sky' | 'rose' | 'slate' }) {
-  const cls: Record<string, string> = {
-    emerald: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    amber: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    sky: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
-    rose: 'bg-rose-500/10 text-rose-400 border-rose-500/20',
-    slate: 'bg-slate-800 text-slate-400 border-slate-700',
-  };
-  return (
-    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold border ${cls[color]}`}>
-      {children}
-    </span>
-  );
-}
-
-function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`bg-slate-900 border border-slate-800 rounded-2xl p-5 ${className}`}>
-      {children}
-    </div>
-  );
-}
-
-function formatDate(iso: string) {
-  if (!iso) return '—';
-  try { return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
-  catch { return iso; }
-}
 
 function productName(id: string) {
   return PRODUCTS.find(p => p.id === id)?.title || id;
@@ -698,6 +628,9 @@ export default function AdminDashboard() {
   const [loggingIn, setLoggingIn] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [idToken, setIdToken] = useState('');
+  const [unread, setUnread] = useState(0);
+  const [googleBusy, setGoogleBusy] = useState(false);
+  const getToken = useCallback(async () => (user ? user.getIdToken() : ''), [user]);
 
   useEffect(() => {
     const firebaseAuth = getFirebaseAuth();
@@ -716,12 +649,21 @@ export default function AdminDashboard() {
     try {
       const token = await user.getIdToken();
       setIdToken(token);
-      const [statsRes, analyticsRes] = await Promise.all([
+      const [statsRes, analyticsRes, messagesRes] = await Promise.all([
         fetch('/api/admin/stats', { headers: { Authorization: `Bearer ${token}` } }),
         fetch('/api/admin/analytics', { headers: { Authorization: `Bearer ${token}` } }),
+        fetch('/api/admin/messages', { headers: { Authorization: `Bearer ${token}` } }),
       ]);
       if (statsRes.ok) setData(await statsRes.json() as AdminData);
       if (analyticsRes.ok) setAnalyticsData(await analyticsRes.json() as AnalyticsData);
+      else setAnalyticsData({ articleStats: [], ebookStats: [], traffic: [] });
+      if (messagesRes.ok) {
+        const m = await messagesRes.json() as { messages?: { read: boolean }[] };
+        setUnread((m.messages || []).filter(x => !x.read).length);
+      }
+      if (!statsRes.ok || !analyticsRes.ok) {
+        setToast({ message: statsRes.status === 401 ? 'The server did not accept this sign-in' : 'Some data could not be loaded', type: 'error' });
+      }
     } catch {
       setToast({ message: 'Failed to load data', type: 'error' });
     } finally {
@@ -729,7 +671,8 @@ export default function AdminDashboard() {
     }
   }, [user]);
 
-  useEffect(() => { if (isAdmin) fetchAll(); }, [isAdmin, fetchAll]);
+  const verified = !!user?.emailVerified;
+  useEffect(() => { if (isAdmin && verified) fetchAll(); }, [isAdmin, verified, fetchAll]);
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -746,35 +689,91 @@ export default function AdminDashboard() {
     }
   }
 
+  async function handleGoogle() {
+    setGoogleBusy(true);
+    setLoginError('');
+    const r = await signInWithGoogle();
+    if (!r.ok) setLoginError(r.error || 'Google sign-in did not complete');
+    setGoogleBusy(false);
+  }
+
+  const doSignOut = () => { const a = getFirebaseAuth(); if (a) signOut(a); };
+
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <div className="min-h-[70vh] flex items-center justify-center">
         <div className="w-6 h-6 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
 
-  if (!user || !isAdmin) {
+  // Signed in, but not the owner: say nothing about what is behind this page.
+  if (user && !isAdmin) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
+      <div className="min-h-[70vh] flex items-center justify-center p-4">
+        <div className="w-full max-w-sm bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center">
+          <ShieldAlert size={28} className="mx-auto mb-3 text-slate-500" aria-hidden="true" />
+          <h1 className="text-lg font-bold text-white">This page isn&apos;t available</h1>
+          <p className="text-slate-400 text-sm mt-2">It is not part of your account.</p>
+          <div className="mt-6 flex flex-col gap-2">
+            <a href="/" className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3 rounded-xl text-sm">Back to the site</a>
+            <button onClick={doSignOut} className="text-slate-400 hover:text-white text-sm py-2 cursor-pointer">Sign out</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // The owner, signed in with a password on an address that was never verified.
+  // The server only accepts a verified email, so send them to Google sign-in.
+  if (user && isAdmin && !verified) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center p-4">
+        <div className="w-full max-w-sm bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center">
+          <ShieldAlert size={28} className="mx-auto mb-3 text-amber-400" aria-hidden="true" />
+          <h1 className="text-lg font-bold text-white">Confirm it&apos;s you</h1>
+          <p className="text-slate-400 text-sm mt-2">For safety, the admin console only opens for a verified email. Sign in with your Google account to continue.</p>
+          {loginError && <p className="text-red-400 text-sm mt-3">{loginError}</p>}
+          <div className="mt-6 flex flex-col gap-2">
+            <button onClick={async () => { doSignOut(); await handleGoogle(); }} disabled={googleBusy}
+              className="bg-white hover:bg-slate-100 disabled:opacity-50 text-slate-900 font-semibold py-3 rounded-xl text-sm cursor-pointer">
+              {googleBusy ? 'Opening Google…' : 'Continue with Google'}
+            </button>
+            <button onClick={doSignOut} className="text-slate-400 hover:text-white text-sm py-2 cursor-pointer">Sign out</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-[70vh] flex items-center justify-center p-4">
         <div className="w-full max-w-sm bg-slate-900 border border-slate-800 rounded-2xl p-8">
           <div className="text-center mb-6">
             <div className="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mx-auto mb-3">
               <LayoutDashboard size={24} className="text-emerald-400" />
             </div>
-            <h1 className="text-xl font-bold text-white">Admin</h1>
+            <h1 className="text-xl font-bold text-white">Owner sign-in</h1>
             <p className="text-slate-400 text-sm mt-1">JaysMoneyGuides</p>
+          </div>
+          <button type="button" onClick={handleGoogle} disabled={googleBusy}
+            className="w-full bg-white hover:bg-slate-100 disabled:opacity-50 text-slate-900 font-semibold py-3 rounded-xl transition-colors text-sm cursor-pointer">
+            {googleBusy ? 'Opening Google…' : 'Continue with Google'}
+          </button>
+          <div className="my-4 flex items-center gap-3 text-[11px] uppercase tracking-wider text-slate-600">
+            <span className="h-px flex-1 bg-slate-800" />or<span className="h-px flex-1 bg-slate-800" />
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <input type="email" value={loginEmail} onChange={e => setLoginEmail(e.target.value)}
-              placeholder="Email" required autoComplete="email"
+              placeholder="Email" required autoComplete="email" aria-label="Email"
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" />
             <input type="password" value={loginPassword} onChange={e => setLoginPassword(e.target.value)}
-              placeholder="Password" required autoComplete="current-password"
+              placeholder="Password" required autoComplete="current-password" aria-label="Password"
               className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors" />
             {loginError && <p className="text-red-400 text-sm">{loginError}</p>}
             <button type="submit" disabled={loggingIn}
-              className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-semibold py-3 rounded-xl transition-colors text-sm">
+              className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-semibold py-3 rounded-xl transition-colors text-sm cursor-pointer">
               {loggingIn ? 'Signing in…' : 'Sign In'}
             </button>
           </form>
@@ -785,7 +784,9 @@ export default function AdminDashboard() {
 
   const tabs: { id: Tab; label: string; icon: React.ElementType; badge?: number }[] = [
     { id: 'overview', label: 'Overview', icon: TrendingUp },
-    { id: 'analytics', label: 'Analytics', icon: BarChart2 },
+    { id: 'traffic', label: 'Traffic', icon: Activity },
+    { id: 'messages', label: 'Messages', icon: MessageSquare, badge: unread },
+    { id: 'analytics', label: 'Content', icon: BarChart2 },
     { id: 'reviews', label: 'Reviews', icon: Star },
     { id: 'orders', label: 'Orders', icon: ShoppingBag },
     { id: 'subscribers', label: 'Subscribers', icon: Mail },
@@ -794,11 +795,11 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-[70vh] bg-slate-950 text-white">
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
 
       {/* Header */}
-      <header className="border-b border-slate-800 bg-slate-950/90 backdrop-blur-sm sticky top-0 z-40">
+      <header className="border-b border-slate-800">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <LayoutDashboard size={17} className="text-emerald-400" />
@@ -816,7 +817,7 @@ export default function AdminDashboard() {
               <ExternalLink size={12} /> View Site
             </a>
             <span className="text-slate-500 text-xs hidden md:inline truncate max-w-[160px]">{user.email}</span>
-            <button onClick={() => { const a = getFirebaseAuth(); if (a) signOut(a); }}
+            <button onClick={doSignOut}
               className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-800 transition-colors">
               <LogOut size={13} />
               <span className="hidden sm:inline">Sign out</span>
@@ -835,6 +836,7 @@ export default function AdminDashboard() {
                 <t.icon size={13} />
                 <span className="hidden sm:inline">{t.label}</span>
                 <span className="sm:hidden">{t.label.split(' ')[0]}</span>
+                {!!t.badge && <span className="rounded-full bg-rose-500 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">{t.badge}</span>}
               </button>
             ))}
           </div>
@@ -842,6 +844,8 @@ export default function AdminDashboard() {
 
         {/* Tab content */}
         {tab === 'overview' && <OverviewTab data={data} analyticsData={analyticsData} />}
+        {tab === 'traffic' && <TrafficTab traffic={analyticsData ? analyticsData.traffic ?? [] : null} />}
+        {tab === 'messages' && <MessagesTab getToken={getToken} onUnread={setUnread} />}
         {tab === 'analytics' && <AnalyticsTab analyticsData={analyticsData} />}
         {tab === 'reviews' && <ReviewsTab token={idToken} />}
         {tab === 'orders' && <OrdersTab data={data} />}

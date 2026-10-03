@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 import { User, BlogPost } from '@/lib/types';
 // Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
-const ADMIN_EMAILS = ['jayisreallycool@gmail.com', 'buddhacmd02@gmail.com'];
+const ADMIN_EMAILS = ['jayisreallycool@gmail.com'];
 const isAdminEmailClient = (email?: string | null) =>
   !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 

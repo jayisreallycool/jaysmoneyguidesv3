@@ -50,6 +50,14 @@ export default function Page() {
         <li><strong>Small preferences</strong> &mdash; for example, remembering that you closed the newsletter prompt.</li>
       </ul>
 
+      <h2>Page-view counting (no cookies)</h2>
+      <p>
+        Separately from the cookies on this page, our own server keeps simple daily totals: how many pages were opened,
+        which pages, the site a visit came from, the country, and whether it was a phone, tablet or computer. This uses
+        no cookies, stores nothing on your device, and does not record your IP address or anything that identifies you
+        &mdash; only the totals are kept.
+      </p>
+
       <h2>Analytics (optional)</h2>
       <p>
         Google Analytics helps us see how many people visit and which guides are useful. It uses cookies such as{' '}
