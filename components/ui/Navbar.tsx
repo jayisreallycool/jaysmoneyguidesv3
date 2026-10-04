@@ -369,7 +369,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                           <ShoppingBag className="w-3 h-3" aria-hidden="true" /> eBook Store
                         </span>
                         <span className="text-[10px] text-teal-400 font-bold flex items-center gap-1">
-                          <Zap className="w-3 h-3" aria-hidden="true" /> 30+ Tools
+                          <Zap className="w-3 h-3" aria-hidden="true" /> 25 Tools
                         </span>
                       </div>
                     </div>
@@ -440,7 +440,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       {[
                         { icon: BookOpen, label: 'All Blueprints', badge: String(totalPostsCount), action: () => handleSelectCategory('All'), iconColor: 'text-emerald-400' },
                         { icon: ShoppingBag, label: 'eBook Store', badge: 'STORE', badgeClass: 'text-amber-300 bg-amber-500/10 border-amber-500/20', action: () => scrollTo('ebooks'), iconColor: 'text-amber-400' },
-                        { icon: Zap, label: 'Tools & Programs', badge: '30+', action: () => { close(); }, href: '/tools', iconColor: 'text-yellow-400' },
+                        { icon: Zap, label: 'Tools & Programs', badge: '25', action: () => { close(); }, href: '/tools', iconColor: 'text-yellow-400' },
                         { icon: Award, label: 'SoFi Bank Guides', badge: 'NEW', badgeClass: 'text-blue-300 bg-blue-500/10 border-blue-500/20', action: close, href: '/sofi-bank', iconColor: 'text-blue-400' },
                         { icon: Calculator, label: 'ROI Calculator', action: () => scrollTo('affiliate-calculator-section'), iconColor: 'text-emerald-400' },
                         { icon: FileText, label: 'Blog', href: '/blog', action: close, iconColor: 'text-blue-400' },

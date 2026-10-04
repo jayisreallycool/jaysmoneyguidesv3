@@ -132,7 +132,11 @@ This means periodically revisiting official search engine guidance directly, rat
 
 
 
-To build lasting search visibility, develop topical authority within your niche using our proven authority-building strategy. [topical authority strategy](/guide/topical-authority-case-study)## Frequently Asked Questions
+To build lasting search visibility, develop topical authority within your niche using our proven authority-building strategy.
+
+Related guide: [topical authority strategy](/guide/topical-authority-case-study).
+
+## Frequently Asked Questions
 
 **How long does it take to see results from SEO improvements?**
 This varies considerably based on your site's existing authority, the competitiveness of your target keywords, and how significant the specific changes are. Many meaningful improvements take weeks to months to fully reflect in rankings, since search engines need time to recrawl and reevaluate changed content.
@@ -161,8 +165,8 @@ Yes, particularly for specific, narrower search terms where a large publication 
 - **[Internal Linking Strategy Guide: The SEO Lever You Fully Control](/guide/internal-linking-strategy-guide)** — the highest-ROI technical item on any SEO checklist
 - **[Core Web Vitals Optimization Guide: Fix LCP, CLS, and INP Step by Step](/guide/core-web-vitals-optimization-guide)** — the performance metrics now influencing Google rankings
 - **[Schema Markup and Rich Snippets: How to Get More Space in Search Results](/guide/schema-markup-rich-snippets-guide)** — implement structured data correctly the first time
-- **[SEMrush](https://www.semrush.com/?ref=jaysmoneyguides)** — the all-in-one SEO platform for keyword research, rank tracking, and site audits
-- **[Ahrefs](https://ahrefs.com/?ref=jaysmoneyguides)** — backlink analysis, content gap research, and competitive intelligence in one tool
+- **[SEMrush](https://www.semrush.com/)** — the all-in-one SEO platform for keyword research, rank tracking, and site audits
+- **[Ahrefs](https://ahrefs.com/)** — backlink analysis, content gap research, and competitive intelligence in one tool
 `
   },
   {
@@ -308,8 +312,8 @@ A useful test is whether you can honestly envision producing genuinely thorough,
 - **[Internal Linking Strategy: How to Connect Your Content Cluster for Maximum SEO Impact](/guide/internal-linking-strategy-guide)** — the internal architecture that makes topical authority compound
 - **[Zero-Competition Keyword Research: Find the Topics That Fill Your Cluster's Gaps](/guide/zero-competition-keyword-research-guide)** — identify exactly which sub-topics are missing from your authority cluster
 - **[Annual Blog Content Calendar Guide: Plan Your Topic Cluster Publishing Schedule](/guide/annual-blog-content-calendar-guide)** — translate topical authority strategy into a month-by-month publishing plan
-- **[SEMrush](https://www.semrush.com/?ref=jaysmoneyguides)** — Topic Research tool for systematic topical coverage planning
-- **[Ahrefs](https://ahrefs.com/?ref=jaysmoneyguides)** — content gap analysis to find which sub-topics competitors rank for that you don't
+- **[SEMrush](https://www.semrush.com/)** — Topic Research tool for systematic topical coverage planning
+- **[Ahrefs](https://ahrefs.com/)** — content gap analysis to find which sub-topics competitors rank for that you don't
     `
   },
   {
@@ -453,7 +457,7 @@ This data-driven approach transforms internal linking from a theoretical best pr
 - **[Practical SEO Checklist for 2026: Every On-Page and Technical Item That Matters](/guide/2026-practical-seo-checklist)** — internal linking in context with the full technical SEO picture
 - **[Topical Authority SEO Case Study: How Cluster Content Drives Compounding Rankings](/guide/topical-authority-case-study)** — why internal linking is the mechanism that makes topic clusters work
 - **[DIY 1-Hour SEO Audit: Find Every Orphaned Page and Broken Link on Your Site](/guide/diy-seo-audit-1-hour-guide)** — the audit process that surfaces internal linking gaps
-- **[Ahrefs](https://ahrefs.com/?ref=jaysmoneyguides)** — site audit tool that flags orphaned pages, anchor text issues, and broken internal links across your entire site
+- **[Ahrefs](https://ahrefs.com/)** — site audit tool that flags orphaned pages, anchor text issues, and broken internal links across your entire site
 `
   },
   {
@@ -599,8 +603,8 @@ This can be a signal that your chosen topic scope is genuinely too narrow to sup
 - **[Topical Authority SEO: Use Zero-Competition Keywords to Build an Unbeatable Cluster](/guide/topical-authority-case-study)** — how low-competition keyword wins compound into mid-competition rankings
 - **[Annual Blog Content Calendar: Organize Your Keyword Research Into a Publishing Roadmap](/guide/annual-blog-content-calendar-guide)** — turn a keyword list into a structured content plan
 - **[How to Write Buyer's Guides That Convert: Matching Keyword Intent to Content Format](/guide/write-buyers-guides-that-convert)** — the content format that performs best for buying-intent keyword targets
-- **[SEMrush](https://www.semrush.com/?ref=jaysmoneyguides)** — Keyword Magic Tool for filtering by difficulty, intent, and volume simultaneously
-- **[Ahrefs](https://ahrefs.com/?ref=jaysmoneyguides)** — full SERP analysis for any keyword to evaluate whether current rankings are beatable
+- **[SEMrush](https://www.semrush.com/)** — Keyword Magic Tool for filtering by difficulty, intent, and volume simultaneously
+- **[Ahrefs](https://ahrefs.com/)** — full SERP analysis for any keyword to evaluate whether current rankings are beatable
     `
   },
   {
@@ -1445,7 +1449,7 @@ International SEO is a genuine growth lever, not a guaranteed one. It works best
 - **[Internal Linking Strategy for Programmatic Sites: Hub-and-Spoke at Scale](/guide/internal-linking-strategy-guide)** — how to structure internal links when you have hundreds of generated pages
 - **[Schema Markup Guide: How to Add Structured Data to Programmatic Templates](/guide/schema-markup-rich-snippets-guide)** — structure your programmatic data for maximum rich result eligibility
 - **[Core Web Vitals Optimization: Make Sure Your Templates Pass Before You Scale](/guide/core-web-vitals-optimization-guide)** — template-level performance fixes that apply before you generate hundreds of pages
-- **[SurferSEO](https://surferseo.com/?ref=jaysmoneyguides)** — score programmatic page templates against keyword clusters before scaling
+- **[SurferSEO](https://surferseo.com/)** — score programmatic page templates against keyword clusters before scaling
 `
   }
 ];

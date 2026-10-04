@@ -217,7 +217,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               </h2>
               <p className="text-xs text-slate-400">
                 {mode === 'login' && 'Sign in to access saved guides, notes, and member perks'}
-                {mode === 'register' && 'Join 10,000+ creators building scalable digital income'}
+                {mode === 'register' && 'Create a free account to save guides and reopen your ebooks'}
                 {mode === 'forgot' && 'Enter your account email to receive a password reset link'}
               </p>
             </div>

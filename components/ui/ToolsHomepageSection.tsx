@@ -26,7 +26,7 @@ const TOOLS: Tool[] = [
     commission: '$200–500+ per signup',
     payout: 'Recurring commission',
     category: 'E-Commerce',
-    link: 'https://www.shopify.com/?ref=jaysmoneyguides',
+    link: 'https://www.shopify.com/',
     features: ['Easy setup', 'Dropshipping ready', 'Payment processing', 'Marketing tools'],
     badge: 'HIGH TICKET',
     badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
@@ -38,7 +38,7 @@ const TOOLS: Tool[] = [
     commission: '$200–400 per signup',
     payout: 'Recurring monthly',
     category: 'SEO Tools',
-    link: 'https://www.semrush.com/?ref=jaysmoneyguides',
+    link: 'https://www.semrush.com/',
     features: ['Keyword research', 'Competitor analysis', 'Rank tracking', 'SEO audit'],
     badge: 'HIGH TICKET',
     badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
@@ -50,7 +50,7 @@ const TOOLS: Tool[] = [
     commission: '$0.30 per day per referral',
     payout: 'Recurring daily',
     category: 'Email Marketing',
-    link: 'https://convertkit.com?ref=jaysmoneyguides',
+    link: 'https://convertkit.com',
     features: ['Creator-friendly', 'Beautiful templates', 'Automation', 'Subscriber growth'],
     badge: 'RECURRING',
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
@@ -62,7 +62,7 @@ const TOOLS: Tool[] = [
     commission: '$100–150 per referral',
     payout: 'Recurring annually',
     category: 'Web Hosting',
-    link: 'https://kinsta.com/?ref=jaysmoneyguides',
+    link: 'https://kinsta.com/',
     features: ['Premium performance', 'Enterprise support', 'Staging sites', 'Advanced security'],
     badge: 'PREMIUM',
     badgeColor: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
@@ -74,7 +74,7 @@ const TOOLS: Tool[] = [
     commission: '$65–75 per sale',
     payout: 'First purchase only',
     category: 'Web Hosting',
-    link: 'https://www.bluehost.com/wordpress/hosting/?ref=jaysmoneyguides',
+    link: 'https://www.bluehost.com/wordpress/hosting/',
     features: ['WordPress optimized', 'SSL included', 'Free domain', '24/7 support'],
     badge: 'POPULAR',
     badgeColor: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
@@ -86,7 +86,7 @@ const TOOLS: Tool[] = [
     commission: '$7–12 per $100/month plan',
     payout: 'Recurring monthly',
     category: 'SEO Tools',
-    link: 'https://ahrefs.com/?ref=jaysmoneyguides',
+    link: 'https://ahrefs.com/',
     features: ['Backlink analysis', 'Site explorer', 'Keyword planner', 'Content ideas'],
   },
   {
@@ -96,7 +96,7 @@ const TOOLS: Tool[] = [
     commission: '$40–80 per signup',
     payout: 'Recurring monthly',
     category: 'Web Hosting',
-    link: 'https://www.siteground.com/?ref=jaysmoneyguides',
+    link: 'https://www.siteground.com/',
     features: ['Fast performance', 'Expert support', 'Free SSL', 'Auto backups'],
   },
   {
@@ -106,7 +106,7 @@ const TOOLS: Tool[] = [
     commission: '$0.30–$1/day per referral',
     payout: 'Recurring daily',
     category: 'Email Marketing',
-    link: 'https://www.getresponse.com/?ref=jaysmoneyguides',
+    link: 'https://www.getresponse.com/',
     features: ['Email campaigns', 'Webinar hosting', 'Automation', 'CRM integration'],
     badge: 'RECURRING',
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
@@ -118,7 +118,7 @@ const TOOLS: Tool[] = [
     commission: '30% recurring for 12 months',
     payout: 'Recurring monthly',
     category: 'Web Design',
-    link: 'https://webflow.com/?ref=jaysmoneyguides',
+    link: 'https://webflow.com/',
     features: ['No-code design', 'CMS included', 'Fast hosting', 'SEO tools'],
     badge: 'RECURRING',
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
@@ -152,7 +152,7 @@ export function ToolsHomepageSection() {
                 {TOOLS.length}+ Programs
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">Curated programs I personally use and recommend</p>
+            <p className="text-xs text-slate-400 mt-0.5">Programs worth knowing, with how each one pays</p>
           </div>
         </div>
         <a

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { EbookReviews } from '@/components/client/EbookReviews';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -55,13 +56,6 @@ const TRUST_BADGES = [
   { icon: FileText,     label: 'No DRM — keep forever'   },
 ];
 
-const STAR_RATINGS = [
-  { stars: 5, pct: 78 },
-  { stars: 4, pct: 16 },
-  { stars: 3, pct: 4  },
-  { stars: 2, pct: 1  },
-  { stars: 1, pct: 1  },
-];
 
 function StarRow({ count, filled }: { count: number; filled: number }) {
   return (
@@ -159,25 +153,10 @@ export default async function EbookPage(
                     <span className="text-slate-400">JaysMoneyGuides</span>
                   </p>
 
-                  {/* Star rating (decorative — social proof) */}
-                  <div className="flex items-center justify-center sm:justify-start gap-2 mb-4">
-                    <StarRow count={5} filled={5} />
-                    <span className="text-sm font-bold text-amber-400">4.9</span>
-                    <span className="text-xs text-slate-500">(42 readers)</span>
-                  </div>
-
                   {/* Price */}
                   <div className="flex items-baseline gap-2 justify-center sm:justify-start">
                     <span className="text-3xl font-black text-emerald-400">{priceLabel}</span>
-                    {!p.isFree && (
-                      <span className="text-sm text-slate-600 line-through">$19.99</span>
-                    )}
                   </div>
-                  {!p.isFree && (
-                    <p className="text-xs text-amber-400 font-semibold mt-1">
-                      Launch price — limited time
-                    </p>
-                  )}
                 </div>
               </div>
 
@@ -226,45 +205,8 @@ export default async function EbookPage(
                 </div>
               </section>
 
-              {/* ── Reader ratings breakdown ── */}
-              <section className="mb-8">
-                <h2 className="text-lg font-extrabold text-white mb-4 flex items-center gap-2">
-                  <Star className="w-5 h-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                  Reader Ratings
-                </h2>
-                <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-                  <div className="flex items-center gap-6 mb-4">
-                    <div className="text-center">
-                      <p className="text-5xl font-black text-white">4.9</p>
-                      <StarRow count={5} filled={5} />
-                      <p className="text-xs text-slate-500 mt-1">42 ratings</p>
-                    </div>
-                    <div className="flex-1 space-y-1.5">
-                      {STAR_RATINGS.map(({ stars, pct }) => (
-                        <div key={stars} className="flex items-center gap-2 text-xs text-slate-500">
-                          <span className="w-4 text-right shrink-0">{stars}</span>
-                          <Star className="w-3 h-3 fill-amber-400/50 text-amber-400/50 shrink-0" aria-hidden="true" />
-                          <div className="flex-1 bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                            <div
-                              className="bg-amber-400 h-full rounded-full"
-                              style={{ width: `${pct}%` }}
-                              aria-hidden="true"
-                            />
-                          </div>
-                          <span className="w-7 shrink-0">{pct}%</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Sample quote */}
-                  <blockquote className="border-l-2 border-emerald-500/40 pl-4 py-1">
-                    <p className="text-sm text-slate-400 italic leading-relaxed">
-                      &ldquo;Clear, actionable, and actually teaches you how to start making money online without fluff.&rdquo;
-                    </p>
-                    <cite className="text-xs text-slate-600 not-italic mt-1 block">— Verified reader</cite>
-                  </blockquote>
-                </div>
-              </section>
+              {/* ── Reader reviews: real, approved reviews of this ebook only ── */}
+              <EbookReviews title={p.title} />
 
               {/* ── About the author ── */}
               <section className="mb-8">
@@ -301,12 +243,9 @@ export default async function EbookPage(
                 {/* Price */}
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-3xl font-black text-emerald-400">{priceLabel}</span>
-                  {!p.isFree && (
-                    <span className="text-sm text-slate-600 line-through">$19.99</span>
-                  )}
                 </div>
                 {!p.isFree && (
-                  <p className="text-xs text-amber-400 font-semibold mb-4">Launch price — limited time</p>
+                  <p className="text-xs text-slate-400 font-semibold mb-4">One-time payment — instant PDF access</p>
                 )}
                 {p.isFree && (
                   <p className="text-xs text-emerald-400 font-semibold mb-4">No payment needed — instant download</p>

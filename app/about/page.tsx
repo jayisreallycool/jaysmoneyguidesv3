@@ -387,7 +387,7 @@ export default async function AboutPage() {
                 <div>
                   <p className="font-black text-white text-sm mb-1">Tools & Programs</p>
                   <p className="text-xs text-slate-400 leading-relaxed">
-                    30+ affiliate programs, tools, and software reviewed — with honest assessments.
+                    25 affiliate programs and tools covered, with how each one pays and who it suits.
                   </p>
                 </div>
                 <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-sky-400 group-hover:gap-2 transition-all">

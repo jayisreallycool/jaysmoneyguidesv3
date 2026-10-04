@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: SITE,
     title: `${SITE_NAME} — Affiliate Marketing, SEO & Blogging Guides`,
     description:
-      'Step-by-step blueprints for building profitable online businesses. Free ebooks, 30+ affiliate program reviews, and weekly guides by Jay Lopez.',
+      'Step-by-step blueprints for building profitable online businesses. Free ebooks, affiliate program breakdowns, and practical guides by Jay Lopez.',
     images: [
       {
         url: '/jay-affiliate-marketing-guides-hero.webp',

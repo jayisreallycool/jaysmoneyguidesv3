@@ -10,9 +10,9 @@ import { FooterNewsletter } from '@/components/client/FooterNewsletter';
 const YEAR = new Date().getFullYear();
 
 const STATS = [
-  { value: '57+', label: 'Free Guides', icon: BookMarked },
+  { value: '57', label: 'Free Guides', icon: BookMarked },
   { value: '5',   label: 'eBooks',      icon: BookOpen },
-  { value: '30+', label: 'Affiliate Reviews', icon: Star },
+  { value: '25', label: 'Programs Covered', icon: Star },
   { value: '100%', label: 'Free to Read', icon: Gift },
 ];
 
@@ -70,7 +70,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="text-center sm:text-left">
             <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
-              Get weekly money-making blueprints
+              Get new guides by email
             </h2>
             <p className="text-sm text-slate-400 mt-1">Affiliate marketing, SEO, and online business — straight to your inbox.</p>
           </div>

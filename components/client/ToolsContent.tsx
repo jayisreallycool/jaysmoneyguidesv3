@@ -47,7 +47,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$200-500+ per signup',
     payout: 'Recurring commission',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://www.shopify.com/?ref=jaysmoneyguides',
+    link: 'https://www.shopify.com/',
     features: ['Easy setup', 'Dropshipping ready', 'Payment processing', 'Marketing tools'],
     badge: 'HIGH TICKET',
     badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30'
@@ -59,7 +59,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$65-75 per sale',
     payout: 'First purchase only',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://www.bluehost.com/wordpress/hosting/?ref=jaysmoneyguides',
+    link: 'https://www.bluehost.com/wordpress/hosting/',
     features: ['WordPress optimized', 'SSL included', 'Free domain', '24/7 support'],
     badge: 'POPULAR',
     badgeColor: 'bg-blue-500/20 text-blue-400 border-blue-500/30'
@@ -71,7 +71,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$40-80 per signup',
     payout: 'Recurring monthly',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://www.siteground.com/?ref=jaysmoneyguides',
+    link: 'https://www.siteground.com/',
     features: ['Fast performance', 'Expert support', 'Free SSL', 'Auto backups'],
   },
   {
@@ -81,7 +81,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$100-150 per referral',
     payout: 'Recurring annually',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://kinsta.com/?ref=jaysmoneyguides',
+    link: 'https://kinsta.com/',
     features: ['Premium performance', 'Enterprise support', 'Staging sites', 'Advanced security'],
   },
   {
@@ -91,7 +91,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$0.95-$1.35 per domain',
     payout: 'Per sale',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://www.namecheap.com/?ref=jaysmoneyguides',
+    link: 'https://www.namecheap.com/',
     features: ['Cheap domains', 'Whois privacy', 'Free email', 'SSL certificates'],
   },
 
@@ -103,7 +103,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$0.30 per day per referral',
     payout: 'Recurring daily',
     category: 'Email Marketing',
-    link: 'https://convertkit.com?ref=jaysmoneyguides',
+    link: 'https://convertkit.com',
     features: ['Creator-friendly', 'Beautiful templates', 'Automation', 'Subscriber growth'],
     badge: 'RECURRING',
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
@@ -115,7 +115,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$0.30-$1/day per referral',
     payout: 'Recurring daily',
     category: 'Email Marketing',
-    link: 'https://www.getresponse.com/?ref=jaysmoneyguides',
+    link: 'https://www.getresponse.com/',
     features: ['Email campaigns', 'Webinar hosting', 'Automation', 'CRM integration'],
   },
   {
@@ -125,7 +125,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% commission or flat rate',
     payout: 'Recurring commission',
     category: 'Email Marketing',
-    link: 'https://www.activecampaign.com/?ref=jaysmoneyguides',
+    link: 'https://www.activecampaign.com/',
     features: ['CRM + email', 'Advanced automation', 'Sales pipeline', 'Deal tracking'],
   },
 
@@ -137,7 +137,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$200-400 per signup',
     payout: 'Recurring monthly',
     category: 'Analytics & SEO Tools',
-    link: 'https://www.semrush.com/?ref=jaysmoneyguides',
+    link: 'https://www.semrush.com/',
     features: ['Keyword research', 'Competitor analysis', 'Rank tracking', 'SEO audit'],
     badge: 'HIGH TICKET',
     badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30'
@@ -149,7 +149,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$7-12 per $100/month plan',
     payout: 'Recurring monthly',
     category: 'Analytics & SEO Tools',
-    link: 'https://ahrefs.com/?ref=jaysmoneyguides',
+    link: 'https://ahrefs.com/',
     features: ['Backlink analysis', 'Site explorer', 'Keyword planner', 'Content ideas'],
   },
   {
@@ -159,7 +159,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$100-200 per signup',
     payout: 'Recurring monthly',
     category: 'Analytics & SEO Tools',
-    link: 'https://moz.com/products/pro?ref=jaysmoneyguides',
+    link: 'https://moz.com/products/pro',
     features: ['Rank tracking', 'Keyword research', 'Site audits', 'Link research'],
   },
   {
@@ -169,7 +169,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$200+ per annual signup',
     payout: 'Recurring annually',
     category: 'Analytics & SEO Tools',
-    link: 'https://surferseo.com/?ref=jaysmoneyguides',
+    link: 'https://surferseo.com/',
     features: ['Content editor', 'SERP analysis', 'Rank tracking', 'Audit tool'],
   },
 
@@ -181,7 +181,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$100-300 per sale',
     payout: 'One-time commission',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://woocommerce.com/?ref=jaysmoneyguides',
+    link: 'https://woocommerce.com/',
     features: ['WordPress integration', 'Free + premium', 'Flexible products', 'Payment gateways'],
   },
   {
@@ -191,7 +191,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$150-250 per signup',
     payout: 'Recurring commission',
     category: 'Web Hosting & E-Commerce',
-    link: 'https://www.bigcommerce.com/?ref=jaysmoneyguides',
+    link: 'https://www.bigcommerce.com/',
     features: ['Scalable', 'Multi-channel', 'Advanced analytics', 'API access'],
   },
 
@@ -203,7 +203,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% lifetime value',
     payout: 'Recurring subscription',
     category: 'AI & Automation Tools',
-    link: 'https://www.copy.ai/?ref=jaysmoneyguides',
+    link: 'https://www.copy.ai/',
     features: ['AI copywriting', '100+ templates', 'Bulk content', 'SEO optimization'],
     badge: 'AI POWERED',
     badgeColor: 'bg-purple-500/20 text-purple-400 border-purple-500/30'
@@ -215,7 +215,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% lifetime value',
     payout: 'Recurring subscription',
     category: 'AI & Automation Tools',
-    link: 'https://www.jasper.ai/?ref=jaysmoneyguides',
+    link: 'https://www.jasper.ai/',
     features: ['AI writing', 'Brand voice', 'Content templates', 'Plagiarism checker'],
   },
   {
@@ -225,7 +225,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% revenue share',
     payout: 'Recurring commission',
     category: 'AI & Automation Tools',
-    link: 'https://zapier.com/?ref=jaysmoneyguides',
+    link: 'https://zapier.com/',
     features: ['App integration', 'Automation', 'No-code', 'Workflows'],
   },
 
@@ -237,7 +237,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$150+ per signup',
     payout: 'Recurring annual',
     category: 'Web Design & No-Code',
-    link: 'https://elementor.com/?ref=jaysmoneyguides',
+    link: 'https://elementor.com/',
     features: ['Drag & drop', 'Responsive', '100+ widgets', 'Template library'],
   },
   {
@@ -247,7 +247,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% lifetime value',
     payout: 'Recurring subscription',
     category: 'Web Design & No-Code',
-    link: 'https://webflow.com/?ref=jaysmoneyguides',
+    link: 'https://webflow.com/',
     features: ['Visual builder', 'Hosting included', 'CMS', 'E-commerce'],
   },
   {
@@ -257,7 +257,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '$25-100 per signup',
     payout: 'Recurring monthly',
     category: 'Web Design & No-Code',
-    link: 'https://figma.com/?ref=jaysmoneyguides',
+    link: 'https://figma.com/',
     features: ['Design collaboration', 'Prototyping', 'Component library', 'Version history'],
   },
 
@@ -269,7 +269,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '30% lifetime value',
     payout: 'Recurring subscription',
     category: 'Productivity & Management',
-    link: 'https://monday.com/?ref=jaysmoneyguides',
+    link: 'https://monday.com/',
     features: ['Project tracking', 'Team collaboration', 'Automation', 'Integrations'],
   },
   {
@@ -279,7 +279,7 @@ const TOOLS_DATA: Tool[] = [
     commission: '20-30% commission',
     payout: 'Recurring subscription',
     category: 'Productivity & Management',
-    link: 'https://asana.com/?ref=jaysmoneyguides',
+    link: 'https://asana.com/',
     features: ['Task management', 'Timeline view', 'Portfolio tracking', 'Automation'],
   },
 
@@ -291,7 +291,7 @@ const TOOLS_DATA: Tool[] = [
     commission: 'Varies by brand',
     payout: 'Monthly',
     category: 'Affiliate Networks',
-    link: 'https://www.cj.com/brands?ref=jaysmoneyguides',
+    link: 'https://www.cj.com/brands',
     features: ['1000s of brands', 'Real-time tracking', 'Competitive commissions', 'Support'],
     badge: 'GATEWAY',
     badgeColor: 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'
@@ -303,7 +303,7 @@ const TOOLS_DATA: Tool[] = [
     commission: 'Varies by brand',
     payout: 'Monthly',
     category: 'Affiliate Networks',
-    link: 'https://www.impact.com/?ref=jaysmoneyguides',
+    link: 'https://www.impact.com/',
     features: ['500+ SaaS brands', 'High commissions', 'Real-time dashboard', 'Support'],
   },
   {
@@ -313,7 +313,7 @@ const TOOLS_DATA: Tool[] = [
     commission: 'Varies by partner',
     payout: 'Weekly/Monthly',
     category: 'Affiliate Networks',
-    link: 'https://www.partnerstack.com/?ref=jaysmoneyguides',
+    link: 'https://www.partnerstack.com/',
     features: ['Curated partners', 'Higher commissions', 'Easy tracking', 'Support'],
   },
 ];
@@ -367,7 +367,7 @@ export function ToolsContent() {
           Tools &amp; Affiliate Programs
         </h1>
         <p className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed mb-8">
-          {TOOLS_DATA.length}+ curated platforms I use to run JaysMoneyGuides. Commission rates, payout structures, and what I actually think about each one.
+          {TOOLS_DATA.length} affiliate programs and tools for online businesses, with how each one pays. Commission rates are set by each program and change — confirm the current terms on the program's own page before you rely on them.
         </p>
 
         {/* Quick stats */}

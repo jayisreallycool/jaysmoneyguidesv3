@@ -11,8 +11,8 @@ interface HeroHeaderProps {
 const STATS = [
   { num: '$100k+', label: 'Affiliate Sales', green: false },
   { num: '100% Free', label: 'In-Depth Guides', green: true },
-  { num: '5 Topics', label: 'All Categories', green: false },
-  { num: 'Weekly', label: 'New Blueprints', green: true },
+  { num: '6 Topics', label: 'All Categories', green: false },
+  { num: '57', label: 'Free Guides', green: true },
 ];
 
 export const HeroHeader: React.FC<HeroHeaderProps> = ({ onSubscribeSuccess }) => {

@@ -4,15 +4,15 @@ import { JsonLd } from '@/components/server/JsonLd';
 import { SITE, personSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Recommended Tools & Affiliate Programs — 30+ Programs | JaysMoneyGuides',
+  title: 'Recommended Tools & Affiliate Programs | JaysMoneyGuides',
   description:
-    'Curated affiliate programs and tools I personally use — Shopify, SEMrush, ConvertKit, Ahrefs, Kinsta and 25+ more. Commission rates, payout details, and honest reviews.',
+    'Affiliate programs and tools for online businesses — Shopify, SEMrush, ConvertKit, Ahrefs, Kinsta and more — with how each one pays and who it suits.',
   alternates: { canonical: `${SITE}/tools` },
   openGraph: {
     type: 'website',
     url: `${SITE}/tools`,
     title: 'Tools & Affiliate Programs — JaysMoneyGuides',
-    description: '30+ curated affiliate programs with commission rates and payout info. Recommended by Jay Lopez.',
+    description: 'Affiliate programs and tools with commission and payout details, curated by Jay Lopez.',
     images: [{ url: `${SITE}/jay-affiliate-marketing-guides-hero.webp`, width: 1536, height: 1024, alt: 'JaysMoneyGuides Tools & Affiliate Programs' }],
   },
 };

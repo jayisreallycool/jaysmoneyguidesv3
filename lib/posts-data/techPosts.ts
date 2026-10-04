@@ -47,7 +47,7 @@ I'm Jay Lopez. In this guide, I am pulling back the curtain on my exact hardware
 ## 1. Web Hosting & CDN: Cloudflare Pages + Vercel ($0/mo)
 
 Forget expensive $30/month shared hosting plans that crash when your article gets shared on Reddit or X.
-* **[Vercel](https://vercel.com/?ref=jaysmoneyguides) / [Cloudflare Pages](https://pages.cloudflare.com/?ref=jaysmoneyguides)**: Deploy static sites directly from GitHub repositories. Your pages load globally in under 100 milliseconds with automatic SSL certificates and infinite scalability.
+* **[Vercel](https://vercel.com/) / [Cloudflare Pages](https://pages.cloudflare.com/)**: Deploy static sites directly from GitHub repositories. Your pages load globally in under 100 milliseconds with automatic SSL certificates and infinite scalability.
 
 ---
 
@@ -1099,7 +1099,7 @@ The hardest part of launching a Custom GPT is actually launching. Everything els
 
 # No-Code Automation 101: How to Connect Apps and Save 5+ Hours Every Week
 
-The most underrated productivity multiplier isn't a new tool or app — it's automation. Specifically, using [no-code automation](/guide/no-code-automation-guide-make-zapier) platforms like Zapier or Make to connect your existing apps and eliminate repetitive manual tasks. Building 5–10 strategic automations saves roughly 5+ hours weekly while removing the cognitive burden of remembering to do routine tasks.
+The most underrated productivity multiplier isn't a new tool or app — it's automation. Specifically, using no-code automation platforms like Zapier or Make to connect your existing apps and eliminate repetitive manual tasks. Building 5–10 strategic automations saves roughly 5+ hours weekly while removing the cognitive burden of remembering to do routine tasks.
 
 
 Track your automation success with proper analytics and monitoring tools. [analytics and monitoring](/guide/privacy-friendly-web-analytics-fathom-plausible)
@@ -1321,7 +1321,7 @@ This is why teams that embrace automation save exponentially more time over year
     id: 'post-tech-6',
     title: 'Web Analytics Beyond Google: Why I Switched to Privacy-Friendly Fathom & Plausible',
     slug: 'privacy-friendly-web-analytics-fathom-plausible',
-    excerpt: 'Ditch bloated Google Analytics 4 (GA4). How simple, [privacy-friendly analytics](/guide/privacy-friendly-web-analytics-fathom-plausible) give you clean data without annoying cookie banners.',
+    excerpt: 'Ditch bloated Google Analytics 4 (GA4). How simple, privacy-friendly analytics give you clean data without annoying cookie banners.',
     category: 'Tech',
     tags: ['Analytics', 'Privacy', 'Fathom', 'Plausible', 'Web Performance'],
     coverImage: '/images/web-analytics-beyond-google-why-i-switched-to-privacy-friend-tech-guide.webp',
@@ -2620,10 +2620,10 @@ A 1 GB RAM tier comfortably handles two to three lightweight services like Plaus
 - **[No-Code Automation Guide: Connect Your Tech Stack Without Writing Code](/guide/no-code-automation-guide-make-zapier)** — automate the workflows between the tools in your stack
 - **[Privacy-Friendly Web Analytics: Lighter, GDPR-Compliant Alternatives to Google Analytics](/guide/privacy-friendly-web-analytics-fathom-plausible)** — replace the heaviest analytics script in most creator stacks
 - **[AI Productivity Tools for Solopreneurs 2026: The Best AI Additions to Your Stack](/guide/ai-productivity-tools-solopreneurs-2026)** — the AI layer on top of your core tool stack
-- **[Bluehost](https://www.bluehost.com/wordpress/hosting/?ref=jaysmoneyguides)** — entry-level WordPress hosting that keeps early stack costs minimal
-- **[Kinsta](https://kinsta.com/?ref=jaysmoneyguides)** — managed WordPress hosting for when traffic growth justifies premium infrastructure
-- **[ConvertKit](https://convertkit.com?ref=jaysmoneyguides)** — the email platform that fits cleanest into a creator-focused stack
-- **[SEMrush](https://www.semrush.com/?ref=jaysmoneyguides)** — replaces 3–4 specialized SEO tools with one subscription
+- **[Bluehost](https://www.bluehost.com/wordpress/hosting/)** — entry-level WordPress hosting that keeps early stack costs minimal
+- **[Kinsta](https://kinsta.com/)** — managed WordPress hosting for when traffic growth justifies premium infrastructure
+- **[ConvertKit](https://convertkit.com)** — the email platform that fits cleanest into a creator-focused stack
+- **[SEMrush](https://www.semrush.com/)** — replaces 3–4 specialized SEO tools with one subscription
 `
   }
 ];

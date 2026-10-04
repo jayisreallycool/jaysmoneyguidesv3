@@ -13,7 +13,7 @@
  */
 
 const MESSAGES = [
-  '🔥 LIMITED TIME: Get up to $125 with SoFi when you refer a friend — new guides just dropped!',
+  '💸 SoFi runs a refer-a-friend bonus on its money products — see our SoFi guides for how it works and the current terms',
   '📚 FREE EBOOK: Download our Affiliate Marketing for Beginners guide — no email required!',
   '💰 NEW RELEASE: Affiliate Marketing Blueprint Vol. 1 — $9.99 instant access in the eBook Store!',
 ];
