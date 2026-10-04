@@ -9,7 +9,7 @@ import { ViewTracker } from '@/components/client/ViewTracker';
 import { TableOfContents } from '@/components/server/TableOfContents';
 import { extractToc } from '@/lib/markdown';
 import { JsonLd } from '@/components/server/JsonLd';
-import { articleSchema, breadcrumbSchema, howToSchema, SITE } from '@/lib/seo';
+import { articleSchema, breadcrumbSchema, SITE } from '@/lib/seo';
 import {
   Clock, BookOpen, ChevronRight, Home, ArrowLeft,
   CheckCircle2, TrendingUp, ArrowRight, Gift,
@@ -33,7 +33,9 @@ export async function generateMetadata(
   const url = `${SITE}/guide/${post.slug}`;
   const description = (post as { metaDescription?: string }).metaDescription ?? post.excerpt;
   return {
-    title: post.title,
+    // Long titles go out as-is: adding " | JaysMoneyGuides" would push them past
+    // what search results show (about 60 characters) and cut the real title.
+    title: post.title.length > 42 ? { absolute: post.title } : post.title,
     description,
     keywords: (post as { seoKeywords?: string[] }).seoKeywords,
     alternates: { canonical: url },
@@ -44,6 +46,7 @@ export async function generateMetadata(
       description,
       images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [post.author?.name ?? 'Jay Lopez'],
     },
     twitter: {
@@ -100,7 +103,6 @@ export default async function GuidePage(
     <>
       <JsonLd data={articleSchema(post)} />
       <JsonLd data={breadcrumbSchema(post)} />
-      {howToSchema(post) && <JsonLd data={howToSchema(post)!} />}
 
       <div className="bg-slate-950 min-h-screen">
 
@@ -189,6 +191,9 @@ export default async function GuidePage(
                 <BookOpen className="w-3.5 h-3.5 text-slate-600" aria-hidden="true" />
                 {formatDate(post.publishedAt)}
               </time>
+              {post.updatedAt && post.updatedAt !== post.publishedAt && (
+                <time dateTime={post.updatedAt} className="text-slate-400">Updated {formatDate(post.updatedAt)}</time>
+              )}
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5 text-slate-600" aria-hidden="true" />
                 {post.readTimeMinutes} min read

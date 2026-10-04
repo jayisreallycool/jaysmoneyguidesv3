@@ -17,6 +17,8 @@ export interface BlogPost {
     avatar: string;
   };
   publishedAt: string;
+  /** Set only when the article was genuinely revised (YYYY-MM-DD). */
+  updatedAt?: string;
   readTimeMinutes: number;
   difficulty: DifficultyLevel;
   featured?: boolean;

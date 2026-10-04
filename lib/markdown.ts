@@ -5,7 +5,7 @@ import 'server-only';
  * (React Server Component), so article bodies ship as HTML with zero client JS.
  *
  * Supports: h1–h4 (with id anchors), bold, italic, inline code, links
- * (external → rel="nofollow sponsored"), plain images, clickable-image banners
+ * (paid/referral links → rel="sponsored nofollow"), plain images, clickable-image banners
  * [![alt](img)](href), blockquotes, bulleted and numbered lists, code fences,
  * horizontal rules, tables, and paragraphs.
  */
@@ -66,6 +66,19 @@ function safeUrl(url: string, fallback = '#'): string {
 
 const SITE = 'https://www.jaysmoneyguides.com';
 
+/**
+ * Link attributes. Only links that can pay the site are marked "sponsored"
+ * (and nofollow) — referral/invite links and the /go/ redirects. Ordinary
+ * outbound links to sources (FTC, studentaid.gov, a program's own terms) are
+ * normal citations and are left followable.
+ */
+const PAID_LINK = /sofi\.com\/(invite|referral)|[?&](ref|aff|affiliate|via|tag|irclickid|utm_medium=affiliate)=|\/go\//i;
+function linkAttrs(url: string): string {
+  const external = /^https?:\/\//i.test(url) && !url.startsWith(SITE);
+  if (PAID_LINK.test(url)) return ' target="_blank" rel="sponsored nofollow noopener noreferrer"';
+  return external ? ' target="_blank" rel="noopener noreferrer"' : '';
+}
+
 function inline(text: string): string {
   // NOTE: We process on the RAW text for markdown patterns first, then escape
   // individual parts. This avoids double-escaping while keeping XSS safety.
@@ -81,8 +94,7 @@ function inline(text: string): string {
   // links — capture raw, escape each attribute part individually
   t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_m, label, url) => {
     const safe = safeUrl(url);
-    const external = /^https?:\/\//i.test(url) && !url.startsWith(SITE);
-    const attrs = external ? ' target="_blank" rel="nofollow sponsored noopener noreferrer"' : '';
+    const attrs = linkAttrs(url);
     // label may contain markdown (bold/italic/code) — escape it then process
     return `<a href="${escAttr(safe)}"${attrs}>${esc(label)}</a>`;
   });
@@ -122,8 +134,7 @@ export function markdownToHtml(md: string): string {
       const [, alt, img, href] = click;
       const safeSrc = safeUrl(img, '');
       const safeHref = safeUrl(href);
-      const external = /^https?:\/\//i.test(href);
-      const attrs = external ? ' target="_blank" rel="nofollow sponsored noopener noreferrer"' : '';
+      const attrs = linkAttrs(href);
       if (safeSrc) {
         out.push(
           `<a href="${escAttr(safeHref)}"${attrs} class="banner-link">` +
@@ -153,6 +164,8 @@ export function markdownToHtml(md: string): string {
     if (h) {
       const level = h[1].length;
       const text = h[2];
+      // The page template already prints the article title as the one <h1>.
+      if (level === 1) continue;
       // slugify strips all non-alphanumeric chars so id is always safe
       const id = slugify(text.replace(/\*\*?([^*]+)\*\*?/g, '$1').replace(/`([^`]+)`/g, '$1'));
       out.push(`<h${level} id="${id}">${inline(text)}</h${level}>`);
