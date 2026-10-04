@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
 import { SITE, SITE_NAME, organizationSchema, websiteSchema, personSchema } from '@/lib/seo';
 import { FixedHeader } from '@/components/client/FixedHeader';
@@ -9,6 +10,21 @@ import { ADSENSE_CLIENT, ADSENSE_PUBLISHER, CONSENT_BOOTSTRAP } from '@/lib/cons
 import { AuthProvider } from '@/components/client/AuthProvider';
 import { AuthModals } from '@/components/client/AuthModals';
 import { JsonLd } from '@/components/server/JsonLd';
+
+/**
+ * One typeface for the whole site: Manrope (variable, self-hosted, ~25 KB).
+ * Self-hosting means no request to Google Fonts, and next/font sizes the
+ * fallback so text doesn't jump when the real font arrives.
+ */
+const manrope = localFont({
+  src: './fonts/manrope-latin-var.woff2',
+  weight: '200 800',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-manrope',
+  fallback: ['ui-sans-serif', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+  adjustFontFallback: 'Arial',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -84,7 +100,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable}>
       <head>
         {/* The hero image is not preloaded here: this layout wraps every page, so a
             preload made guide/legal pages download a hero they never show. On the

@@ -21,14 +21,6 @@ export async function getAllCategories(): Promise<string[]> {
   return Array.from(new Set(INITIAL_POSTS.map((p) => p.category)));
 }
 
-/** 3–4 related posts in the same category (internal linking for SEO). */
-export async function getRelatedPosts(post: BlogPost, limit = 4): Promise<BlogPost[]> {
-  return INITIAL_POSTS.filter(
-    (p) => p.category === post.category && p.slug !== post.slug
-  ).slice(0, limit);
-}
-
-
 export async function getPostSummaries(): Promise<BlogPostSummary[]> {
   return (await getAllPosts()).map(({ content: _content, ...summary }) => summary);
 }

@@ -2,7 +2,10 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/posts';
+import { getAllPosts, getPostBySlug } from '@/lib/posts';
+import { getClusterPosts, getEbookFor, getPillar, getRelatedByRelevance, isPillar } from '@/lib/topics';
+import { bannerFor, splitForBanner } from '@/lib/affiliate-banners';
+import { AffiliateBanner } from '@/components/server/AffiliateBanner';
 import { PostBody } from '@/components/server/PostBody';
 import { AffiliateClickTracker } from '@/components/client/AffiliateClickTracker';
 import { ViewTracker } from '@/components/client/ViewTracker';
@@ -15,7 +18,6 @@ import {
   CheckCircle2, TrendingUp, ArrowRight, Gift,
 } from 'lucide-react';
 import { AdUnit } from '@/components/client/AdUnit';
-import { PRODUCTS } from '@/lib/products';
 
 export const dynamicParams = false;
 
@@ -88,16 +90,19 @@ export default async function GuidePage(
   const { slug } = await params;
   const post = await getPostBySlug(slug);
   if (!post) notFound();
-  const related = await getRelatedPosts(post, 3);
+  const related = getRelatedByRelevance(post, 3);
+  const pillar = getPillar(post.category);
+  const cluster = isPillar(post) ? getClusterPosts(post) : [];
+  const banner = bannerFor(post);
+  const [bodyTop, bodyRest] = banner ? splitForBanner(post.content) : [post.content, ''];
 
   const catColor = CATEGORY_COLORS[post.category] ?? fallbackColor;
   const diff = DIFFICULTY[post.difficulty] ?? DIFFICULTY.Beginner;
   const keyTakeaways = post.keyTakeaways ?? [];
   const toc = extractToc(post.content);
 
-  // Pick a relevant ebook for sidebar promo — free one first, else first paid
-  const freeEbook = PRODUCTS.find((p) => p.isFree);
-  const sidebarEbook = freeEbook ?? PRODUCTS[0];
+  // The ebook that matches this guide's topic (falls back to the free one)
+  const sidebarEbook = getEbookFor(post);
 
   return (
     <>
@@ -230,12 +235,45 @@ export default async function GuidePage(
 
           {/* ── Article body ── */}
           <article>
-            <PostBody markdown={post.content} />
+            <PostBody markdown={bodyTop} />
+            {banner && <AffiliateBanner offer={banner} />}
+            {bodyRest && <PostBody markdown={bodyRest} />}
             {/* Tracks affiliate link clicks → GA4 event: affiliate_link_click */}
             <AffiliateClickTracker />
             {/* Tracks article views → Firestore article_views collection */}
             <ViewTracker slug={post.slug} type="article" />
           </article>
+
+          {/* ── Topic hub: up to the pillar, or down to every guide in the topic ── */}
+          {cluster.length > 0 ? (
+            <nav aria-label={`All ${post.category} guides`} className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">
+              <h2 className="text-base font-extrabold text-white">All {post.category} guides</h2>
+              <p className="mt-1 text-sm text-slate-400">This is the starting point for the topic. Each guide below goes deeper on one part of it.</p>
+              <ul className="mt-4 grid gap-x-6 gap-y-2.5 sm:grid-cols-2">
+                {cluster.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/guide/${c.slug}`} className="text-sm leading-snug text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 hover:text-emerald-300">
+                      {c.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ) : pillar ? (
+            <nav aria-label="Start of this topic" className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-500">Part of the {post.category} series</p>
+              <p className="mt-2 text-sm text-slate-300">
+                New to this topic? Start with{' '}
+                <Link href={`/guide/${pillar.slug}`} className="font-semibold text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 hover:text-emerald-300">
+                  {pillar.title}
+                </Link>
+                , or browse{' '}
+                <Link href={`/category/${encodeURIComponent(post.category)}`} className="font-semibold text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 hover:text-emerald-300">
+                  every {post.category} guide
+                </Link>.
+              </p>
+            </nav>
+          ) : null}
 
           {/* ── Ad: Rectangle after article body (high RPM placement) ── */}
           <AdUnit slot="GUIDE_MID_RECTANGLE" format="rectangle" className="my-10 mx-auto" />
@@ -271,7 +309,7 @@ export default async function GuidePage(
           {related.length > 0 && (
             <aside aria-label="Related guides" className="mt-12 mb-10">
               <h2 className="text-xl font-extrabold text-white mb-5">
-                More in {post.category}
+                Read next
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {related.map((r) => {

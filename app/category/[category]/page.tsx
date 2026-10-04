@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { getPillar } from '@/lib/topics';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
@@ -124,7 +125,8 @@ export default async function CategoryPage({
   if (posts.length === 0) notFound();
 
   // Featured post: explicitly marked, else most recent
-  const featuredPost = posts.find((p) => p.featured) ?? posts[0];
+  // The topic's "start here" guide leads the page; the rest support it.
+  const featuredPost = getPillar(name) ?? posts.find((p) => p.featured) ?? posts[0];
   const remainingPosts = posts.filter((p) => p.id !== featuredPost.id);
 
   const { description, blurb, emoji } = getCategoryMeta(name);

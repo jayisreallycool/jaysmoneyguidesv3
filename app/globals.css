@@ -1,5 +1,34 @@
 @import "tailwindcss";
 
+/* ══ Typography ════════════════════════════════════════════════════════════
+   One family (Manrope, loaded in app/layout.tsx). Tailwind's font-sans and
+   the page default both point at it. */
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: tight tracking and balanced line breaks everywhere. */
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Form controls don't inherit the page font by default. */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -277,8 +306,15 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
 /* ── Article / guide body prose ── */
 .post-body {
   color: #cbd5e1; /* slate-300 */
-  font-size: 1.0625rem;
-  line-height: 1.8;
+  font-size: 1.0625rem;   /* 17px: comfortable for long reading on a phone */
+  line-height: 1.75;
+  max-width: 44rem;       /* ~70 characters per line on wide screens */
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+.post-body table {
+  font-variant-numeric: tabular-nums;
 }
 
 .post-body h2 {
@@ -435,7 +471,7 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
 }
 
 @media (max-width: 640px) {
-  .post-body { font-size: 1rem; }
+  .post-body { font-size: 1.0625rem; line-height: 1.7; }
   .post-body h2 { font-size: 1.3rem; margin-top: 2rem; }
   .post-body h3 { font-size: 1.1rem; }
   .post-body pre { padding: 1rem; font-size: 0.8125rem; }
