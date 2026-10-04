@@ -190,7 +190,7 @@ export function markdownToHtml(md: string): string {
           const cells = r.split('|').map(c => c.trim()).filter(Boolean);
           return `<tr>${cells.map(c => `<td>${inline(c)}</td>`).join('')}</tr>`;
         }).join('');
-        out.push(`<table>${header}<tbody>${body}</tbody></table>`);
+        out.push(`<div class="table-wrap"><table>${header}<tbody>${body}</tbody></table></div>`);
         continue;
       }
     }

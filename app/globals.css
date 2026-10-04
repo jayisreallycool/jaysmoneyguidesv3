@@ -317,6 +317,17 @@ a, button, [role="button"], [role="tab"], input, select, textarea, label {
   font-variant-numeric: tabular-nums;
 }
 
+/* A wide table scrolls sideways inside its wrapper instead of widening the page. */
+.post-body .table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.75rem 0;
+}
+.post-body .table-wrap table {
+  margin: 0;
+}
+
 .post-body h2 {
   font-size: 1.5rem;
   font-weight: 800;
