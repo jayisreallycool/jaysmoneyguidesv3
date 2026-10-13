@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 import { Category, ModalView, User, Product } from '@/lib/types';
 import { PRODUCTS } from '@/lib/products';
-import { GoogleAdSenseBanner } from './GoogleAdSenseBanner';
 
 // Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
 const ADMIN_EMAILS = ['jayisreallycool@gmail.com'];
@@ -383,15 +382,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <X className="w-4 h-4" />
                     </button>
                   </div>
-                </div>
-
-                {/* ── AdSense banner ── */}
-                <div className="w-full">
-                  <GoogleAdSenseBanner
-                    slot="top-slide-menu-ad"
-                    variant="menu-top"
-                    onOpenPolicy={(view) => { openModal(view); close(); }}
-                  />
                 </div>
 
                 {/* ── Search bar ── */}

@@ -73,19 +73,3 @@ export function bannerFor(post: { slug: string; category: string }): BannerOffer
   const offer = id ? OFFERS[id] : undefined;
   return offer && offer.href ? offer : null;
 }
-
-/**
- * Where the banner goes: at the section break closest to the middle of the
- * article, so it sits between two complete sections and well away from the
- * ad slots at the top and bottom. Short articles get it after the body.
- */
-export function splitForBanner(markdown: string): [string, string] {
-  const blocks = markdown.split(/\r?\n\r?\n/);
-  const h2 = blocks.map((b, i) => (/^##\s/.test(b.trim()) ? i : -1)).filter((i) => i > 0);
-  if (h2.length < 4) return [markdown, ''];
-  const total = markdown.length;
-  let pos = 0;
-  const offsets = blocks.map((b) => { const at = pos; pos += b.length + 2; return at; });
-  const mid = h2.reduce((best, i) => (Math.abs(offsets[i] - total * 0.55) < Math.abs(offsets[best] - total * 0.55) ? i : best), h2[1]);
-  return [blocks.slice(0, mid).join('\n\n'), blocks.slice(mid).join('\n\n')];
-}

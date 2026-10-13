@@ -311,7 +311,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
 
       {/* Ad: Leaderboard between guides and ebooks */}
       <div className="max-w-4xl mx-auto px-4 pb-2">
-        <AdUnit slot="HOME_MID_LEADERBOARD" format="leaderboard" />
+        <AdUnit kind="horizontal" />
       </div>
 
       {/* 4. Ebooks */}

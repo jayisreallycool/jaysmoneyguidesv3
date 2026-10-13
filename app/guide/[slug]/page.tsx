@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { getClusterPosts, getEbookFor, getPillar, getRelatedByRelevance, isPillar } from '@/lib/topics';
-import { bannerFor, splitForBanner } from '@/lib/affiliate-banners';
+import { bannerFor } from '@/lib/affiliate-banners';
+import { layoutArticle } from '@/lib/article-layout';
 import { AffiliateBanner } from '@/components/server/AffiliateBanner';
 import { PostBody } from '@/components/server/PostBody';
 import { AffiliateClickTracker } from '@/components/client/AffiliateClickTracker';
@@ -94,7 +95,7 @@ export default async function GuidePage(
   const pillar = getPillar(post.category);
   const cluster = isPillar(post) ? getClusterPosts(post) : [];
   const banner = bannerFor(post);
-  const [bodyTop, bodyRest] = banner ? splitForBanner(post.content) : [post.content, ''];
+  const pieces = layoutArticle(post.content, Boolean(banner));
 
   const catColor = CATEGORY_COLORS[post.category] ?? fallbackColor;
   const diff = DIFFICULTY[post.difficulty] ?? DIFFICULTY.Beginner;
@@ -206,8 +207,6 @@ export default async function GuidePage(
             </div>
           </header>
 
-          {/* ── Ad: Leaderboard below article header (high viewability) ── */}
-          <AdUnit slot="GUIDE_TOP_LEADERBOARD" format="leaderboard" className="mb-8" />
 
           {/* ── Table of contents ── */}
           <TableOfContents items={toc} />
@@ -235,9 +234,15 @@ export default async function GuidePage(
 
           {/* ── Article body ── */}
           <article>
-            <PostBody markdown={bodyTop} />
-            {banner && <AffiliateBanner offer={banner} />}
-            {bodyRest && <PostBody markdown={bodyRest} />}
+            {pieces.map((piece, i) =>
+              piece.kind === 'md' ? (
+                piece.md.trim() ? <PostBody key={i} markdown={piece.md} /> : null
+              ) : piece.kind === 'ad' ? (
+                <AdUnit key={i} kind="in-article" className="max-w-[44rem]" />
+              ) : banner ? (
+                <AffiliateBanner key={i} offer={banner} />
+              ) : null
+            )}
             {/* Tracks affiliate link clicks → GA4 event: affiliate_link_click */}
             <AffiliateClickTracker />
             {/* Tracks article views → Firestore article_views collection */}
@@ -275,8 +280,8 @@ export default async function GuidePage(
             </nav>
           ) : null}
 
-          {/* ── Ad: Rectangle after article body (high RPM placement) ── */}
-          <AdUnit slot="GUIDE_MID_RECTANGLE" format="rectangle" className="my-10 mx-auto" />
+          {/* ── Ad: horizontal unit at the end of the article ── */}
+          <AdUnit kind="horizontal" className="max-w-[44rem]" />
 
           {/* ── Author byline footer ── */}
           <div className="mt-12 pt-8 border-t border-slate-800/70 flex items-start gap-4">
@@ -299,11 +304,6 @@ export default async function GuidePage(
               </p>
             </div>
           </div>
-
-          {/* ── Ad: Leaderboard above related guides (natural scroll pause point) ── */}
-          {related.length > 0 && (
-            <AdUnit slot="GUIDE_BOTTOM_LEADERBOARD" format="leaderboard" className="mb-8" />
-          )}
 
           {/* ── Related guides ── */}
           {related.length > 0 && (
@@ -352,7 +352,7 @@ export default async function GuidePage(
           {/* ── Sidebar ── */}
           <aside
             aria-label="Guide sidebar"
-            className="hidden lg:block w-72 xl:w-80 shrink-0 sticky top-28 self-start space-y-5 pb-10"
+            className="hidden lg:block w-[300px] xl:w-80 shrink-0 self-stretch space-y-5 pb-10"
           >
             {/* Related guides */}
             {related.length > 0 && (
@@ -413,7 +413,10 @@ export default async function GuidePage(
             )}
 
             {/* Ad slot */}
-            <AdUnit slot="GUIDE_SIDEBAR_RECTANGLE" format="rectangle" className="w-full" />
+            {/* Vertical ad: desktop only, stays in view while the reader scrolls */}
+            <div className="sticky top-28">
+              <AdUnit kind="vertical" className="!mt-0" />
+            </div>
           </aside>
 
           </div>{/* end flex row */}
