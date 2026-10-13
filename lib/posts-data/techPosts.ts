@@ -4,7 +4,7 @@ export const TECH_POSTS: BlogPost[] = [
   {
     id: 'post-tech-1',
     title: 'A Free Tech Stack for a One-Person Online Business',
-    slug: 'solopreneur-tech-stack-2026',
+    slug: 'free-tech-stack-one-person-business',
     excerpt: 'The free tools that can run a one-person online business, what each free plan limits, and the two costs you can\'t avoid: a domain and payment fees.',
     category: 'Tech',
     tags: ['Tech Stack', 'Solopreneur', 'Software Tools', 'Productivity', 'Free Tools'],
@@ -61,7 +61,7 @@ So if your site earns money, Vercel's free plan isn't for you. The paid Pro plan
 
 Netlify's free plan works on credits: 300 a month, with a hard stop. A production deploy costs 15 credits and each GB of bandwidth costs 20, so the allowance goes quickly if you publish often. When the credits run out, the site is paused until the next cycle. That's a real risk for a site that suddenly gets traffic.
 
-All three assume your site is built from files in a GitHub repository, which means some comfort with code. If that isn't you, a hosted platform is the better route, and this [comparison of WordPress, Ghost and a custom-built site](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026) covers the trade-offs.
+All three assume your site is built from files in a GitHub repository, which means some comfort with code. If that isn't you, a hosted platform is the better route, and this [comparison of WordPress, Ghost and a custom-built site](/guide/wordpress-vs-ghost-vs-nextjs) covers the trade-offs.
 
 ## Email list: Kit's free plan
 
@@ -110,13 +110,13 @@ Pay when one of these happens:
 - **A paid feature would earn or save more than it costs.** Email automation is the usual first one, because a welcome sequence runs without you.
 - **You're doing a job by hand every week.** At that point a paid tool or a [no-code automation](/guide/no-code-automation-guide-make-zapier) is cheaper than your hours.
 
-Before the first sale, the only bill should be the domain. Buy that, put a site on a host whose terms allow business use, and start the email list. If the site itself is the next job, the [step-by-step guide to starting a blog](/guide/how-to-start-a-profitable-blog-2026) picks up from here.
+Before the first sale, the only bill should be the domain. Buy that, put a site on a host whose terms allow business use, and start the email list. If the site itself is the next job, the [step-by-step guide to starting a blog](/guide/how-to-start-a-blog-that-makes-money) picks up from here.
 `
   },
   {
     id: 'post-tech-2',
     title: 'AI Tools for a One-Person Business: What to Use for Each Job',
-    slug: 'ai-productivity-tools-solopreneurs-2026',
+    slug: 'ai-tools-one-person-business',
     excerpt: 'Which AI tools are worth using when you work alone, organised by job, with their failure modes, what to keep out of them and a pre-publish checklist.',
     category: 'Tech',
     tags: ['AI Tools', 'Productivity', 'Automation', 'Workflow', 'Artificial Intelligence'],
@@ -235,13 +235,13 @@ Turning training off doesn't make a chat private. The provider still stores your
 
 ## Start with one job
 
-Pick the task you repeat most often and try one free plan on it for a couple of weeks. Keep the tool if checking its output takes less time than doing the task yourself, and pay only once you hit a free limit on a job it has already proved useful for. If that job is writing, the next thing to read is [how to write blog posts faster without making them worse](/guide/fast-article-writing-framework-2026).
+Pick the task you repeat most often and try one free plan on it for a couple of weeks. Keep the tool if checking its output takes less time than doing the task yourself, and pay only once you hit a free limit on a job it has already proved useful for. If that job is writing, the next thing to read is [how to write blog posts faster without making them worse](/guide/write-blog-posts-faster).
 `
   },
   {
     id: 'post-tech-3',
     title: 'WordPress vs Ghost vs Custom Next.js: Which to Build On',
-    slug: 'wordpress-vs-ghost-vs-custom-react-cms-2026',
+    slug: 'wordpress-vs-ghost-vs-nextjs',
     excerpt: 'Which platform fits your blog depends on who publishes and how you earn. A plain comparison of WordPress, Ghost and a custom Next.js build.',
     category: 'Tech',
     tags: ['CMS', 'WordPress', 'Ghost', 'React', 'Next.js', 'Web Development'],
@@ -305,7 +305,7 @@ Two details to check before you sign up. At the time of writing, the lowest Ghos
 
 Self-hosting removes the plan fee but hands the work back to you. Ghost's [hosting docs](https://docs.ghost.org/hosting) describe a specific stack (Ubuntu, Node.js, MySQL, NGINX), put updates and server maintenance on you, and note that newsletter delivery is a separate paid service for self-hosters. If you've never run a server, read a [beginner's walkthrough of running services on a VPS](/guide/self-hosting-beginners-cloud-vps-guide) before committing.
 
-Ghost's weak spot is everything outside publishing. There are integrations and themes, but nothing like WordPress's plugin directory. If you want an unusual ad layout or a comparison-table tool, you may end up editing theme code. If newsletters are the business, though, I'd take Ghost over WordPress plus a stack of email plugins. The guide on [starting a paid newsletter](/guide/build-paid-newsletter-recurring-income) covers whether that model suits you at all.
+Ghost's weak spot is everything outside publishing. There are integrations and themes, but nothing like WordPress's plugin directory. If you want an unusual ad layout or a comparison-table tool, you may end up editing theme code. If newsletters are the business, though, I'd take Ghost over WordPress plus a stack of email plugins. The guide on [starting a paid newsletter](/guide/how-to-start-a-paid-newsletter) covers whether that model suits you at all.
 
 ## Custom Next.js: full control, and you maintain all of it
 
@@ -321,7 +321,7 @@ Build this if you'd enjoy building it, or if you need something the other two ca
 
 None of them. All three can rank, and all three can be set up badly.
 
-Search engines read the HTML your site serves. They care whether pages are crawlable, have sensible titles and canonical URLs, load reasonably fast and answer the query. WordPress gets most of the technical parts from an SEO plugin. Ghost includes the basics without add-ons. With Next.js you write them yourself, which means nothing is wrong by default and nothing is right by default either. Whichever you choose, run through a [basic SEO checklist](/guide/2026-practical-seo-checklist) once the site is live.
+Search engines read the HTML your site serves. They care whether pages are crawlable, have sensible titles and canonical URLs, load reasonably fast and answer the query. WordPress gets most of the technical parts from an SEO plugin. Ghost includes the basics without add-ons. With Next.js you write them yourself, which means nothing is wrong by default and nothing is right by default either. Whichever you choose, run through a [basic SEO checklist](/guide/seo-checklist) once the site is live.
 
 ## Which is fastest?
 
@@ -348,7 +348,7 @@ In every case, the part that protects your traffic is keeping URLs the same, or 
 
 ## What to do next
 
-Pick by who will be publishing day to day, since that person lives with the choice. For most people starting a blog to earn from, that points to self-hosted WordPress, and the step-by-step guide to [starting a blog that can make money](/guide/how-to-start-a-profitable-blog-2026) picks up from there.
+Pick by who will be publishing day to day, since that person lives with the choice. For most people starting a blog to earn from, that points to self-hosted WordPress, and the step-by-step guide to [starting a blog that can make money](/guide/how-to-start-a-blog-that-makes-money) picks up from there.
 `
   },
   {
@@ -450,7 +450,7 @@ Copy this and fill in the brackets:
 
 > If you're unsure what I want, ask one question before you start.
 
-The outline step pairs well with a repeatable drafting routine. If you don't have one, [this process for writing posts faster without making them worse](/guide/fast-article-writing-framework-2026) covers the parts the assistant can't do for you.
+The outline step pairs well with a repeatable drafting routine. If you don't have one, [this process for writing posts faster without making them worse](/guide/write-blog-posts-faster) covers the parts the assistant can't do for you.
 
 ## Setup 2: a public helper that answers from your guides
 
@@ -492,7 +492,7 @@ Actions were the GPT feature for that, and they're the part that doesn't survive
 
 ## Start with the private one
 
-Build the writing assistant this week with the tool you already use, and test it against a post you've published so you can judge the output honestly. Leave the public helper until the private one has earned your trust. If you're still deciding which AI tools deserve a place in your routine, [this rundown of AI tools for solo operators](/guide/ai-productivity-tools-solopreneurs-2026) is the next read.
+Build the writing assistant this week with the tool you already use, and test it against a post you've published so you can judge the output honestly. Leave the public helper until the private one has earned your trust. If you're still deciding which AI tools deserve a place in your routine, [this rundown of AI tools for solo operators](/guide/ai-tools-one-person-business) is the next read.
 `
   },
   {
@@ -719,7 +719,7 @@ Both paid tools offer a trial, and they can run next to GA4 without conflict. Ru
   {
     id: 'post-tech-7',
     title: 'How to Set Up a Simple Desk for Focused Work on a Budget',
-    slug: 'minimalist-desk-setup-for-focus-2026',
+    slug: 'simple-desk-setup-for-focus',
     excerpt: 'A plain guide to setting up a comfortable, low-distraction desk: get your posture right, spend on the few things that matter, skip the rest.',
     category: 'Tech',
     tags: ['Desk Setup', 'Hardware', 'Productivity', 'Ergonomics', 'Workspace'],
@@ -818,7 +818,7 @@ Adjusting a workstation can ease ordinary stiffness, but it isn't treatment. If 
 
 ## Where to go from here
 
-Spend ten minutes on the posture check today and buy only what fixes a gap you found. If one laptop is your whole workspace, the next thing to protect is what's on it, so set up [a backup routine for your work files](/guide/cloud-backups-for-creators-guide). After that, the bigger gains come from how you use the desk: a repeatable [process for drafting blog posts faster](/guide/fast-article-writing-framework-2026) will do more for your output than any piece of hardware.
+Spend ten minutes on the posture check today and buy only what fixes a gap you found. If one laptop is your whole workspace, the next thing to protect is what's on it, so set up [a backup routine for your work files](/guide/cloud-backups-for-creators-guide). After that, the bigger gains come from how you use the desk: a repeatable [process for drafting blog posts faster](/guide/write-blog-posts-faster) will do more for your output than any piece of hardware.
 `
   },
   {
@@ -917,7 +917,7 @@ On WordPress, a site is two things: the database, which holds your posts and set
 
 If your site is code in a Git repository, the copy on GitHub plus the clone on your backed-up computer already gives you redundancy for the code. GitHub's [guide to backing up a repository](https://docs.github.com/en/repositories/archiving-a-github-repository/backing-up-a-repository) points out that a clone doesn't include issues, wikis or Git LFS objects. Anything stored outside the repository, such as a database or uploaded media, needs its own export.
 
-On a hosted platform, find the export option in settings and use it on a schedule. Which of these situations you're in depends on [the CMS you picked](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026), and if you [run your own server](/guide/self-hosting-beginners-cloud-vps-guide), nobody else is making backups for you.
+On a hosted platform, find the export option in settings and use it on a schedule. Which of these situations you're in depends on [the CMS you picked](/guide/wordpress-vs-ghost-vs-nextjs), and if you [run your own server](/guide/self-hosting-beginners-cloud-vps-guide), nobody else is making backups for you.
 
 ### Your email list
 
@@ -1045,7 +1045,7 @@ Don't skip MFA on an account just because SMS is the only option. Turn it on, an
 
 **Money and audience accounts.** Add MFA to payment processors, ad networks, affiliate dashboards and your email-list provider, and check that payout details haven't been changed. If your list is the core of your business, the provider account behind your [email welcome sequence](/guide/build-automated-affiliate-email-funnel) deserves the same care as your bank login.
 
-**Updates.** Turn on automatic updates for your operating system, browser and phone, and leave your computer's security software running and updating. If you run your own site, that includes the CMS and its plugins; the guide to [choosing between WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026) covers how much maintenance each one leaves you with.
+**Updates.** Turn on automatic updates for your operating system, browser and phone, and leave your computer's security software running and updating. If you run your own site, that includes the CMS and its plugins; the guide to [choosing between WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-nextjs) covers how much maintenance each one leaves you with.
 
 ## Give collaborators access, not passwords
 
@@ -1270,7 +1270,7 @@ Yes, and plenty of people do for personal projects. The server then depends on y
 
 ## Start with one app
 
-Set up the server, run Uptime Kuma for a month, and see how you feel about the upkeep. If it's a chore, you've lost very little and can delete the server. If you like it, add a second app and get your backups tested before you host anything you'd miss. To see where a server fits among the other tools a one-person business needs, read the [solo business tech stack guide](/guide/solopreneur-tech-stack-2026) next.
+Set up the server, run Uptime Kuma for a month, and see how you feel about the upkeep. If it's a chore, you've lost very little and can delete the server. If you like it, add a second app and get your backups tested before you host anything you'd miss. To see where a server fits among the other tools a one-person business needs, read the [solo business tech stack guide](/guide/free-tech-stack-one-person-business) next.
 `
   }
 ];

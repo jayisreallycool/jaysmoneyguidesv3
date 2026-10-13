@@ -152,7 +152,7 @@ Be wary of companies advertising consolidation that turn out to be debt settleme
 
 ## Start with numbers you already have
 
-Before you ask any lender for a quote, write down your card balances, their APRs and the payment you could make every month without strain. With those three things in front of you, a loan offer is easy to judge: either its total cost beats what you have now, or it doesn't. If you're not sure what payment is realistic, set up a budget first, and the [50/30/20 approach to managing cash flow](/guide/manage-cash-flow-solo-founder-50-30-20-rule) is a simple place to begin.
+Before you ask any lender for a quote, write down your card balances, their APRs and the payment you could make every month without strain. With those three things in front of you, a loan offer is easy to judge: either its total cost beats what you have now, or it doesn't. If you're not sure what payment is realistic, set up a budget first, and the [50/30/20 approach to managing cash flow](/guide/cash-flow-for-freelancers) is a simple place to begin.
 
 *This article is general education, not personal financial advice. Approval and terms depend on your own credit, income and other factors the lender reviews.*
 `,
@@ -227,7 +227,7 @@ For federal loans, I'd only consider it if all of these are true:
 
 If you're unsure about any of them, keep the federal loans federal. You can also split the decision: refinance your private loans and leave the federal ones alone.
 
-Some borrowers fall into special cases. Doctors and dentists in residency have a different set of trade-offs, covered in the guide to [refinancing medical and dental school loans](/guide/sofi-medical-dental-student-loan-refinancing). And if your income swings from month to month, sort out [a cash-flow plan for irregular income](/guide/manage-cash-flow-solo-founder-50-30-20-rule) before you commit to a payment that can't flex.
+Some borrowers fall into special cases. Doctors and dentists in residency have a different set of trade-offs, covered in the guide to [refinancing medical and dental school loans](/guide/sofi-medical-dental-student-loan-refinancing). And if your income swings from month to month, sort out [a cash-flow plan for irregular income](/guide/cash-flow-for-freelancers) before you commit to a payment that can't flex.
 
 ## So is now the right time?
 

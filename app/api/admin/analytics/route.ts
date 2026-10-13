@@ -2,6 +2,7 @@ import { adminDb, verifyAdminRequest } from '@/lib/firebase-admin';
 import { NextRequest } from 'next/server';
 import { INITIAL_POSTS } from '@/lib/posts-data/initialPosts';
 import { PRODUCTS } from '@/lib/products';
+import SLUG_RENAMES from '@/lib/slug-renames.json';
 
 export const runtime = 'nodejs';
 
@@ -22,6 +23,17 @@ function counts(v: unknown): Record<string, number> {
   return out;
 }
 
+function renamePages(pages: Record<string, number>): Record<string, number> {
+  const renames = SLUG_RENAMES as Record<string, string>;
+  const out: Record<string, number> = {};
+  for (const [path, n] of Object.entries(pages)) {
+    const m = path.match(/^\/guide\/(.+)$/);
+    const key = m && renames[m[1]] ? `/guide/${renames[m[1]]}` : path;
+    out[key] = (out[key] ?? 0) + n;
+  }
+  return out;
+}
+
 const verifyAdmin = (req: Request) => verifyAdminRequest(req);
 
 export async function GET(req: NextRequest) {
@@ -38,8 +50,11 @@ export async function GET(req: NextRequest) {
 
     // Map slug → view count
     const viewsBySlug: Record<string, number> = {};
+    // Views recorded under a guide's old address count toward its new one.
+    const renames = SLUG_RENAMES as Record<string, string>;
     viewsSnap.docs.forEach(d => {
-      viewsBySlug[d.id] = (d.data().count as number) || 0;
+      const slug = renames[d.id] ?? d.id;
+      viewsBySlug[slug] = (viewsBySlug[slug] ?? 0) + ((d.data().count as number) || 0);
     });
 
     // Map productId → open count
@@ -81,7 +96,7 @@ export async function GET(req: NextRequest) {
           date: days[i],
           views: num(d.views),
           visits: num(d.visits),
-          pages: counts(d.pages),
+          pages: renamePages(counts(d.pages)),
           referrers: counts(d.referrers),
           devices: counts(d.devices),
           countries: counts(d.countries),

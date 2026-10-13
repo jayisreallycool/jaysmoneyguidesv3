@@ -4,7 +4,7 @@ export const AFFILIATE_POSTS: BlogPost[] = [
   {
     id: 'post-aff-viable-solution',
     title: 'Is Affiliate Marketing Still Worth It? How to Judge a Niche',
-    slug: 'affiliate-marketing-viable-solution-2026',
+    slug: 'is-affiliate-marketing-worth-it',
     excerpt: 'The model still works, but only for specific niches and useful content. Here\'s how to check whether yours has room before you spend anything.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Marketing', 'Business Strategy', 'Niche Selection'],
@@ -81,13 +81,13 @@ Start an email list early. It's the one audience a ranking change can't take fro
 
 ## Your next step
 
-Pick one niche and run the first check today, before you spend anything. Reading the search results will tell you more than another article about whether affiliate marketing is dead. The guide to [keyword research that reflects realistic opportunity](/guide/zero-competition-keyword-research-guide) shows how to size up that competition properly.
+Pick one niche and run the first check today, before you spend anything. Reading the search results will tell you more than another article about whether affiliate marketing is dead. The guide to [keyword research that reflects realistic opportunity](/guide/low-competition-keyword-research) shows how to size up that competition properly.
 `
   },
   {
     id: 'post-aff-opportunity-2025',
     title: 'Affiliate Marketing Trends: What Changed and What to Do',
-    slug: 'affiliate-marketing-big-opportunity-2026',
+    slug: 'affiliate-marketing-trends',
     excerpt: 'The changes that affect affiliate site owners, with sources: AI answers in search, spam policies, network consolidation and tracking. Plus what to do about each.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Marketing', 'Industry Trends', 'E-Commerce', 'SaaS Growth'],
@@ -120,7 +120,7 @@ Most articles about affiliate marketing trends open with a market-size figure. I
 
 The shifts that affect a site owner are more concrete. Google now answers many searches itself. Its spam policies describe thin affiliate pages and mass-produced content by name. One of the oldest affiliate networks has been absorbed by its parent. Browser tracking is less dependable than program terms suggest. Each of these calls for a specific response, and that's what this guide covers.
 
-If you're still deciding whether to start at all, that's a separate question. I've covered it in [how to judge whether an affiliate niche is worth your time](/guide/affiliate-marketing-viable-solution-2026).
+If you're still deciding whether to start at all, that's a separate question. I've covered it in [how to judge whether an affiliate niche is worth your time](/guide/is-affiliate-marketing-worth-it).
 
 ## Google answers more searches without sending a click
 
@@ -227,7 +227,7 @@ The short version: a recurring program is usually the better deal when your read
 
 Someone clicks your link and signs up for a paid plan. The company then pays you a percentage of each payment while that customer stays subscribed. If they cancel, drop to a free plan or get a refund, your commission stops or shrinks with it.
 
-Most physical-product programs pay once per order, and the rates are lower. Amazon's [standard commission rate table](https://affiliate-program.amazon.com/help/node/topic/GRXPHT8U84RAYDXZ) tops out at 10% for a couple of luxury categories, with everyday categories such as home, toys and kitchen at 3% to 4.5%. That program still has its uses, which I cover in my [look at where Amazon Associates fits](/guide/amazon-associates-honest-review-2026).
+Most physical-product programs pay once per order, and the rates are lower. Amazon's [standard commission rate table](https://affiliate-program.amazon.com/help/node/topic/GRXPHT8U84RAYDXZ) tops out at 10% for a couple of luxury categories, with everyday categories such as home, toys and kitchen at 3% to 4.5%. That program still has its uses, which I cover in my [look at where Amazon Associates fits](/guide/is-amazon-associates-worth-it).
 
 The catch is that "recurring" describes several different deals:
 
@@ -287,7 +287,7 @@ Fit matters more than rate. A tool your readers don't need won't convert at 50%,
 
 ## Content that earns recurring commissions
 
-People who search "what is email marketing software" are rarely ready to buy, and big publishers own those results anyway. Searches where someone is choosing between options are a better target: "Tool A vs Tool B", "best scheduling software for boutique fitness studios", "Tool A alternatives". My guide to [keyword research based on realistic opportunity](/guide/zero-competition-keyword-research-guide) covers how to find the ones a small site can rank for.
+People who search "what is email marketing software" are rarely ready to buy, and big publishers own those results anyway. Searches where someone is choosing between options are a better target: "Tool A vs Tool B", "best scheduling software for boutique fitness studios", "Tool A alternatives". My guide to [keyword research based on realistic opportunity](/guide/low-competition-keyword-research) covers how to find the ones a small site can rank for.
 
 Recurring commissions also change what a good review looks like. You're paid only while the customer stays, so talking someone into a tool that doesn't suit them earns one month and a cancellation. Say who the tool is wrong for. Use a trial account and your own screenshots where you can. If you haven't tested a feature or a pricing tier, say so. Link to the vendor's pricing page and note the date you checked, because SaaS prices and plan names change often.
 
@@ -305,7 +305,7 @@ Recurring commissions beat one-time payouts when customers stay and the program 
   {
     id: 'post-aff-2',
     title: 'Is Amazon Associates Worth It? The Terms That Matter',
-    slug: 'amazon-associates-honest-review-2026',
+    slug: 'is-amazon-associates-worth-it',
     excerpt: 'What Amazon\'s affiliate program pays, how the 24-hour window and three-sale approval rule work, and which sites it suits.',
     category: 'Affiliate Marketing',
     tags: ['Amazon Associates', 'Physical Products', 'E-commerce', 'Affiliate Marketing'],
@@ -538,7 +538,7 @@ A direct deal doesn't change your disclosure duties. The FTC expects you to [dis
 
 ## Start with one brand you already cover
 
-Pick a product you already write about, find its affiliate manager this week and send the email above. If your affiliate income comes mostly from Amazon today, my [review of what Amazon Associates does well and where it falls short](/guide/amazon-associates-honest-review-2026) will help you decide which categories are worth pitching direct first.
+Pick a product you already write about, find its affiliate manager this week and send the email above. If your affiliate income comes mostly from Amazon today, my [review of what Amazon Associates does well and where it falls short](/guide/is-amazon-associates-worth-it) will help you decide which categories are worth pitching direct first.
 `
   },
   {
@@ -655,7 +655,7 @@ Amazon's rule is contractual and sits on top of the FTC's. The [Associates Progr
 
 > As an Amazon Associate I earn from qualifying purchases.
 
-Amazon's help pages also suggest short labels near individual links, such as "(paid link)" or "#ad." Its program policies currently bar using affiliate links in ebooks and printed material, so read them before reusing blog content in another format. These are contract terms, so the consequence of breaking them is Amazon closing your account. I cover the program's other trade-offs in [this look at Amazon Associates](/guide/amazon-associates-honest-review-2026).
+Amazon's help pages also suggest short labels near individual links, such as "(paid link)" or "#ad." Its program policies currently bar using affiliate links in ebooks and printed material, so read them before reusing blog content in another format. These are contract terms, so the consequence of breaking them is Amazon closing your account. I cover the program's other trade-offs in [this look at Amazon Associates](/guide/is-amazon-associates-worth-it).
 
 ## What happens if you skip it
 
@@ -734,7 +734,7 @@ Check each program's rules before you put its links in an email. The rules diffe
 
 **Why it hurts:** A spike is hard to reproduce and tells you little. Those visitors arrived curious about one post, and few of them were shopping. A big day can also hide a page that converts badly, because the volume covers for it.
 
-**The fix:** Put most of your effort into traffic that keeps arriving without you. For a blog, that means articles written to answer searches people make when they're close to buying, such as "X vs Y" or "best X for [specific situation]". Start with terms a new site has a realistic chance of ranking for. The guide to [keyword research that reflects realistic opportunity](/guide/zero-competition-keyword-research-guide) shows how to find them. Treat a viral post as a bonus and make sure the page it lands on has your signup form.
+**The fix:** Put most of your effort into traffic that keeps arriving without you. For a blog, that means articles written to answer searches people make when they're close to buying, such as "X vs Y" or "best X for [specific situation]". Start with terms a new site has a realistic chance of ranking for. The guide to [keyword research that reflects realistic opportunity](/guide/low-competition-keyword-research) shows how to find them. Treat a viral post as a bonus and make sure the page it lands on has your signup form.
 
 ## 4. Never going back to old articles
 
@@ -757,7 +757,7 @@ While you're in there, look at your affiliate dashboard to see which links got c
 
 **Why it hurts:** Google's spam policies list [keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies) as a violation. Its guidance on helpful content also names writing to a particular word count, and producing content mainly to attract search visits, as warning signs. Even where a page like that ranks, it sells poorly, because a reader who has to dig for the answer leaves before reaching your recommendation.
 
-**The fix:** Put the answer in the first few lines. Write the draft the way you'd explain it to a friend who asked, then go back and check that your headings use the words a searcher would type. Read it aloud once, and rewrite any sentence that only exists to hold a keyword. For the technical side, the [practical SEO checklist](/guide/2026-practical-seo-checklist) covers what's worth your time.
+**The fix:** Put the answer in the first few lines. Write the draft the way you'd explain it to a friend who asked, then go back and check that your headings use the words a searcher would type. Read it aloud once, and rewrite any sentence that only exists to hold a keyword. For the technical side, the [practical SEO checklist](/guide/seo-checklist) covers what's worth your time.
 
 ## Can you fix these on a site that's already built?
 
@@ -874,7 +874,7 @@ Most email platforms add the unsubscribe link and address block to every message
 
 Some affiliate programs restrict or ban email promotion, and breaking the terms can cost you the account.
 
-Amazon is the one most people ask about. Its current [Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) allow Special Links in email only when the message is solicited, meaning the recipient opted in. The same policies still bar links in ebooks and printed material, so a PDF lead magnet shouldn't contain Amazon links. Amazon changes these terms from time to time; read the current version before you rely on it. The other [Amazon Associates terms worth knowing](/guide/amazon-associates-honest-review-2026) are covered separately.
+Amazon is the one most people ask about. Its current [Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) allow Special Links in email only when the message is solicited, meaning the recipient opted in. The same policies still bar links in ebooks and printed material, so a PDF lead magnet shouldn't contain Amazon links. Amazon changes these terms from time to time; read the current version before you rely on it. The other [Amazon Associates terms worth knowing](/guide/is-amazon-associates-worth-it) are covered separately.
 
 For every other program, search its terms for "email" before adding a link to your sequence. Do the same with your email platform's acceptable use policy, since some providers limit affiliate-heavy sending.
 
@@ -1001,7 +1001,7 @@ On camera, keep it brief:
 
 Repeated pitching is the quickest way to lose a viewer who came for instructions.
 
-Title the video the way people phrase the search. The process for [finding keywords with realistic competition](/guide/zero-competition-keyword-research-guide) is written for blogs, and it transfers well to choosing video topics. Good audio matters more than camera quality for this kind of video, and a free screen recorder such as OBS Studio is enough to start.
+Title the video the way people phrase the search. The process for [finding keywords with realistic competition](/guide/low-competition-keyword-research) is written for blogs, and it transfers well to choosing video topics. Good audio matters more than camera quality for this kind of video, and a free screen recorder such as OBS Studio is enough to start.
 
 ## Why search-driven videos keep earning
 
@@ -1090,7 +1090,7 @@ The useful part of this is the break-even. In the example the high-ticket commis
 
 ## Which model fits your site
 
-Low ticket makes sense when your traffic is broad or can realistically become broad: search topics with a lot of volume, Pinterest, short-form social. Readers arrive wanting to pick something inexpensive and move on, so roundups and quick comparisons do the job. [Amazon Associates](/guide/amazon-associates-honest-review-2026) is where most people start, and its rates differ by product category, so check the current schedule for yours.
+Low ticket makes sense when your traffic is broad or can realistically become broad: search topics with a lot of volume, Pinterest, short-form social. Readers arrive wanting to pick something inexpensive and move on, so roundups and quick comparisons do the job. [Amazon Associates](/guide/is-amazon-associates-worth-it) is where most people start, and its rates differ by product category, so check the current schedule for yours.
 
 High ticket makes sense when your audience is small but specific, and you know the product area well enough to answer the hard questions someone has before spending serious money. A newsletter read by a few hundred people in one profession can be a better fit for a business software program than a general blog with ten times the visitors.
 
@@ -1174,7 +1174,7 @@ Two more calls I'd make at this stage:
 - **Choose first, check commissions second.** If the best fit for a situation has no affiliate program, include it anyway with a plain link. A guide where every pick happens to pay you is easy to spot.
 - **Cover the popular option you wouldn't pick.** Readers are already considering it. Saying who it suits and why you'd pass does more for your credibility than leaving it out.
 
-Your situation list doubles as keyword research, because "best X for Y" searches are those same situations typed into a search box. If you need help judging which ones a small site can rank for, see [how to size up a keyword's real opportunity](/guide/zero-competition-keyword-research-guide).
+Your situation list doubles as keyword research, because "best X for Y" searches are those same situations typed into a search box. If you need help judging which ones a small site can rank for, see [how to size up a keyword's real opportunity](/guide/low-competition-keyword-research).
 
 ## An outline that works for most buyer's guides
 
@@ -1223,7 +1223,7 @@ A guide where you used two of five products and said so is more useful than one 
 
 Exact prices are the first thing to go wrong, so keep them out of your sentences. Relative statements last longer: "the cheapest of the five", "roughly double the price of Product A". Then send the reader to the seller for the current number.
 
-Some programs don't leave this up to you. [Amazon's Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) only allow you to show prices and availability when Amazon serves the link that displays them or when you pull the data through its API, so a hand-typed Amazon price is a compliance problem as well as a stale one. The other [Amazon Associates terms that affect how you write](/guide/amazon-associates-honest-review-2026) are covered separately.
+Some programs don't leave this up to you. [Amazon's Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) only allow you to show prices and availability when Amazon serves the link that displays them or when you pull the data through its API, so a hand-typed Amazon price is a compliance problem as well as a stale one. The other [Amazon Associates terms that affect how you write](/guide/is-amazon-associates-worth-it) are covered separately.
 
 For everything else that changes, keep the volatile facts in one place, ideally the summary table, so an update is a single pass. On each pass, check four things:
 
@@ -1246,7 +1246,7 @@ Earning more from one pick than another is fine. Letting the commission choose t
 
 ## Before you publish
 
-Read only the summary table and the first two paragraphs. If a reader could make a reasonable choice from those alone, and the sections below back up each pick with something you checked yourself, the guide is ready. For the drafting itself, [this framework for writing articles faster and more clearly](/guide/fast-article-writing-framework-2026) picks up where the outline leaves off.
+Read only the summary table and the first two paragraphs. If a reader could make a reasonable choice from those alone, and the sections below back up each pick with something you checked yourself, the guide is ready. For the drafting itself, [this framework for writing articles faster and more clearly](/guide/write-blog-posts-faster) picks up where the outline leaves off.
 `
   },
   {
@@ -1308,7 +1308,7 @@ Pinterest's rule isn't the only disclosure rule. In the US, the FTC expects a cl
 
 ### Your affiliate program has rules too
 
-Pinterest allowing something doesn't mean your program does. Some programs limit which sites or social platforms your links can appear on, and some ban masked links. Amazon's [Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies), for example, prohibit using a link shortener "in a manner that makes it unclear that you are linking to an Amazon Site". Read the terms of each program before you put its link on a Pin, and if they don't mention Pinterest, ask the program. I've covered [the Amazon Associates terms that catch people out](/guide/amazon-associates-honest-review-2026) separately.
+Pinterest allowing something doesn't mean your program does. Some programs limit which sites or social platforms your links can appear on, and some ban masked links. Amazon's [Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies), for example, prohibit using a link shortener "in a manner that makes it unclear that you are linking to an Amazon Site". Read the terms of each program before you put its link on a Pin, and if they don't mention Pinterest, ask the program. I've covered [the Amazon Associates terms that catch people out](/guide/is-amazon-associates-worth-it) separately.
 
 ## Pin straight to an affiliate link, or to your own article?
 
@@ -1337,7 +1337,7 @@ Pinterest says plainly that text helps discovery: "When you add the right text t
 
 **Boards.** Pinterest's advice is to save each Pin to a relevant board. It doesn't spell out how much board names count, so treat this as my assumption: a specific board ("Small Space Home Office Ideas") describes your Pins better than a catch-all ("Home Stuff"), to people and probably to the search system too. Start with a handful of boards that match your main article categories.
 
-Pull the phrases from the search bar test above and from Pinterest Trends, not from your Google keyword list. People often word a Pinterest search differently. The same habit of [checking real demand before you write](/guide/zero-competition-keyword-research-guide) applies here, just with a different search box.
+Pull the phrases from the search bar test above and from Pinterest Trends, not from your Google keyword list. People often word a Pinterest search differently. The same habit of [checking real demand before you write](/guide/low-competition-keyword-research) applies here, just with a different search box.
 
 ## Pin design basics
 

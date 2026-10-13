@@ -4,7 +4,7 @@ export const SEO_POSTS: BlogPost[] = [
   {
     id: 'post-seo-1',
     title: 'SEO Checklist: What to Check First and How to Check It',
-    slug: '2026-practical-seo-checklist',
+    slug: 'seo-checklist',
     excerpt: 'A prioritized SEO checklist in six groups. Every item names the free tool to check it with and says whether the advice comes from Google\'s own documentation.',
     category: 'SEO',
     tags: ['SEO Checklist', 'On-Page SEO', 'Technical SEO', 'E-E-A-T'],
@@ -67,7 +67,7 @@ If you'd rather run these checks as one timed session, my [one-hour SEO audit wa
 - **Updates are real.** Revise a page when the facts change. Google lists changing a date without substantially changing the content as a warning sign. *Google-documented.*
 - **One page per topic.** If two of your posts chase the same query, merge them and redirect the weaker one. *Good practice.*
 
-Most pages that fail this group were aimed at the wrong query from the start. That's a research problem, and I cover it in the guide to [picking keywords you can realistically rank for](/guide/zero-competition-keyword-research-guide).
+Most pages that fail this group were aimed at the wrong query from the start. That's a research problem, and I cover it in the guide to [picking keywords you can realistically rank for](/guide/low-competition-keyword-research).
 
 Google's own questions for this group are on its [helpful content page](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). It's worth reading once in full.
 
@@ -130,13 +130,13 @@ Nothing here guarantees a ranking. What you can control is whether your pages ar
 
 ## After the checklist
 
-Once groups 1 and 2 pass, most of the remaining gains come from covering your subject more thoroughly than the sites you compete with. Fixing tags further won't do much. That's the next thing to work on, and my piece on [how focused sites build topical authority](/guide/topical-authority-case-study) explains how.
+Once groups 1 and 2 pass, most of the remaining gains come from covering your subject more thoroughly than the sites you compete with. Fixing tags further won't do much. That's the next thing to work on, and my piece on [how focused sites build topical authority](/guide/topical-authority-topic-clusters) explains how.
 `
   },
   {
     id: 'post-seo-2',
     title: 'Topical Authority: How to Build a Small-Site Topic Cluster',
-    slug: 'topical-authority-case-study',
+    slug: 'topical-authority-topic-clusters',
     excerpt: 'Topical authority is SEO shorthand, not a Google ranking factor. Here\'s how to pick a narrow topic, map a pillar and supporting articles, and check the results.',
     category: 'SEO',
     tags: ['Topical Authority', 'SEO Strategy', 'Content Clusters', 'Content Marketing'],
@@ -190,7 +190,7 @@ Narrow enough that you could list every question a beginner would ask and realis
 3. Count the questions that deserve their own article. If you have fewer than about eight, the topic may be too thin to build a site section around. If you have more than you could write well in the next six months, cut the topic down until the list is manageable.
 4. Check that you know the subject, or are willing to learn it by doing it. Thin articles on a topic you've only read about are the weak point of most clusters.
 
-Those numbers are my rule of thumb for scoping a project, and Google publishes no threshold. If you want help deciding which questions are worth an article, the guide to [keyword research based on realistic opportunity](/guide/zero-competition-keyword-research-guide) covers that step.
+Those numbers are my rule of thumb for scoping a project, and Google publishes no threshold. If you want help deciding which questions are worth an article, the guide to [keyword research based on realistic opportunity](/guide/low-competition-keyword-research) covers that step.
 
 ## Mapping the pillar page and supporting articles
 
@@ -262,7 +262,7 @@ Yes, and plenty do. Each topic needs its own cluster and its own depth, so the w
 
 ## Start with the map
 
-Pick the narrowest topic you can cover fully, write the cluster map, and publish against it before adding anything outside it. If you haven't settled on a subject for the site at all yet, begin with the guide to [starting a blog that can sustain itself](/guide/how-to-start-a-profitable-blog-2026), then come back and build the first cluster.
+Pick the narrowest topic you can cover fully, write the cluster map, and publish against it before adding anything outside it. If you haven't settled on a subject for the site at all yet, begin with the guide to [starting a blog that can sustain itself](/guide/how-to-start-a-blog-that-makes-money), then come back and build the first cluster.
 `
   },
   {
@@ -348,7 +348,7 @@ Two caveats. Google describes this report as a sample, and tables stop at 1,000 
 
 **A crawler, if you want one.** Screaming Frog's SEO Spider has a free version that crawls up to 500 URLs and lists the links pointing at each page it finds. That's plenty for most small blogs, but you can do everything in this article without it.
 
-Which pages deserve more links is a judgment call. I'd start with pages that earn money, pages sitting on the second page of results for a search you care about, and the main guide at the centre of each subject you cover. That last group matters most if you're [building topical authority with a cluster of related posts](/guide/topical-authority-case-study), because the links are what turn separate articles into a cluster.
+Which pages deserve more links is a judgment call. I'd start with pages that earn money, pages sitting on the second page of results for a search you care about, and the main guide at the centre of each subject you cover. That last group matters most if you're [building topical authority with a cluster of related posts](/guide/topical-authority-topic-clusters), because the links are what turn separate articles into a cluster.
 
 ## A 30-minute internal link audit
 
@@ -386,13 +386,13 @@ On a site with hundreds of templated pages, hand-placed links can't cover everyt
 
 ## Where to go from here
 
-Run the 30-minute audit once, then let the per-post routine keep things tidy. Internal links are one item among several that affect how a page performs, so once they're in order, work through the rest of the [practical SEO checklist](/guide/2026-practical-seo-checklist) to see what else is worth your time.
+Run the 30-minute audit once, then let the per-post routine keep things tidy. Internal links are one item among several that affect how a page performs, so once they're in order, work through the rest of the [practical SEO checklist](/guide/seo-checklist) to see what else is worth your time.
 `
   },
   {
     id: 'post-seo-4',
     title: 'How to Find Low-Competition Keywords for a New Site',
-    slug: 'zero-competition-keyword-research-guide',
+    slug: 'low-competition-keyword-research',
     excerpt: 'Find specific queries a new site can compete for using Google\'s own suggestions and Search Console, then judge each one by reading the results page.',
     category: 'SEO',
     tags: ['Keyword Research', 'Search Intent', 'SEO Strategy', 'Content Planning'],
@@ -449,7 +449,7 @@ Look for queries where you get impressions but sit low on page one or on page tw
 
 Two limits to know about. A brand-new site will have little or nothing here, so come back after a couple of months of publishing. And Google [leaves some queries out of the report to protect privacy](https://support.google.com/webmasters/answer/17011259?hl=en), so the list is never complete.
 
-If you haven't published anything yet, set up the site first. My guide to [starting a blog that can sustain itself](/guide/how-to-start-a-profitable-blog-2026) covers that, and you can add Search Console the same day.
+If you haven't published anything yet, set up the site first. My guide to [starting a blog that can sustain itself](/guide/how-to-start-a-blog-that-makes-money) covers that, and you can add Search Console the same day.
 
 ## Step 3: Work out what the searcher wants
 
@@ -486,7 +486,7 @@ Every volume figure is an estimate, including Google's. Keyword Planner describe
 
 Use volume to compare queries roughly, more versus less, and don't plan around the exact figure. Long, specific queries frequently show as zero or "no data" in tools and still bring visitors. Appearing in autocomplete or People Also Ask is decent evidence that people do search for something. The opposite risk is real as well: a phrase you invented that shows up nowhere in Google's suggestions may have nobody searching for it.
 
-There's no minimum volume that makes a query worth writing about. A handful of visitors a month to one page isn't much, but thirty related pages on one subject add up, and covering a subject thoroughly is how [smaller sites build topical authority](/guide/topical-authority-case-study) over time.
+There's no minimum volume that makes a query worth writing about. A handful of visitors a month to one page isn't much, but thirty related pages on one subject add up, and covering a subject thoroughly is how [smaller sites build topical authority](/guide/topical-authority-topic-clusters) over time.
 
 ## Pick one primary query per article
 
@@ -584,7 +584,7 @@ A second test: would the page still be worth having if search engines didn't exi
 
 You're looking for a search that people make in many variations with the same structure: "[tool A] vs [tool B]", "[service] in [city]", "[app] integration with [app]", "[unit] to [unit]". The pattern has to be real, so check that people search several of the variations and look at what currently ranks. If the results are forum threads and thin pages, there's room. If they're all official product pages, your template probably won't beat them.
 
-The process is the same as [keyword research built around realistic opportunity](/guide/zero-competition-keyword-research-guide); you're just evaluating a pattern instead of a single phrase.
+The process is the same as [keyword research built around realistic opportunity](/guide/low-competition-keyword-research); you're just evaluating a pattern instead of a single phrase.
 
 ### 2. Get a real dataset
 
@@ -650,7 +650,7 @@ Yes. Many sites use templates for structured reference pages and write their gui
 
 ## Start with ten rows
 
-Before choosing tools or building a template, fill in ten rows of your dataset by hand and write one page from them manually. If that page is useful and the next nine would be different in ways that matter, you have a project. If the next nine would all say roughly the same thing, the topic is better served by a handful of hand-written articles, and [building depth on one focused topic](/guide/topical-authority-case-study) is the better route.
+Before choosing tools or building a template, fill in ten rows of your dataset by hand and write one page from them manually. If that page is useful and the next nine would be different in ways that matter, you have a project. If the next nine would all say roughly the same thing, the topic is better served by a handful of hand-written articles, and [building depth on one focused topic](/guide/topical-authority-topic-clusters) is the better route.
 `
   },
   {
@@ -764,7 +764,7 @@ Here's a complete Article example. Swap in your own values:
 </script>
 \`\`\`
 
-You rarely need to write this by hand for every post. Most platforms and SEO plugins generate Article and breadcrumb markup automatically, and a custom site can build it from the same data that fills the page template. How much you get for free is one of the practical differences [between WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026).
+You rarely need to write this by hand for every post. Most platforms and SEO plugins generate Article and breadcrumb markup automatically, and a custom site can build it from the same data that fills the page template. How much you get for free is one of the practical differences [between WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-nextjs).
 
 Generating it from the page's own data also solves the main maintenance problem. A hand-typed date or price goes stale the first time you edit the page. A templated one can't drift.
 
@@ -910,7 +910,7 @@ The same choices affect how readable the page is, which the guide to [blog layou
 
 If the lab report flags slow server response, or every page has poor LCP even after you've fixed images, look at the server. Nothing can appear on screen until the server sends the first byte.
 
-Turn on page caching, which serves a saved copy of each page instead of rebuilding it for every visitor. On WordPress that's a caching plugin or a host feature. A CDN, which keeps copies of your site on servers closer to your readers, helps if your audience is spread across countries. If you're on very cheap shared hosting and caching doesn't help, moving hosts may be the fix. Hosted platforms handle this layer for you, which is one of the trade-offs in [choosing a CMS](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026).
+Turn on page caching, which serves a saved copy of each page instead of rebuilding it for every visitor. On WordPress that's a caching plugin or a host feature. A CDN, which keeps copies of your site on servers closer to your readers, helps if your audience is spread across countries. If you're on very cheap shared hosting and caching doesn't help, moving hosts may be the fix. Hosted platforms handle this layer for you, which is one of the trade-offs in [choosing a CMS](/guide/wordpress-vs-ghost-vs-nextjs).
 
 ## Don't chase a perfect 100
 
@@ -930,7 +930,7 @@ Usually not for images, fonts, removing scripts or caching. Persistent INP probl
 
 ## Change one thing, then re-test
 
-Make one change, run PageSpeed Insights again, and note what moved. Once images and scripts are under control, page speed is one line on a longer list, and the [SEO checklist](/guide/2026-practical-seo-checklist) shows what to look at next.
+Make one change, run PageSpeed Insights again, and note what moved. Once images and scripts are under control, page speed is one line on a longer list, and the [SEO checklist](/guide/seo-checklist) shows what to look at next.
 `
   },
   {
@@ -1026,7 +1026,7 @@ First, find what's slipping. Click the date filter, choose the Compare tab, and 
 
 Second, find near misses. On the **Queries** tab, sort by impressions and look for searches where your average position sits just off the first page. Those pages already have Google's attention, so improving them usually pays back faster than writing something new. Write down three at most.
 
-Third, click any query that matters to you and switch to the Pages tab. If two of your URLs show up for the same search, they may be competing with each other. Note the pair so you can merge them or make each one clearly about a different thing, which is the same thinking behind [grouping a small site's articles into topic clusters](/guide/topical-authority-case-study).
+Third, click any query that matters to you and switch to the Pages tab. If two of your URLs show up for the same search, they may be competing with each other. Note the pair so you can merge them or make each one clearly about a different thing, which is the same thinking behind [grouping a small site's articles into topic clusters](/guide/topical-authority-topic-clusters).
 
 ## Minutes 30–40: Core Web Vitals and PageSpeed Insights
 
@@ -1079,7 +1079,7 @@ When you've fixed an indexing problem, go back to that reason in the Page indexi
 
 Save the note with today's date and the indexed-page count from Search Console. Next time you'll have something to compare against, and the whole pass goes faster. For a small site I'd repeat it every three months or so, and straight after any redesign, theme change or move to a new host.
 
-This hour tells you what's broken. For the wider list of things worth getting right on every page, work through the [SEO checklist of what to check first](/guide/2026-practical-seo-checklist) once the week's fixes are done.
+This hour tells you what's broken. For the wider list of things worth getting right on every page, work through the [SEO checklist of what to check first](/guide/seo-checklist) once the week's fixes are done.
 `
   },
   {
@@ -1204,13 +1204,13 @@ There's no fixed timeline. How you rank against competitors depends on how many 
 
 Most readers of this site run blogs, affiliate sites or online stores. If that's you and your customers could be anywhere, you can skip nearly all of this. Google's guidelines limit Business Profiles to businesses that have a location customers can visit or that travel to customers. That leaves out a purely online business, and a virtual office you don't work from doesn't count as a location.
 
-Your time is better spent on ordinary search work: [finding low-competition keywords for a new site](/guide/zero-competition-keyword-research-guide) and writing pages that answer them.
+Your time is better spent on ordinary search work: [finding low-competition keywords for a new site](/guide/low-competition-keyword-research) and writing pages that answer them.
 
 The exception is a blogger who also sells a local service, such as in-person photography, tutoring or consulting for businesses in one city. That part of your business does qualify, and everything above applies to it.
 
 ## Where to start this week
 
-Verify the profile, get the primary category right, and fix your hours. Then set up one repeatable way to ask every customer for an honest review. Those four tasks cover most of what Google itself recommends, and none of them costs anything. After that, work through [the wider SEO checklist](/guide/2026-practical-seo-checklist) for your website.
+Verify the profile, get the primary category right, and fix your hours. Then set up one repeatable way to ask every customer for an honest review. Those four tasks cover most of what Google itself recommends, and none of them costs anything. After that, work through [the wider SEO checklist](/guide/seo-checklist) for your website.
 `
   },
   {
@@ -1245,7 +1245,7 @@ Verify the profile, get the primary category right, and fix your hours. Then set
       'Give each language version a canonical that points to itself, never to another language.',
     ],
     content: `
-Most blogs don't need international SEO. If your site is in one language and you have no plans to translate it, there's nothing to set up. Google works out a page's language from the text on it and can show that page to people searching in that language anywhere in the world. Readers in other countries finding your English articles is normal and needs no hreflang. Your time is better spent on [the basic SEO checks that apply to every site](/guide/2026-practical-seo-checklist).
+Most blogs don't need international SEO. If your site is in one language and you have no plans to translate it, there's nothing to set up. Google works out a page's language from the text on it and can show that page to people searching in that language anywhere in the world. Readers in other countries finding your English articles is normal and needs no hreflang. Your time is better spent on [the basic SEO checks that apply to every site](/guide/seo-checklist).
 
 You need it once you publish real alternate versions of the same page: a Spanish translation of an English guide, say, or separate US and UK editions with different prices and spelling. From then on you have two jobs. Give every version its own URL, and tell Google which URLs are versions of each other. The second job is what hreflang is for.
 
@@ -1324,7 +1324,7 @@ A safer approach is to translate a small number of your best pages and have some
 
 ## Check for demand before you translate anything
 
-Open the Performance report in Search Console and look at the Countries tab. If a non-English-speaking country already sends impressions to your English pages, that's the best evidence you'll get that a translation has an audience. Confirm it by [researching what people search for in that language](/guide/zero-competition-keyword-research-guide), because direct translations of your English keywords are often not the phrases people use. Then translate one page, validate the hreflang on it, and expand only if it gets traction.
+Open the Performance report in Search Console and look at the Countries tab. If a non-English-speaking country already sends impressions to your English pages, that's the best evidence you'll get that a translation has an audience. Confirm it by [researching what people search for in that language](/guide/low-competition-keyword-research), because direct translations of your English keywords are often not the phrases people use. Then translate one page, validate the hreflang on it, and expand only if it gets traction.
 `
   }
 ];

@@ -10,11 +10,11 @@ import type { BlogPost, Product } from './types';
  * left without a way in.
  */
 const PILLARS: Record<string, string> = {
-  'Affiliate Marketing': 'affiliate-marketing-viable-solution-2026',
-  SEO: '2026-practical-seo-checklist',
-  Blogging: 'how-to-start-a-profitable-blog-2026',
-  Tech: 'solopreneur-tech-stack-2026',
-  Entrepreneurship: 'validate-digital-business-idea-48-hours',
+  'Affiliate Marketing': 'is-affiliate-marketing-worth-it',
+  SEO: 'seo-checklist',
+  Blogging: 'how-to-start-a-blog-that-makes-money',
+  Tech: 'free-tech-stack-one-person-business',
+  Entrepreneurship: 'validate-a-business-idea',
   'SoFi Bank': 'sofi-referral-bonus-guide',
 };
 

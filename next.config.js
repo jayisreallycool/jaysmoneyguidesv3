@@ -1,3 +1,10 @@
+/**
+ * Guides whose web address was renamed. Old address -> new address.
+ * Kept forever: links on other sites, social posts and search results still
+ * use the old addresses, and the permanent (308) redirect passes them on.
+ */
+const SLUG_RENAMES = require('./lib/slug-renames.json');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -32,6 +39,14 @@ const nextConfig = {
   experimental: {
     // Tree-shake icon and animation libraries aggressively
     optimizePackageImports: ['lucide-react', 'motion'],
+  },
+
+  async redirects() {
+    return Object.entries(SLUG_RENAMES).map(([from, to]) => ({
+      source: `/guide/${from}`,
+      destination: `/guide/${to}`,
+      permanent: true,
+    }));
   },
 
   async headers() {

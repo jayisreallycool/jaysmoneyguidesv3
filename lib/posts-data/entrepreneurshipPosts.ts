@@ -4,7 +4,7 @@ export const ENTREPRENEURSHIP_POSTS: BlogPost[] = [
   {
     id: 'post-ent-1',
     title: 'How to Start an Online Business: A Realistic First-Year Plan',
-    slug: '0-to-10k-month-honest-12-month-blueprint',
+    slug: 'online-business-first-year-plan',
     excerpt: 'A first-year plan for a one-person online business: validate, build one asset, grow one channel, fix pricing, add systems, with a clear finish line for each stage.',
     category: 'Entrepreneurship',
     tags: ['Entrepreneurship', 'Solopreneur', 'Business Roadmap', 'Revenue Growth'],
@@ -65,7 +65,7 @@ You're done when you have evidence a skeptical friend would accept: money changi
 
 Pick the one thing the business is built on and make it good. That's a service with a clear scope and price, a small product, or a body of content that covers one narrow topic properly.
 
-If you have a skill people already hire for, I'd start with a service. It needs the least building and gets you paying customers soonest, and those customers show you what a later product should be. A [fixed-scope, fixed-price productized service](/guide/power-of-productized-services-freelancing-to-saas) is easier to sell and repeat than open-ended freelancing.
+If you have a skill people already hire for, I'd start with a service. It needs the least building and gets you paying customers soonest, and those customers show you what a later product should be. A [fixed-scope, fixed-price productized service](/guide/productized-services-guide) is easier to sell and repeat than open-ended freelancing.
 
 For content, a handful of posts won't do it. You need enough articles to answer the main questions in your topic, and each one has to be better than what already ranks.
 
@@ -89,7 +89,7 @@ Done means you've kept a publishing or outreach routine for about three months a
 
 Once people are arriving, you have real data on what they buy, and it often disagrees with your original plan. Look at which offer gets bought, where people drop off, and what customers ask for that you don't sell.
 
-Underpricing is the usual mistake at this stage. A low price feels safer, but it means you need far more buyers to cover your time. I'd test a higher price before assuming it won't sell; the guide on [how to price a digital product](/guide/pricing-strategy-digital-products-why-97-outsells-19) covers how to do that.
+Underpricing is the usual mistake at this stage. A low price feels safer, but it means you need far more buyers to cover your time. I'd test a higher price before assuming it won't sell; the guide on [how to price a digital product](/guide/how-to-price-a-digital-product) covers how to do that.
 
 If you run a content site and haven't settled on a model, compare [ads, affiliate links and your own products](/guide/blog-monetization-model-comparison) against the traffic you have now. Ads need volume. Products and services can work with a small audience that trusts you.
 
@@ -111,7 +111,7 @@ The plan above fails most often for a reason that has nothing to do with strateg
 
 So decide two numbers before you start. The first is how many hours a week you can give this for a full year without wrecking your job or your health. Fewer protected hours beat more hours you can't sustain, and a [weekly schedule built around focused work blocks](/guide/solopreneur-operating-system-deep-work-schedule) helps you keep them. The second is how much money you're willing to spend, and how long your savings last if the business pays you nothing.
 
-I'd keep the job, or part-time income, through at least the first three stages. It slows you down, but it means you make decisions without rent pressure. Startup costs for most online businesses are small, a domain, hosting and a few tools, so the real expense is your own living costs while revenue is low or uneven. Once money does come in, [setting aside tax and keeping a cash buffer](/guide/manage-cash-flow-solo-founder-50-30-20-rule) matters more than it did on a salary.
+I'd keep the job, or part-time income, through at least the first three stages. It slows you down, but it means you make decisions without rent pressure. Startup costs for most online businesses are small, a domain, hosting and a few tools, so the real expense is your own living costs while revenue is low or uneven. Once money does come in, [setting aside tax and keeping a cash buffer](/guide/cash-flow-for-freelancers) matters more than it did on a salary.
 
 It's also fair to say this is easier with savings and fewer obligations. Someone with a cushion can wait out a slow year. If you don't have one, a service business that can pay sooner is the safer starting point than a content site that may take a long time to earn.
 
@@ -131,13 +131,13 @@ A flat line after a stage you did properly is a reason to change the idea, the a
 
 ## Where to start this week
 
-Don't build anything yet. Write down who has the problem and what you'd charge to solve it, then spend the next two weeks trying to get one person to say yes with money. The guide to [validating a business idea before you build it](/guide/validate-digital-business-idea-48-hours) has the steps.
+Don't build anything yet. Write down who has the problem and what you'd charge to solve it, then spend the next two weeks trying to get one person to say yes with money. The guide to [validating a business idea before you build it](/guide/validate-a-business-idea) has the steps.
 `
   },
   {
     id: 'post-ent-2',
     title: 'Cash Flow for Freelancers: A System for Irregular Income',
-    slug: 'manage-cash-flow-solo-founder-50-30-20-rule',
+    slug: 'cash-flow-for-freelancers',
     excerpt: 'A simple cash flow system for freelancers and solo business owners: separate accounts, fixed pay, tax savings on every payment, a buffer and a weekly forecast.',
     category: 'Entrepreneurship',
     tags: ['Cash Flow', 'Finance', 'Solopreneur', 'Business Management'],
@@ -260,7 +260,7 @@ Most late payment is preventable before the work starts.
 
 If a client pays late every time despite all this, plan for it in the forecast or raise their price to cover the cost of waiting. Dropping them is also a fair choice.
 
-Longer term, the cure for lumpy income is revenue that repeats. Retainers and [fixed-scope productized services](/guide/power-of-productized-services-freelancing-to-saas) are billed on a schedule and usually paid upfront, which makes the forecast much easier to trust.
+Longer term, the cure for lumpy income is revenue that repeats. Retainers and [fixed-scope productized services](/guide/productized-services-guide) are billed on a schedule and usually paid upfront, which makes the forecast much easier to trust.
 
 ## When to pay for a bookkeeper or accountant
 
@@ -270,13 +270,13 @@ For taxes, I'd talk to an accountant earlier than feels necessary, ideally in yo
 
 ## Start with the accounts
 
-Open the accounts and schedule your first fixed transfer this week, then build the forecast with whatever invoices you have outstanding. Once the basics run on their own, the next question is where the business is headed, and this [12-month framework for building a sustainable online business](/guide/0-to-10k-month-honest-12-month-blueprint) is a good place to plan that.
+Open the accounts and schedule your first fixed transfer this week, then build the forecast with whatever invoices you have outstanding. Once the basics run on their own, the next question is where the business is headed, and this [12-month framework for building a sustainable online business](/guide/online-business-first-year-plan) is a good place to plan that.
 `
   },
   {
     id: 'post-ent-3',
     title: 'How to Validate a Business Idea Before You Build It',
-    slug: 'validate-digital-business-idea-48-hours',
+    slug: 'validate-a-business-idea',
     excerpt: 'Three tests, cheapest first, to find out whether anyone will pay for your digital product idea before you build it, with pass and fail signals for each.',
     category: 'Entrepreneurship',
     tags: ['Idea Validation', 'Product Launch', 'Lean Startup', 'Solopreneur'],
@@ -319,7 +319,7 @@ Decide what result counts as a pass before you run each test, and write it down.
 
 This test costs nothing and takes a few hours. You're looking for people describing the problem in their own words, unprompted, in places you didn't create.
 
-- **Search suggestions.** Type the problem into Google and YouTube and read the autocomplete suggestions and the "People also ask" box. Google bases them on real searches. The process in my guide to [finding low-competition keywords](/guide/zero-competition-keyword-research-guide) works here too, with a different goal: you want proof of demand, and rankings can wait.
+- **Search suggestions.** Type the problem into Google and YouTube and read the autocomplete suggestions and the "People also ask" box. Google bases them on real searches. The process in my guide to [finding low-competition keywords](/guide/low-competition-keyword-research) works here too, with a different goal: you want proof of demand, and rankings can wait.
 - **Forums and communities.** Search Reddit, niche Facebook groups, and industry forums for the problem. Note how often it comes up, how recent the threads are, and whether people describe workarounds.
 - **Reviews of existing products.** Read the two- and three-star reviews of tools, courses, or templates that already address the problem. Those reviewers paid for a solution and can tell you exactly where it fell short.
 
@@ -367,9 +367,9 @@ Interest is cheap, so the last test asks people to give something up. You need a
 | Pre-sale | Payment now, delivery on a stated date | Strong |
 | Manual version | Payment for a done-by-hand service | Strong |
 
-The manual version is worth a look if your idea is software or a course. Deliver the result by hand to a few paying customers first, and you learn what they value before writing any code. That's the idea behind [productized services](/guide/power-of-productized-services-freelancing-to-saas).
+The manual version is worth a look if your idea is software or a course. Deliver the result by hand to a few paying customers first, and you learn what they value before writing any code. That's the idea behind [productized services](/guide/productized-services-guide).
 
-Send the page to the people you interviewed and post it where the rules of the community allow it. If you're unsure what to charge, my guide to [pricing digital products](/guide/pricing-strategy-digital-products-why-97-outsells-19) covers how to pick a starting number.
+Send the page to the people you interviewed and post it where the rules of the community allow it. If you're unsure what to charge, my guide to [pricing digital products](/guide/how-to-price-a-digital-product) covers how to pick a starting number.
 
 I won't give you a conversion-rate benchmark, because conversion rates vary too much by price, audience, and traffic source for one number to mean anything. Set your pass line in absolute terms instead. Work out how many buyers would justify the time you'd spend building, and use that.
 
@@ -403,7 +403,7 @@ Most results land somewhere between a clear yes and a clear no. Work out which p
 
 ## After a pass, build the smallest version that delivers
 
-A passed pre-sale means you owe real people a product by a date. Build only what you promised on the page and get it to those first buyers. Their use of it is the next round of validation. Results vary, and plenty of validated ideas still need changes after launch. For what comes after those first customers, see my [12-month framework for building an online business](/guide/0-to-10k-month-honest-12-month-blueprint).
+A passed pre-sale means you owe real people a product by a date. Build only what you promised on the page and get it to those first buyers. Their use of it is the next round of validation. Results vary, and plenty of validated ideas still need changes after launch. For what comes after those first customers, see my [12-month framework for building an online business](/guide/online-business-first-year-plan).
 `
   },
   {
@@ -464,7 +464,7 @@ Here's what that looks like at a one-person scale. The time estimates are rough 
 | Ebook or short course | Weeks | New editions, buyer questions, refunds |
 | Small tool (calculator, script, plugin) | Days to months | Bug fixes, security and dependency updates, hosting |
 
-If most of your income is client work, you don't have to jump straight to this list. Packaging a service with a fixed scope and price is a halfway step, and the guide to [productized services](/guide/power-of-productized-services-freelancing-to-saas) covers how that works.
+If most of your income is client work, you don't have to jump straight to this list. Packaging a service with a fixed scope and price is a halfway step, and the guide to [productized services](/guide/productized-services-guide) covers how that works.
 
 ## What leverage costs
 
@@ -487,7 +487,7 @@ The two work well together. An article brings in readers, and a template, tool o
 ## How to decide what to build first
 
 1. Write down the questions you've answered more than twice, for clients, in forums, or for yourself. Repeated questions are the raw material.
-2. Check that other people are asking too. For content, that means [finding keywords a new site can rank for](/guide/zero-competition-keyword-research-guide). For a product or tool, [test the idea before you build it](/guide/validate-digital-business-idea-48-hours).
+2. Check that other people are asking too. For content, that means [finding keywords a new site can rank for](/guide/low-competition-keyword-research). For a product or tool, [test the idea before you build it](/guide/validate-a-business-idea).
 3. Build the smallest version that's useful. One article before an ebook. A spreadsheet before an app.
 4. Put it where those people already look, and give it a fixed window, say three months, before you judge it.
 5. Look at the numbers (search impressions, signups, sales) and decide: improve it, leave it, or drop it. Then set the next review date.
@@ -502,7 +502,7 @@ Pick one repeated question, publish the smallest useful answer to it this month,
   {
     id: 'post-ent-5',
     title: 'How to Price a Digital Product: A Method You Can Test',
-    slug: 'pricing-strategy-digital-products-why-97-outsells-19',
+    slug: 'how-to-price-a-digital-product',
     excerpt: 'No price is right for every ebook, course or template. Set a first price from buyer alternatives and comparable products, then test it and compare revenue.',
     category: 'Entrepreneurship',
     tags: ['Pricing Strategy', 'Digital Products', 'Sales'],
@@ -546,7 +546,7 @@ So write down, in one sentence, what the buyer can do after using the product th
 - Pay a freelancer or consultant to do it for them
 - Buy a competing product
 
-Those alternatives set the range. A spreadsheet template that replaces an hour of setup competes with "I'll build it myself tonight", so it sits at the low end. A course that replaces hiring someone competes with that person's invoice, so it can sit much higher. If you can't name the outcome clearly, fix that before you think about price. A cheap product with a vague promise still doesn't sell, and [testing the idea with real buyers first](/guide/validate-digital-business-idea-48-hours) will tell you more than any pricing tweak.
+Those alternatives set the range. A spreadsheet template that replaces an hour of setup competes with "I'll build it myself tonight", so it sits at the low end. A course that replaces hiring someone competes with that person's invoice, so it can sit much higher. If you can't name the outcome clearly, fix that before you think about price. A cheap product with a vague promise still doesn't sell, and [testing the idea with real buyers first](/guide/validate-a-business-idea) will tell you more than any pricing tweak.
 
 ## Check what comparable products charge
 
@@ -590,7 +590,7 @@ Tiers work when buyers want different amounts of the same thing. A common setup 
 
 Sellers often show a higher-priced tier next to the main one because buyers judge a price against whatever is beside it, which is usually called anchoring. I'd treat that as a common practice with no guaranteed lift, and I'd only list a higher tier you'd be happy to deliver.
 
-Bundles follow the same logic. A bundle is worth more when the pieces add up to one finished job, like a course plus the templates it teaches you to use. Unrelated extras added to make the stack look bigger tend to read as padding. If your top tier is turning into done-for-you work, look at [packaging it as a fixed-scope productized service](/guide/power-of-productized-services-freelancing-to-saas) instead.
+Bundles follow the same logic. A bundle is worth more when the pieces add up to one finished job, like a course plus the templates it teaches you to use. Unrelated extras added to make the stack look bigger tend to read as padding. If your top tier is turning into done-for-you work, look at [packaging it as a fixed-scope productized service](/guide/productized-services-guide) instead.
 
 ## What about $19 instead of $20?
 
@@ -694,7 +694,7 @@ More isn't realistic for most people. In *Deep Work*, Newport summarizes Anders 
 
 Put the block where you're sharpest. For many people that's the morning, but if you do your best thinking at 9 pm, schedule it there and run your admin window earlier.
 
-During the block, close email and chat, leave your phone in another room, and work on one task you chose in advance. Deciding what to work on is a separate job from doing it, and it shouldn't eat the first twenty minutes. If your block is for writing, a [repeatable drafting process](/guide/fast-article-writing-framework-2026) makes it much easier to start cold.
+During the block, close email and chat, leave your phone in another room, and work on one task you chose in advance. Deciding what to work on is a separate job from doing it, and it shouldn't eat the first twenty minutes. If your block is for writing, a [repeatable drafting process](/guide/write-blog-posts-faster) makes it much easier to start cold.
 
 ### Batch email and admin into set windows
 
@@ -750,7 +750,7 @@ No. Mark each focus block on your calendar as done or missed. At the weekly plan
 
 ## Try it for two weeks
 
-Put next week's focus blocks, email windows and planning session on your calendar today, and run the schedule for two weeks before you change anything. If you're unsure what those focus hours should go toward, [this 12-month framework for building an online business](/guide/0-to-10k-month-honest-12-month-blueprint) will help you choose.
+Put next week's focus blocks, email windows and planning session on your calendar today, and run the schedule for two weeks before you change anything. If you're unsure what those focus hours should go toward, [this 12-month framework for building an online business](/guide/online-business-first-year-plan) will help you choose.
 `
   },
   {
@@ -841,7 +841,7 @@ If the answer to the first five is no, the page is a summary. Either add what's 
 
 I think refusing to use AI at all is a mistake, and so is letting it write the article.
 
-It's useful for the parts of writing that aren't your contribution: turning rough notes into an outline, pointing out gaps in a draft, tightening long sentences, suggesting headings, reformatting a table. My guide to [writing blog posts faster](/guide/fast-article-writing-framework-2026) covers how to speed up a draft without lowering its quality.
+It's useful for the parts of writing that aren't your contribution: turning rough notes into an outline, pointing out gaps in a draft, tightening long sentences, suggesting headings, reformatting a table. My guide to [writing blog posts faster](/guide/write-blog-posts-faster) covers how to speed up a draft without lowering its quality.
 
 It's unreliable for facts. Models produce confident statistics, quotes, prices and policy details that are wrong or don't exist, and nothing in the output tells you which ones. Treat every specific claim in an AI-assisted draft as unverified until you've found it in a primary source.
 
@@ -853,13 +853,13 @@ The same logic applies to publishing at scale. Generating hundreds of pages from
 
 None of this guarantees rankings or income. It takes longer than generating text, and results vary by niche. But it's the work a competitor can't copy in an afternoon.
 
-Pick your five most-visited posts and run the checklist on each. Then decide what the site should be known for and cover that subject properly; the guide to [building a small-site topic cluster](/guide/topical-authority-case-study) shows how to plan it.
+Pick your five most-visited posts and run the checklist on each. Then decide what the site should be known for and cover that subject properly; the guide to [building a small-site topic cluster](/guide/topical-authority-topic-clusters) shows how to plan it.
 `
   },
   {
     id: 'post-ent-8',
     title: 'Productized Services: Turn Freelance Work Into a Fixed Offer',
-    slug: 'power-of-productized-services-freelancing-to-saas',
+    slug: 'productized-services-guide',
     excerpt: 'A productized service is freelance work sold at a fixed scope, price and timeline. Here\'s how to pick one, write the offer, price it and say no to extras.',
     category: 'Entrepreneurship',
     tags: ['Productized Services', 'Freelancing', 'Business Models'],
@@ -948,7 +948,7 @@ A flat fee suits work with a clear finish line. A subscription suits work the cl
 
 **Flat fee.** Say a site audit takes you about 6 hours once you have a process, counting the call and the admin. If you want that time to pay around $75 an hour, your floor is $450. Your slowest audits take 9 hours, though, and at $450 those pay $50 an hour. Pricing at $675 covers the slow ones at your target rate and pays more on the quick ones.
 
-That's the reason not to multiply your old hourly rate by your best-case time. A fixed price has to absorb the bad jobs as well as the good ones. Once the floor is covered, the same questions apply as with any fixed-price product, and the guide on [how to set a price for a digital product](/guide/pricing-strategy-digital-products-why-97-outsells-19) covers them in more depth.
+That's the reason not to multiply your old hourly rate by your best-case time. A fixed price has to absorb the bad jobs as well as the good ones. Once the floor is covered, the same questions apply as with any fixed-price product, and the guide on [how to set a price for a digital product](/guide/how-to-price-a-digital-product) covers them in more depth.
 
 **Subscription.** Say you charge $1,500 a month for design requests and a typical client uses 12 hours of your time. That works out to $125 an hour. A heavy client who uses 25 hours brings you down to $60. Five clients are a 60-hour month if they're typical and a 125-hour month if they're all heavy.
 
@@ -960,7 +960,7 @@ So a subscription needs a limit built into the offer itself. The usual one is a 
 | Main risk | Underpricing a slow job | One client using all your time |
 | Protect yourself with | A price based on your slowest jobs | One request at a time, fixed turnaround |
 
-Subscriptions also make income steadier from month to month, which makes it easier to [plan your cash flow as a one-person business](/guide/manage-cash-flow-solo-founder-50-30-20-rule). Either way, results vary, and a published price doesn't bring clients in by itself.
+Subscriptions also make income steadier from month to month, which makes it easier to [plan your cash flow as a one-person business](/guide/cash-flow-for-freelancers). Either way, results vary, and a published price doesn't bring clients in by itself.
 
 ## How to say no to out-of-scope requests
 
@@ -1002,7 +1002,7 @@ Write down step 4 in detail the first few times you run it, including the templa
 
 ## Start with one offer and one client
 
-Don't build a pricing page with three tiers yet. Write one offer using the template above, set a price based on your slower jobs, and put it in front of a few past clients or people like them. If nobody bites, you've lost an afternoon. The guide on [testing whether people will pay before you build anything](/guide/validate-digital-business-idea-48-hours) walks through that step.
+Don't build a pricing page with three tiers yet. Write one offer using the template above, set a price based on your slower jobs, and put it in front of a few past clients or people like them. If nobody bites, you've lost an afternoon. The guide on [testing whether people will pay before you build anything](/guide/validate-a-business-idea) walks through that step.
 `
   },
   {
@@ -1061,7 +1061,7 @@ Pick one task from the shortlist and document it. I'd do this as a screen record
 
 This does two jobs. It gives your VA something to follow, and it tells you whether the task is ready to hand over. If you can't write the steps, the task isn't ready yet.
 
-Don't polish it. The first person to follow the document will find the gaps, and you fix them then. If the work is content-related, a [repeatable writing workflow](/guide/fast-article-writing-framework-2026) already gives you most of the document.
+Don't polish it. The first person to follow the document will find the gaps, and you fix them then. If the work is content-related, a [repeatable writing workflow](/guide/write-blog-posts-faster) already gives you most of the document.
 
 ## Where to look for a virtual assistant
 
@@ -1105,7 +1105,7 @@ There isn't one number. Rates vary widely by location, skill, experience and pla
 
 To find the going rate for your task, search the platform you plan to hire on for people who do that exact work and note what the experienced ones with strong feedback charge. You can also ask applicants to state their rate. Then decide between hourly pay, which suits ongoing and variable work, and a fixed price per task, which suits work with a clear finish line.
 
-Pay what the work is worth, and pay on time, every time. Someone in another country is running a household on that income like anyone else, and reliable pay is a big part of why good people stay. If you're unsure the business can carry a new recurring cost, sort out [your cash flow as a solo founder](/guide/manage-cash-flow-solo-founder-50-30-20-rule) first and start with a few hours a week.
+Pay what the work is worth, and pay on time, every time. Someone in another country is running a household on that income like anyone else, and reliable pay is a big part of why good people stay. If you're unsure the business can carry a new recurring cost, sort out [your cash flow as a solo founder](/guide/cash-flow-for-freelancers) first and start with a few hours a week.
 
 ## Contractor rules and tax paperwork
 
@@ -1139,7 +1139,7 @@ You don't need a hiring plan. You need one documented task and a small paid tria
   {
     id: 'post-ent-10',
     title: 'How to Sell a Content Site: Valuation and the Sale Process',
-    slug: 'exit-strategy-sell-niche-site-40x-multiple',
+    slug: 'how-to-sell-a-content-site',
     excerpt: 'A content site sells for a multiple of its net profit. Here\'s how the number is built, what moves it, where to sell, and how the handover works.',
     category: 'Entrepreneurship',
     tags: ['Exit Strategy', 'Business Valuation', 'Selling a Website'],
@@ -1217,7 +1217,7 @@ Each of these is a buyer asking how likely the profit is to continue after you'r
 
 **Owner dependence** is the one people underestimate. If you write everything, hold every relationship and keep the process in your head, the buyer is buying a job. Written procedures and work already handed to someone else, even [a part-time virtual assistant](/guide/hire-first-virtual-assistant-va-solopreneur-guide), make the handover believable.
 
-**Clean records** affect whether the deal closes at all. Keep a monthly profit and loss statement, a separate business bank account, and analytics that go back as far as the earnings do. If your books are a mess, start with a basic system for [tracking cash flow as a solo owner](/guide/manage-cash-flow-solo-founder-50-30-20-rule).
+**Clean records** affect whether the deal closes at all. Keep a monthly profit and loss statement, a separate business bank account, and analytics that go back as far as the earnings do. If your books are a mess, start with a basic system for [tracking cash flow as a solo owner](/guide/cash-flow-for-freelancers).
 
 None of this can be fixed in the month before listing. Give yourself a year if you can.
 

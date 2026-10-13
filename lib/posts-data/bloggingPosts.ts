@@ -4,7 +4,7 @@ export const BLOGGING_POSTS: BlogPost[] = [
   {
     id: 'post-blog-1',
     title: 'How to Start a Blog That Can Make Money, Step by Step',
-    slug: 'how-to-start-a-profitable-blog-2026',
+    slug: 'how-to-start-a-blog-that-makes-money',
     excerpt: 'The steps to start a blog in order, from topic and platform to your first 15 articles, with an honest look at how long traffic and income take.',
     category: 'Blogging',
     tags: ['Blogging', 'Content Strategy', 'SEO Fundamentals', 'Blog Monetization'],
@@ -47,7 +47,7 @@ The first is whether you can keep writing about it. Try listing 20 specific arti
 
 The second is whether anyone spends money around it. Look for products people compare before buying, software or services with affiliate programs, and problems people already pay to solve. "Productivity" is too broad to say anything about. "Budget home espresso" has gear, accessories, beans and repairs, and a clear set of readers who are about to buy something.
 
-Narrow beats broad for a new site. You can widen later, and a tight topic tells you what to write next. If you want a quick way to test demand before committing months to it, the guide to [validating an idea before you build it](/guide/validate-digital-business-idea-48-hours) covers that.
+Narrow beats broad for a new site. You can widen later, and a tight topic tells you what to write next. If you want a quick way to test demand before committing months to it, the guide to [validating an idea before you build it](/guide/validate-a-business-idea) covers that.
 
 ## Step 2: Choose a platform
 
@@ -75,7 +75,7 @@ My recommendation by situation:
 - If you plan to charge readers directly, use Ghost, or Substack if you want zero setup.
 - If you only want to find out whether you like writing, start on a free option and move later. Just know that moving a site is real work.
 
-For a longer look at the trade-offs, see the [WordPress vs Ghost vs custom-built comparison](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026).
+For a longer look at the trade-offs, see the [WordPress vs Ghost vs custom-built comparison](/guide/wordpress-vs-ghost-vs-nextjs).
 
 ## Step 3: Get a domain and hosting
 
@@ -106,7 +106,7 @@ Skip logo design, custom fonts and plugin shopping for now.
 
 A new site with three posts on three unrelated subjects gives readers and search engines nothing to go on. Ten to fifteen articles covering one narrow topic from different angles does. Each article should answer one specific question someone types into a search box.
 
-For the espresso example, that could be how to dial in a grinder, why shots taste sour, which machines suit a small kitchen, and how often to descale. Specific, lower-competition questions are where a new site has a chance. Broad terms like "best espresso machine" are held by large publishers. The guide to [keyword research for realistic opportunities](/guide/zero-competition-keyword-research-guide) explains how to find those questions.
+For the espresso example, that could be how to dial in a grinder, why shots taste sour, which machines suit a small kitchen, and how often to descale. Specific, lower-competition questions are where a new site has a chance. Broad terms like "best espresso machine" are held by large publishers. The guide to [keyword research for realistic opportunities](/guide/low-competition-keyword-research) explains how to find those questions.
 
 For each article:
 
@@ -121,7 +121,7 @@ Set a pace you can hold alongside the rest of your life. One solid article a wee
 
 Slowly. Google's own [SEO starter guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) says some changes take effect in hours and others take several months, and that there's no guarantee any site gets indexed at all. A brand-new domain has no history, so expect the first few months to look almost empty.
 
-Search is still the main source for most blogs because it keeps sending readers to old articles. You don't need advanced tactics at this stage. Descriptive titles, one clear topic per page, fast loading and internal links cover most of it, and the [practical SEO checklist](/guide/2026-practical-seo-checklist) goes through each of those.
+Search is still the main source for most blogs because it keeps sending readers to old articles. You don't need advanced tactics at this stage. Descriptive titles, one clear topic per page, fast loading and internal links cover most of it, and the [practical SEO checklist](/guide/seo-checklist) goes through each of those.
 
 While you wait, you can bring in early readers yourself. Answer questions in communities where your readers already are, and link to your article only when it's the best answer. Share with your email list. Pinterest and YouTube suit some topics well. None of this replaces search, but it gets real people reading while your pages age.
 
@@ -153,7 +153,7 @@ Choose the topic, buy the domain, set up the pages in Step 4, and write down you
   {
     id: 'post-blog-2',
     title: 'How to Write Blog Posts Faster Without Making Them Worse',
-    slug: 'fast-article-writing-framework-2026',
+    slug: 'write-blog-posts-faster',
     excerpt: 'Slow writing comes from planning, drafting and polishing all at once. Here\'s a five-step process, an outline template and a pre-publish checklist.',
     category: 'Blogging',
     tags: ['Content Writing', 'Writing Process', 'Productivity', 'Blogging System'],
@@ -190,7 +190,7 @@ The fix is to do those jobs in order. Decide the one question the article answer
 
 Before you outline, write one sentence: "This article answers [question] for [reader]." For example: "This article answers 'how do I write an affiliate disclosure?' for a blogger who just joined their first program."
 
-That sentence does most of your cutting for you. Anything that doesn't help that reader with that question belongs in a different article. If you can't write the sentence, the topic is still too vague to draft, and more time spent on [choosing a specific keyword](/guide/zero-competition-keyword-research-guide) will pay off more than time spent typing.
+That sentence does most of your cutting for you. Anything that doesn't help that reader with that question belongs in a different article. If you can't write the sentence, the topic is still too vague to draft, and more time spent on [choosing a specific keyword](/guide/low-competition-keyword-research) will pay off more than time spent typing.
 
 ## 2. Outline from the reader's questions
 
@@ -263,7 +263,7 @@ Google's position is worth reading in its own words. Its [guidance on using gene
 - You've read it aloud once, start to finish.
 - It links to the next thing the reader needs, and those links work.
 
-For titles, meta descriptions and the other on-page details, run through the [SEO checklist](/guide/2026-practical-seo-checklist) before you hit publish.
+For titles, meta descriptions and the other on-page details, run through the [SEO checklist](/guide/seo-checklist) before you hit publish.
 
 ## Speed comes from repeating the process
 
@@ -273,7 +273,7 @@ There's no trick that makes one article fast. What gets faster is the tenth arti
   {
     id: 'post-blog-3',
     title: 'How to Start a Paid Newsletter (and Whether It\'s Worth It)',
-    slug: 'build-paid-newsletter-recurring-income',
+    slug: 'how-to-start-a-paid-newsletter',
     excerpt: 'A paid newsletter is a small layer on top of a free list that already trusts you. Here\'s how to judge if yours is ready, what platforms take, and how to run the numbers.',
     category: 'Blogging',
     tags: ['Newsletter', 'Recurring Revenue', 'Monetization', 'Substack'],
@@ -318,7 +318,7 @@ I'd look for three things before charging:
 - Readers reply or ask follow-up questions without being prompted.
 - You can name, in one sentence, something those readers want that your free issues don't give them.
 
-If the third one is fuzzy, wait. You can test it cheaply by asking your list what they'd pay for, the same way you'd [check demand for any digital product before building it](/guide/validate-digital-business-idea-48-hours).
+If the third one is fuzzy, wait. You can test it cheaply by asking your list what they'd pay for, the same way you'd [check demand for any digital product before building it](/guide/validate-a-business-idea).
 
 If you don't have a list at all, start there. A blog that ranks for a focused topic is one of the steadier ways to feed one, and [a short welcome sequence for new subscribers](/guide/build-automated-affiliate-email-funnel) does a lot of the early trust-building for you.
 
@@ -354,7 +354,7 @@ Sources: [Substack's own breakdown of its costs](https://support.substack.com/hc
 
 On top of any platform cut, the payment processor takes its share. Stripe's standard US rate is 2.9% + 30¢ per successful card payment, and Substack says an extra 0.7% Stripe billing fee applies to recurring subscriptions. International cards and currency conversion cost more.
 
-Ghost is also a full publishing platform, so if you're weighing it as your main site, the [comparison of WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-custom-react-cms-2026) covers that side of the decision.
+Ghost is also a full publishing platform, so if you're weighing it as your main site, the [comparison of WordPress, Ghost and a custom build](/guide/wordpress-vs-ghost-vs-nextjs) covers that side of the decision.
 
 ## How to price a paid newsletter
 
@@ -362,7 +362,7 @@ Look at what paid newsletters in your own niche charge and start near them. News
 
 Offer monthly and annual billing. An annual plan at a modest discount gives you cash up front and one renewal decision a year instead of twelve. The fixed 30¢ per charge also hurts less: on a $5 monthly plan it's 6% of every payment before any percentage fee.
 
-Don't agonise over the first price. You can change it later; check how your platform treats existing subscribers when you do. The same logic applies here as in [pricing any digital product](/guide/pricing-strategy-digital-products-why-97-outsells-19): too cheap can signal low value and makes the fees bite harder.
+Don't agonise over the first price. You can change it later; check how your platform treats existing subscribers when you do. The same logic applies here as in [pricing any digital product](/guide/how-to-price-a-digital-product): too cheap can signal low value and makes the fees bite harder.
 
 ## A worked example (made-up numbers)
 
@@ -491,7 +491,7 @@ Many readers scan the headings before deciding whether to read. A heading should
 
 Keep the levels in order: the title, then H2 for sections, then H3 inside them. People using screen readers often jump from heading to heading, and skipped levels make that harder.
 
-Short paragraphs help on a phone, where four sentences can fill the screen. Two to four sentences is a reasonable habit. Don't chop everything into single lines, though, because an explanation that needs five sentences reads worse as five fragments. The [article structure I'd use for drafting](/guide/fast-article-writing-framework-2026) covers this from the writing side.
+Short paragraphs help on a phone, where four sentences can fill the screen. Two to four sentences is a reasonable habit. Don't chop everything into single lines, though, because an explanation that needs five sentences reads worse as five fragments. The [article structure I'd use for drafting](/guide/write-blog-posts-faster) covers this from the writing side.
 
 ## Stop the page from jumping
 
@@ -594,7 +594,7 @@ Read the post once and copy out anything that still makes sense with the rest of
 
 Write each one as a plain sentence in a notes file. If an idea needs two paragraphs of setup before it makes sense, leave it in the post.
 
-This gets much easier when the post was built in clear sections to begin with. If yours tend to run as one long block of prose, [outlining the article in separate sections before you write](/guide/fast-article-writing-framework-2026) fixes that at the source.
+This gets much easier when the post was built in clear sections to begin with. If yours tend to run as one long block of prose, [outlining the article in separate sections before you write](/guide/write-blog-posts-faster) fixes that at the source.
 
 ## Step 3: Match each idea to a format
 
@@ -747,7 +747,7 @@ An ebook, template, course or paid newsletter is something you make once and sel
 
 It's also the most work and the easiest to get wrong. You build the whole thing before earning anything, then you handle refunds, questions and updates. The common failure is making a product nobody asked for.
 
-So wait for evidence. Repeated reader questions on one problem, emails asking whether you offer something, or one article that draws far more engagement than the rest are all decent signs. Then [test the idea before you build it](/guide/validate-digital-business-idea-48-hours), ideally with a small paid version. When you get to pricing, don't assume cheap is safe. The guide on [pricing digital products](/guide/pricing-strategy-digital-products-why-97-outsells-19) explains why.
+So wait for evidence. Repeated reader questions on one problem, emails asking whether you offer something, or one article that draws far more engagement than the rest are all decent signs. Then [test the idea before you build it](/guide/validate-a-business-idea), ideally with a small paid version. When you get to pricing, don't assume cheap is safe. The guide on [pricing digital products](/guide/how-to-price-a-digital-product) explains why.
 
 ## Which model fits your situation
 
@@ -779,7 +779,7 @@ Revisit the mix about once a year. A site with more traffic, a bigger email list
 
 ## Where to go from here
 
-Pick the one model that matches the traffic and topic you have today, and give it a few months before adding a second. Income from any of these varies a lot between sites and usually builds slowly. If you're still setting up, the guide on [starting a blog that can sustain itself](/guide/how-to-start-a-profitable-blog-2026) covers choosing a topic with monetization in mind.
+Pick the one model that matches the traffic and topic you have today, and give it a few months before adding a second. Income from any of these varies a lot between sites and usually builds slowly. If you're still setting up, the guide on [starting a blog that can sustain itself](/guide/how-to-start-a-blog-that-makes-money) covers choosing a topic with monetization in mind.
 `
   },
   {
@@ -818,13 +818,13 @@ A keyword list tells you what you could write. It doesn't tell you what to write
 
 A content calendar closes it. Group your keywords into clusters, work out how many articles you can finish in a month, put the clusters in order, and write each slot into a spreadsheet with four columns. That takes an afternoon, and it covers the next three months.
 
-This guide assumes you already have a keyword list. If you don't, start with [finding low-competition keywords for a new site](/guide/zero-competition-keyword-research-guide) and come back.
+This guide assumes you already have a keyword list. If you don't, start with [finding low-competition keywords for a new site](/guide/low-competition-keyword-research) and come back.
 
 ## Step 1: Turn the keyword list into articles, then clusters
 
 A raw keyword list overstates how much you have to write, because several phrases usually belong to one article. "How often to water a snake plant" and "snake plant watering schedule" are the same question. Search both: if the results are mostly the same pages, treat them as one article and pick the clearer phrase as the target query.
 
-Once the list is down to one row per article, tag each row with its parent topic. Rows that share a parent are a cluster: one broad pillar article and the narrower posts that support it. I won't re-teach clustering here, since the guide on [building a topic cluster on a small site](/guide/topical-authority-case-study) covers how to choose and size one.
+Once the list is down to one row per article, tag each row with its parent topic. Rows that share a parent are a cluster: one broad pillar article and the narrower posts that support it. I won't re-teach clustering here, since the guide on [building a topic cluster on a small site](/guide/topical-authority-topic-clusters) covers how to choose and size one.
 
 For the calendar, you only need two things from this step: a list of articles, and a cluster name next to each.
 
@@ -898,7 +898,7 @@ At the end of each quarter, spend an hour on it. Move unfinished rows forward, d
 
 ## Start with one cluster
 
-Don't schedule the whole keyword list. Pick the cluster with the easiest queries, fill in four to six weeks using the template above, and publish the first row. When you sit down to write it, a [repeatable framework for drafting articles](/guide/fast-article-writing-framework-2026) will help you keep the pace you just set.
+Don't schedule the whole keyword list. Pick the cluster with the easiest queries, fill in four to six weeks using the template above, and publish the first row. When you sit down to write it, a [repeatable framework for drafting articles](/guide/write-blog-posts-faster) will help you keep the pace you just set.
 `
   },
   {
@@ -968,9 +968,9 @@ This is the ethical way to write, and it also lines up with what Google asks for
 
 None of these make the doubt disappear. They give you evidence, and evidence is what the feeling responds to.
 
-**Publish small.** A 600-word post answering one narrow question is easier to get right and easier to stand behind than a giant guide. If structure is what slows you down, a [repeatable writing framework](/guide/fast-article-writing-framework-2026) takes some of the decisions off your plate.
+**Publish small.** A 600-word post answering one narrow question is easier to get right and easier to stand behind than a giant guide. If structure is what slows you down, a [repeatable writing framework](/guide/write-blog-posts-faster) takes some of the decisions off your plate.
 
-**Narrow the topic until you do know it.** "Email marketing" is too big for anyone to feel sure about. "How I set up a welcome email for a brand-new list" is something you can know completely. Narrow topics are also where a new site has a realistic chance of being found, so this pairs well with [looking for low-competition keywords](/guide/zero-competition-keyword-research-guide).
+**Narrow the topic until you do know it.** "Email marketing" is too big for anyone to feel sure about. "How I set up a welcome email for a brand-new list" is something you can know completely. Narrow topics are also where a new site has a realistic chance of being found, so this pairs well with [looking for low-competition keywords](/guide/low-competition-keyword-research).
 
 **Keep a record of reader replies.** Save the comments, emails and messages where someone says a post helped, in a folder or a note. It's easy to wave these off when they arrive and forget them a week later. Reading back through actual words from actual readers is more convincing than telling yourself you're doing fine.
 
@@ -986,7 +986,7 @@ Ordinary self-doubt about a new blog is uncomfortable but manageable. If anxiety
 
 ## Start with one small, honest post
 
-You don't need to settle whether you're "qualified" in general. Pick one narrow thing you've done or learned, write it up with your limits stated, and publish it. If you haven't set up a site yet, the [step-by-step guide to starting a blog](/guide/how-to-start-a-profitable-blog-2026) covers that part.
+You don't need to settle whether you're "qualified" in general. Pick one narrow thing you've done or learned, write it up with your limits stated, and publish it. If you haven't set up a site yet, the [step-by-step guide to starting a blog](/guide/how-to-start-a-blog-that-makes-money) covers that part.
 `
   },
   {
@@ -1097,7 +1097,7 @@ Before you send it, read the site's guidelines and follow them to the letter, in
 
 ## What to write once you get a yes
 
-Write the article for their readers, at the depth and in the tone the site already uses. Bring something they don't have yet: a process you can explain step by step, an example, or a point of view on a question their existing posts leave open. If you tend to stall on drafts, a [repeatable structure for writing articles](/guide/fast-article-writing-framework-2026) helps you deliver on time, and editors notice who does.
+Write the article for their readers, at the depth and in the tone the site already uses. Bring something they don't have yet: a process you can explain step by step, an example, or a point of view on a question their existing posts leave open. If you tend to stall on drafts, a [repeatable structure for writing articles](/guide/write-blog-posts-faster) helps you deliver on time, and editors notice who does.
 
 Give them original work. Don't send the same article to several sites, and don't hand over a reworded copy of something already on your blog.
 
@@ -1111,7 +1111,7 @@ If money, a free product or a link swap is part of the arrangement, tell the edi
 
 Expect a burst of visitors from that site in the first days, and then a trickle for as long as the article keeps getting read. How many depends on the host's audience and how well your topic matches it. Some posts send very few. Check your analytics for referral visits from that domain, and look at what those visitors did after they arrived.
 
-Don't expect a ranking jump. Google doesn't say how much weight any single link carries, a nofollowed link is one you've asked it not to count, and no one can promise a result from one article. If your pages aren't ranking, the work on your own site matters far more: covering your topic thoroughly enough to [build topical authority](/guide/topical-authority-case-study) and fixing the basics in the [SEO checklist](/guide/2026-practical-seo-checklist).
+Don't expect a ranking jump. Google doesn't say how much weight any single link carries, a nofollowed link is one you've asked it not to count, and no one can promise a result from one article. If your pages aren't ranking, the work on your own site matters far more: covering your topic thoroughly enough to [build topical authority](/guide/topical-authority-topic-clusters) and fixing the basics in the [SEO checklist](/guide/seo-checklist).
 
 The benefit that lasts is the relationship. Share the piece, answer the comments, and thank the editor. A second article for the same site is easier to land than the first, and editors who trust you tend to mention you to others.
 
@@ -1125,7 +1125,7 @@ Only ones you'd have been glad to publish with no link in them. Edit them like y
 
 ## Start with one site
 
-Pick one site you already read, find the gap in what it has published, and send one specific pitch this week. If the readers who come back with you land on a blog that's thin, fix that first with the [step-by-step guide to starting a blog that can make money](/guide/how-to-start-a-profitable-blog-2026).
+Pick one site you already read, find the gap in what it has published, and send one specific pitch this week. If the readers who come back with you land on a blog that's thin, fix that first with the [step-by-step guide to starting a blog that can make money](/guide/how-to-start-a-blog-that-makes-money).
 `
   },
   {
