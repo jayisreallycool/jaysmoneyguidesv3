@@ -1,0 +1,87 @@
+{
+  "slug": "cybersecurity-for-digital-creators",
+  "images": [
+    {
+      "slot": "top",
+      "after": "The fake brand deal: how creator accounts get taken over",
+      "type": "flow",
+      "title": "How a fake brand deal takes a channel",
+      "alt": "Flow of the fake sponsorship attack: forged offer, software download link, file run, session cookies sent to attacker, channel sold or rebranded.",
+      "caption": "Stealing the session cookie skips your password and MFA, which is why the no-unknown-files rule matters.",
+      "data": {
+        "loop": false,
+        "items": [
+          {
+            "label": "Forged collaboration offer",
+            "text": "Sent to the channel's business email, posing as a real company"
+          },
+          {
+            "label": "Download link",
+            "text": "A \"software download\" page, by email or inside a PDF on Google Drive"
+          },
+          {
+            "label": "The file runs",
+            "text": "It sends the browser's session cookies to the attacker"
+          },
+          {
+            "label": "Account taken over",
+            "text": "The attacker acts as you without logging in, so MFA never gets a say"
+          },
+          {
+            "label": "Channel resold",
+            "text": "Hijacked channels are sold or rebranded to stream crypto scams"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "This week: email, domain and money accounts",
+      "type": "checklist",
+      "title": "This week's account checks",
+      "alt": "Checklist covering email recovery details, forwarding rules, a private admin address, registrar lock, auto-renew, payout details and updates.",
+      "caption": "Start with email and your domain, since whoever controls them can reset or redirect almost everything else.",
+      "data": {
+        "items": [
+          "Recovery email and phone on your main email are yours and current",
+          "No forwarding rules, filters or old third-party apps you didn't set up",
+          "Unpublished admin address as the login for registrar, host, payments",
+          "MFA on at the registrar and DNS provider; domain shows as locked",
+          "Auto-renew on, with a current card on file",
+          "MFA on payment, ad, affiliate and list accounts; payouts unchanged",
+          "Automatic updates on for your OS, browser, phone, CMS and plugins"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Give collaborators access, not passwords",
+      "type": "compare",
+      "title": "Sharing a login vs inviting a collaborator",
+      "alt": "Comparison of sharing your password with an editor or assistant against inviting them under their own account with the lowest role and MFA.",
+      "caption": "Most platforms have roles or team seats, so a shared password is rarely the only way to get help.",
+      "data": {
+        "columns": [
+          {
+            "label": "Shared password",
+            "tone": "bad",
+            "points": [
+              "Their laptop becomes part of your security",
+              "Everyone signs in as you",
+              "Access stays until you change the password"
+            ]
+          },
+          {
+            "label": "Own account, own role",
+            "tone": "good",
+            "points": [
+              "Lowest role that lets them do the job",
+              "MFA required on their side too",
+              "Removed the same day they stop working with you"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

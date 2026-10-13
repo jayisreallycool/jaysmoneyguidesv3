@@ -78,6 +78,8 @@ I'm not going to quote rates or fees. They change, they depend on your credit an
 
 With a personal loan you get a lump sum up front and repay it in fixed monthly payments over a set number of years. The Consumer Financial Protection Bureau describes it as a [closed-end loan](https://www.consumerfinance.gov/ask-cfpb/what-is-a-personal-installment-loan-en-2114/): unlike a credit card, you can't borrow against it again as you pay it down. That fixed end date is the main thing it has going for it.
 
+![Comparison of when a personal loan tends to suit you, such as high-rate card debt and stable income, and when it doesn't, such as covering monthly bills.](/images/guides/sofi-personal-loans-guide/1-is-a-personal-loan-a-fit-for-you.webp "A loan changes the rate and the schedule. It doesn't fix spending that runs ahead of income.")
+
 It tends to suit you if:
 
 - You're carrying card balances at a high rate and can qualify for a loan rate that's clearly lower.
@@ -94,6 +96,8 @@ It tends not to suit you if:
 ## When consolidating card debt helps
 
 Consolidation saves money when two things are true. The loan's APR is lower than the rate you're paying across your cards, and the term isn't so long that the extra months of interest cancel out the lower rate.
+
+![Steps to test a consolidation loan: list card balances and APRs, total the loan cost with fees, compare with paying the cards, decide on the totals.](/images/guides/sofi-personal-loans-guide/2-do-the-arithmetic-first.webp "A smaller monthly payment can still mean a bigger total if the term is longer.")
 
 The second one is easy to miss. The CFPB's [page on consolidating credit card debt](https://www.consumerfinance.gov/ask-cfpb/what-do-i-need-to-know-if-im-thinking-about-consolidating-my-credit-card-debt-en-1861/) puts it this way: "Although your monthly payment might be lower, it may be because you're paying over a longer time." A smaller payment can still mean a bigger total.
 
@@ -129,6 +133,8 @@ On term, I'd take the shortest one with a payment you can make comfortably in a 
 ## Checking your rate is different from applying
 
 These are two steps, and only the second one touches your credit.
+
+![Flow from checking your rate with a soft credit pull, to seeing estimates, to applying with a hard pull, to receiving the final offer.](/images/guides/sofi-personal-loans-guide/3-rate-check-vs-full-application.webp "Only the full application touches your credit, so you can compare estimates from several lenders first.")
 
 When you check your rate, SoFi does a soft credit pull, which doesn't affect your credit score. You see estimated rates and terms based on what you entered. If you pick one of those options and continue with the application, SoFi requests your full credit report. That's a hard pull, and SoFi says it may affect your credit.
 
@@ -199,6 +205,8 @@ This is general education, not personal financial advice. I also won't quote SoF
 
 Federal Student Aid puts it bluntly: refinancing federal loans with a private lender ["would take your student loans out of the federal student aid system and would result in a loss of benefits"](https://studentaid.gov/articles/financial-aid-dictionary/). The Consumer Financial Protection Bureau adds that [the switch can't be reversed](https://www.consumerfinance.gov/ask-cfpb/should-i-consolidate-refinance-student-loans-en-561/). Once a federal loan becomes a private loan, it stays private.
 
+![Four cards on federal protections lost by refinancing privately: income-driven repayment, forgiveness, deferment and forbearance, and discharge.](/images/guides/sofi-student-loan-refinancing-guide/1-what-federal-loans-lose-in-a-refinance.webp "The switch can't be reversed. Once a federal loan becomes private, it stays private.")
+
 Here's what goes away:
 
 - **Income-driven repayment.** Federal plans can set your payment based on your income and family size. A private loan has a fixed schedule, whatever you earn.
@@ -218,6 +226,8 @@ More details may shift, and which plans you can use depends partly on when you b
 
 Refinancing private loans is the simple case. They never had federal protections, so if a new loan costs less overall and you're comfortable with the lender, there's little to lose.
 
+![Checklist of four conditions for considering a federal loan refinance: stable income, no forgiveness plans, a comfortable standard payment, a lower rate.](/images/guides/sofi-student-loan-refinancing-guide/2-refinancing-federal-loans-all-must-be-true.webp "If you're unsure about any of these, keep the federal loans federal.")
+
 For federal loans, I'd only consider it if all of these are true:
 
 - Your income is stable and you could keep paying through a few rough months from savings.
@@ -232,6 +242,8 @@ Some borrowers fall into special cases. Doctors and dentists in residency have a
 ## So is now the right time?
 
 Nobody can tell you where rates are heading, and I wouldn't plan around a guess. The timing that matters is your own. Refinancing is worth a look when your credit score or income has improved since you borrowed, when you're paying a rate well above what lenders will offer you today, or when you have private loans scattered across several servicers.
+
+![Comparison of situations where refinancing is worth a look, such as improved credit, against times it's usually a poor fit, such as a shaky job.](/images/guides/sofi-student-loan-refinancing-guide/3-is-now-a-good-time-for-you.webp "The timing that matters is your own, not a guess about where rates are heading.")
 
 It's usually a poor time if your job feels shaky, if you're working toward forgiveness, or if you have only a year or two of payments left. With a small remaining balance, the savings are often too slim to justify the paperwork.
 
@@ -319,6 +331,8 @@ Put those together and you can see the problem. The same big balance that makes 
 
 PSLF forgives the remaining balance on your federal Direct Loans after you've made 120 qualifying monthly payments while working full-time for a qualifying employer. The government's own [Public Service Loan Forgiveness page](https://studentaid.gov/manage-loans/forgiveness-cancellation/public-service) has the full rules. The basics:
 
+![Four cards summarising PSLF rules: qualifying employer, full-time hours of at least 30 a week, federal Direct Loans only, and 120 qualifying payments.](/images/guides/sofi-medical-dental-student-loan-refinancing/1-the-four-pslf-requirements.webp "Refinancing with a private lender ends PSLF eligibility for those loans, and it can't be reversed.")
+
 - **Employer:** a U.S. government organization at any level, a 501(c)(3) non-profit, or certain other non-profits that provide public services. What matters is who employs you, and your job title doesn't come into it.
 - **Hours:** full-time, which for PSLF means averaging at least 30 hours a week.
 - **Loans:** federal Direct Loans only. Private loans never qualify.
@@ -339,6 +353,8 @@ Two cautions before you count on PSLF:
 
 SoFi has a refinancing product aimed at medical and dental residents and fellows, separate from its standard student loan refinancing. As of October 2026, SoFi's site describes it this way:
 
+![Flow of SoFi's resident refinance as described in the article: small fixed payment in training, unpaid interest added to principal, then regular payments.](/images/guides/sofi-medical-dental-student-loan-refinancing/2-how-the-resident-refinance-works.webp "The low payment during training can leave you owing more when full payments start than when you refinanced.")
+
 - It's for people who've graduated with an MD, DO, DMD or DDS and are in an approved residency or fellowship program with up to seven years left.
 - During the residency period you make a small fixed monthly payment. SoFi's page gives the current amount. There's a cap on how many years that reduced payment lasts.
 - That payment may not cover the interest building up each month. SoFi's disclosure says any unpaid interest left at the end of the residency period gets added to your principal. So your balance can be larger when full payments start than it was when you refinanced.
@@ -351,6 +367,8 @@ The low payment is the appeal, but be clear about what it's replacing. A residen
 ## A way to sort yourself
 
 This isn't advice for your situation, just the general shape of the decision.
+
+![Comparison of waiting to refinance, which costs some interest, against refinancing federal loans too early, which can cost forgiveness.](/images/guides/sofi-medical-dental-student-loan-refinancing/3-unsure-where-youll-work-compare-the-risks.webp "Refinancing can be done later at any point. Undoing it can't be done at all.")
 
 | Your situation | General direction |
 | --- | --- |
@@ -425,6 +443,8 @@ This guide is education, not personal financial advice. I won't quote rates, bec
 
 The FAFSA is the application for federal grants, work-study and federal loans, and many states and colleges use it for their own aid too. Fill it out even if you expect to get little. Skipping it means skipping money you may not have to repay.
 
+![Order for covering college costs: complete the FAFSA, use grants and scholarships, take federal loans, try other options, then borrow privately for the gap.](/images/guides/sofi-private-student-loans-guide/1-paying-for-college-in-the-right-order.webp "A private loan is a reasonable way to cover the last part of the bill, not the first.")
+
 Federal loans come before private ones for a few concrete reasons:
 
 - Most federal loans for students don't depend on your credit history and don't need a cosigner.
@@ -461,6 +481,8 @@ Some lenders offer cosigner release, which removes the cosigner after the studen
 ## Fixed or variable rate
 
 A fixed rate stays the same for the life of the loan, so the payment is predictable. A variable rate is tied to a market index and can rise or fall, which means your payment can too.
+
+![Comparison of fixed and variable private student loan rates: fixed stays the same, variable follows a market index and can rise or fall.](/images/guides/sofi-private-student-loans-guide/2-fixed-or-variable-rate.webp "For a loan carried ten years or more, lean fixed unless you expect to pay it off quickly.")
 
 Variable rates often start lower, which is the temptation. For a loan you'll carry for ten years or more, I'd lean fixed unless you expect to pay it off quickly. If you do consider a variable rate, check whether the loan disclosure sets a maximum rate and work out what the payment would be at that maximum.
 
@@ -505,6 +527,8 @@ A lender with no fees isn't automatically the cheapest. The rate you're offered 
 ## How much to borrow
 
 Start with the school's cost of attendance, subtract every grant, scholarship and federal loan, and subtract what the family can pay from income and savings. What's left is the gap. Borrow that and no more.
+
+![Flow for sizing a private student loan: start with cost of attendance, subtract aid and federal loans, subtract family contribution, borrow only the gap.](/images/guides/sofi-private-student-loans-guide/3-work-out-your-gap.webp "Borrow the gap and no more, and confirm there's no prepayment penalty before you sign.")
 
 A rough check many advisers use is to keep total student debt below what you expect to earn in your first year after school. It's a rule of thumb and won't fit every career, but if your number is far above it, look hard at cheaper options first.
 
@@ -557,6 +581,8 @@ SoFi's bank referral program pays both sides. A new customer opens a SoFi Checki
 
 That includes me. If you open an account through a link on this page, SoFi pays me a referral bonus and pays you the welcome bonus. Nothing here changes what you qualify for, and SoFi decides who gets paid.
 
+![Flow of the SoFi bank referral: a member shares a link, a new customer opens an account and makes a small deposit, then both get a bonus.](/images/guides/sofi-referral-bonus-guide/1-how-a-sofi-referral-pays-both-sides.webp "The new customer's bonus is the smaller one; the member who referred them gets more.")
+
 ## Who gets what
 
 As of October 2026, SoFi's [official rules](${RULES}) list these amounts for the Checking and Savings referral offer:
@@ -594,6 +620,8 @@ SoFi's terms say a bonus is credited to your SoFi Checking account within seven 
 
 Nearly every missed bonus traces back to one of these:
 
+![Common reasons a SoFi referral bonus doesn't pay: no referral link, an existing SoFi product, a late or small deposit, or referrer account issues.](/images/guides/sofi-referral-bonus-guide/2-why-a-referral-bonus-gets-missed.webp "Nearly every missed bonus traces back to one of these, so check them before you sign up.")
+
 - The account wasn't opened through a referral link.
 - The new customer already had another SoFi product.
 - The deposits came to less than $50, or started after the 25 days.
@@ -610,6 +638,8 @@ Yes, treat them as income. SoFi's terms describe the bonuses as miscellaneous in
 ## Should you open an account just for the bonus?
 
 I wouldn't. $25 is a fair thank-you for opening an account you already wanted, and a poor reason to add one you'll never use. Compare the account itself first: fees, the interest it pays, and whether you'd move your paycheck there. SoFi also runs a separate direct deposit bonus for new accounts, so check its site to see whether that offer or the referral offer fits you better, and whether you can get both.
+
+![Decision on opening a SoFi account for a referral bonus: open it only if you'd use the account anyway, otherwise skip it.](/images/guides/sofi-referral-bonus-guide/3-open-an-account-for-the-bonus.webp "Judge the account itself first; the bonus is a thank-you, not a reason.")
 
 Once you have an account you'll get your own link to share. If you post it anywhere public, say plainly that you get paid, which is what the [FTC's disclosure rules](/guide/affiliate-disclosure-ftc-compliance-guide) require of anyone sharing a referral link.
 

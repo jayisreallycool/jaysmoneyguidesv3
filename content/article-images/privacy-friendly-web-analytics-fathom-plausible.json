@@ -1,0 +1,91 @@
+{
+  "slug": "privacy-friendly-web-analytics-fathom-plausible",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What Plausible and Fathom do differently",
+      "type": "flow",
+      "title": "How cookieless tools count visitors",
+      "alt": "Flow showing how Plausible and Fathom count visitors: IP address and user agent plus a daily secret become a scrambled identifier.",
+      "caption": "Daily counts are accurate, but a reader who returns tomorrow is counted as new.",
+      "data": {
+        "items": [
+          {
+            "label": "IP address + user agent",
+            "text": "Taken from the visit, with no cookie set"
+          },
+          {
+            "label": "Add a daily secret",
+            "text": "A secret value that changes every day"
+          },
+          {
+            "label": "Scrambled identifier",
+            "text": "Used to count unique visitors; the raw IP isn't stored"
+          },
+          {
+            "label": "Next day, new secret",
+            "text": "Plausible deletes the daily value after 24 hours"
+          }
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What GA4 does that they don't",
+      "type": "cards",
+      "title": "What GA4 adds",
+      "alt": "Four GA4 capabilities the simpler tools lack: Google Ads linking, funnels and path reports, BigQuery export, and returning-visitor tracking.",
+      "caption": "The price is complexity. Most of these reports answer questions a small content site never asks.",
+      "data": {
+        "items": [
+          {
+            "title": "Google Ads link",
+            "text": "Measure campaigns and build remarketing audiences."
+          },
+          {
+            "title": "Explorations and funnels",
+            "text": "Path reports follow a visitor through several steps."
+          },
+          {
+            "title": "BigQuery export",
+            "text": "Export raw event data. Google Cloud charges apply."
+          },
+          {
+            "title": "Returning visitors",
+            "text": "Tracks users across sessions."
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Which one to pick",
+      "type": "decision",
+      "title": "GA4, Plausible or Fathom?",
+      "alt": "Decision chart: use GA4 if you run Google Ads or display ads; consider Plausible or Fathom for an ad-free site with mostly EU or UK readers.",
+      "caption": "With no budget, stay on GA4 with a correctly configured banner.",
+      "data": {
+        "question": "Do you run ads on or for your site?",
+        "branches": [
+          {
+            "answer": "Google Ads",
+            "result": "Use GA4. Conversion measurement and audiences depend on that link.",
+            "tone": "neutral"
+          },
+          {
+            "answer": "Display ads",
+            "result": "You already need a banner, and GA4 is free. Pay only for full counts or a simpler view.",
+            "tone": "neutral"
+          },
+          {
+            "answer": "No ads",
+            "result": "Plausible or Fathom fits best if most readers are in the EU or UK. Check local rules.",
+            "tone": "neutral"
+          }
+        ]
+      },
+      "note": "General information, not legal advice"
+    }
+  ]
+}

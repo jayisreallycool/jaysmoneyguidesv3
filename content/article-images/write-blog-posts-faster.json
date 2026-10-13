@@ -1,0 +1,52 @@
+{
+  "slug": "write-blog-posts-faster",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "flow",
+      "title": "One job at a time",
+      "alt": "Five-stage writing process: decide the one question, outline from reader questions, write the answer first, draft without editing, edit in passes.",
+      "caption": "Doing these jobs in order stops each one from interrupting the other two.",
+      "data": {
+        "items": [
+          {"label": "Decide the question", "text": "One sentence: this article answers [question] for [reader]."},
+          {"label": "Outline", "text": "The reader's questions, in order, become your headings."},
+          {"label": "Answer first", "text": "The two-or-three-sentence answer becomes the opening."},
+          {"label": "Draft without editing", "text": "Leave it rough. Type TK for missing facts and keep moving."},
+          {"label": "Edit in passes", "text": "Cut, check facts, then read it aloud."}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "5. Edit in three passes",
+      "type": "steps",
+      "title": "Three edits, one job each",
+      "alt": "Three editing passes: cut warm-ups and repeats, check every fact and TK against its source, then read the draft aloud and proofread.",
+      "caption": "One read-through that tries to catch everything catches very little.",
+      "data": {
+        "items": [
+          {"title": "Cut", "text": "Delete warm-ups, repeats and sentences the reader wouldn't miss."},
+          {"title": "Check facts", "text": "Open the source for every fact and TK. If you can't confirm a number, remove it."},
+          {"title": "Read it aloud", "text": "Fix sentences that run long or sound unnatural, then proofread."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Where AI drafting helps, and where it doesn't",
+      "type": "compare",
+      "title": "Where AI drafting fits",
+      "alt": "Comparison of where AI tools help with writing, such as outlines and rough drafts, and where they fall short, such as invented facts and padded prose.",
+      "caption": "An AI draft still needs all three editing passes, with extra care on the fact check.",
+      "data": {
+        "columns": [
+          {"label": "Where it helps", "tone": "neutral", "points": ["Turning reader questions into an outline", "Suggesting questions you missed", "A rough draft to react to"]},
+          {"label": "Where it doesn't", "tone": "neutral", "points": ["Supplying what you know", "Facts: it can invent a price or rule", "Prose: its default is padded"]}
+        ]
+      }
+    }
+  ]
+}

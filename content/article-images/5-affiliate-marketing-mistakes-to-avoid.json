@@ -1,0 +1,53 @@
+{
+  "slug": "5-affiliate-marketing-mistakes-to-avoid",
+  "images": [
+    {
+      "slot": "top",
+      "after": "1. Promoting too many products",
+      "type": "steps",
+      "title": "Cutting your product list down",
+      "alt": "Four steps to fix promoting too many products: pick three to five, learn them properly, test for a drawback, write one comparison.",
+      "caption": "A short list you know well beats a long list of links you can't explain.",
+      "data": {
+        "items": [
+          {"title": "Pick three to five products", "text": "Choose the ones that solve your audience's main problem."},
+          {"title": "Learn them properly", "text": "Use them, or read the docs, pricing page and forum complaints."},
+          {"title": "Run the drawback test", "text": "If you can't name one specific drawback from memory, don't recommend it yet."},
+          {"title": "Write one comparison", "text": "Finish one thorough comparison before adding anything new."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "3. Chasing traffic spikes",
+      "type": "compare",
+      "title": "Traffic spikes vs search traffic",
+      "alt": "Comparison of one-off traffic spikes, which are hard to repeat, with search traffic that keeps arriving from people close to buying.",
+      "caption": "Treat a viral post as a bonus and put your effort into traffic that keeps coming.",
+      "data": {
+        "columns": [
+          {"label": "Traffic spikes", "tone": "bad", "points": ["Hard to reproduce", "Visitors curious about one post", "Few of them were shopping", "Volume can hide a page that converts badly"]},
+          {"label": "Search traffic", "tone": "good", "points": ["Keeps arriving without you", "Answers searches close to buying", "Think \"X vs Y\" or \"best X for...\"", "Start with terms a new site can rank for"]}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "5. Writing for Google first and the reader second",
+      "type": "checklist",
+      "title": "Write for the reader first",
+      "alt": "Checklist for reader-first articles: answer early, draft like explaining to a friend, use searcher words in headings, cut keyword-only sentences.",
+      "caption": "A reader who has to dig for the answer leaves before reaching your recommendation.",
+      "data": {
+        "items": [
+          "Put the answer in the first few lines",
+          "Draft it the way you'd explain it to a friend who asked",
+          "Check that headings use the words a searcher would type",
+          "Read the draft aloud once",
+          "Rewrite any sentence that only exists to hold a keyword",
+          "Don't pad the article to hit a word count"
+        ]
+      }
+    }
+  ]
+}

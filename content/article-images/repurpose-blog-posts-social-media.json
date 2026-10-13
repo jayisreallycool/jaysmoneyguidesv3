@@ -1,0 +1,66 @@
+{
+  "slug": "repurpose-blog-posts-social-media",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Step 3: Match each idea to a format",
+      "type": "cards",
+      "title": "What changes in every format",
+      "alt": "Three things that change when a blog idea becomes a social post or email: the hook comes first, each piece carries one idea, and link handling differs.",
+      "caption": "Whatever the platform, rework these three before you post.",
+      "data": {
+        "items": [
+          {"title": "The hook", "text": "On a feed, the first line has to be the point, not the context."},
+          {"title": "The length", "text": "One idea per piece. Summarizing the whole article is a second blog post."},
+          {"title": "The link", "text": "Check whether a caption link is clickable or has to live in your profile."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "A worked example",
+      "type": "table",
+      "title": "One post, three pieces",
+      "alt": "Grid showing how a post on picking a blog name becomes a short video, a carousel and an email, and which piece needs the link to finish.",
+      "caption": "Each piece opens on the idea itself, and none tries to cover the whole post.",
+      "data": {
+        "headers": ["Piece", "Built from", "Needs the link"],
+        "rows": [
+          ["Short video", "Idea 1: say the name out loud", "No"],
+          ["Carousel", "All four ideas, one per slide", "No"],
+          ["Email", "Idea 3: leave the topic out", "Yes, to finish the thought"]
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Will repurposing cause a duplicate content problem?",
+      "type": "compare",
+      "title": "Where duplicate content comes in",
+      "alt": "Comparison of short social posts, pins and emails, which cause no duplicate issue, with republishing a full article on another site.",
+      "caption": "For most small blogs, a summary that links to the original is the safest route.",
+      "data": {
+        "columns": [
+          {
+            "label": "Posts, pins, emails",
+            "tone": "good",
+            "points": [
+              "Short pieces in new wording",
+              "Not competing with your article in search",
+              "No duplicate content problem"
+            ]
+          },
+          {
+            "label": "Full article elsewhere",
+            "tone": "bad",
+            "points": [
+              "Google has two copies and picks one",
+              "It may not pick yours",
+              "Not a penalty, but it decides what ranks"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

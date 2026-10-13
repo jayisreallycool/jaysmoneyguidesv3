@@ -1,0 +1,58 @@
+{
+  "slug": "build-custom-gpt-ai-assistant-for-blog",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What happened to custom GPTs",
+      "type": "flow",
+      "title": "How custom GPTs are being retired",
+      "alt": "Timeline of the custom GPT retirement: no new GPTs on personal accounts, workspace building ends October 26, 2026, all GPTs stop December 11.",
+      "caption": "Personal accounts are already locked out of creating GPTs, and every GPT has an end date.",
+      "note": "Check OpenAI's retirement FAQ directly; the rollout is still moving",
+      "data": {
+        "items": [
+          {"label": "Personal accounts", "text": "Can no longer create or publish new GPTs"},
+          {"label": "October 26, 2026", "text": "Business, Enterprise and Edu workspaces stop building them"},
+          {"label": "December 11, 2026", "text": "Every custom GPT stops working"},
+          {"label": "February 2027", "text": "Extension available to a few Enterprise workspaces"}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Setup 2: a public helper that answers from your guides",
+      "type": "checklist",
+      "title": "Before you share a public helper",
+      "alt": "Checklist for a public blog helper: upload only public guides, add a guide index file, limit answers to your guides, test in a private window.",
+      "caption": "Anyone you share a Gem with can view its instructions and uploaded files.",
+      "data": {
+        "items": [
+          "Upload only what's already public",
+          "Add one file with each guide's title, URL and short summary",
+          "Include the full text of your ten or so most-read guides",
+          "Tell it to answer only from the uploaded guides",
+          "Open the link in a private window to see what readers see",
+          "Ask ten real reader questions and check every answer"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "The limits",
+      "type": "cards",
+      "title": "Limits to know before you share",
+      "alt": "Five limits of blog AI assistants: invented facts, shared files aren't private, data settings, unedited output and stale files.",
+      "caption": "Launch the private assistant first; a public one's mistakes reach readers with your name on them.",
+      "data": {
+        "items": [
+          {"title": "It still makes things up", "text": "Reference files reduce invented facts but don't stop them."},
+          {"title": "Shared files aren't secret", "text": "No paid ebooks, drafts, client work, logins or API keys."},
+          {"title": "Check the data settings", "text": "Review each tool's privacy settings before you upload a draft."},
+          {"title": "Don't publish it unedited", "text": "An outline is a starting point, not a finished post."},
+          {"title": "Stale files, stale answers", "text": "When you update a guide, replace its file."}
+        ]
+      }
+    }
+  ]
+}

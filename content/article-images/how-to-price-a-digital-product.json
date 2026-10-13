@@ -1,0 +1,86 @@
+{
+  "slug": "how-to-price-a-digital-product",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "steps",
+      "title": "Setting a first price you can test",
+      "alt": "Five steps for pricing a digital product: define the outcome and alternatives, check comparable products, pick a price, sell, then test another price.",
+      "caption": "The first price is a starting point. Total revenue across two tested prices decides whether it moves.",
+      "data": {
+        "items": [
+          {
+            "title": "Name the outcome",
+            "text": "What the buyer can do after using it, and what their other options cost"
+          },
+          {
+            "title": "Check comparable products",
+            "text": "Find five to ten that solve the same problem for the same kind of buyer"
+          },
+          {
+            "title": "Pick a price in that range",
+            "text": "Pricing well above the cluster means your page has to show why"
+          },
+          {
+            "title": "Sell long enough",
+            "text": "Wait until you have enough sales to trust the numbers"
+          },
+          {
+            "title": "Try another price",
+            "text": "Change only the price, run a similar period and compare total revenue"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "How to test a price honestly",
+      "type": "checklist",
+      "title": "Keep a price test fair",
+      "alt": "Checklist for a fair price test: change only the price, match the period and traffic, record visitors, sales, revenue and refunds, ignore tiny samples.",
+      "caption": "A small audience can need a few months per price before the difference means anything.",
+      "data": {
+        "items": [
+          "Change only the price between the two periods",
+          "Run each price for a similar period with similar traffic",
+          "Record visitors, sales, revenue and refunds for each period",
+          "Don't compare a launch week with a quiet week",
+          "Don't change the sales page or bonuses in the same week",
+          "Treat small gaps, like six sales against nine, as noise"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Don't fake discounts or deadlines",
+      "type": "compare",
+      "title": "Honest vs deceptive pricing",
+      "alt": "Comparison of honest pricing tactics, like real former prices and stated launch deadlines, against inflated was-prices and resetting countdown timers.",
+      "caption": "The FTC treats invented former prices and fake countdowns as deceptive. Real deadlines are fine.",
+      "note": "General information about US guidance, not legal advice",
+      "data": {
+        "columns": [
+          {
+            "label": "Honest",
+            "tone": "good",
+            "points": [
+              "A was-price you really charged for a while",
+              "A launch price that ends on a stated date",
+              "Ending the offer when you said you would"
+            ]
+          },
+          {
+            "label": "Deceptive",
+            "tone": "bad",
+            "points": [
+              "An inflated price set up to show a big cut",
+              "A countdown that resets when the page reloads",
+              "Urgency on an offer that isn't time-limited"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "build-automated-affiliate-email-funnel",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "compare",
+      "title": "Why most welcome sequences fail",
+      "alt": "Comparison of failing affiliate welcome sequences with a short five-email sequence that delivers, helps, then makes one recommendation.",
+      "caption": "A short sequence earns trust before it asks for anything.",
+      "data": {
+        "columns": [
+          {
+            "label": "Sequences that fail",
+            "tone": "bad",
+            "points": [
+              "No sequence at all",
+              "Silence until a random newsletter",
+              "A pitch in the very first email",
+              "Selling to someone who joined an hour ago"
+            ]
+          },
+          {
+            "label": "A sequence that works",
+            "tone": "good",
+            "points": [
+              "Five emails over about ten days",
+              "Email 1 delivers what you promised",
+              "Emails 2 and 3 are useful, nothing to sell",
+              "Email 4 makes one recommendation"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What the recommendation email looks like",
+      "type": "checklist",
+      "title": "What a good recommendation email does",
+      "alt": "Checklist for an affiliate recommendation email: tie to a known problem, one product, who should skip it, disclosure before the link.",
+      "caption": "It should read like advice from someone who knows the topic, not a sales page.",
+      "data": {
+        "items": [
+          "Ties back to a problem you already wrote about",
+          "Names one product and who it suits",
+          "Says plainly who should skip it",
+          "Puts the commission disclosure before the link",
+          "Only claims testing you actually did",
+          "Leaves out countdowns, \"last chance\" and bonus stacks"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Keeping the sequence honest over time",
+      "type": "steps",
+      "title": "A check-up every few months",
+      "alt": "Steps to audit an automated email sequence: subscribe with a spare address, click every link, review email 4 clicks and drop-off, prune inactive subscribers.",
+      "caption": "An automated sequence keeps sending whatever you wrote, so read it as a new subscriber would.",
+      "data": {
+        "items": [
+          {"title": "Subscribe with a spare address", "text": "Read the whole sequence the way a new subscriber would."},
+          {"title": "Click every link", "text": "Catch discontinued products and programs whose terms have changed."},
+          {"title": "Look at the numbers", "text": "Check clicks on email 4 and where opens fall off."},
+          {"title": "Change one thing at a time", "text": "That way you can tell what made the difference."},
+          {"title": "Ask quiet subscribers", "text": "Send one \"do you still want these?\" email and remove those who don't answer."}
+        ]
+      }
+    }
+  ]
+}

@@ -55,6 +55,8 @@ The periods overlap on purpose, and the month numbers assume part-time hours alo
 
 Start by testing the assumption everything else rests on, which is that a specific group of people has a problem and will pay to fix it. Talk to people who have the problem. Look at what they already buy. Then ask for money: a pre-order, a paid pilot, a deposit on a service. Compliments and survey answers don't count, because they cost the person nothing.
 
+![Comparison of validation evidence: pre-orders, paid pilots and deposits count, while compliments and survey answers don't.](/images/guides/online-business-first-year-plan/1-what-counts-as-proof-someone-will-pay.webp "Evidence that costs the person nothing tells you little about whether they'll pay.")
+
 For a content business the test is different. You're checking that people search for the topic, that the existing results leave gaps you can fill, and that there's something to sell or recommend once readers arrive.
 
 You're done when you have evidence a skeptical friend would accept: money changing hands, or for content, clear search demand with a gap you can fill.
@@ -89,6 +91,8 @@ Done means you've kept a publishing or outreach routine for about three months a
 
 Once people are arriving, you have real data on what they buy, and it often disagrees with your original plan. Look at which offer gets bought, where people drop off, and what customers ask for that you don't sell.
 
+![Steps for months seven to ten: see which offer sells, find where people drop off, note unmet requests, test a higher price.](/images/guides/online-business-first-year-plan/2-fixing-the-monetization.webp "Real buying data often disagrees with the original plan, so let it steer the offer.")
+
 Underpricing is the usual mistake at this stage. A low price feels safer, but it means you need far more buyers to cover your time. I'd test a higher price before assuming it won't sell; the guide on [how to price a digital product](/guide/how-to-price-a-digital-product) covers how to do that.
 
 If you run a content site and haven't settled on a model, compare [ads, affiliate links and your own products](/guide/blog-monetization-model-comparison) against the traffic you have now. Ads need volume. Products and services can work with a small audience that trusts you.
@@ -118,6 +122,8 @@ It's also fair to say this is easier with savings and fewer obligations. Someone
 ## How to tell whether to keep going
 
 Honest baseline first. The US Bureau of Labor Statistics tracks new private-sector employer establishments, and in recent years [roughly one in five has closed within its first year](https://www.bls.gov/bdm/us_age_naics_00_table7.txt). That data doesn't cover one-person online businesses with no employees, and staying open isn't the same as earning a living. There's no reliable figure for what solo online businesses earn in year one, so be wary of anyone who quotes one.
+
+![Decision for a flat result at a review point: after a stage done properly, change something; after a rushed stage, go back.](/images/guides/online-business-first-year-plan/3-reading-a-flat-line-at-review-time.webp "Review at months 3, 6 and 12, and compare against your own earlier numbers.")
 
 Set review points at months 3, 6 and 12, and compare against your own earlier numbers. Other people's income screenshots leave out their starting position and their failed attempts.
 
@@ -193,6 +199,8 @@ Your personal checking account stays separate and receives one transfer a month 
 
 When a client pays, move money before you do anything else: a share to tax savings, a share to the buffer, and the rest stays in business checking to cover expenses and your own pay.
 
+![Flow of a freelancer's client payment: a share to tax savings, a share to the buffer, the rest in business checking, then one monthly transfer to personal.](/images/guides/cash-flow-for-freelancers/1-where-each-client-payment-goes.webp "The exact split matters less than doing it every single time a payment lands.")
+
 The split matters less than doing it every single time. Percentages depend on your costs and your tax situation, and there's no standard set. Use whatever your accountant suggests for taxes, pick a buffer share you can live with, and adjust after a few months of real data.
 
 ## What about the 50/30/20 rule?
@@ -212,6 +220,8 @@ How the transfer works depends on your structure. A sole proprietor or single-me
 ## Set aside tax money every time you get paid
 
 No employer is withholding tax for you, so it has to come out of each payment yourself. Two federal rules drive this.
+
+![Cards summarizing US self-employment tax at 15.3 percent and quarterly estimated payments with due dates of April 15, June 15, September 15 and January 15.](/images/guides/cash-flow-for-freelancers/2-two-federal-tax-rules-for-freelancers.webp "No employer withholds for you, so tax money has to come out of each payment.")
 
 **Self-employment tax.** If your net self-employment earnings are $400 or more for the year, you generally owe self-employment tax, which covers Social Security and Medicare. The rate is 15.3% (12.4% Social Security plus 2.9% Medicare), generally applied to 92.35% of your net earnings. The Social Security part only applies up to an annual earnings cap that changes each year. This is on top of regular income tax, though you can deduct half of it when figuring your adjusted gross income.
 
@@ -251,6 +261,8 @@ Update the table once a week. Ten minutes is enough, and it fits well inside a [
 ## How to handle clients who pay late
 
 Most late payment is preventable before the work starts.
+
+![Five steps to prevent late client payments: take a deposit, put terms in writing, invoice immediately, follow up on a schedule, stop work when overdue.](/images/guides/cash-flow-for-freelancers/3-prevent-late-payment-before-work-starts.webp "Most late payment is preventable before the work starts.")
 
 1. **Take a deposit.** For any sizeable project, ask for part of the fee upfront and tie the rest to milestones rather than one final invoice.
 2. **Put terms in writing.** State the due date, how to pay, and what happens if payment is late, in the contract and again on the invoice. Shorter terms are fine if you set them at the start.
@@ -311,6 +323,8 @@ A weekend is enough for a first pass: the first test and the invitations for the
 
 Each test below has a pass signal, a fail signal, and a suggestion for what to do with a "no".
 
+![Flow of three validation tests run from cheapest to most expensive: find complaints, talk to five to ten people, then ask for money.](/images/guides/validate-a-business-idea/1-three-tests-cheapest-first.webp "Write down your pass line for each test before you run it.")
+
 ## Write down your pass line first
 
 Decide what result counts as a pass before you run each test, and write it down. Once you've put hours into an idea, a weak result starts to look encouraging. A number you committed to on Friday is much harder to argue with on Monday.
@@ -338,6 +352,8 @@ Search results show that a problem exists. Conversations show how much it hurts 
 ### Why "would you buy this?" is a bad question
 
 It asks for a prediction about the future, and it's an easy one to be kind about. Saying "yes, I'd buy that" costs nothing and ends an awkward moment. You walk away with a compliment and no information.
+
+![Comparison of asking whether someone would buy your idea with asking about specific things they have already done about the problem.](/images/guides/validate-a-business-idea/2-opinions-vs-past-behaviour.webp "Talk about the other person's life, not your idea.")
 
 Rob Fitzpatrick's book [The Mom Test](https://www.momtestbook.com/) is built around this problem. His fix is to talk about the other person's life instead of your idea, and to ask about specific things they've already done instead of opinions about what they might do. Questions like that are hard to answer with a polite lie, even for your mom.
 
@@ -382,6 +398,8 @@ I won't give you a conversion-rate benchmark, because conversion rates vary too 
 ## Pre-selling honestly
 
 Only take money for something you will deliver or refund. Three practices keep a pre-sale fair to buyers:
+
+![Checklist for an honest pre-sale: say the product doesn't exist yet, give a realistic date, promise full refunds and keep the money aside.](/images/guides/validate-a-business-idea/3-keep-a-pre-sale-fair-to-buyers.webp "Only take money for something you will deliver or refund.")
 
 - Say plainly on the page that the product doesn't exist yet, and give a delivery date you have good reason to believe.
 - Promise a full refund if you miss the date or decide not to build it, and pay those refunds quickly without being asked.
@@ -446,6 +464,8 @@ The idea has a name, "permissionless leverage", and it comes from the investor N
 
 In his 2018 thread "How to Get Rich (without getting lucky)", Naval wrote that business leverage comes from capital, people, and "products with no marginal cost of replication (code and media)". He called capital and labor *permissioned* leverage: someone has to hand you the money or agree to work for you. Then came the line most people remember, that [code and media are permissionless leverage](https://x.com/naval/status/1002106893265920000), because you can make software and media that work for you while you sleep without asking anyone first.
 
+![Comparison of Naval Ravikant's permissioned leverage, capital and labor, with permissionless leverage, code and media you can make without asking.](/images/guides/permissionless-leverage-content-and-code/1-permissioned-vs-permissionless-leverage.webp "Only the making is permissionless. Getting found still runs through platforms.")
+
 He expands on it in a short [podcast episode on products with no marginal cost](https://nav.al/product-media), and Eric Jorgenson collected the thread and related interviews in *The Almanack of Naval Ravikant*, which is [free to read online](https://www.navalmanack.com/).
 
 Two things the quote doesn't tell you. Only the making is permissionless. Getting found still runs through Google, social platforms and app stores, and they decide who sees your work. And "while you sleep" describes a good week for an asset that's already working. It says nothing about the months before that, or the maintenance after.
@@ -470,6 +490,8 @@ If most of your income is client work, you don't have to jump straight to this l
 
 You pay first and find out later. A freelancer gets paid within weeks of doing the work. An article can take months to rank, if it ranks at all, and a tool can launch to nobody. That's why I'd build these alongside paid work at first, so one asset failing doesn't touch the rent.
 
+![Four cards on the costs of leveraged assets: you pay before you know, content decays, code decays, and every asset needs a review date.](/images/guides/permissionless-leverage-content-and-code/2-what-leverage-costs.webp "Upkeep is still far less work than serving every reader or user by hand.")
+
 Then there's upkeep, which is the part "passive income" pitches skip. Content decays: prices and product details go out of date, competitors publish something better, and search results shift under you. An article left alone for two years is usually a weaker asset than it was. Code decays in a different way. The libraries it depends on get updated, security holes get found, the platform or API it plugs into changes its rules, and users email you when it breaks.
 
 Upkeep is still far less work than serving every reader or user by hand, which is the whole point. But budget for it. A sensible habit is to put a review date on every asset the day you publish it.
@@ -491,6 +513,8 @@ The two work well together. An article brings in readers, and a template, tool o
 3. Build the smallest version that's useful. One article before an ebook. A spreadsheet before an app.
 4. Put it where those people already look, and give it a fixed window, say three months, before you judge it.
 5. Look at the numbers (search impressions, signups, sales) and decide: improve it, leave it, or drop it. Then set the next review date.
+
+![Five steps to pick a first leveraged asset: list repeated questions, check demand, build the smallest version, give it a window, then review the numbers.](/images/guides/permissionless-leverage-content-and-code/3-choosing-your-first-asset.webp "Most first assets won't earn much. The first one teaches you how long things take.")
 
 Most first assets won't earn much, and results vary a lot by topic. What you're really buying with the first one is the knowledge of how long things take you and what your audience responds to.
 
@@ -535,6 +559,8 @@ There's no price that's correct for every ebook, course or template, and no rule
 
 The method is short. Work out what the product helps the buyer do and what their other options cost. Look at what comparable products sell for. Pick a price inside that range, sell at it long enough to get real numbers, then try another price and compare total revenue.
 
+![Five steps for pricing a digital product: define the outcome and alternatives, check comparable products, pick a price, sell, then test another price.](/images/guides/how-to-price-a-digital-product/1-setting-a-first-price-you-can-test.webp "The first price is a starting point. Total revenue across two tested prices decides whether it moves.")
+
 ## Start with what the buyer gets and what else they could do
 
 Your costs tell you very little here. A digital product costs almost nothing to deliver, and the hours you spent making it aren't the buyer's concern. They're paying for an outcome.
@@ -578,6 +604,8 @@ Two other things affect the result. Payment processors and marketplaces typicall
 
 Pick a price from your comparable range and sell at it until you have enough sales to trust. Then change only the price and run it for a similar period with similar traffic.
 
+![Checklist for a fair price test: change only the price, match the period and traffic, record visitors, sales, revenue and refunds, ignore tiny samples.](/images/guides/how-to-price-a-digital-product/2-keep-a-price-test-fair.webp "A small audience can need a few months per price before the difference means anything.")
+
 Be strict with yourself about sample size. Six sales against nine is noise. With a small audience it may take a few months per price to learn anything, and a launch week can't be compared with a quiet week. Write down visitors, sales, revenue and refunds for each period so you're comparing like with like.
 
 Don't change the sales page, the bonuses and the price in the same week. If you do, you won't know which change moved the number.
@@ -599,6 +627,8 @@ Prices ending in 9 are everywhere, and there's some evidence behind the habit. I
 ## Don't fake discounts or deadlines
 
 A crossed-out "was $197" is only honest if you really sold the product at $197. The [FTC's Guides Against Deceptive Pricing](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233) (16 CFR Part 233) say a former price is a legitimate basis for comparison when it was the actual price offered to the public on a regular basis for a reasonably substantial period. An inflated price set up so you can advertise a big reduction makes the bargain, in the guide's words, "a false one".
+
+![Comparison of honest pricing tactics, like real former prices and stated launch deadlines, against inflated was-prices and resetting countdown timers.](/images/guides/how-to-price-a-digital-product/3-honest-vs-deceptive-pricing.webp "The FTC treats invented former prices and fake countdowns as deceptive. Real deadlines are fine.")
 
 Fake urgency is the same problem. The FTC's 2022 staff report on dark patterns lists [countdown timers on offers that aren't really time-limited](https://www.ftc.gov/news-events/news/press-releases/2022/09/ftc-report-shows-rise-sophisticated-dark-patterns-designed-trick-trap-consumers) among its examples of deceptive design. If your timer resets when the page reloads, take it down. A real deadline, such as a launch price that ends on a stated date, is fine.
 
@@ -692,6 +722,8 @@ That's about 14 hours of focused work. It looks light on paper. Before you decid
 
 More isn't realistic for most people. In *Deep Work*, Newport summarizes Anders Ericsson's research on deliberate practice: about an hour a day is a reasonable limit for someone new to that kind of concentration, rising to roughly four hours with practice and rarely beyond. So if you're starting out, book 90 minutes and build up.
 
+![Checklist for a deep work focus block: schedule it when you're sharpest, start with 90 minutes, close email and chat, and work on one pre-chosen task.](/images/guides/solopreneur-operating-system-deep-work-schedule/1-setting-up-a-focus-block.webp "Deciding what to work on is a separate job from doing it.")
+
 Put the block where you're sharpest. For many people that's the morning, but if you do your best thinking at 9 pm, schedule it there and run your admin window earlier.
 
 During the block, close email and chat, leave your phone in another room, and work on one task you chose in advance. Deciding what to work on is a separate job from doing it, and it shouldn't eat the first twenty minutes. If your block is for writing, a [repeatable drafting process](/guide/write-blog-posts-faster) makes it much easier to start cold.
@@ -707,6 +739,8 @@ If the admin window keeps overflowing, look at what's in it. Repetitive steps su
 ### Plan once a week
 
 Thirty minutes with a calendar and a notes app covers it:
+
+![Four steps for a weekly planning session: review last week, choose one to three outcomes, book focus blocks with tasks, then fit calls into afternoons.](/images/guides/solopreneur-operating-system-deep-work-schedule/2-the-30-minute-weekly-plan.webp "All you need is thirty minutes with a calendar and a notes app.")
 
 1. Look at last week. Note which focus blocks happened and what ate the ones that didn't.
 2. Choose one to three outcomes for next week on your main asset, such as "publish two articles".
@@ -732,6 +766,8 @@ In both cases, do the weekly plan anyway. It matters more when you have fewer ho
 ## What to do when the plan breaks
 
 Every schedule breaks at some point. A few rules keep one bad day from turning into a bad month.
+
+![Fixes for a broken schedule: move a missed block, drop to a minimum week, change a failing block, treat weekly emergencies as a business problem.](/images/guides/solopreneur-operating-system-deep-work-schedule/3-when-the-schedule-breaks.webp "A few rules keep one bad day from turning into a bad month.")
 
 - **You miss a block.** Don't try to win it back at 11 pm. Move the task to the next block and push something smaller off the week. Newport does the same with his daily plan: when the day goes sideways, he redraws the schedule for the hours that are left.
 - **The whole week falls apart.** Drop to the minimum version: one focus block a day, however short, and one email window. Leave everything else until next week.
@@ -801,6 +837,8 @@ If a page on your site could have been produced by someone who has never done th
 
 **First-hand experience, with evidence.** A model has never used the product, run the campaign or filled in the form. You have, or you can. The evidence is what makes it believable: your own screenshots and photos, the settings you used, the dates, the numbers, and the mistakes. A paragraph on what went wrong and what you'd do differently is often the most useful part of a page, and it can't be written by summarizing a sales page. If you write reviews, the outline in my guide to [writing a buyer's guide](/guide/write-buyers-guides-that-convert) is built around this kind of proof.
 
+![Five cards: first-hand experience with evidence, a specific point of view, original data or a tool, a direct reader relationship, and a trusted name.](/images/guides/building-a-moat-in-the-age-of-ai/1-five-things-a-model-cant-supply.webp "Each of these comes from you, which is why a rewrite of existing pages can't contain them.")
+
 **A specific point of view.** Ask a model which option is best and you'll usually get a balanced list of considerations. Readers mostly want a recommendation and the reasoning behind it: "I'd pick this one unless you need that feature." Taking a position means you'll sometimes be wrong in public. I think that's a fair trade, because a page that commits to nothing gives nobody a reason to come back.
 
 **Original data or a tool.** New information is the one thing a rewrite can't contain. It doesn't have to be a big study. A spreadsheet comparing the terms of ten programs you checked yourself, a small survey of your subscribers, a calculator, or a template people can copy all count. Say how you collected the data and when, so readers can judge it.
@@ -827,6 +865,8 @@ That page also suggests telling readers how a piece was produced when they'd rea
 
 Run this on a draft before publishing, or on an old post you're deciding whether to keep.
 
+![Checklist of seven questions to ask about a draft, from first-hand observations and a clear recommendation to checked facts and a named author.](/images/guides/building-a-moat-in-the-age-of-ai/2-run-this-before-you-publish.webp "If the answer to the first five is no, the page is a summary. Add what's missing rather than inventing it.")
+
 1. Is there at least one thing here you observed yourself: a result, a screenshot, a price you were quoted, a problem you hit?
 2. Does the page say how you know? ("Tested for three weeks on a free plan" beats "we tested it".)
 3. Is there a clear recommendation, and does it say who it's wrong for?
@@ -840,6 +880,8 @@ If the answer to the first five is no, the page is a summary. Either add what's 
 ## Where AI helps, and where it will hurt you
 
 I think refusing to use AI at all is a mistake, and so is letting it write the article.
+
+![Comparison of writing tasks AI is useful for, like outlining and tightening sentences, against what it is unreliable for, like facts and experience.](/images/guides/building-a-moat-in-the-age-of-ai/3-where-ai-helps-and-where-it-hurts.webp "Use AI for the parts of writing that aren't your contribution, and verify every specific claim it produces.")
 
 It's useful for the parts of writing that aren't your contribution: turning rough notes into an outline, pointing out gaps in a draft, tightening long sentences, suggesting headings, reformatting a table. My guide to [writing blog posts faster](/guide/write-blog-posts-faster) covers how to speed up a draft without lowering its quality.
 
@@ -901,6 +943,8 @@ Turning freelance work into one of these comes down to five jobs: pick the work 
 ## Pick the job you've already done many times
 
 Go back through your last ten or so client projects and list what you did on each. You're looking for the piece of work that showed up most often and went the same way each time, with the same inputs from the client and roughly the same hours from you.
+
+![Decision chart: if you can list the job's steps without saying it depends, check your hours; if not, keep it as custom work.](/images/guides/productized-services-guide/1-can-this-job-be-packaged.webp "Your first offer is usually narrower than you expect, like a five-email welcome sequence instead of marketing help.")
 
 That piece is your first offer. It's usually narrower than you expect. "Marketing help" can't be packaged, but "set up and write a five-email welcome sequence" can.
 
@@ -966,6 +1010,8 @@ Subscriptions also make income steadier from month to month, which makes it easi
 
 Every client will eventually ask for something outside the package. It's rarely pushy. They don't have your scope list in their head, and the request seems small to them.
 
+![Four cards: offer an add-on, quote a separate project, refer it on, and keep a list of priced add-ons for common requests.](/images/guides/productized-services-guide/2-three-answers-to-out-of-scope-requests.webp "Deciding your answers in advance means you aren't inventing them under pressure.")
+
 Decide in advance what you'll say, so you aren't making it up under pressure. There are three workable answers:
 
 1. **It's an add-on.** "That's outside the audit, but I can do it for $150. Want me to add it?"
@@ -979,6 +1025,8 @@ Doing a small extra for free once in a while is fine if you choose to. The troub
 ## A simple delivery process
 
 The package only pays off if you deliver it the same way every time. A basic checklist covers most services:
+
+![Flow of a productized service delivery: payment and agreement, intake form, confirmed date, work from your list, then check, deliver and close.](/images/guides/productized-services-guide/3-delivering-the-same-way-every-time.webp "Writing down the work step in detail is what later lets you speed up or hand routine parts to an assistant.")
 
 1. Client pays and accepts the agreement.
 2. Client fills in an intake form with everything you need, such as access, files and goals.
@@ -1041,6 +1089,8 @@ A first virtual assistant hire tends to work when you hand over one specific, re
 
 So the order is: pick the task, document it, post a short and specific job, pay a few candidates for a small trial, then onboard the best one with limited access to your accounts. Most of the effort sits in the first two steps, and you do those before you talk to anyone.
 
+![Five stages of hiring a first virtual assistant: pick a task, document it, post a specific job, run a paid trial, onboard with limited access.](/images/guides/hire-first-virtual-assistant-va-solopreneur-guide/1-the-order-for-a-first-va-hire.webp "Most of the effort sits in the first two stages, before you talk to anyone.")
+
 ## Decide what to hand over first
 
 Log what you do for a week. A notes file with a line per task is enough. Then run each task through three checks:
@@ -1097,6 +1147,8 @@ Long job posts with a dozen "nice to have" skills attract generic applications. 
 
 Shortlist two or three people and give each the same small task, taken from the real work and built on your documentation. One to two hours is plenty. Pay everyone for it at the agreed rate, whether or not you hire them. Unpaid "test work" is unfair to candidates and puts off the experienced ones.
 
+![Steps for a VA trial: shortlist two or three people, give the same one to two hour task, pay everyone, then review how they worked.](/images/guides/hire-first-virtual-assistant-va-solopreneur-guide/2-how-to-run-a-paid-trial-task.webp "A small mistake with clear communication usually beats getting it right in silence.")
+
 When the trials come back, look at more than the finished result. Check whether they followed the document, whether they asked a question when something was unclear instead of guessing, and whether they delivered when they said they would. Someone who makes a small mistake and communicates clearly is usually a better long-term bet than someone who gets it right in silence.
 
 ## How much to pay a virtual assistant
@@ -1114,6 +1166,8 @@ This is general information, not legal or tax advice. Most VAs work as independe
 ## Give access without handing over your accounts
 
 Your VA needs access to do the job. They don't need your identity.
+
+![Checklist for sharing account access with a VA: no main email password, separate users, password manager sharing, no money access, a shared list.](/images/guides/hire-first-virtual-assistant-va-solopreneur-guide/3-give-access-not-your-identity.webp "Turn on two-factor authentication for your own accounts before you add anyone.")
 
 - **Never share your main email password.** That inbox resets every other account you own. If the VA will handle email, use delegation. [Gmail's delegate feature](https://support.google.com/mail/answer/138350) lets someone read, send and delete mail for you without your password, and a delegate can't change that password.
 - **Create a separate user wherever the tool allows it.** Most platforms let you add a team member with a limited role. On a blog, that might be a role that can draft and edit but not install plugins or manage users.
@@ -1178,6 +1232,8 @@ This is general information, not legal or tax advice. Selling a business is a co
 
 The formula is short:
 
+![Flow from revenue, minus every running cost, to net profit over a set period, multiplied by a risk-based multiple to give the sale price.](/images/guides/how-to-sell-a-content-site/1-how-a-sale-price-gets-built.webp "The profit figure is arithmetic. The multiple is the buyer's judgment about risk.")
+
 **Sale price = net profit over a set period × a multiple**
 
 Net profit here means revenue minus every cost of running the site: hosting, tools, writers, editors, software, paid links or ads. The period is usually the trailing 12 months. A shorter window, such as 6 months, sometimes gets used when a site has changed a lot recently, and buyers will push back on that if the short window happens to flatter the numbers.
@@ -1225,6 +1281,8 @@ None of this can be fixed in the month before listing. Give yourself a year if y
 
 **Open marketplaces** (Flippa is the best known) let you list almost any site yourself. You get reach and speed, and you do the vetting, negotiating and paperwork. Expect a listing fee plus a success fee; both depend on the asking price, so check the marketplace's current pricing page.
 
+![Table comparing open marketplaces, brokers or curated marketplaces, and private sales by what you get and what it costs you.](/images/guides/how-to-sell-a-content-site/2-three-ways-to-sell-a-site.webp "For a first sale, I'd lean toward a broker or curated marketplace if the site qualifies.")
+
 **Curated marketplaces and brokers** (Empire Flippers, FE International, Quiet Light and others) vet the business, help set the price, bring qualified buyers and manage the process. They charge a commission on the sale price, usually tiered by deal size, and often ask for a period of exclusivity. Most have minimum size requirements, so a small site may not qualify. Read the fee schedule and the exclusivity terms before you sign a listing agreement.
 
 **A private sale** to someone you already know skips the commission. It also removes the middleman who would have verified the buyer and held the money, so you'll need your own lawyer and a third-party escrow service.
@@ -1243,6 +1301,8 @@ For a first sale, I'd lean toward a broker or curated marketplace if the site qu
 8. **Transfer the assets.** Domain, hosting, content, email list, social accounts, and affiliate or ad accounts. Some accounts can't be transferred and the buyer has to open new ones, so check each program's rules early.
 9. **Release of funds.** Once the buyer confirms they control everything, escrow pays you.
 10. **Transition support.** You answer questions and make introductions for an agreed period.
+
+![Six stages of a content site sale: prepare records, value and list, take offers, due diligence, signing with escrow, then transfer and payout.](/images/guides/how-to-sell-a-content-site/3-from-listing-to-handover.webp "Never hand over a domain against a promise to pay. Escrow exists for exactly this.")
 
 Timing varies a lot. Small, clean sites can sell in weeks; larger or messier ones take months.
 

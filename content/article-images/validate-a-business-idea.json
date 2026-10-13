@@ -1,0 +1,55 @@
+{
+  "slug": "validate-a-business-idea",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "flow",
+      "title": "Three tests, cheapest first",
+      "alt": "Flow of three validation tests run from cheapest to most expensive: find complaints, talk to five to ten people, then ask for money.",
+      "caption": "Write down your pass line for each test before you run it.",
+      "data": {
+        "items": [
+          {"label": "Test 1: Find complaints", "text": "People describing the problem unprompted, in places you didn't create"},
+          {"label": "Test 2: Talk to people", "text": "Five to ten people who have the problem"},
+          {"label": "Test 3: Ask for money", "text": "Payment or a firm commitment before the product exists"},
+          {"label": "Build the smallest version", "text": "Only what you promised, for your first buyers"}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Why \"would you buy this?\" is a bad question",
+      "type": "compare",
+      "title": "Opinions vs past behaviour",
+      "alt": "Comparison of asking whether someone would buy your idea with asking about specific things they have already done about the problem.",
+      "caption": "Talk about the other person's life, not your idea.",
+      "data": {
+        "columns": [
+          {"label": "\"Would you buy this?\"", "tone": "bad", "points": ["Asks for a prediction", "Easy to be kind about", "A yes costs them nothing", "You leave with a compliment"]},
+          {"label": "Ask about their past", "tone": "good", "points": ["Asks what they've already done", "Hard to answer with a polite lie", "Shows how often it happens", "Reveals what they've tried"]}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Pre-selling honestly",
+      "type": "checklist",
+      "title": "Keep a pre-sale fair to buyers",
+      "alt": "Checklist for an honest pre-sale: say the product doesn't exist yet, give a realistic date, promise full refunds and keep the money aside.",
+      "caption": "Only take money for something you will deliver or refund.",
+      "data": {
+        "items": [
+          "Say plainly that the product doesn't exist yet",
+          "Give a delivery date you have good reason to believe",
+          "Promise a full refund if you miss the date or don't build it",
+          "Pay refunds quickly, without being asked",
+          "Keep pre-sale money aside until you've delivered",
+          "Never run a fake checkout that collects card details",
+          "Read your payment processor's terms on pre-orders"
+        ]
+      }
+    }
+  ]
+}

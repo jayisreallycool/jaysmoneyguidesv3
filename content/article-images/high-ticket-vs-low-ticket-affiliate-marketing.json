@@ -1,0 +1,53 @@
+{
+  "slug": "high-ticket-vs-low-ticket-affiliate-marketing",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What counts as high ticket and low ticket",
+      "type": "compare",
+      "title": "A high price isn't a high commission",
+      "alt": "Comparison: a $2,000 laptop at a 2% rate earns $40, while a $300 software plan at 30% earns $90.",
+      "caption": "Check the program's actual rate for the product category before you build content around it.",
+      "data": {
+        "columns": [
+          {"label": "$2,000 laptop", "tone": "neutral", "points": ["Expensive product", "2% commission rate", "Earns $40 a sale"]},
+          {"label": "$300 software plan", "tone": "neutral", "points": ["Cheaper product", "30% commission rate", "Earns $90 a sale"]}
+        ]
+      },
+      "note": "Plain arithmetic, not real program rates"
+    },
+    {
+      "slot": "middle",
+      "after": "Which model fits your site",
+      "type": "decision",
+      "title": "Which model fits your site right now",
+      "alt": "Decision chart: broad traffic suits low ticket, a small specific audience you know well suits high ticket, and neither means start low ticket in one category.",
+      "caption": "Match the model to how your readers already buy, not to the size of the commission.",
+      "data": {
+        "question": "What does your site have today?",
+        "branches": [
+          {"answer": "Broad traffic", "result": "Low ticket. Roundups and quick comparisons for readers who buy fast.", "tone": "neutral"},
+          {"answer": "Small, specific", "result": "High ticket, if you can answer the hard questions before a big purchase.", "tone": "neutral"},
+          {"answer": "Neither yet", "result": "Start low ticket in one narrow category and add higher offers later.", "tone": "good"}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Refunds and held commissions hurt more at high ticket",
+      "type": "checklist",
+      "title": "Compare high-ticket programs past the rate",
+      "alt": "Checklist for comparing high-ticket affiliate programs: refund window, hold period, one-time or recurring payout, and trial cancellations.",
+      "caption": "A lower rate that's paid reliably can be worth more than a higher one that keeps getting reversed.",
+      "data": {
+        "items": [
+          "How long is the refund window?",
+          "How long are commissions held before they're payable?",
+          "Is the payout one-time or recurring?",
+          "Do trial cancellations or early refunds earn you nothing?",
+          "Read the program's own rules, since every program sets its own"
+        ]
+      }
+    }
+  ]
+}

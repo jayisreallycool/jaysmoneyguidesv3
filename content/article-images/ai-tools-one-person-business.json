@@ -1,0 +1,50 @@
+{
+  "slug": "ai-tools-one-person-business",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "decision",
+      "title": "Does the tool earn its place?",
+      "alt": "Decision chart: if checking AI output is quicker than doing the task yourself, keep the tool; if not, do the work yourself.",
+      "caption": "AI tools give a fast first version, so the real cost is the time it takes you to check it.",
+      "data": {
+        "question": "Is checking the output quicker than doing the task yourself?",
+        "branches": [
+          {"answer": "Yes", "result": "The tool earns its place for this job.", "tone": "good"},
+          {"answer": "No", "result": "Do this task yourself. The tool saves no time here.", "tone": "bad"}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Research with sources",
+      "type": "steps",
+      "title": "From AI answer to a fact you can repeat",
+      "alt": "Four steps for AI research: get an answer with links, open each source, find the exact sentence, and prefer the original source.",
+      "caption": "Treat an AI answer as a faster route to sources, then read the sources.",
+      "data": {
+        "items": [
+          {"title": "Get an answer with links", "text": "Use a tool that searches the web and shows the pages it used."},
+          {"title": "Open the source", "text": "A citation can point to a page that doesn't say what the answer claims."},
+          {"title": "Find the sentence", "text": "Locate the exact line that supports the claim before you repeat it."},
+          {"title": "Prefer the original", "text": "The company's terms page, the regulator or the study beats a blog post about it."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Automation",
+      "type": "compare",
+      "title": "Why automation needs a different safeguard",
+      "alt": "Comparison of drafting with an assistant, where you see every output, and automation, where one wrong output can repeat for weeks.",
+      "caption": "Keep a manual approval step in front of anything an automation publishes or sends to a customer.",
+      "data": {
+        "columns": [
+          {"label": "Drafting with AI", "tone": "neutral", "points": ["You see every output", "You check it before it goes anywhere", "A mistake stays in one draft"]},
+          {"label": "AI in an automation", "tone": "neutral", "points": ["Runs when you aren't looking", "Output can go out unchecked", "One wrong output can repeat for weeks"]}
+        ]
+      }
+    }
+  ]
+}

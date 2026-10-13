@@ -1,0 +1,57 @@
+{
+  "slug": "sofi-referral-bonus-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "flow",
+      "title": "How a SoFi referral pays both sides",
+      "alt": "Flow of the SoFi bank referral: a member shares a link, a new customer opens an account and makes a small deposit, then both get a bonus.",
+      "caption": "The new customer's bonus is the smaller one; the member who referred them gets more.",
+      "note": "Check SoFi's official rules for current terms",
+      "data": {
+        "items": [
+          {"label": "Member shares a link", "text": "An existing SoFi member sends their referral link"},
+          {"label": "New customer opens", "text": "A SoFi Checking and Savings account, through that link"},
+          {"label": "Small deposit", "text": "Made within a few weeks of opening"},
+          {"label": "Both get a cash bonus", "text": "SoFi decides who qualifies and pays each side"}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Why a bonus doesn't pay out",
+      "type": "checklist",
+      "title": "Why a referral bonus gets missed",
+      "alt": "Common reasons a SoFi referral bonus doesn't pay: no referral link, an existing SoFi product, a late or small deposit, or referrer account issues.",
+      "caption": "Nearly every missed bonus traces back to one of these, so check them before you sign up.",
+      "note": "Check SoFi's official rules for current terms",
+      "data": {
+        "items": [
+          "Account wasn't opened through a referral link",
+          "New customer already had another SoFi product",
+          "Deposits fell short or started after the deadline",
+          "Account was opened after the promotion period ended",
+          "Referrer's account was closed or not in good standing",
+          "Referrer had hit SoFi's yearly bonus cap"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Should you open an account just for the bonus?",
+      "type": "decision",
+      "title": "Open an account for the bonus?",
+      "alt": "Decision on opening a SoFi account for a referral bonus: open it only if you'd use the account anyway, otherwise skip it.",
+      "caption": "Judge the account itself first; the bonus is a thank-you, not a reason.",
+      "data": {
+        "question": "Would you use the account even without the bonus?",
+        "branches": [
+          {"answer": "Yes", "result": "Compare fees, interest and whether you'd move your paycheck there, then decide.", "tone": "good"},
+          {"answer": "No", "result": "Skip it. A bonus is a poor reason to add an account you'll never use.", "tone": "bad"}
+        ]
+      }
+    }
+  ]
+}

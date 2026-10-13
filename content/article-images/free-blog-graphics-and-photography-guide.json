@@ -1,0 +1,57 @@
+{
+  "slug": "free-blog-graphics-and-photography-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Creative Commons in one minute",
+      "type": "table",
+      "title": "Creative Commons letters at a glance",
+      "alt": "Reference grid of Creative Commons terms CC0, BY, SA, NC and ND, what each requires, and how each fits a monetized blog.",
+      "caption": "On a blog with ads or affiliate links, NC images are the ones to skip entirely.",
+      "data": {
+        "headers": ["License", "What it means", "Monetized blog"],
+        "rows": [
+          ["CC0", "Rights waived, no credit needed", "Fine to use"],
+          ["BY", "You must credit the creator", "Commercial use and editing allowed"],
+          ["SA", "Share adaptations on the same terms", "Applies if you adapt it"],
+          ["NC", "Non-commercial use only", "Avoid altogether"],
+          ["ND", "No adaptations, use as it is", "Problem if you add text"]
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Using AI-generated images",
+      "type": "checklist",
+      "title": "Checks before using an AI image",
+      "alt": "Checklist for AI-generated blog images: read commercial terms, avoid real people and logos, don't assume ownership, ask if it adds value.",
+      "caption": "AI tools suit abstract or decorative images, as long as the terms and subject matter are clear.",
+      "data": {
+        "items": [
+          "Read the tool's terms for commercial use",
+          "Check whether free and paid tiers have different terms",
+          "Don't generate real people",
+          "Don't generate brand logos",
+          "Don't assume you own the result",
+          "Ask whether it adds more than a stock photo would"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Make your own graphics instead of decorating with stock",
+      "type": "cards",
+      "title": "Graphics nobody else has",
+      "alt": "Four kinds of original blog graphics: charts from your own data, annotated screenshots, simple diagrams and your own photos.",
+      "caption": "The most useful image in a post explains something and can't turn up on another site.",
+      "data": {
+        "items": [
+          {"title": "Charts from your own data", "text": "Label the axes, cut the gridlines and say where the numbers came from."},
+          {"title": "Annotated screenshots", "text": "An arrow and a short label on the exact button to click."},
+          {"title": "Simple diagrams", "text": "Boxes and arrows for a process, or a two-column comparison."},
+          {"title": "Your own photos", "text": "A phone photo near a window, against a plain background."}
+        ]
+      }
+    }
+  ]
+}

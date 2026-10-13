@@ -1,4 +1,5 @@
 import 'server-only';
+import imageSizes from './article-images.generated.json';
 
 /**
  * Minimal, dependency-free markdown → HTML renderer that runs on the SERVER
@@ -145,16 +146,18 @@ export function markdownToHtml(md: string): string {
       }
     }
 
-    // plain image -> figure with a caption (alt text shown below the image)
-    const img = block.match(/^!\[([^\]]*)\]\(([^)\s]+)\)\s*$/);
+    // plain image -> figure. ![alt](src "caption"): the caption is shown under
+    // the image; the alt text describes the image for screen readers and search.
+    const img = block.match(/^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)\s*$/);
     if (img) {
-      const [, alt, src] = img;
+      const [, alt, src, title] = img;
       const safe = safeUrl(src, '');
       if (safe) {
-        const caption = alt
-          ? `<figcaption class="img-caption">${esc(alt)}</figcaption>`
-          : '';
-        out.push(`<figure class="content-figure"><img src="${escAttr(safe)}" alt="${escAttr(alt)}" loading="lazy" class="content-img" />${caption}</figure>`);
+        const text = (title ?? alt).trim();
+        const caption = text ? `<figcaption class="img-caption">${esc(text)}</figcaption>` : '';
+        const size = (imageSizes as Record<string, { width: number; height: number }>)[src];
+        const dims = size ? ` width="${size.width}" height="${size.height}"` : '';
+        out.push(`<figure class="content-figure"><img src="${escAttr(safe)}" alt="${escAttr(alt)}"${dims} loading="lazy" decoding="async" class="content-img" />${caption}</figure>`);
         continue;
       }
     }

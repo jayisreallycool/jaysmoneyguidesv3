@@ -1,0 +1,53 @@
+{
+  "slug": "core-web-vitals-optimization-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How to check your Core Web Vitals",
+      "type": "compare",
+      "title": "Field data vs lab data",
+      "alt": "Comparison of PageSpeed Insights field data from real Chrome users over 28 days with lab data from one simulated page load.",
+      "caption": "When the two disagree, trust the field data. Use the lab test to find causes.",
+      "data": {
+        "columns": [
+          {"label": "Field data", "tone": "neutral", "points": ["Real Chrome users, previous 28 days", "Shown at the top of the report", "What the assessment is based on", "Can be missing on small sites"]},
+          {"label": "Lab data", "tone": "neutral", "points": ["One simulated page load", "Comes with the 0–100 score", "Updates the moment you change things", "Can't measure INP"]}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Fix images first",
+      "type": "checklist",
+      "title": "Five image habits for faster pages",
+      "alt": "Checklist of image habits: resize before upload, use WebP or AVIF, set width and height, lazy-load lower images, never lazy-load the main one.",
+      "caption": "The LCP element is often the featured image at the top of the post.",
+      "data": {
+        "items": [
+          "Resize before you upload, to roughly the largest display size",
+          "Use a modern format such as WebP or AVIF",
+          "Give every image a width and height",
+          "Lazy-load images further down the page",
+          "Never lazy-load the main image at the top"
+        ]
+      },
+      "note": "Adding fetchpriority=\"high\" to the main image tells the browser to fetch it early"
+    },
+    {
+      "slot": "bottom",
+      "after": "Stop the page jumping around",
+      "type": "cards",
+      "title": "Save space for what arrives late",
+      "alt": "Four ways to prevent layout shift: set image dimensions, reserve ad slots, size embed containers, and make banners overlay the page.",
+      "caption": "Layout shift almost always comes from something arriving into a space nobody saved for it.",
+      "data": {
+        "items": [
+          {"title": "Images", "text": "Set a width and height on every image."},
+          {"title": "Ads", "text": "Reserve a slot with a fixed minimum height so text isn't pushed down."},
+          {"title": "Embeds", "text": "Put videos, social posts and iframes in a container with a set size."},
+          {"title": "Banners", "text": "Have cookie notices and newsletter bars overlay the page."}
+        ]
+      }
+    }
+  ]
+}

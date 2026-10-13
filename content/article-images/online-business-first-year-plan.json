@@ -1,0 +1,51 @@
+{
+  "slug": "online-business-first-year-plan",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Months 1–2: prove someone will pay",
+      "type": "compare",
+      "title": "What counts as proof someone will pay",
+      "alt": "Comparison of validation evidence: pre-orders, paid pilots and deposits count, while compliments and survey answers don't.",
+      "caption": "Evidence that costs the person nothing tells you little about whether they'll pay.",
+      "data": {
+        "columns": [
+          {"label": "Counts as proof", "tone": "good", "points": ["A pre-order", "A paid pilot", "A deposit on a service"]},
+          {"label": "Doesn't count", "tone": "bad", "points": ["Compliments", "Survey answers", "Anything that costs them nothing"]}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Months 7–10: fix the monetization",
+      "type": "steps",
+      "title": "Fixing the monetization",
+      "alt": "Steps for months seven to ten: see which offer sells, find where people drop off, note unmet requests, test a higher price.",
+      "caption": "Real buying data often disagrees with the original plan, so let it steer the offer.",
+      "data": {
+        "items": [
+          {"title": "See which offer gets bought", "text": "Use the data from people who are now arriving."},
+          {"title": "Find where people drop off", "text": "Look for the point where interested visitors stop."},
+          {"title": "Note what customers ask for", "text": "List requests for things you don't sell yet."},
+          {"title": "Test a higher price", "text": "Underpricing is the usual mistake at this stage."},
+          {"title": "Settle on one offer", "text": "Done means strangers have bought it more than once."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How to tell whether to keep going",
+      "type": "decision",
+      "title": "Reading a flat line at review time",
+      "alt": "Decision for a flat result at a review point: after a stage done properly, change something; after a rushed stage, go back.",
+      "caption": "Review at months 3, 6 and 12, and compare against your own earlier numbers.",
+      "data": {
+        "question": "Your numbers are flat at a review point. How did the last stage go?",
+        "branches": [
+          {"answer": "Done properly", "result": "Change the idea, the audience or the channel.", "tone": "neutral"},
+          {"answer": "Rushed or skipped", "result": "Go back and do that stage properly before moving on.", "tone": "bad"}
+        ]
+      }
+    }
+  ]
+}

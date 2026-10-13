@@ -1,0 +1,54 @@
+{
+  "slug": "seo-checklist",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How to read the labels",
+      "type": "compare",
+      "title": "The two labels in this checklist",
+      "alt": "Comparison of the Google-documented label, from Google's own documentation, and the good practice label, for sensible advice Google doesn't spell out.",
+      "caption": "Neither label means ranking factor, and no item guarantees a position.",
+      "data": {
+        "columns": [
+          {"label": "Google-documented", "tone": "neutral", "points": ["Comes from Google's own documentation", "Mainly the SEO Starter Guide", "Not a promise of rankings"]},
+          {"label": "Good practice", "tone": "neutral", "points": ["Sensible and widely done", "Google doesn't spell it out", "Not a promise of rankings"]}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "3. On-page basics",
+      "type": "table",
+      "title": "On-page basics at a glance",
+      "alt": "Reference table of on-page SEO elements, what to check for each, and whether the advice is Google-documented or good practice.",
+      "caption": "A site: search shows how your titles appear and makes duplicates easy to spot.",
+      "data": {
+        "headers": ["Element", "What to check", "Label"],
+        "rows": [
+          ["Title", "Unique and accurate on every page", "Google-documented"],
+          ["Meta description", "Summarizes the page", "Google-documented"],
+          ["Headings", "Describe what's under them", "Good practice"],
+          ["URL", "Readable words, not ?post=12847", "Google-documented"],
+          ["Image alt text", "Descriptive, near related text", "Google-documented"],
+          ["Structured data", "Valid, if you use it", "Google-documented"]
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "5. Speed and mobile",
+      "type": "cards",
+      "title": "Google's Core Web Vitals targets",
+      "alt": "Cards showing Core Web Vitals targets: Largest Contentful Paint within 2.5 seconds, Interaction to Next Paint under 200 milliseconds, Layout Shift under 0.1.",
+      "caption": "Fix what's failing, and don't spend a month chasing a perfect score.",
+      "data": {
+        "items": [
+          {"title": "Largest Contentful Paint", "text": "Within 2.5 seconds."},
+          {"title": "Interaction to Next Paint", "text": "Under 200 milliseconds."},
+          {"title": "Cumulative Layout Shift", "text": "Under 0.1."},
+          {"title": "Where to test", "text": "PageSpeed Insights for one URL. Search Console's report for the whole site."}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "youtube-affiliate-marketing-small-channel-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Affiliate links vs. YouTube Shopping affiliate",
+      "type": "compare",
+      "title": "Affiliate links vs Shopping affiliate",
+      "alt": "Comparison of regular affiliate links, which need no Partner Program, with YouTube Shopping affiliate, which has eligibility requirements.",
+      "caption": "Ordinary affiliate links have no entry gate, so you can start with them today.",
+      "note": "Read YouTube's eligibility page for current Shopping thresholds",
+      "data": {
+        "columns": [
+          {"label": "Regular affiliate link", "tone": "neutral", "points": ["From a program you joined yourself", "Pasted into your description", "YouTube isn't part of the deal", "No subscriber minimum"]},
+          {"label": "Shopping affiliate", "tone": "neutral", "points": ["YouTube's own product tagging", "Requires the Partner Program", "Must meet its subscriber threshold", "Listed countries only"]}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "How to disclose affiliate links in a video",
+      "type": "steps",
+      "title": "Disclosing affiliate links in a video",
+      "alt": "Steps to disclose YouTube affiliate links: say it early, show it on screen, repeat it by the link and tick the paid promotion option.",
+      "caption": "Some people watch without sound and others listen without watching, so cover both.",
+      "data": {
+        "items": [
+          {"title": "Say it early", "text": "In plain words: you earn a commission if viewers buy through the links."},
+          {"title": "Show it on screen", "text": "Put the same sentence on screen for a few seconds while you say it."},
+          {"title": "Repeat it in the description", "text": "Place it right next to the link."},
+          {"title": "Tick paid promotion", "text": "Select the option in video details; it adds a label at the start."},
+          {"title": "Keep your own disclosure", "text": "The YouTube label doesn't replace what you say and show."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Where to put the links and what to say on camera",
+      "type": "flow",
+      "title": "Where the link fits in a video",
+      "alt": "Flow of an affiliate tutorial video: state the outcome, disclose and mention the link once, solve the problem, point to the link at the end.",
+      "caption": "Repeated pitching is the quickest way to lose a viewer who came for instructions.",
+      "data": {
+        "items": [
+          {"label": "First few seconds", "text": "Say what the viewer will be able to do by the end"},
+          {"label": "Mention the link once", "text": "Say it's linked below, along with the disclosure"},
+          {"label": "Solve the problem", "text": "Spend the rest of the video on the task"},
+          {"label": "Near the end", "text": "Point to the link again in one sentence"}
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

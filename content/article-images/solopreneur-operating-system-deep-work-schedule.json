@@ -1,0 +1,54 @@
+{
+  "slug": "solopreneur-operating-system-deep-work-schedule",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Protect two to four hours of focus a day",
+      "type": "checklist",
+      "title": "Setting up a focus block",
+      "alt": "Checklist for a deep work focus block: schedule it when you're sharpest, start with 90 minutes, close email and chat, and work on one pre-chosen task.",
+      "caption": "Deciding what to work on is a separate job from doing it.",
+      "data": {
+        "items": [
+          "Put the block where you're sharpest, morning or evening",
+          "New to this? Book 90 minutes and build up",
+          "Close email and chat",
+          "Leave your phone in another room",
+          "Work on one task you chose in advance"
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Plan once a week",
+      "type": "steps",
+      "title": "The 30-minute weekly plan",
+      "alt": "Four steps for a weekly planning session: review last week, choose one to three outcomes, book focus blocks with tasks, then fit calls into afternoons.",
+      "caption": "All you need is thirty minutes with a calendar and a notes app.",
+      "data": {
+        "items": [
+          { "title": "Look at last week", "text": "Note which focus blocks happened and what ate the ones that didn't" },
+          { "title": "Choose outcomes", "text": "One to three for next week on your main asset" },
+          { "title": "Book the focus blocks", "text": "Add them to your calendar as appointments, each with a task" },
+          { "title": "Fit in the rest", "text": "Calls and errands in the afternoons; leave one afternoon empty" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What to do when the plan breaks",
+      "type": "cards",
+      "title": "When the schedule breaks",
+      "alt": "Fixes for a broken schedule: move a missed block, drop to a minimum week, change a failing block, treat weekly emergencies as a business problem.",
+      "caption": "A few rules keep one bad day from turning into a bad month.",
+      "data": {
+        "items": [
+          { "title": "You miss a block", "text": "Don't win it back at 11 pm. Move the task to the next block" },
+          { "title": "The week falls apart", "text": "Drop to one focus block a day and one email window" },
+          { "title": "A block keeps failing", "text": "Three weeks running? Move it, shorten it or find the interruption" },
+          { "title": "Weekly emergencies", "text": "That's a business problem, like too many clients. No calendar fixes it" }
+        ]
+      }
+    }
+  ]
+}

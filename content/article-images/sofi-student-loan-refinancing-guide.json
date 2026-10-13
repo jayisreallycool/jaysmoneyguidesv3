@@ -1,0 +1,79 @@
+{
+  "slug": "sofi-student-loan-refinancing-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What you give up when you refinance federal loans",
+      "type": "cards",
+      "title": "What federal loans lose in a refinance",
+      "alt": "Four cards on federal protections lost by refinancing privately: income-driven repayment, forgiveness, deferment and forbearance, and discharge.",
+      "caption": "The switch can't be reversed. Once a federal loan becomes private, it stays private.",
+      "data": {
+        "items": [
+          {
+            "title": "Income-driven repayment",
+            "text": "Payments based on income and family size become a fixed schedule"
+          },
+          {
+            "title": "Forgiveness programs",
+            "text": "PSLF and other forgiveness apply only to federal loans"
+          },
+          {
+            "title": "Deferment and forbearance",
+            "text": "Private hardship policies are usually narrower"
+          },
+          {
+            "title": "Discharge protections",
+            "text": "Many private lenders don't offer the same; read the agreement"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Who refinancing tends to fit",
+      "type": "checklist",
+      "title": "Refinancing federal loans: all must be true",
+      "alt": "Checklist of four conditions for considering a federal loan refinance: stable income, no forgiveness plans, a comfortable standard payment, a lower rate.",
+      "caption": "If you're unsure about any of these, keep the federal loans federal.",
+      "data": {
+        "items": [
+          "Stable income, with savings to cover a few rough months",
+          "No government or nonprofit job, and no forgiveness plans",
+          "A standard-plan payment you can comfortably make",
+          "A new rate low enough to matter over the life of the loan"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "So is now the right time?",
+      "type": "compare",
+      "title": "Is now a good time for you?",
+      "alt": "Comparison of situations where refinancing is worth a look, such as improved credit, against times it's usually a poor fit, such as a shaky job.",
+      "caption": "The timing that matters is your own, not a guess about where rates are heading.",
+      "data": {
+        "columns": [
+          {
+            "label": "Worth a look",
+            "tone": "good",
+            "points": [
+              "Your credit score or income has improved",
+              "Your rate is well above today's offers",
+              "Private loans spread across servicers"
+            ]
+          },
+          {
+            "label": "Usually a poor time",
+            "tone": "bad",
+            "points": [
+              "Your job feels shaky",
+              "You're working toward forgiveness",
+              "Only a year or two of payments left"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

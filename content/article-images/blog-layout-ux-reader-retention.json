@@ -1,0 +1,102 @@
+{
+  "slug": "blog-layout-ux-reader-retention",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Text size, line length and line height",
+      "type": "table",
+      "title": "Which numbers come from a standard",
+      "alt": "Table separating what WCAG sets for text size, line length, line height and tap targets from common design convention.",
+      "caption": "Some values are published rules and some are habit. Knowing which is which tells you where you have room to adjust.",
+      "data": {
+        "headers": [
+          "Setting",
+          "WCAG says",
+          "Convention"
+        ],
+        "rows": [
+          [
+            "Body text size",
+            "No minimum set",
+            "16px; 17–18px is common"
+          ],
+          [
+            "Line length",
+            "No more than 80 characters",
+            "About 45–75 characters"
+          ],
+          [
+            "Line height",
+            "At least 1.5",
+            "1.5 to about 1.7"
+          ],
+          [
+            "Tap targets",
+            "24×24 CSS pixels at minimum",
+            "About 44–48px"
+          ]
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Stop the page from jumping",
+      "type": "cards",
+      "title": "Reserve the space before it loads",
+      "alt": "Four cards: the cause of layout shift, fixes for images and ad slots, and Google's Cumulative Layout Shift target of 0.1 or less.",
+      "caption": "Text jumps when something loads late and pushes it down. Holding the gap in advance stops it.",
+      "data": {
+        "items": [
+          {
+            "title": "The cause",
+            "text": "An image or ad loads late and pushes the text you're reading down the page"
+          },
+          {
+            "title": "Images",
+            "text": "Give every image width and height attributes, or a CSS aspect-ratio"
+          },
+          {
+            "title": "Ad slots",
+            "text": "Set a minimum height on the container so the slot is there before the ad"
+          },
+          {
+            "title": "How it's measured",
+            "text": "Google calls it Cumulative Layout Shift; 0.1 or less counts as good"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Pop-ups and ads",
+      "type": "compare",
+      "title": "Pop-ups and ads: keep or remove",
+      "alt": "Comparison of acceptable sign-up and ad formats, like in-article forms and slim banners, against full-screen overlays and heavy ad density.",
+      "caption": "Google's guidance and the Coalition for Better Ads point the same way: the article comes first.",
+      "data": {
+        "columns": [
+          {
+            "label": "Fine to keep",
+            "tone": "good",
+            "points": [
+              "Newsletter form inside the article",
+              "Slim banner using a small part of the screen",
+              "Legally required gates, such as age checks",
+              "Ads well under 30% of mobile article height"
+            ]
+          },
+          {
+            "label": "Remove",
+            "tone": "bad",
+            "points": [
+              "Full-screen overlay when someone lands",
+              "Redirect to a separate sign-up page",
+              "More ads than content on a screen",
+              "Large sticky ads or autoplay video with sound"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

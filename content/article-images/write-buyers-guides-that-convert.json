@@ -1,0 +1,72 @@
+{
+  "slug": "write-buyers-guides-that-convert",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Start with the buyers, then pick the products",
+      "type": "flow",
+      "title": "Situations first, products second",
+      "alt": "Flow for planning a buyer's guide: list reader situations, find the best fit for each, label picks by situation, keep the list to four to six.",
+      "caption": "A guide with fifteen products is a catalog, and the reader still has to decide.",
+      "data": {
+        "items": [
+          {"label": "List reader situations", "text": "Write down the three to five situations your readers are in."},
+          {"label": "Find the best fit for each", "text": "Every product gets a reason to be in the guide."},
+          {"label": "Label picks by situation", "text": "The \"best for\" labels come without any forcing."},
+          {"label": "Keep the list short", "text": "About one product per situation, usually four to six."}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What to say when you haven't tested a product",
+      "type": "compare",
+      "title": "Used picks vs researched picks",
+      "alt": "Comparison of how to present products you used versus products you only researched in a buyer's guide, including labels, evidence and wording.",
+      "caption": "Admitting you used two of five products beats faking all five.",
+      "data": {
+        "columns": [
+          {
+            "label": "Used yourself",
+            "tone": "neutral",
+            "points": [
+              "Label the pick as used",
+              "Show your own photos and screenshots",
+              "Add your own measurements",
+              "Back \"best for\" with first-hand evidence"
+            ]
+          },
+          {
+            "label": "Only researched",
+            "tone": "neutral",
+            "points": [
+              "Label the pick as researched",
+              "Name sources: docs, pricing, owner reviews",
+              "Say what you couldn't check",
+              "Keep experience language out"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Handling prices and availability that go stale",
+      "type": "checklist",
+      "title": "Each time you recheck the guide",
+      "alt": "Checklist for updating a buyer's guide: products still sold, plans unchanged, new options, working links, relative prices, honest last-updated date.",
+      "caption": "Keep the volatile facts in the summary table so an update is a single pass.",
+      "data": {
+        "items": [
+          "Every product is still sold in the form you describe",
+          "Plans, tiers or features haven't changed",
+          "No new option deserves a slot",
+          "All the links still work",
+          "Prices are relative, not exact numbers",
+          "\"Last updated\" changes only after a real recheck"
+        ]
+      }
+    }
+  ]
+}

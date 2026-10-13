@@ -1,0 +1,56 @@
+{
+  "slug": "how-to-start-a-blog-that-makes-money",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Step 2: Choose a platform",
+      "type": "decision",
+      "title": "Which blog platform fits your goal",
+      "alt": "Decision chart matching blog goals to platforms: self-hosted WordPress for ads and affiliates, Ghost or Substack for paid readers, a free option to test.",
+      "caption": "Pick by who handles the upkeep and how freely you can earn, not by features.",
+      "data": {
+        "question": "What is the blog mainly for?",
+        "branches": [
+          {"answer": "Ads and affiliates", "result": "Self-hosted WordPress, or a paid WordPress.com plan if you don't want a server.", "tone": "neutral"},
+          {"answer": "Paid readers", "result": "Ghost, or Substack if you want zero setup.", "tone": "neutral"},
+          {"answer": "Testing the waters", "result": "Start on a free option and move later. Moving a site is real work.", "tone": "neutral"}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Step 4: Set up the few pages and settings that matter",
+      "type": "checklist",
+      "title": "Finish these before your first article",
+      "alt": "Checklist of blog setup essentials: About and Contact pages, privacy policy, affiliate disclosure, HTTPS, readable theme, Search Console, email signup.",
+      "caption": "Skip logo design, custom fonts and plugin shopping for now.",
+      "data": {
+        "items": [
+          "About page that says who writes the blog and why to trust it",
+          "Contact page or a visible email address",
+          "Privacy policy, before analytics, ads or an email form",
+          "Affiliate disclosure, if you'll use affiliate links",
+          "HTTPS on, and clean URLs that use the post name",
+          "A light, readable theme",
+          "Search Console with your sitemap, plus analytics and email signup"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How blogs earn money",
+      "type": "cards",
+      "title": "Four ways a blog earns",
+      "alt": "Four blog income methods: display ads, affiliate links, your own products such as ebooks or courses, and services like freelancing or coaching.",
+      "caption": "Most blogs that last use more than one, and results vary widely.",
+      "data": {
+        "items": [
+          {"title": "Display ads", "text": "Pay per visit, but the amount is small, so they need a lot of traffic."},
+          {"title": "Affiliate links", "text": "A commission on purchases. Best on comparisons and reviews."},
+          {"title": "Your own products", "text": "Ebooks, templates or courses. Keep more per sale, but take time to make."},
+          {"title": "Services", "text": "Freelance work, consulting or coaching. Often a blog's first income."}
+        ]
+      }
+    }
+  ]
+}

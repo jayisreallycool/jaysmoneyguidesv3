@@ -1,0 +1,88 @@
+{
+  "slug": "building-a-moat-in-the-age-of-ai",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Five things a model can't supply for you",
+      "type": "cards",
+      "title": "Five things a model can't supply",
+      "alt": "Five cards: first-hand experience with evidence, a specific point of view, original data or a tool, a direct reader relationship, and a trusted name.",
+      "caption": "Each of these comes from you, which is why a rewrite of existing pages can't contain them.",
+      "data": {
+        "items": [
+          {
+            "title": "First-hand experience",
+            "text": "Your screenshots, settings, dates, numbers and mistakes as evidence"
+          },
+          {
+            "title": "A specific point of view",
+            "text": "A recommendation and the reasoning, not a balanced list"
+          },
+          {
+            "title": "Original data or a tool",
+            "text": "A comparison you checked, a small survey, a calculator or a template"
+          },
+          {
+            "title": "A direct relationship",
+            "text": "An email list or community of people who asked to hear from you"
+          },
+          {
+            "title": "A name people trust",
+            "text": "A real byline, an honest about page and corrections when you're wrong"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "A checklist: what did you add that a model couldn't have written?",
+      "type": "checklist",
+      "title": "Run this before you publish",
+      "alt": "Checklist of seven questions to ask about a draft, from first-hand observations and a clear recommendation to checked facts and a named author.",
+      "caption": "If the answer to the first five is no, the page is a summary. Add what's missing rather than inventing it.",
+      "data": {
+        "items": [
+          "Something you observed yourself: a result, screenshot or problem",
+          "The page says how you know",
+          "A clear recommendation, and who it's wrong for",
+          "Something that didn't work, or a limit of your own test",
+          "Information that exists nowhere else",
+          "Every specific fact checked against a linked primary source",
+          "Readers know who wrote it and how to reach you"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Where AI helps, and where it will hurt you",
+      "type": "compare",
+      "title": "Where AI helps and where it hurts",
+      "alt": "Comparison of writing tasks AI is useful for, like outlining and tightening sentences, against what it is unreliable for, like facts and experience.",
+      "caption": "Use AI for the parts of writing that aren't your contribution, and verify every specific claim it produces.",
+      "data": {
+        "columns": [
+          {
+            "label": "Useful for",
+            "tone": "good",
+            "points": [
+              "Turning rough notes into an outline",
+              "Pointing out gaps in a draft",
+              "Tightening long sentences",
+              "Suggesting headings or reformatting a table"
+            ]
+          },
+          {
+            "label": "Unreliable for",
+            "tone": "bad",
+            "points": [
+              "Statistics, quotes, prices and policy details",
+              "Anything that happened to you",
+              "Your data and your opinion",
+              "Hundreds of pages from a template"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

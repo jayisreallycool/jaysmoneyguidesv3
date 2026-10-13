@@ -1,0 +1,73 @@
+{
+  "slug": "overcome-imposter-syndrome-creators",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Check whether the doubt is pointing at something real",
+      "type": "decision",
+      "title": "Is the doubt pointing at something real?",
+      "alt": "Decision chart: if you can name what you need to do before publishing, do it; if you can't and the post is accurate, publish it.",
+      "caption": "Useful doubt points at a specific gap. Vague doubt about an accurate post is a reason to publish.",
+      "data": {
+        "question": "Can you name what you'd need to do to feel ready to publish this post?",
+        "branches": [
+          {
+            "answer": "Yes",
+            "result": "Do it: check the claim, try the step, or rework the section you don't understand.",
+            "tone": "neutral"
+          },
+          {
+            "answer": "No",
+            "result": "If the post is accurate and honest about what you know, publish it.",
+            "tone": "good"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "\"Who am I to write about this?\" has a practical answer",
+      "type": "cards",
+      "title": "Claim only what's true",
+      "alt": "Four cards: write from what you've done, say what you have and haven't tested, document instead of posing, and be honest about your level.",
+      "caption": "You feel like a fraud when a post implies more than you can back up, so close the gap from that side.",
+      "data": {
+        "items": [
+          {
+            "title": "Write from what you did",
+            "text": "\"How I set up my first blog\" is a post you're fully qualified to write"
+          },
+          {
+            "title": "Say what you tested",
+            "text": "If you only read the documentation, say so"
+          },
+          {
+            "title": "Document, don't pose",
+            "text": "What you tried, what happened and what you'd do differently"
+          },
+          {
+            "title": "State your level",
+            "text": "One line on how long you've done this and where your information comes from"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Habits that make the feeling quieter over time",
+      "type": "checklist",
+      "title": "Habits that build evidence",
+      "alt": "Checklist of five habits: publish small, narrow the topic, keep a record of reader replies, compare against your own earlier work, and fix mistakes openly.",
+      "caption": "These don't make the doubt disappear. They give it evidence to respond to.",
+      "data": {
+        "items": [
+          "Publish small: one narrow question per post",
+          "Narrow the topic until you know it completely",
+          "Save reader replies that say a post helped",
+          "Compare your tenth post with your first, not with other creators",
+          "Fix mistakes in the open and note the update"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "internal-linking-strategy-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How to write anchor text",
+      "type": "checklist",
+      "title": "Anchor text that does its job",
+      "alt": "Checklist for internal link anchor text: passes the read-it-alone test, varied wording, text between links, alt text on image links, standard HTML links.",
+      "caption": "Read the anchor on its own. If it still tells you what's behind the link, it's fine.",
+      "data": {
+        "items": [
+          "Makes sense with the rest of the sentence removed",
+          "Descriptive, reasonably concise and relevant to both pages",
+          "Worded to fit each sentence, not one repeated keyword",
+          "Some text between links so each keeps its context",
+          "Linked images have alt text",
+          "A standard HTML link with an href, not a JavaScript button"
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "A 30-minute internal link audit",
+      "type": "steps",
+      "title": "The 30-minute link audit",
+      "alt": "Five steps of an internal link audit: export Search Console data, find gaps, pick five pages, add links, then check and note changes.",
+      "caption": "Give Google a few weeks to recrawl before judging the results.",
+      "data": {
+        "items": [
+          {
+            "title": "Export the data (5 min)",
+            "text": "Export the internal Top linked pages table from Search Console's Links report"
+          },
+          {
+            "title": "Find the gaps (5 min)",
+            "text": "Sort lowest first and mark pages with very few links or none listed"
+          },
+          {
+            "title": "Pick five pages (5 min)",
+            "text": "Choose the five that matter most; skip thin or outdated posts"
+          },
+          {
+            "title": "Add the links (10 min)",
+            "text": "Run a site: search for each topic and add one in-sentence link to 2 or 3 posts"
+          },
+          {
+            "title": "Check and note (5 min)",
+            "text": "Click every new link, then write down the date and the pages you changed"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Common internal linking mistakes",
+      "type": "cards",
+      "title": "Internal linking mistakes to fix",
+      "alt": "Four common internal linking mistakes: the same anchor everywhere, links only in menus or widgets, pages linking to themselves, and nofollow internal links.",
+      "caption": "Older posts often carry most of your traffic, so go back and add links to newer pages too.",
+      "data": {
+        "items": [
+          {
+            "title": "Same anchor everywhere",
+            "text": "\"Read more\" says nothing; one repeated keyword phrase looks forced"
+          },
+          {
+            "title": "Menu and footer only",
+            "text": "Use them as a backstop; put the links that matter in body text"
+          },
+          {
+            "title": "A page linking to itself",
+            "text": "Often from auto-linking plugins, and it sends the reader nowhere"
+          },
+          {
+            "title": "Nofollow on your own links",
+            "text": "Some themes add it; check a few links in your page source"
+          }
+        ]
+      }
+    }
+  ]
+}

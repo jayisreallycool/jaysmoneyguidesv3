@@ -1,0 +1,56 @@
+{
+  "slug": "blog-monetization-model-comparison",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Display ads pay for volume",
+      "type": "cards",
+      "title": "What each ad network asks for",
+      "alt": "Entry requirements for AdSense, Raptive, Mediavine and Mediavine Journey, from no minimum traffic to set pageview, session or revenue thresholds.",
+      "caption": "AdSense is the usual first step; premium networks set traffic or revenue thresholds.",
+      "note": "As listed in October 2026. Check each network's page before you plan.",
+      "data": {
+        "items": [
+          {"title": "Google AdSense", "text": "No minimum traffic number. Original content, policy compliance, age 18+."},
+          {"title": "Raptive", "text": "25,000 monthly pageviews, traffic conditions, domain six months old."},
+          {"title": "Mediavine", "text": "At least $5,000 in annual ad revenue."},
+          {"title": "Mediavine Journey", "text": "1,000 sessions in 30 days from the US, Canada, the UK or Australia."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Digital products pay for trust",
+      "type": "steps",
+      "title": "Wait for evidence before you build",
+      "alt": "Steps before making a digital product: watch for repeated reader demand, test the idea with a small paid version, then price it without assuming cheap is safe.",
+      "caption": "The common failure is making a product nobody asked for, so let readers show you first.",
+      "data": {
+        "items": [
+          {"title": "Watch for repeated questions", "text": "Readers keep asking about one problem, or email asking if you offer something."},
+          {"title": "Spot the standout article", "text": "One post draws far more engagement than the rest."},
+          {"title": "Test before you build", "text": "Validate the idea, ideally with a small paid version."},
+          {"title": "Price it with care", "text": "Don't assume cheap is safe."},
+          {"title": "Plan for upkeep", "text": "After launch you handle refunds, questions and updates."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Which model fits your situation",
+      "type": "cards",
+      "title": "Which model fits your blog now",
+      "alt": "Five situations matched to a model: affiliate links, an email list, display ads, a digital product, or ads and affiliates when time is short.",
+      "caption": "Match the model to the traffic and topic you have today, not the ones you hope to have.",
+      "data": {
+        "items": [
+          {"title": "Low traffic, commercial", "text": "Affiliate links first. Write articles that help people choose."},
+          {"title": "Low traffic, no products", "text": "Skip monetizing for now and build an email list."},
+          {"title": "High traffic, general", "text": "Display ads, then a premium network once you qualify."},
+          {"title": "Small, trusting audience", "text": "A digital product or paid newsletter, once readers show what they want."},
+          {"title": "Very little time", "text": "Ads and affiliate links need the least upkeep."}
+        ]
+      }
+    }
+  ]
+}

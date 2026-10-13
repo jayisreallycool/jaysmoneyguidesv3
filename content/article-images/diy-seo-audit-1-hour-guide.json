@@ -1,0 +1,54 @@
+{
+  "slug": "diy-seo-audit-1-hour-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Minutes 0–5: search Google for your own site",
+      "type": "checklist",
+      "title": "What to spot in a site: search",
+      "alt": "Checklist of things to look for in a site: search, from tag pages and staging copies to foreign-language spam and duplicate or truncated titles.",
+      "caption": "Note each kind of problem once. The Page indexing report gives you the real numbers next.",
+      "data": {
+        "items": [
+          "Tag and archive pages, or internal search results",
+          "Test posts or a staging copy of the site",
+          "URLs with tracking parameters on the end",
+          "Pages in a language you never wrote (a sign of hacking)",
+          "Truncated titles, or one title on several pages",
+          "Results that show only your site name"
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Minutes 20–30: the Performance report",
+      "type": "steps",
+      "title": "Three checks in the Performance report",
+      "alt": "Three Performance report checks: compare periods to find pages losing clicks, find near-miss queries, and spot two URLs competing for one search.",
+      "caption": "Near misses already have Google's attention, so improving them usually pays back faster than new posts.",
+      "data": {
+        "items": [
+          {"title": "Find what's slipping", "text": "Compare with the previous period, then sort Pages by clicks difference."},
+          {"title": "Find near misses", "text": "Sort Queries by impressions. Note up to three just off the first page."},
+          {"title": "Spot competing pages", "text": "Open a key query's Pages tab. Two of your URLs there may be competing."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Minutes 50–60: turn the findings into a fix list",
+      "type": "decision",
+      "title": "Sorting every finding",
+      "alt": "Decision for each audit finding: if it stops a page being indexed, found or used, fix it this week; if it only helps, schedule it; otherwise ignore it.",
+      "caption": "Keep the fix-this-week list to five items. Anything beyond that goes under Schedule.",
+      "data": {
+        "question": "Does this stop a page I care about from being indexed, found or used?",
+        "branches": [
+          {"answer": "Yes", "result": "Fix this week: noindex on a key page, failing sitemap, hacked pages.", "tone": "bad"},
+          {"answer": "No, but it helps", "result": "Schedule: near-miss pages, posts to merge, internal links, speed items.", "tone": "neutral"},
+          {"answer": "Neither", "result": "Ignore, and write down that you chose to.", "tone": "good"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "sofi-personal-loans-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Who a personal loan suits, and who it doesn't",
+      "type": "compare",
+      "title": "Is a personal loan a fit for you",
+      "alt": "Comparison of when a personal loan tends to suit you, such as high-rate card debt and stable income, and when it doesn't, such as covering monthly bills.",
+      "caption": "A loan changes the rate and the schedule. It doesn't fix spending that runs ahead of income.",
+      "data": {
+        "columns": [
+          {
+            "label": "Tends to suit you",
+            "tone": "good",
+            "points": [
+              "High-rate card balances, clearly lower loan rate",
+              "A large, necessary one-time expense",
+              "Stable income covers it even in a tight month"
+            ]
+          },
+          {
+            "label": "Tends not to",
+            "tone": "bad",
+            "points": [
+              "Borrowing to cover ordinary monthly bills",
+              "The rate offered isn't lower than your cards",
+              "The debt is student loans"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "When consolidating card debt helps",
+      "type": "steps",
+      "title": "Do the arithmetic first",
+      "alt": "Steps to test a consolidation loan: list card balances and APRs, total the loan cost with fees, compare with paying the cards, decide on the totals.",
+      "caption": "A smaller monthly payment can still mean a bigger total if the term is longer.",
+      "data": {
+        "items": [
+          {
+            "title": "List your cards",
+            "text": "Add up the balances and note each card's APR."
+          },
+          {
+            "title": "Total each loan offer",
+            "text": "Monthly payment times the number of months, plus any fee."
+          },
+          {
+            "title": "Total the card route",
+            "text": "What you'd pay putting the same monthly amount toward the cards."
+          },
+          {
+            "title": "Compare the totals",
+            "text": "If the loan total isn't clearly lower, it isn't doing much for you."
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Checking your rate is different from applying",
+      "type": "flow",
+      "title": "Rate check vs full application",
+      "alt": "Flow from checking your rate with a soft credit pull, to seeing estimates, to applying with a hard pull, to receiving the final offer.",
+      "caption": "Only the full application touches your credit, so you can compare estimates from several lenders first.",
+      "note": "Confirm each lender uses a soft pull for its rate check.",
+      "data": {
+        "items": [
+          {
+            "label": "Check your rate",
+            "text": "A soft credit pull. It doesn't affect your credit score."
+          },
+          {
+            "label": "See estimates",
+            "text": "Rates and terms based on what you entered. Not an approval."
+          },
+          {
+            "label": "Apply",
+            "text": "The lender requests your full credit report, a hard pull."
+          },
+          {
+            "label": "Final offer",
+            "text": "Read the fee, late-payment and prepayment terms before accepting."
+          }
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

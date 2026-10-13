@@ -1,0 +1,58 @@
+{
+  "slug": "cash-flow-for-freelancers",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Split every payment the day it arrives",
+      "type": "flow",
+      "title": "Where each client payment goes",
+      "alt": "Flow of a freelancer's client payment: a share to tax savings, a share to the buffer, the rest in business checking, then one monthly transfer to personal.",
+      "caption": "The exact split matters less than doing it every single time a payment lands.",
+      "note": "Ask your accountant for the tax share. There's no standard set.",
+      "data": {
+        "items": [
+          { "label": "Client pays", "text": "The money lands in business checking" },
+          { "label": "Tax savings", "text": "Move a share first. It already belongs to the IRS and your state" },
+          { "label": "Buffer", "text": "Move a share that covers a slow month or a late client" },
+          { "label": "Business checking", "text": "The rest covers expenses and your own pay" },
+          { "label": "Personal account", "text": "One fixed transfer a month, on the same date" }
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Set aside tax money every time you get paid",
+      "type": "cards",
+      "title": "Two federal tax rules for freelancers",
+      "alt": "Cards summarizing US self-employment tax at 15.3 percent and quarterly estimated payments with due dates of April 15, June 15, September 15 and January 15.",
+      "caption": "No employer withholds for you, so tax money has to come out of each payment.",
+      "note": "US federal rules only. Your state may have its own estimated payments.",
+      "data": {
+        "items": [
+          { "title": "Self-employment tax", "text": "Generally owed on net earnings of $400 or more; covers Social Security, Medicare" },
+          { "title": "The 15.3% rate", "text": "12.4% Social Security plus 2.9% Medicare, generally on 92.35% of net earnings" },
+          { "title": "Quarterly estimates", "text": "Generally required if you expect to owe $1,000 or more when you file" },
+          { "title": "Four due dates", "text": "April 15, June 15, September 15 and January 15 of the following year" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How to handle clients who pay late",
+      "type": "steps",
+      "title": "Prevent late payment before work starts",
+      "alt": "Five steps to prevent late client payments: take a deposit, put terms in writing, invoice immediately, follow up on a schedule, stop work when overdue.",
+      "caption": "Most late payment is preventable before the work starts.",
+      "data": {
+        "items": [
+          { "title": "Take a deposit", "text": "Ask for part of the fee upfront and tie the rest to milestones" },
+          { "title": "Put terms in writing", "text": "Due date, how to pay and what happens if late, in the contract and invoice" },
+          { "title": "Invoice immediately", "text": "Send the invoice the day the milestone is done" },
+          { "title": "Follow up on a schedule", "text": "A reminder before the due date, another the day after, a call a week later" },
+          { "title": "Stop work when overdue", "text": "Say so in the contract, so pausing is a known term, not a confrontation" }
+        ]
+      }
+    }
+  ]
+}

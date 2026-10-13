@@ -1,0 +1,54 @@
+{
+  "slug": "find-direct-brand-affiliate-deals",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How to find brands that run their own program",
+      "type": "decision",
+      "title": "Which kind of program is it?",
+      "alt": "Decision chart: if the brand runs its own program, if it sits on a network, or if there is no program, each leads to a different pitch.",
+      "caption": "Where the sign-up form sends you tells you which pitch to make.",
+      "data": {
+        "question": "Where does the brand's affiliate sign-up take you?",
+        "branches": [
+          {"answer": "Brand's own site", "result": "Apply through the form, then email the manager about terms once approved.", "tone": "good"},
+          {"answer": "A network's domain", "result": "Join there, then ask the brand's affiliate manager for a private rate.", "tone": "neutral"},
+          {"answer": "No program at all", "result": "Hardest pitch. Suggest a unique discount code for your readers.", "tone": "neutral"}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "The pitch email",
+      "type": "cards",
+      "title": "Four things every pitch needs",
+      "alt": "Four parts of an affiliate pitch email: who you are, the page the product would go on, honest numbers, and one specific ask.",
+      "caption": "Keep the whole email short enough to read on a phone.",
+      "data": {
+        "items": [
+          {"title": "Who you are", "text": "Your site, its topic and who reads it."},
+          {"title": "The page", "text": "A live article where the product belongs, with its URL."},
+          {"title": "Honest numbers", "text": "What your analytics show. No rounding up, no best month."},
+          {"title": "One specific ask", "text": "A higher rate, a reader discount code or a longer cookie. Pick one."}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "If you don't hear back",
+      "type": "steps",
+      "title": "When a brand goes quiet",
+      "alt": "Steps after an unanswered affiliate pitch: wait about a week, send one short follow-up, log it in a sheet, move on, and retry later.",
+      "caption": "Silence usually has more to do with timing and budgets than with your email.",
+      "data": {
+        "items": [
+          {"title": "Wait a week or so", "text": "Give the first email time before you nudge."},
+          {"title": "Follow up once", "text": "Two lines on the same thread: checking it arrived, and the offer stands."},
+          {"title": "Log it", "text": "Keep a sheet with brand, contact, date sent and outcome."},
+          {"title": "Move on", "text": "Work several prospects at once so no single reply matters too much."},
+          {"title": "Try again later", "text": "Pitch again once you've published more in their category."}
+        ]
+      }
+    }
+  ]
+}

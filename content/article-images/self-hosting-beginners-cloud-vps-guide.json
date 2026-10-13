@@ -1,0 +1,71 @@
+{
+  "slug": "self-hosting-beginners-cloud-vps-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What's worth self-hosting, and what isn't",
+      "type": "compare",
+      "title": "What to self-host first, and what to skip",
+      "alt": "Comparison of good first self-hosting projects, like tools only you use, against things beginners should leave alone, like email and payment data.",
+      "caption": "Start where a few hours of downtime is only an annoyance.",
+      "data": {
+        "columns": [
+          {
+            "label": "Good to start with",
+            "tone": "good",
+            "points": [
+              "Tools that only you use",
+              "Uptime Kuma, the easiest first app",
+              "Analytics or automation for your own work",
+              "A password vault, once backups are tested"
+            ]
+          },
+          {
+            "label": "Leave alone",
+            "tone": "bad",
+            "points": [
+              "Email: deliverability is the hard part",
+              "Customers' payment data",
+              "Your main money-making site, for now",
+              "Anything where an outage costs customers"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Lock the server down on first login",
+      "type": "steps",
+      "title": "Lock down a new VPS",
+      "alt": "Four steps to secure a new VPS: create a sudo user, turn off root and password logins, enable the ufw firewall and turn on automatic security updates.",
+      "caption": "These four steps take about fifteen minutes on first login.",
+      "data": {
+        "items": [
+          { "title": "Create a regular user", "text": "Give it sudo rights and your SSH key, then test it in a second terminal" },
+          { "title": "Turn off root and passwords", "text": "Disable root and password logins in sshd config, check, restart SSH" },
+          { "title": "Enable the firewall", "text": "Allow SSH and web traffic with ufw, and nothing else" },
+          { "title": "Turn on security updates", "text": "Install unattended-upgrades. Kernel updates still need a reboot" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Run your first app with Docker and automatic HTTPS",
+      "type": "flow",
+      "title": "From empty server to app on HTTPS",
+      "alt": "Flow for running a first self-hosted app: install Docker, point a subdomain at the server, write compose.yaml and a Caddyfile, then start everything.",
+      "caption": "Only Caddy gets a ports line. Ports Docker publishes bypass ufw.",
+      "data": {
+        "items": [
+          { "label": "Install Docker Engine", "text": "Use Docker's official instructions for your distribution" },
+          { "label": "Point a subdomain", "text": "Create an A record with the server's IP before starting Caddy" },
+          { "label": "Write compose.yaml", "text": "Caddy as the reverse proxy, then the app underneath" },
+          { "label": "Add a Caddyfile", "text": "Send your subdomain to the app, such as kuma:3001" },
+          { "label": "Start everything", "text": "docker compose up -d; Caddy gets and renews the certificate" }
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

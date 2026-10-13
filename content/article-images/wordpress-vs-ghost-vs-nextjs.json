@@ -1,0 +1,96 @@
+{
+  "slug": "wordpress-vs-ghost-vs-nextjs",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Ghost: built for newsletters and paid memberships",
+      "type": "compare",
+      "title": "Ghost(Pro) vs self-hosted Ghost",
+      "alt": "Comparison of the hosted Ghost(Pro) service with self-hosting Ghost, covering plan fees, member-count pricing, server stack and maintenance.",
+      "caption": "Both run the same software. The difference is who pays for and maintains the server and email sending.",
+      "data": {
+        "columns": [
+          {
+            "label": "Ghost(Pro)",
+            "tone": "neutral",
+            "points": [
+              "Official hosted service",
+              "Monthly plan tiered by member count",
+              "Lowest plan lacks paid subscriptions",
+              "You don't run a server"
+            ]
+          },
+          {
+            "label": "Self-hosted",
+            "tone": "neutral",
+            "points": [
+              "No plan fee",
+              "Ubuntu, Node.js, MySQL and NGINX",
+              "Updates and server upkeep are on you",
+              "Newsletter delivery is a separate paid service"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Which is best for SEO?",
+      "type": "cards",
+      "title": "Where each platform's SEO basics come from",
+      "alt": "Cards showing how WordPress, Ghost and a custom Next.js site each handle technical SEO, plus what search engines check on all three.",
+      "caption": "All three can rank and all three can be set up badly. Run a basic SEO checklist once the site is live.",
+      "data": {
+        "items": [
+          {
+            "title": "WordPress",
+            "text": "Most technical parts come from an SEO plugin"
+          },
+          {
+            "title": "Ghost",
+            "text": "Includes the basics without add-ons"
+          },
+          {
+            "title": "Custom Next.js",
+            "text": "You write them yourself: nothing is right or wrong by default"
+          },
+          {
+            "title": "What all three need",
+            "text": "Crawlable pages, sensible titles, canonical URLs, reasonable speed"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How hard is it to switch later?",
+      "type": "compare",
+      "title": "WordPress to Ghost: what moves",
+      "alt": "Comparison of content that moves from WordPress to Ghost through the importer against custom post types, shortcodes and plugin features that don't.",
+      "caption": "Whatever you move, keep URLs the same or redirect each old URL to its new one to protect your traffic.",
+      "note": "Ghost's importer limits: files up to 100 MB and 2,500 posts",
+      "data": {
+        "columns": [
+          {
+            "label": "Moves over",
+            "tone": "neutral",
+            "points": [
+              "Posts and pages via the XML export",
+              "Tags",
+              "Categories, converted to tags"
+            ]
+          },
+          {
+            "label": "Doesn't move",
+            "tone": "neutral",
+            "points": [
+              "Custom post types",
+              "Most uncommon shortcodes",
+              "Theme and plugin features"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

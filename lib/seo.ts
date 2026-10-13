@@ -37,9 +37,11 @@ export function articleSchema(post: BlogPost) {
     '@type': 'Article',
     headline: post.title,
     description: (post as { metaDescription?: string }).metaDescription ?? post.excerpt,
-    image: post.coverImage
-      ? [post.coverImage]
-      : [`${SITE}/jay-affiliate-marketing-guides-hero.webp`],
+    image: [
+      post.coverImage ? (post.coverImage.startsWith('/') ? `${SITE}${post.coverImage}` : post.coverImage) : `${SITE}/jay-affiliate-marketing-guides-hero.webp`,
+      // the explainer graphics inside the article
+      ...[...(post.content ?? '').matchAll(/^!\[[^\]]*\]\((\/images\/guides\/[^)\s]+)/gm)].map((m) => `${SITE}${m[1]}`),
+    ],
     datePublished: post.publishedAt,
     dateModified: (post as { updatedAt?: string }).updatedAt ?? post.publishedAt,
     author: {

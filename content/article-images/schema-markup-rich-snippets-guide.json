@@ -1,0 +1,82 @@
+{
+  "slug": "schema-markup-rich-snippets-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What schema markup can and can't do",
+      "type": "compare",
+      "title": "What schema markup does",
+      "alt": "Comparison of what schema markup can do, such as label page content and make it eligible for rich results, and what it can't, such as raise rankings.",
+      "caption": "Valid markup makes a page a candidate. Google still decides what to show.",
+      "data": {
+        "columns": [
+          {
+            "label": "Can",
+            "tone": "neutral",
+            "points": [
+              "State what a name, date or number means",
+              "Make a page eligible for rich results",
+              "Feed breadcrumbs, dates and authors"
+            ]
+          },
+          {
+            "label": "Can't",
+            "tone": "neutral",
+            "points": [
+              "Raise your rankings on its own",
+              "Force a rich result to appear",
+              "Describe content readers can't see"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "The rules on star ratings",
+      "type": "checklist",
+      "title": "Before you add rating markup",
+      "alt": "Checklist of Google's star rating rules: eligible content types only, no self-serving reviews, real visible user ratings, and no fake reviews.",
+      "caption": "If your site has no working review system, leave rating markup alone.",
+      "data": {
+        "items": [
+          "The page is about an eligible type, such as a product or recipe",
+          "It isn't an ordinary blog post",
+          "The reviews aren't about your own business",
+          "Ratings come directly from users",
+          "Visitors can see the ratings on the marked-up page",
+          "No ratings pulled in from other websites",
+          "Nothing made up: fake reviews can bring a manual action"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How to test your markup",
+      "type": "steps",
+      "title": "Testing your markup",
+      "alt": "Four steps to test schema: run the Rich Results Test, fix errors before warnings, use URL Inspection after publishing, then watch rich result reports.",
+      "caption": "A passing test means the markup is valid, not that a rich result will appear.",
+      "data": {
+        "items": [
+          {
+            "title": "Run the Rich Results Test",
+            "text": "Paste the URL or code to see eligible types, errors and warnings"
+          },
+          {
+            "title": "Fix errors first",
+            "text": "A missing required property makes the item ineligible; then fix warnings"
+          },
+          {
+            "title": "Inspect the live URL",
+            "text": "Use URL Inspection in Search Console to confirm Google found it"
+          },
+          {
+            "title": "Watch the reports",
+            "text": "Check rich result reports for valid and invalid items over the next weeks"
+          }
+        ]
+      }
+    }
+  ]
+}

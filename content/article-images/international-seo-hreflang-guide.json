@@ -1,0 +1,56 @@
+{
+  "slug": "international-seo-hreflang-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How hreflang works",
+      "type": "checklist",
+      "title": "The hreflang rules in one place",
+      "alt": "Checklist of hreflang rules: language code first, every version lists all versions, links go both ways, full URLs and an x-default fallback.",
+      "caption": "Hreflang helps Google pick between your versions. It doesn't rank any of them higher.",
+      "data": {
+        "items": [
+          "Start with a language code like es; a region like es-MX is optional",
+          "A region code on its own isn't valid",
+          "Every version lists itself and all the others",
+          "Links must go both ways, or Google ignores the tags",
+          "Use full URLs, including https://",
+          "Set x-default as the fallback page"
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What Google ignores, and what it tells you not to do",
+      "type": "cards",
+      "title": "What Google ignores or advises against",
+      "alt": "Four cards: the lang attribute doesn't set language for Google, avoid automatic redirects, add visible language links, and the hreflang report is gone.",
+      "caption": "Google reads the visible content to decide a page's language.",
+      "data": {
+        "items": [
+          { "title": "The lang attribute", "text": "Google doesn't use it to detect language, but browsers and screen readers do" },
+          { "title": "Automatic redirects", "text": "Avoid redirecting by IP or browser language; Googlebot crawls mostly from the US" },
+          { "title": "Visible language links", "text": "Put a link to the other languages on every page and let the reader choose" },
+          { "title": "No hreflang report", "text": "Search Console dropped it; check page source or use a crawler" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Common hreflang mistakes",
+      "type": "table",
+      "title": "Common hreflang mistakes and fixes",
+      "alt": "Table of four hreflang mistakes and their fixes: missing return links, invalid codes like en-UK, cross-language canonicals and relative URLs.",
+      "caption": "A template change can drop the tags without warning, so recheck them in regular audits.",
+      "data": {
+        "headers": ["Mistake", "Fix"],
+        "rows": [
+          ["Spanish page doesn't point back", "Update older pages with return links"],
+          ["en-UK as a code", "Use en-GB"],
+          ["Canonical points to another language", "Each version points to itself"],
+          ["/es/guide/ or //example.com/es/", "Use the full https:// address"]
+        ]
+      }
+    }
+  ]
+}

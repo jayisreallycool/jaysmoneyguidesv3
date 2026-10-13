@@ -209,22 +209,23 @@ function renderArticleContent(content: string): React.ReactNode[] {
 
     // Images
     if (block.startsWith('![')) {
-      const imgMatch = block.match(/^!\[(.*?)\]\((.*?)\)/);
+      const imgMatch = block.match(/^!\[(.*?)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/);
       if (imgMatch) {
         const altText = imgMatch[1];
         const imgSrc = imgMatch[2];
+        const captionText = imgMatch[3] ?? altText;
         out.push(
           <div key={index} className="my-6 rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl bg-slate-950">
             <img
               src={imgSrc}
               alt={altText}
-              className="w-full h-auto object-cover max-h-[500px]"
+              className="w-full h-auto"
               loading="lazy"
               decoding="async"
             />
-            {altText && (
+            {captionText && (
               <p className="text-center text-xs text-slate-400 py-2 bg-slate-950/80 border-t border-slate-800 font-medium italic">
-                {altText}
+                {captionText}
               </p>
             )}
           </div>

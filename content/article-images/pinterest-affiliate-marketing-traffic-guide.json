@@ -1,0 +1,55 @@
+{
+  "slug": "pinterest-affiliate-marketing-traffic-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What Pinterest's rules say about affiliate links",
+      "type": "checklist",
+      "title": "Pinterest's conditions for affiliate links",
+      "alt": "Checklist of Pinterest's affiliate link conditions: disclose, keep content original, use links in moderation, one real account, and care with shorteners.",
+      "caption": "Affiliate links are allowed on Pinterest, but only when these conditions are met.",
+      "data": {
+        "items": [
+          "Be transparent about commercial content and your links",
+          "Keep affiliate content original and adding unique value",
+          "Use affiliate links in moderation, not in large volumes",
+          "Use one real account, with no fake or traded saves",
+          "Be careful with link shorteners and redirects",
+          "Follow the FTC's disclosure rules as well in the US"
+        ]
+      },
+      "note": "Check Pinterest's guidelines page for the current wording"
+    },
+    {
+      "slot": "middle",
+      "after": "Pin straight to an affiliate link, or to your own article?",
+      "type": "decision",
+      "title": "Where should this Pin point?",
+      "alt": "Decision chart: a single product needing little explanation in a program that permits it can get a direct Pin; otherwise pin to your own article.",
+      "caption": "Both are allowed, but a Pin to your own page keeps working when a program changes its terms.",
+      "data": {
+        "question": "One product, little explanation needed, and the program clearly permits it?",
+        "branches": [
+          {"answer": "Yes", "result": "A direct affiliate Pin can work, with disclosure. Keep these a small share.", "tone": "neutral"},
+          {"answer": "No", "result": "Pin to your own article and put the affiliate links on that page.", "tone": "good"}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Using keywords in Pin titles, descriptions and boards",
+      "type": "cards",
+      "title": "Where keywords go on Pinterest",
+      "alt": "Four cards on Pinterest keywords: search phrase first in titles, plain sentences in descriptions, specific board names, and phrases from Pinterest search.",
+      "caption": "Text helps people discover your Pins, so put the phrase someone would search where it shows.",
+      "data": {
+        "items": [
+          {"title": "Pin title", "text": "Up to 100 characters. Put the search phrase at the front."},
+          {"title": "Description", "text": "Up to 800 characters. Two or three ordinary sentences, not a keyword list."},
+          {"title": "Boards", "text": "Specific board names that match your main article categories."},
+          {"title": "Where phrases come from", "text": "Pinterest's search bar and Pinterest Trends, not your Google keyword list."}
+        ]
+      }
+    }
+  ]
+}

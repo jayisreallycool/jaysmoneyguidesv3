@@ -1,0 +1,71 @@
+{
+  "slug": "guest-posting-strategy-backlinks-traffic",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Where Google draws the line",
+      "type": "compare",
+      "title": "Guest posting vs link spam",
+      "alt": "Comparison of guest posting practices Google allows, like labelled sponsored posts, against link spam such as paid followed links and keyword anchors.",
+      "caption": "Treat the link as a small byproduct and the audience as the goal.",
+      "data": {
+        "columns": [
+          {
+            "label": "Fine",
+            "tone": "good",
+            "points": [
+              "Editorial pieces for the host's own readers",
+              "Sponsored posts labelled, links qualified",
+              "Your name or site name in the bio",
+              "Accepting a nofollow on your link"
+            ]
+          },
+          {
+            "label": "Link spam",
+            "tone": "bad",
+            "points": [
+              "Paying for a followed link",
+              "Trading links as the price of publication",
+              "Keyword-optimized anchors in guest posts",
+              "A paid post dressed up as editorial"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "How to judge a site before you pitch",
+      "type": "decision",
+      "title": "The nofollow test",
+      "alt": "Decision chart asking whether you would still write for a site if it put a nofollow on your link, with yes meaning a good target and no meaning walk away.",
+      "caption": "Authority scores are estimates from SEO tool companies. Google doesn't use them.",
+      "data": {
+        "question": "If this site put a nofollow on your link, would you still want to write for it?",
+        "branches": [
+          { "answer": "Yes", "result": "It's a good target. Its readers are the reason you're there", "tone": "good" },
+          { "answer": "No", "result": "The link was the only reason you were there. Skip it", "tone": "bad" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What to write once you get a yes",
+      "type": "checklist",
+      "title": "Writing the accepted guest post",
+      "alt": "Checklist for writing a guest post: match the host's tone, add something new, send original work, use plain anchor text and put the honest link in your bio.",
+      "caption": "Exact-match keyword anchors are the pattern Google's policy names.",
+      "data": {
+        "items": [
+          "Write for their readers, in the tone the site already uses",
+          "Bring something new: a process, an example or a point of view",
+          "Send original work, never a reworded copy of your own post",
+          "Link to their relevant articles and good outside sources",
+          "Use plain anchor text, such as your site name",
+          "Put the honest link in your bio, aimed at your best first page",
+          "If money or a link swap is involved, ask for a label"
+        ]
+      }
+    }
+  ]
+}

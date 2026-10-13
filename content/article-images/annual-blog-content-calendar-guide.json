@@ -1,0 +1,83 @@
+{
+  "slug": "annual-blog-content-calendar-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Step 2: Set a pace you can keep for six months",
+      "type": "steps",
+      "title": "Work out a pace from your hours",
+      "alt": "Three steps for setting a posting pace: time one finished article, count your weekly hours, then divide and plan for about three quarters.",
+      "caption": "Plan from the hours you actually have, not a number that sounds ambitious.",
+      "data": {
+        "items": [
+          {
+            "title": "Time one finished article",
+            "text": "Include research, editing, images and publishing. Time your next one if you don't know."
+          },
+          {
+            "title": "Count your weekly hours",
+            "text": "Only the hours a week you can reliably give the blog."
+          },
+          {
+            "title": "Divide, then plan for 3/4",
+            "text": "Plan for about three quarters of the result. The spare quarter covers weeks that go wrong."
+          }
+        ]
+      },
+      "note": "Example: six hours a week at about five hours per article is roughly one a week"
+    },
+    {
+      "slot": "middle",
+      "after": "Pillar first, or supporting posts first?",
+      "type": "decision",
+      "title": "Pillar first or supporting posts first?",
+      "alt": "Decision chart: on a new site publish two or three supporting posts before the pillar; if you know the topic well, the pillar can go first.",
+      "caption": "Either order works, because internal links can be added after the fact.",
+      "data": {
+        "question": "Do you already know the topic well?",
+        "branches": [
+          {
+            "answer": "No, or new site",
+            "result": "Publish two or three supporting posts first. Put the pillar by slot four or five.",
+            "tone": "neutral"
+          },
+          {
+            "answer": "Yes",
+            "result": "Pillar first is fine too. Schedule a \"links to add\" task for each new post.",
+            "tone": "neutral"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Step 5: Reserve slots for updating old posts",
+      "type": "compare",
+      "title": "What counts as an update",
+      "alt": "Comparison of a real update, which corrects facts, fills gaps and replaces stale examples, with a date-only change Google lists as a warning sign.",
+      "caption": "Give updates a recurring slot. One a month is a reasonable start.",
+      "data": {
+        "columns": [
+          {
+            "label": "A real update",
+            "tone": "good",
+            "points": [
+              "Corrects facts",
+              "Fills gaps in the content",
+              "Replaces stale examples"
+            ]
+          },
+          {
+            "label": "A date-only change",
+            "tone": "bad",
+            "points": [
+              "New date, same content",
+              "Done to make the page seem fresh",
+              "Google lists it as a warning sign"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

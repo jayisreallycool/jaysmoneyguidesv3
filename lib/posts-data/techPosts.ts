@@ -55,6 +55,8 @@ The catch is that "free" always comes with a limit, and some free plans don't al
 
 This is the part most "free stack" lists get wrong. Vercel's free Hobby plan is generous on paper: 100 GB of data transfer and 1,000,000 function invocations a month. But [Vercel's fair use guidelines](https://vercel.com/docs/limits/fair-use-guidelines) restrict Hobby to non-commercial personal use. Their list of commercial use includes taking payments from visitors, advertising a product or service, showing ads such as Google AdSense, and sites where affiliate linking is the primary purpose. Asking for donations is the one exception they name.
 
+![Decision chart: if your site earns money through ads, payments or affiliate links, skip Vercel's free Hobby plan and look at Cloudflare Pages.](/images/guides/free-tech-stack-one-person-business/1-picking-a-free-host.webp "The commercial-use terms matter more than the bandwidth numbers when you choose a free host.")
+
 So if your site earns money, Vercel's free plan isn't for you. The paid Pro plan is $20 per user a month.
 
 [Cloudflare Pages](https://pages.cloudflare.com/) is the safer free choice for a business site. Its free plan lists unlimited sites, unlimited static requests and unlimited bandwidth, with a cap of 500 builds a month and one build at a time. Each site can hold up to 20,000 files, with a 25 MiB limit per file. I didn't find a non-commercial restriction on its pricing or limits pages, but read the current terms yourself before you rely on that.
@@ -85,11 +87,15 @@ Plausible and Fathom are often listed in free stacks, but neither has a free pla
 
 An address like you@yourdomain.com looks more credible than a free webmail address, and it's the item where free options are weakest.
 
+![Comparison of Cloudflare Email Routing, which forwards domain mail to an existing inbox, and Zoho Mail's free plan, a web-only mailbox.](/images/guides/free-tech-stack-one-person-business/2-two-free-ways-to-use-your-domain.webp "Free domain email is where free options are weakest. Google Workspace is the paid, full-mailbox option.")
+
 Cloudflare Email Routing is free and forwards mail sent to your domain into an inbox you already have. It doesn't give you a mailbox. Zoho Mail has a free plan with up to 5 users and 5 GB each on one domain, but it's web access only (no IMAP or POP) and available only in select data centers, so check whether you can sign up for it where you live. Google Workspace is the full-mailbox option and it's paid per user; check its pricing page for the current price.
 
 ## What isn't free
 
 **The domain.** You pay for it every year for as long as the business runs. Prices vary by extension and registrar, and the first-year price is often lower than the renewal, so look at the renewal price before you buy. [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/) says it charges only what the registry and ICANN charge, with no markup.
+
+![Three cards on what a free stack still costs: a domain renewed every year, a fee on every payment, and your own time.](/images/guides/free-tech-stack-one-person-business/3-the-costs-you-cant-avoid.webp "Before the first sale, the only bill should be the domain.")
 
 **Payments.** [Stripe](https://stripe.com/pricing) has no setup or monthly fee. In the US it charges 2.9% + 30¢ per successful domestic card payment, plus 1.5% for international cards and 1% if currency conversion is needed. Fees differ by country. On a $20 product paid with a US card, that's 88¢. Stripe's Payment Links let you take a payment without building a checkout, at the same rate.
 
@@ -151,6 +157,8 @@ What they do well is produce a fast first version of something you're able to ch
 
 Here are the five jobs with one or two options for each, followed by what goes wrong, what to keep out of these tools, and a checklist to run before anything reaches a reader or a client.
 
+![Decision chart: if checking AI output is quicker than doing the task yourself, keep the tool; if not, do the work yourself.](/images/guides/ai-tools-one-person-business/1-does-the-tool-earn-its-place.webp "AI tools give a fast first version, so the real cost is the time it takes you to check it.")
+
 ## The five jobs at a glance
 
 | Job | Well-known options | Free plan? |
@@ -177,6 +185,8 @@ Results improve when you tell the assistant who the reader is, what format you w
 
 Perplexity searches the web and answers with links to the pages it used. The general assistants can search the web too. Either way, treat the answer as a faster route to sources and then read the sources.
 
+![Four steps for AI research: get an answer with links, open each source, find the exact sentence, and prefer the original source.](/images/guides/ai-tools-one-person-business/2-from-ai-answer-to-a-fact-you-can-repeat.webp "Treat an AI answer as a faster route to sources, then read the sources.")
+
 That second step matters because a citation can point to a page that doesn't say what the answer claims. The link may also go to a thin page that was wrong to begin with. And when an assistant answers without searching, its knowledge stops at its training date, so prices, rules and product names can be stale.
 
 For anything you plan to repeat in public, open the source, find the sentence, and prefer the original (the company's terms page, the regulator, the study) over a blog post describing it.
@@ -198,6 +208,8 @@ They struggle with text inside an image and with anything that must match realit
 ## Automation
 
 Zapier and Make connect apps with "when this happens, do that" rules, and an AI step can sit in the middle of a workflow. A common example is summarising a form submission or sorting an incoming email before it reaches you.
+
+![Comparison of drafting with an assistant, where you see every output, and automation, where one wrong output can repeat for weeks.](/images/guides/ai-tools-one-person-business/3-why-automation-needs-a-different-safeguard.webp "Keep a manual approval step in front of anything an automation publishes or sends to a customer.")
 
 The risk here is different from the other four jobs. When you draft with an assistant, you see every output. An automation runs when you aren't looking, so one wrong output can repeat for weeks. Keep a manual approval step in front of anything that gets published or sent to a customer. The [beginner's guide to connecting apps with Zapier or Make](/guide/no-code-automation-guide-make-zapier) covers how to build and test a first workflow.
 
@@ -299,6 +311,8 @@ The cost of that flexibility is upkeep. WordPress core, your theme and every plu
 
 Ghost is open source under the MIT licence, and you can run it two ways: pay for Ghost(Pro), the official hosted service, or host it yourself.
 
+![Comparison of the hosted Ghost(Pro) service with self-hosting Ghost, covering plan fees, member-count pricing, server stack and maintenance.](/images/guides/wordpress-vs-ghost-vs-nextjs/1-ghost-pro-vs-self-hosted-ghost.webp "Both run the same software. The difference is who pays for and maintains the server and email sending.")
+
 What sets it apart is that memberships and email newsletters are part of the product. Readers can sign up, you can email posts to them, and you can charge for access through Stripe without assembling plugins. Ghost's [pricing page](https://ghost.org/pricing/) says it adds no transaction fee of its own to subscription payments; the payment processor's fees still apply.
 
 Two details to check before you sign up. At the time of writing, the lowest Ghost(Pro) plan doesn't include paid subscriptions or custom themes, so a paid newsletter needs a higher tier. And plans are tiered by member count, so the bill grows with your list.
@@ -321,6 +335,8 @@ Build this if you'd enjoy building it, or if you need something the other two ca
 
 None of them. All three can rank, and all three can be set up badly.
 
+![Cards showing how WordPress, Ghost and a custom Next.js site each handle technical SEO, plus what search engines check on all three.](/images/guides/wordpress-vs-ghost-vs-nextjs/2-where-each-platforms-seo-basics-come-from.webp "All three can rank and all three can be set up badly. Run a basic SEO checklist once the site is live.")
+
 Search engines read the HTML your site serves. They care whether pages are crawlable, have sensible titles and canonical URLs, load reasonably fast and answer the query. WordPress gets most of the technical parts from an SEO plugin. Ghost includes the basics without add-ons. With Next.js you write them yourself, which means nothing is wrong by default and nothing is right by default either. Whichever you choose, run through a [basic SEO checklist](/guide/seo-checklist) once the site is live.
 
 ## Which is fastest?
@@ -341,6 +357,8 @@ Plan prices change, so check each provider's current page. The shape of the cost
 ## How hard is it to switch later?
 
 Leaving WordPress is the easy direction. Its built-in export produces an XML file with your posts, pages, comments, categories and tags, and Ghost has a WordPress importer in its admin. Ghost's [migration docs](https://docs.ghost.org/migration/wordpress) list the limits at the time of writing: files up to 100 MB and 2,500 posts, categories become tags, and custom post types and most uncommon shortcodes don't carry over. Your theme and plugin features don't move at all, so anything a plugin did for you has to be rebuilt or dropped.
+
+![Comparison of content that moves from WordPress to Ghost through the importer against custom post types, shortcodes and plugin features that don't.](/images/guides/wordpress-vs-ghost-vs-nextjs/3-wordpress-to-ghost-what-moves.webp "Whatever you move, keep URLs the same or redirect each old URL to its new one to protect your traffic.")
 
 Moving to a custom build is a development project. You'll convert content to whatever format your site uses and rebuild every template. Moving away from one is the same amount of work in reverse.
 
@@ -392,6 +410,8 @@ Below: what changed, which tool fits which job, two setups worth building, instr
 ## What happened to custom GPTs
 
 OpenAI's help pages now say new GPT creation and publishing aren't available on personal accounts. Business, Enterprise and Edu workspaces can still build them, but only until October 26, 2026, and every custom GPT stops working on December 11 (a few Enterprise workspaces can get an extension into February 2027). The dates are in [OpenAI's custom GPT retirement and migration FAQ](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq), which is worth reading directly because the rollout is still moving.
+
+![Timeline of the custom GPT retirement: no new GPTs on personal accounts, workspace building ends October 26, 2026, all GPTs stop December 11.](/images/guides/build-custom-gpt-ai-assistant-for-blog/1-how-custom-gpts-are-being-retired.webp "Personal accounts are already locked out of creating GPTs, and every GPT has an end date.")
 
 The replacement is called Plugins. A plugin bundles "skills" (reusable instructions), reference files and connected apps.
 
@@ -456,6 +476,8 @@ The outline step pairs well with a repeatable drafting routine. If you don't hav
 
 The idea is that a reader asks "which of your guides covers disclosure rules?" and gets a short answer plus the link, drawn only from what you've published.
 
+![Checklist for a public blog helper: upload only public guides, add a guide index file, limit answers to your guides, test in a private window.](/images/guides/build-custom-gpt-ai-assistant-for-blog/2-before-you-share-a-public-helper.webp "Anyone you share a Gem with can view its instructions and uploaded files.")
+
 Gemini Gems are the practical choice. You can set a Gem to "Anyone with the link", and Google's help page on [sharing a Gem](https://support.google.com/gemini/answer/16504957) spells out what that means: people you share with can view the Gem's instructions and its uploaded files. Assume the same of any shared assistant, whatever the vendor says.
 
 So upload only what's already public. I'd use a single text file listing each guide's title, URL and a three-sentence summary, plus the full text of your ten or so most-read guides. Then give it instructions like these:
@@ -477,6 +499,8 @@ Before you put the link on your site, open it in a private browser window to see
 ## The limits
 
 **It still makes things up.** Reference files reduce invented facts but don't stop them. A private assistant's mistakes only reach you. A public one's mistakes reach readers with your name attached, which is why I'd launch the private one first and run the public one only if you're willing to spot-check it regularly.
+
+![Five limits of blog AI assistants: invented facts, shared files aren't private, data settings, unedited output and stale files.](/images/guides/build-custom-gpt-ai-assistant-for-blog/3-limits-to-know-before-you-share.webp "Launch the private assistant first; a public one's mistakes reach readers with your name on them.")
 
 **Shared files aren't private.** Don't upload paid ebooks, course material, unpublished drafts, client work, earnings reports or anything containing login details or API keys. If you sell a product, the assistant can describe it and link to the sales page without having the file.
 
@@ -537,6 +561,8 @@ Zapier, Make and n8n all work this way. If you've never built one, I'd start wit
 
 The example: someone submits your contact form, the details land in a spreadsheet, and you get a notification. Button names differ between tools and change often, so these steps describe what you're doing instead of where to click.
 
+![Steps to build a no-code automation: do it by hand, choose the trigger, add the action, map fields, test with real data, turn it on and check history.](/images/guides/no-code-automation-guide-make-zapier/1-your-first-form-to-spreadsheet-automation.webp "Slow down on field mapping: a wrong mapping still runs without an error.")
+
 1. **Do it by hand once.** Submit your own form, copy the details into the spreadsheet, and note which form field goes in which column. If you can't describe the manual steps, you can't automate them yet.
 2. **Choose the trigger.** Create a new workflow (Zapier calls it a Zap, Make calls it a scenario), pick your form app, and select the "new submission" or "new response" event.
 3. **Connect your accounts.** The tool will ask you to sign in to the form app and grant access. You'll do the same for the spreadsheet. Read the permission screen; you're giving a third party access to that account.
@@ -566,6 +592,8 @@ I'd keep anything public-facing as a draft. Automated cross-posting produces ide
 
 Free-plan details below come from each company's pricing page in October 2026. They change, so check the current free plan before you commit: [Zapier pricing](https://zapier.com/pricing), [Make pricing](https://www.make.com/en/pricing), [n8n pricing](https://n8n.io/pricing/).
 
+![Comparison of Zapier and Make: Zapier counts successful action steps as tasks, Make charges a credit for every module including the trigger.](/images/guides/no-code-automation-guide-make-zapier/2-how-zapier-and-make-count-usage.webp "The free allowances aren't comparable at face value, so count what a run actually uses.")
+
 | Tool | Free option at the time of writing | Suits |
 |---|---|---|
 | Zapier | 100 tasks a month, unlimited Zaps, each limited to one trigger and one action | The simplest start for two-step automations |
@@ -583,6 +611,8 @@ Whichever you pick, check that it supports the specific apps you use, and the sp
 ## What goes wrong, and how to limit it
 
 **Automations break quietly.** An app renames a field, your login expires, or you rename a spreadsheet column, and the workflow stops or starts writing blanks. Nothing announces this unless you set it up to. Find the failure-notification setting in your tool and confirm it's on for your plan. Zapier, for example, switches a Zap off automatically if 95% of its runs errored in the last seven days, according to [its help docs](https://help.zapier.com/hc/en-us/articles/8496037690637-Manage-your-Zap-error-notifications).
+
+![Checklist for safer automations: failure notifications, monthly run history checks, comparing counts, minimal data, and drafts for customer emails.](/images/guides/no-code-automation-guide-make-zapier/3-keep-automations-from-failing-quietly.webp "Nothing announces a broken automation unless you set it up to.")
 
 **Add your own check too.** A calendar reminder once a month to open the run history takes two minutes. For anything that matters, compare counts: if the form tool shows 14 submissions and the sheet has 11 rows, you've found a problem the error log missed.
 
@@ -658,6 +688,8 @@ Plausible's $9 starter plan covers up to 10,000 monthly pageviews. Fathom's $15 
 
 Both give you one dashboard: visitors, pageviews, top pages, referrers, countries, devices, and any goals you set up, such as a newsletter signup. You can read it in a minute, which is most of the appeal.
 
+![Flow showing how Plausible and Fathom count visitors: IP address and user agent plus a daily secret become a scrambled identifier.](/images/guides/privacy-friendly-web-analytics-fathom-plausible/1-how-cookieless-tools-count-visitors.webp "Daily counts are accurate, but a reader who returns tomorrow is counted as new.")
+
 Neither sets a cookie. To count unique visitors, each one combines the visitor's IP address and browser user agent with a secret value that changes every day, then turns that into a scrambled identifier. Both vendors say they never store the raw IP address. Plausible's [data policy](https://plausible.io/data-policy) says the daily value is deleted after 24 hours, and Fathom's [data page](https://usefathom.com/data) describes the same approach.
 
 That design has a cost. A visitor who returns tomorrow, or switches from phone to laptop, is counted as a new person. You get accurate daily traffic and no picture of returning readers over weeks.
@@ -671,6 +703,8 @@ Matomo and Simple Analytics sit in the same category. Check the same points for 
 ## What GA4 does that they don't
 
 GA4 costs nothing for a standard property, and it's far more capable:
+
+![Four GA4 capabilities the simpler tools lack: Google Ads linking, funnels and path reports, BigQuery export, and returning-visitor tracking.](/images/guides/privacy-friendly-web-analytics-fathom-plausible/2-what-ga4-adds.webp "The price is complexity. Most of these reports answer questions a small content site never asks.")
 
 - It links to Google Ads, so you can measure campaigns and build remarketing audiences.
 - It has explorations, funnels and path reports for following a visitor through several steps.
@@ -702,6 +736,8 @@ So a GA4 site with a proper banner undercounts its European traffic, and by how 
 ## Which one to pick
 
 **You run Google Ads, or plan to.** Use GA4. Conversion measurement and audiences depend on that link.
+
+![Decision chart: use GA4 if you run Google Ads or display ads; consider Plausible or Fathom for an ad-free site with mostly EU or UK readers.](/images/guides/privacy-friendly-web-analytics-fathom-plausible/3-ga4-plausible-or-fathom.webp "With no budget, stay on GA4 with a correctly configured banner.")
 
 **You show AdSense or other display ads.** You already need a banner, and GA4 is free. A paid tool only makes sense if you want full visit counts or a simpler dashboard. The guide comparing [ads, affiliate links and digital products](/guide/blog-monetization-model-comparison) covers how the ad side fits together.
 
@@ -756,6 +792,8 @@ The order matters more than the budget. Get your body positioned properly first,
 
 Before you buy anything, check how you sit at the desk you have. Both [OSHA's computer workstation guidance](https://www.osha.gov/etools/computer-workstations) and [Mayo Clinic's office ergonomics guide](https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169) describe roughly the same neutral position:
 
+![Posture checklist for screen, elbows, wrists, feet and back, based on OSHA and Mayo Clinic guidance on a neutral sitting position.](/images/guides/simple-desk-setup-for-focus/1-free-posture-check-before-you-buy.webp "Whatever you can't achieve with your current furniture becomes your shopping list.")
+
 - **Screen:** the top of the monitor at or slightly below eye level, about an arm's length away. Both sources put the range at 20 to 40 inches (50 to 100 cm).
 - **Elbows:** close to your body and bent somewhere between 90 and 120 degrees, with your shoulders relaxed.
 - **Wrists:** straight and in line with your forearms, not bent up, down or sideways while you type.
@@ -778,6 +816,8 @@ Fit beats brand. Sit in a chair before buying if you can, or buy from somewhere 
 
 This is the most common problem with a laptop-only desk. A laptop screen sits well below eye level, so you end up looking down for hours.
 
+![Comparison of two screen-height fixes: a laptop stand with an external keyboard and mouse, or an external monitor on a stand or arm.](/images/guides/simple-desk-setup-for-focus/2-two-ways-to-raise-a-laptop-screen.webp "Raising the laptop without a separate keyboard trades a neck problem for a wrist problem.")
+
 There are two fixes. The cheaper one is a laptop stand (or, again, a stack of books) plus an external keyboard and mouse, which is what Mayo Clinic suggests for laptop users. Raising the laptop without adding a separate keyboard just trades a neck problem for a wrist problem. The other fix is an external monitor on a stand or arm, set so the top edge is at or just below your eye line.
 
 ### A keyboard and mouse you find comfortable
@@ -795,6 +835,8 @@ A basic desk lamp aimed at the desk surface, not at the screen or your eyes, is 
 ## What can wait
 
 These are all fine things to own. I just wouldn't buy any of them before the four items above are sorted.
+
+![Table of desk purchases that can wait, including a standing desk, second monitor, accessories, new computer and headphones, with when each helps.](/images/guides/simple-desk-setup-for-focus/3-things-that-can-wait.webp "Fine things to own, but not before the chair, screen, keyboard and lighting are sorted.")
 
 - **A standing desk.** OSHA suggests doing some tasks standing and walking around regularly, and you can do both without new furniture. Buy one later if you find you want it.
 - **A second monitor.** Useful for work that involves comparing documents or watching data. For writing, one screen is enough for most people.
@@ -875,6 +917,8 @@ That's three copies, two kinds of storage (a drive you own and someone else's da
 
 A sync service keeps every device identical. Delete a folder on your laptop and it's deleted everywhere. Save over a file and the overwritten version is what syncs. If malware scrambles your files, the scrambled copies can sync too.
 
+![Comparison of a sync service, which copies deletions and overwrites to every device, and a backup service, which keeps older file versions.](/images/guides/cloud-backups-for-creators-guide/1-sync-service-vs-backup-service.webp "Keep using sync for convenience, but don't count it as one of your three copies.")
+
 There is a safety net, but it's short. According to each service's own help pages in October 2026:
 
 - [Google Drive](https://support.google.com/drive/answer/2375102) deletes files from Trash for good after 30 days.
@@ -911,6 +955,8 @@ If you work on a laptop, the drive only helps when it's plugged in. Tie it to so
 
 This is where most creators have a gap, because none of the following is caught by steps 1 and 2.
 
+![Four cards: website database and files, email list export, password manager kit and 2FA codes, and phone photos and video.](/images/guides/cloud-backups-for-creators-guide/2-four-things-your-computer-backup-misses.webp "None of these is caught by the cloud backup or the external drive, so each needs its own export.")
+
 ### Your website
 
 On WordPress, a site is two things: the database, which holds your posts and settings, and the files, which hold themes, plugins and uploads. You need both. [WordPress's own backup documentation](https://developer.wordpress.org/advanced-administration/security/backup/) suggests weekly backups for smaller sites and daily for busy ones, and keeping several recent backups in more than one place. Your host's backups are worth having, but they sit in the same account as the site, so download a copy to your computer now and then.
@@ -946,6 +992,8 @@ Phone photo libraries are usually synced, with the same weakness as any sync. Ap
 ## Test a restore before you need one
 
 Until you've restored something, you don't know whether your backups work. Pick one file from the cloud backup and one from the external drive, restore each to a different folder, and open them. For the website, restoring to a staging copy or a local install is the real test; at minimum, open the database export and check that it isn't empty and that it's recent.
+
+![Five steps to test backups: pick a file from each backup, restore to a new folder, open it, check the website backup, and write down the steps.](/images/guides/cloud-backups-for-creators-guide/3-how-to-test-a-restore.webp "Until you've restored something, you don't know whether your backups work.")
 
 Write down the steps you took, and keep that note with your recovery codes.
 
@@ -1012,6 +1060,8 @@ This is the same baseline CISA, the US cybersecurity agency, pushes in its [four
 
 Google's Threat Analysis Group documented a long-running campaign against YouTubers in its [report on cookie-theft malware](https://blog.google/threat-analysis-group/phishing-campaign-targets-youtube-creators-cookie-theft-malware/). The attackers found creators through the business email address listed on their channel and sent a forged collaboration offer that impersonated a real company. Once the creator agreed, they got a link to a "software download" page, by email or inside a PDF on Google Drive. Running the file sent the browser's session cookies to the attacker. Hijacked channels were then sold or rebranded to stream cryptocurrency scams.
 
+![Flow of the fake sponsorship attack: forged offer, software download link, file run, session cookies sent to attacker, channel sold or rebranded.](/images/guides/cybersecurity-for-digital-creators/1-how-a-fake-brand-deal-takes-a-channel.webp "Stealing the session cookie skips your password and MFA, which is why the no-unknown-files rule matters.")
+
 A session cookie is what keeps you signed in after you've entered your password and your MFA code. Someone who copies it can act as you without ever logging in, so MFA doesn't get a chance to stop them. That's why a rule about files sits on the same list as MFA.
 
 In practice:
@@ -1041,6 +1091,8 @@ Don't skip MFA on an account just because SMS is the only option. Turn it on, an
 
 **Email.** Check that the recovery email and phone number on the account are yours and current. Look at forwarding rules and filters for anything you didn't create, and remove third-party apps you no longer use. I'd also set up a separate admin address that isn't published anywhere and use it as the login for your registrar, hosting, payment and ad accounts. The public "business enquiries" address is the one attackers write to, so it shouldn't be the one that can reset your domain.
 
+![Checklist covering email recovery details, forwarding rules, a private admin address, registrar lock, auto-renew, payout details and updates.](/images/guides/cybersecurity-for-digital-creators/2-this-weeks-account-checks.webp "Start with email and your domain, since whoever controls them can reset or redirect almost everything else.")
+
 **Domain registrar and DNS.** Whoever controls your domain controls your website and can receive your email. Turn on MFA at the registrar and at your DNS provider if that's a separate account, and confirm the domain shows as locked. ICANN describes [registrar lock](https://www.icann.org/resources/pages/locked-2013-05-03-en), also shown as "Client Transfer Prohibited", as protection against unauthorised changes. Turn on auto-renew and keep the card on file current, so the domain can't lapse and be registered by someone else.
 
 **Money and audience accounts.** Add MFA to payment processors, ad networks, affiliate dashboards and your email-list provider, and check that payout details haven't been changed. If your list is the core of your business, the provider account behind your [email welcome sequence](/guide/build-automated-affiliate-email-funnel) deserves the same care as your bank login.
@@ -1050,6 +1102,8 @@ Don't skip MFA on an account just because SMS is the only option. Turn it on, an
 ## Give collaborators access, not passwords
 
 Sharing a login with an editor or assistant means their laptop is now part of your security. Most platforms have a better option: YouTube's channel permissions, user roles in a CMS, team seats in payment and email tools. Invite people under their own account, at the lowest role that lets them do the job, and require MFA on their side too.
+
+![Comparison of sharing your password with an editor or assistant against inviting them under their own account with the lowest role and MFA.](/images/guides/cybersecurity-for-digital-creators/3-sharing-a-login-vs-inviting-a-collaborator.webp "Most platforms have roles or team seats, so a shared password is rarely the only way to get help.")
 
 When someone stops working with you, remove their access the same day. If you're about to bring on help, the guide to [hiring your first virtual assistant](/guide/hire-first-virtual-assistant-va-solopreneur-guide) covers handing over work; pair it with a quick review of who can sign in to what.
 
@@ -1119,6 +1173,8 @@ If you still want to do it, the rest of this guide is the short path: pick a ser
 
 Start with tools that only you use, where a few hours of downtime is an annoyance. Four that suit a one-person business:
 
+![Comparison of good first self-hosting projects, like tools only you use, against things beginners should leave alone, like email and payment data.](/images/guides/self-hosting-beginners-cloud-vps-guide/1-what-to-self-host-first-and-what-to-skip.webp "Start where a few hours of downtime is only an annoyance.")
+
 | Tool | What it does | Licence |
 | --- | --- | --- |
 | Uptime Kuma | Alerts you when your sites go down | MIT |
@@ -1154,6 +1210,8 @@ ssh-keygen -t ed25519
 ## Lock the server down on first login
 
 A new server starts receiving automated login attempts soon after it goes online. These four steps take about fifteen minutes.
+
+![Four steps to secure a new VPS: create a sudo user, turn off root and password logins, enable the ufw firewall and turn on automatic security updates.](/images/guides/self-hosting-beginners-cloud-vps-guide/2-lock-down-a-new-vps.webp "These four steps take about fifteen minutes on first login.")
 
 **1. Create a regular user.** Log in with \`ssh root@YOUR_SERVER_IP\`, then create an account with sudo rights and give it a copy of your key. I've called it \`deploy\`; use any name.
 
@@ -1203,6 +1261,8 @@ This patches the operating system only. Kernel updates still need an occasional 
 ## Run your first app with Docker and automatic HTTPS
 
 Docker packages each app with everything it needs, so installing one becomes a short config file. Install Docker Engine from [Docker's official instructions](https://docs.docker.com/engine/install/) for your distribution. Ubuntu 26.04 is on its supported list.
+
+![Flow for running a first self-hosted app: install Docker, point a subdomain at the server, write compose.yaml and a Caddyfile, then start everything.](/images/guides/self-hosting-beginners-cloud-vps-guide/3-from-empty-server-to-app-on-https.webp "Only Caddy gets a ports line. Ports Docker publishes bypass ufw.")
 
 Next, point a domain at the server. In your DNS settings, create an A record for a subdomain such as \`status.yourdomain.com\` with your server's IP address as the value. Do this before the next step, because the certificate can't be issued until the name resolves.
 

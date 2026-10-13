@@ -1,0 +1,80 @@
+{
+  "slug": "local-seo-map-pack-mastery-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Fill in every field, accurately",
+      "type": "checklist",
+      "title": "Business Profile fields to get right",
+      "alt": "Checklist of Google Business Profile fields: real business name, specific primary category, direct phone, regular and holiday hours, details and real photos.",
+      "caption": "Complete, accurate information is what lets Google match your profile to the right searches.",
+      "data": {
+        "items": [
+          "Real-world business name, with no keywords or city added",
+          "Specific primary category: \"This business IS a\"",
+          "Address or service area, set up correctly",
+          "Phone number that reaches the business directly",
+          "Regular hours, plus special hours for holidays",
+          "Attributes, services and a description written for customers",
+          "Real photos of the storefront, inside, team and finished work"
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Service-area businesses hide their address",
+      "type": "decision",
+      "title": "Should your profile show an address?",
+      "alt": "Decision chart: businesses serving customers at their address show it, those that travel hide it and list service areas, hybrids show both.",
+      "caption": "P.O. boxes and virtual offices you don't actually work from aren't acceptable addresses either way.",
+      "data": {
+        "question": "Where do you serve customers?",
+        "branches": [
+          {
+            "answer": "At my address",
+            "result": "Show the address on your profile",
+            "tone": "neutral"
+          },
+          {
+            "answer": "I travel to them",
+            "result": "Remove the address and list up to 20 service areas by city or postal code",
+            "tone": "neutral"
+          },
+          {
+            "answer": "Both",
+            "result": "Hybrid business: show the address along with a service area",
+            "tone": "neutral"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What to fix on your own website",
+      "type": "cards",
+      "title": "Website work that backs up the profile",
+      "alt": "Four cards: a real location or service page, LocalBusiness structured data, page speed and basic SEO, and an optional embedded map.",
+      "caption": "Your site confirms the same details as your profile. It plays a supporting role, not the main one.",
+      "data": {
+        "items": [
+          {
+            "title": "Location or service page",
+            "text": "Name, address or area, phone and hours in plain text, plus local answers"
+          },
+          {
+            "title": "LocalBusiness markup",
+            "text": "JSON-LD with at least name and address; test it with the Rich Results Test"
+          },
+          {
+            "title": "The basics",
+            "text": "Fast loading on a phone, no broken pages, no missing titles"
+          },
+          {
+            "title": "Embedded map",
+            "text": "Handy for visitors, but Google doesn't list it as a ranking help"
+          }
+        ]
+      }
+    }
+  ]
+}

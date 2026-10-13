@@ -1,0 +1,100 @@
+{
+  "slug": "affiliate-disclosure-ftc-compliance-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What the FTC requires, and what is only good practice",
+      "type": "cards",
+      "title": "What a disclosure has to do",
+      "alt": "Four cards: disclose material connections, match the format, make it unavoidable online, and use words people understand.",
+      "caption": "The FTC's test is whether someone reading that recommendation will see and understand the disclosure.",
+      "data": {
+        "items": [
+          {
+            "title": "Disclose the connection",
+            "text": "Commissions, free products, payment and discount codes that earn you something"
+          },
+          {
+            "title": "Match the format",
+            "text": "Written needs written, spoken needs spoken, a video that does both needs both"
+          },
+          {
+            "title": "Make it unavoidable",
+            "text": "No clicking, scrolling to a footer or opening another page to find it"
+          },
+          {
+            "title": "Use plain words",
+            "text": "\"Affiliate link\" alone may not be enough; say that you get paid"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Where the disclosure goes on each platform",
+      "type": "table",
+      "title": "Where the disclosure goes",
+      "alt": "Table of where to place an affiliate disclosure on blog posts, video, social captions and email, and what not to rely on for each.",
+      "caption": "On every platform, the disclosure sits with the recommendation, not somewhere the reader has to go looking.",
+      "data": {
+        "headers": [
+          "Platform",
+          "Put it",
+          "Don't rely on"
+        ],
+        "rows": [
+          [
+            "Blog posts",
+            "Top of the post, before any link",
+            "A link labelled disclosure or legal"
+          ],
+          [
+            "YouTube and video",
+            "Said early, also in the description",
+            "A description note on its own"
+          ],
+          [
+            "Social captions",
+            "At the start of the caption",
+            "Hashtag strings, your bio, #sp"
+          ],
+          [
+            "Email",
+            "In the email, above the first link",
+            "A notice on your website"
+          ]
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Amazon has its own required sentence",
+      "type": "compare",
+      "title": "FTC rules and Amazon's rule",
+      "alt": "Comparison of the FTC Endorsement Guides and the Amazon Associates agreement: who sets each rule, what wording is needed, and the consequence.",
+      "caption": "If you're an Amazon Associate, you follow both: the FTC standard and Amazon's contract terms.",
+      "data": {
+        "columns": [
+          {
+            "label": "FTC Endorsement Guides",
+            "tone": "neutral",
+            "points": [
+              "Applies to any material connection",
+              "No special legal wording required",
+              "Applied under Section 5 of the FTC Act"
+            ]
+          },
+          {
+            "label": "Amazon Associates",
+            "tone": "neutral",
+            "points": [
+              "A contract term on top of the FTC's",
+              "Requires a set sentence on your site",
+              "Breaking it can close your account"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

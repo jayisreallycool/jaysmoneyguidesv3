@@ -1,0 +1,97 @@
+{
+  "slug": "low-competition-keyword-research",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Step 1: Collect the phrases people really type",
+      "type": "cards",
+      "title": "Four free places to find phrases",
+      "alt": "Four free sources of real search wording: Google autocomplete, People Also Ask, related searches, and forum or Reddit thread titles.",
+      "caption": "Put everything in a spreadsheet and don't filter yet.",
+      "data": {
+        "items": [
+          {
+            "title": "Google autocomplete",
+            "text": "Type the seed, then add a letter or a question word. Use a private window."
+          },
+          {
+            "title": "People Also Ask",
+            "text": "Expand the question boxes. Each one you open loads more."
+          },
+          {
+            "title": "Related searches",
+            "text": "The bottom of the results page shows neighbouring angles on the topic."
+          },
+          {
+            "title": "Forums and Reddit",
+            "text": "Thread titles show problems in people's own words."
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What search volume numbers can and can't tell you",
+      "type": "compare",
+      "title": "What search volume tells you",
+      "alt": "Comparison of what search volume numbers are good for, such as rough comparisons, against what they can't tell you, such as exact traffic.",
+      "caption": "Use volume to compare queries roughly, more versus less, and don't plan around the exact figure.",
+      "data": {
+        "columns": [
+          {
+            "label": "It can tell you",
+            "tone": "neutral",
+            "points": [
+              "Which query gets more, roughly",
+              "A phrase in autocomplete is likely searched",
+              "That a made-up phrase may have no searches"
+            ]
+          },
+          {
+            "label": "It can't tell you",
+            "tone": "neutral",
+            "points": [
+              "An exact figure; every one is an estimate",
+              "A minimum worth writing about; there isn't one",
+              "Whether a \"zero\" query brings visitors"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "A worked example",
+      "type": "flow",
+      "title": "From broad topic to one query",
+      "alt": "Worked example narrowing indoor herb garden through autocomplete, People Also Ask and forums to the query why is my basil dying under a grow light.",
+      "caption": "The result answers one question for one type of reader, which a new site can realistically compete for.",
+      "note": "Example phrases only; volume and rankings weren't measured.",
+      "data": {
+        "items": [
+          {
+            "label": "Seed: indoor herb garden",
+            "text": "Too broad for a new site; retailers and big publishers rank."
+          },
+          {
+            "label": "Autocomplete",
+            "text": "Narrower: \"indoor herb garden without sunlight\"."
+          },
+          {
+            "label": "Forums",
+            "text": "Repeated threads about basil wilting under a grow light."
+          },
+          {
+            "label": "Candidate query",
+            "text": "\"why is my basil dying under a grow light\" (informational)."
+          },
+          {
+            "label": "Results check",
+            "text": "Mostly forums and passing mentions is a gap. Full articles: try again."
+          }
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "is-affiliate-marketing-worth-it",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What makes it harder than it used to be",
+      "type": "compare",
+      "title": "What stopped working, what still can",
+      "alt": "Comparison of affiliate approaches that are now a bad bet, like thin copied pages, with ones that can still work, like specific original pages.",
+      "caption": "The model is intact, but the winnable topics have become more specific.",
+      "data": {
+        "columns": [
+          {
+            "label": "Now a bad bet",
+            "tone": "bad",
+            "points": [
+              "Reviews copied from the merchant",
+              "Pages produced in bulk for rankings",
+              "Broad topics like \"best laptops\"",
+              "Relying on search for all visitors"
+            ]
+          },
+          {
+            "label": "Still winnable",
+            "tone": "good",
+            "points": [
+              "Pages that add something original",
+              "Honest comparisons by someone who knows",
+              "Specific topics big publishers skip",
+              "Search as one source among several"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "How to judge whether a niche still has room",
+      "type": "steps",
+      "title": "Four checks before you buy a domain",
+      "alt": "Four steps to judge an affiliate niche: read what ranks, confirm programs pay enough, be honest about your knowledge, and check purchase frequency and price.",
+      "caption": "Together these take about an afternoon. If a niche fails the first two, change the niche.",
+      "data": {
+        "items": [
+          {
+            "title": "Read what already ranks",
+            "text": "Outdated or vague top results are an opening. Big publishers mean narrow the topic."
+          },
+          {
+            "title": "Confirm programs pay enough",
+            "text": "Check the commission rate, cookie window and payout threshold in each program's terms."
+          },
+          {
+            "title": "Be honest about what you know",
+            "text": "Write twenty buyer questions. Can you answer most without looking anything up?"
+          },
+          {
+            "title": "Check how often people buy",
+            "text": "Repeat purchases or subscriptions support a steadier business. Price matters too."
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Two things to set up from the first post",
+      "type": "cards",
+      "title": "Set these up from the first post",
+      "alt": "Two cards: disclose commissions clearly and close to the recommendation, and start an email list early.",
+      "caption": "Disclosure is a legal expectation, and a list is an audience a ranking change can't take away.",
+      "data": {
+        "items": [
+          {
+            "title": "Disclose your commissions",
+            "text": "Clearly and conspicuously, close to the recommendation, as the FTC expects."
+          },
+          {
+            "title": "Start an email list",
+            "text": "The one audience a ranking change can't take from you."
+          }
+        ]
+      }
+    }
+  ]
+}

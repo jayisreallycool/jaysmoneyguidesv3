@@ -1,0 +1,56 @@
+{
+  "slug": "is-amazon-associates-worth-it",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How long does the Amazon affiliate cookie last?",
+      "type": "flow",
+      "title": "How an Amazon session pays out",
+      "alt": "Flow of an Amazon Associates session: a click starts a 24-hour session, the first order earns on everything in it, cart items extend to 89 days.",
+      "caption": "You earn on the whole order, but the session closes once that first order is placed.",
+      "data": {
+        "items": [
+          {"label": "Reader clicks your link", "text": "A session starts"},
+          {"label": "Session ends", "text": "After 24 hours, an order, or a click on another Associate's link"},
+          {"label": "First order placed", "text": "You earn on everything in it, each at its own category rate"},
+          {"label": "Cart extension", "text": "Items added to cart in your session count if ordered within 89 days"}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "The rules that get accounts closed",
+      "type": "checklist",
+      "title": "Rules to check before you build",
+      "alt": "Checklist of Amazon Associates policy rules covering disclosure, prices, reviews, offline use, email, link clarity and incentives.",
+      "caption": "Amazon can end your account, so read the full program policies first.",
+      "data": {
+        "items": [
+          "State \"As an Amazon Associate I earn from qualifying purchases\"",
+          "Show prices or stock only if Amazon serves them",
+          "Don't copy Amazon reviews or star ratings unless via the API",
+          "No Amazon links in printed material, ebooks or mailings",
+          "Email, SMS and DM links only to people who opted in",
+          "Make it clear the reader is going to Amazon; no cloaking",
+          "No cash back, discounts or rewards for buying through you"
+        ]
+      },
+      "note": "Check the current Associates Program Policies for the exact wording"
+    },
+    {
+      "slot": "bottom",
+      "after": "Who it suits, and who should look elsewhere",
+      "type": "compare",
+      "title": "Where Amazon fits and where it doesn't",
+      "alt": "Comparison of good fits for Amazon Associates, like everyday physical products, with poor fits like long research cycles and 1% categories.",
+      "caption": "Whatever the mix, don't let one program carry the whole site.",
+      "data": {
+        "columns": [
+          {"label": "Fits well", "tone": "good", "points": ["Readers about to buy a physical product", "Kitchen gear, tools, home goods, pet supplies", "Readers who trust Amazon's checkout"]},
+          {"label": "Fits badly", "tone": "bad", "points": ["Readers who research for days", "Products in the 1% categories", "A brand's own program pays much more"]}
+        ]
+      }
+    }
+  ]
+}

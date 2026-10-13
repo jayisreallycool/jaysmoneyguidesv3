@@ -1,0 +1,81 @@
+{
+  "slug": "affiliate-marketing-trends",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Google answers more searches without sending a click",
+      "type": "compare",
+      "title": "Which pages an AI summary can replace",
+      "alt": "Comparison of affiliate pages a search summary can replace, like definitions, versus pages built on your own testing and judgment.",
+      "caption": "Look in Search Console for pages where impressions held up but clicks dropped.",
+      "data": {
+        "columns": [
+          {
+            "label": "Easy to replace",
+            "tone": "bad",
+            "points": [
+              "Answers to simple factual questions",
+              "Definition-style posts",
+              "Pages the reader needs no judgment for"
+            ]
+          },
+          {
+            "label": "Harder to replace",
+            "tone": "good",
+            "points": [
+              "Comparisons built on your own testing",
+              "\"Which one for my situation\" guides",
+              "Reviews with your own photos or measurements"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Tracking loses more sales than program terms admit",
+      "type": "cards",
+      "title": "Why a 30-day cookie is the best case",
+      "alt": "Four cards on affiliate tracking: Chrome kept third-party cookies, Safari blocks them, ask how programs track, and shorten the time to purchase.",
+      "caption": "Some referred sales are never credited, especially from readers on iPhones.",
+      "data": {
+        "items": [
+          {
+            "title": "Chrome",
+            "text": "In April 2025 Google said it would keep its current third-party cookie approach"
+          },
+          {
+            "title": "Safari",
+            "text": "Blocks third-party cookies by default and can cap script cookies at 24 hours"
+          },
+          {
+            "title": "Ask how it tracks",
+            "text": "Sales also recorded on the merchant's server hold up better than a cookie alone"
+          },
+          {
+            "title": "Shorten the gap",
+            "text": "An email list brings a reader back with a fresh click before they buy"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Rules on reviews have got stricter",
+      "type": "checklist",
+      "title": "Review and disclosure checks",
+      "alt": "Checklist for affiliate reviews: no fake or AI reviews, no false claims of testing or independence, and disclosures placed next to recommendations.",
+      "caption": "The FTC rule on consumer reviews took effect on October 21, 2024.",
+      "note": "This is not legal advice. Read the FTC pages linked in the article.",
+      "data": {
+        "items": [
+          "No fake reviews, including AI-written ones from people who don't exist",
+          "Never write \"I tested this\" about a product you haven't handled",
+          "Don't present a site you control as offering independent reviews",
+          "Put the disclosure close to the recommendation",
+          "Don't rely on the words \"affiliate link\" alone"
+        ]
+      }
+    }
+  ]
+}

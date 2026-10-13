@@ -43,6 +43,8 @@ You only need free tools: Google Search Console (verify your site first), PageSp
 
 Each item ends with one of two labels. **Google-documented** means the advice comes from Google's own documentation, mainly the [SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). **Good practice** means it's sensible and widely done, but Google doesn't spell it out.
 
+![Comparison of the Google-documented label, from Google's own documentation, and the good practice label, for sensible advice Google doesn't spell out.](/images/guides/seo-checklist/1-the-two-labels-in-this-checklist.webp "Neither label means ranking factor, and no item guarantees a position.")
+
 Neither label means "ranking factor". Google doesn't publish a list of those, and no item here guarantees a position. Where Google does say its ranking systems use something, I've said so in the item.
 
 ## 1. Can Google crawl and index the page?
@@ -80,6 +82,8 @@ Google's own questions for this group are on its [helpful content page](https://
 - **Images have descriptive alt text and sit near the text they relate to.** *Google-documented.*
 - **Structured data is valid, if you use it.** It's optional and never guarantees a rich result. Test a page with Google's Rich Results Test. My [schema markup guide](/guide/schema-markup-rich-snippets-guide) covers which types are worth adding. *Google-documented.*
 
+![Reference table of on-page SEO elements, what to check for each, and whether the advice is Google-documented or good practice.](/images/guides/seo-checklist/2-on-page-basics-at-a-glance.webp "A site: search shows how your titles appear and makes duplicates easy to spot.")
+
 ## 4. Site structure and internal links
 
 - **Every page is linked from at least one other page.** Google finds most pages by following links. In Search Console, open Links → Internal links and look for important pages with few or none. *Google-documented.*
@@ -96,6 +100,8 @@ Internal links are the part of this list you control completely. I've written up
 - **Core Web Vitals are in the "good" range.** Google's targets are a Largest Contentful Paint within 2.5 seconds, Interaction to Next Paint under 200 milliseconds, and Cumulative Layout Shift under 0.1. Test a URL in PageSpeed Insights. Search Console's Core Web Vitals report covers the whole site, though new sites often have too little visitor data to show anything. *Google-documented.*
 - **The site loads over HTTPS.** Type the \`http://\` version of your address and confirm it redirects to \`https://\`. *Google-documented.*
 - **Pop-ups and ads don't bury the content.** Google's page experience guidance asks whether pages avoid intrusive interstitials and excessive ads. Open the page on a phone in a private window and see what a first-time visitor gets. *Google-documented.*
+
+![Cards showing Core Web Vitals targets: Largest Contentful Paint within 2.5 seconds, Interaction to Next Paint under 200 milliseconds, Layout Shift under 0.1.](/images/guides/seo-checklist/3-googles-core-web-vitals-targets.webp "Fix what's failing, and don't spend a month chasing a perfect score.")
 
 Google states plainly that Core Web Vitals are used by its ranking systems. It also says it will still show the most relevant content even when page experience is poor. So fix what's failing, and don't spend a month chasing a perfect score. The [Core Web Vitals guide for non-developers](/guide/core-web-vitals-optimization-guide) covers the usual fixes.
 
@@ -185,6 +191,8 @@ None of this promises that a small site will outrank a big publisher. It does ex
 
 Narrow enough that you could list every question a beginner would ask and realistically answer all of them. Try this:
 
+![Decision chart on topic scope: under about eight article-worthy questions is too thin, more than six months of writing is too broad.](/images/guides/topical-authority-topic-clusters/1-is-your-topic-the-right-size.webp "A rule of thumb for scoping a project. Google publishes no threshold.")
+
 1. Write the topic as one sentence that names an audience and a situation. "Gardening" fails. "Growing vegetables in containers on a balcony" passes.
 2. List every question someone in that situation would have. Use your own knowledge first, then Google's autocomplete and "People also ask" boxes, then forums where people in that situation ask for help.
 3. Count the questions that deserve their own article. If you have fewer than about eight, the topic may be too thin to build a site section around. If you have more than you could write well in the next six months, cut the topic down until the list is manageable.
@@ -195,6 +203,8 @@ Those numbers are my rule of thumb for scoping a project, and Google publishes n
 ## Mapping the pillar page and supporting articles
 
 A cluster has two kinds of page.
+
+![Comparison of a pillar page, an overview linking to every subtopic, and a supporting article, which answers one question fully.](/images/guides/topical-authority-topic-clusters/2-pillar-page-vs-supporting-article.webp "Write the map before the articles so gaps and overlaps show up early.")
 
 The pillar page is the overview. It covers the whole topic at a level a newcomer can follow, gives a short answer on each subtopic, and links out to the article that handles that subtopic in detail. It's a useful page in its own right, and it's the page you'd send a friend who asked where to start.
 
@@ -231,6 +241,8 @@ If you can, give the cluster a shared URL path or a consistent slug prefix. It i
 ## How to tell from Search Console whether it's working
 
 Overall site traffic hides what a cluster is doing, so look at the cluster on its own in the Performance report.
+
+![Five steps to check a topic cluster in Search Console: filter the pages, compare periods, watch impressions, read queries, and review each page.](/images/guides/topical-authority-topic-clusters/3-check-a-cluster-in-search-console.webp "Read the trend rather than exact totals, and be patient: some changes take several months.")
 
 1. Add a page filter. If the cluster shares a URL path, use "URLs containing". If it doesn't, choose "Custom (regex)" and list the slugs separated by a pipe, for example \`container-sizes|potting-mix|watering-pots\`.
 2. Use the date control to compare the last three months with the three months before.
@@ -315,6 +327,8 @@ You'll see a lot written about "link equity" flowing through a site in measurabl
 
 Anchor text is the clickable part of a link. Google's guidance is that it should be "descriptive, reasonably concise, and relevant" to both the page it sits on and the page it points to.
 
+![Checklist for internal link anchor text: passes the read-it-alone test, varied wording, text between links, alt text on image links, standard HTML links.](/images/guides/internal-linking-strategy-guide/1-anchor-text-that-does-its-job.webp "Read the anchor on its own. If it still tells you what's behind the link, it's fine.")
+
 A quick test, also from Google: read the anchor text on its own, with the rest of the sentence removed. If it still tells you what's behind the link, it's fine.
 
 | Weak anchor | Better anchor |
@@ -358,6 +372,8 @@ Which pages deserve more links is a judgment call. I'd start with pages that ear
 4. **Add the links (10 minutes).** For each of the five, run a site: search for its topic, open two or three of the posts that come up, and add one link inside a sentence where it fits. Write the anchor so it passes the read-it-alone test.
 5. **Check and note (5 minutes).** Click every link you added to confirm it goes to the right place, then write down the date and the pages you changed.
 
+![Five steps of an internal link audit: export Search Console data, find gaps, pick five pages, add links, then check and note changes.](/images/guides/internal-linking-strategy-guide/2-the-30-minute-link-audit.webp "Give Google a few weeks to recrawl before judging the results.")
+
 Give Google a few weeks to recrawl before judging anything, and don't expect a dramatic jump. Rankings depend on a lot more than links, and results vary from site to site. If you find broken links or redirect chains along the way, a fuller [one-hour audit of your own site](/guide/diy-seo-audit-1-hour-guide) covers those.
 
 ## A routine for every new post
@@ -375,6 +391,8 @@ On a site with hundreds of templated pages, hand-placed links can't cover everyt
 ## Common internal linking mistakes
 
 **The same anchor everywhere.** This goes wrong in both directions: "read more" on every link tells Google nothing, and one exact keyword phrase repeated across the whole site looks forced.
+
+![Four common internal linking mistakes: the same anchor everywhere, links only in menus or widgets, pages linking to themselves, and nofollow internal links.](/images/guides/internal-linking-strategy-guide/3-internal-linking-mistakes-to-fix.webp "Older posts often carry most of your traffic, so go back and add links to newer pages too.")
 
 **Links only in the menu, footer or a related-posts widget.** Google can crawl those, and they're useful for getting around. But a footer link has no surrounding sentence to give it meaning, and a widget picks posts by tag or date instead of by what the paragraph is about. Use them as a backstop and put the links that matter in the body text. Where those blocks sit on the page is a design question, which I cover in the guide to [blog layout and readability](/guide/blog-layout-ux-reader-retention).
 
@@ -431,6 +449,8 @@ One caveat before the process: no keyword worth having has zero competition. Som
 
 Start with one seed topic your site covers and gather wording from four free places.
 
+![Four free sources of real search wording: Google autocomplete, People Also Ask, related searches, and forum or Reddit thread titles.](/images/guides/low-competition-keyword-research/1-four-free-places-to-find-phrases.webp "Put everything in a spreadsheet and don't filter yet.")
+
 **Google autocomplete.** Type the seed and note the suggestions, then add a letter or a question word ("how", "why", "can", "without", "for") and note those too. Google says its [autocomplete predictions reflect real searches](https://support.google.com/websearch/answer/7368877?hl=en), and that they're also shaped by your language, location and past searches. Use a private window so your own history doesn't skew the list.
 
 **People Also Ask.** Search the seed and expand the question boxes. Each one you open loads more. These are often good article topics or section headings as written.
@@ -484,6 +504,8 @@ Also check how much of the answer appears on the results page itself. If Google 
 
 Every volume figure is an estimate, including Google's. Keyword Planner describes its own monthly search numbers as estimates, and third-party tools model theirs from their own data, which is why two tools often disagree about the same phrase.
 
+![Comparison of what search volume numbers are good for, such as rough comparisons, against what they can't tell you, such as exact traffic.](/images/guides/low-competition-keyword-research/2-what-search-volume-tells-you.webp "Use volume to compare queries roughly, more versus less, and don't plan around the exact figure.")
+
 Use volume to compare queries roughly, more versus less, and don't plan around the exact figure. Long, specific queries frequently show as zero or "no data" in tools and still bring visitors. Appearing in autocomplete or People Also Ask is decent evidence that people do search for something. The opposite risk is real as well: a phrase you invented that shows up nowhere in Google's suggestions may have nobody searching for it.
 
 There's no minimum volume that makes a query worth writing about. A handful of visitors a month to one page isn't much, but thirty related pages on one subject add up, and covering a subject thoroughly is how [smaller sites build topical authority](/guide/topical-authority-topic-clusters) over time.
@@ -497,6 +519,8 @@ Close variations belong in the same article. If two phrasings return nearly the 
 ## A worked example
 
 This is an illustration of the process. The phrases below are examples I've written to show the steps, and I haven't measured their volume or rankings. Yours will come from what Google shows you.
+
+![Worked example narrowing indoor herb garden through autocomplete, People Also Ask and forums to the query why is my basil dying under a grow light.](/images/guides/low-competition-keyword-research/3-from-broad-topic-to-one-query.webp "The result answers one question for one type of reader, which a new site can realistically compete for.")
 
 1. **Seed topic:** indoor herb garden. Far too broad for a new site; the results are retailers and large publishers.
 2. **Autocomplete:** adding words surfaces narrower versions such as "indoor herb garden without sunlight" and "indoor herb garden for beginners".
@@ -574,6 +598,8 @@ None of this bans templates or databases. Plenty of well-known sites are built t
 | Where the content comes from | A dataset you can verify | Boilerplate, spun or generated text |
 | Who it serves | Someone searching that exact thing | Nobody; it exists to rank |
 
+![Decision test: delete the place or product name from two programmatic pages; if you can't tell them apart, it's one page published many times.](/images/guides/programmatic-seo-guide-for-beginners/1-the-name-swap-test.webp "Second test: would the page still be worth having if search engines didn't exist?")
+
 A quick test I'd use: delete the place or product name from two of your pages and compare them. If you can't tell which is which, you have one page published many times.
 
 A second test: would the page still be worth having if search engines didn't exist? A page comparing two specific tools on price, features and limits passes. A page titled "best plumber in [city]" with no information about plumbers in that city doesn't.
@@ -604,6 +630,8 @@ Before going further, pull ten rows at random and ask whether each one could sup
 
 Put the unique information first: the comparison table, the local details, the specific numbers. Keep shared boilerplate short and push it down the page.
 
+![Checklist for a programmatic page template: unique data first, short boilerplate, conditional sections, a notes field, unique titles and internal links.](/images/guides/programmatic-seo-guide-for-beginners/2-a-template-that-adapts-to-its-data.webp "A page that adapts to its data reads like it was made for that entry.")
+
 Build in conditional logic. If a row has no pricing data, drop the pricing section for that page instead of printing a vague sentence. If an entry has something unusual about it, give the template a field for a short written note. A page that adapts to its data reads like it was made for that entry.
 
 Each page also needs its own title, meta description and heading built from the data, plus sensible links to related entries and back to a browsable index page. Google's doorway examples specifically mention similar pages that sit outside a clear, browsable hierarchy, so [a deliberate internal linking structure](/guide/internal-linking-strategy-guide) is part of staying on the right side of the policy as well as helping readers.
@@ -629,6 +657,8 @@ For the pages that did get indexed, check the Performance report for impressions
 ### 7. Prune what doesn't earn its place
 
 If the batch holds up, expand in stages and keep checking. For pages that stay unindexed or never get visits, improve the data, merge them into a stronger page, add a noindex tag, or delete them. A smaller set of useful pages is safer than a large set of marginal ones, because Google's spam policies talk about consequences for sites, and a pile of thin pages puts more than those pages at risk.
+
+![Four options for programmatic pages that stay unindexed or get no visits: improve the data, merge into a stronger page, add noindex, or delete.](/images/guides/programmatic-seo-guide-for-beginners/3-four-fixes-for-pages-that-dont-earn.webp "A smaller set of useful pages is safer than a large set of marginal ones.")
 
 Plan for upkeep too. Prices change, businesses close, products get discontinued. One wrong value in the dataset is wrong on every page that uses it, so schedule a regular review of a sample of pages against their sources, the same way you'd run [a periodic audit of the rest of your site](/guide/diy-seo-audit-1-hour-guide).
 
@@ -695,6 +725,8 @@ For a small content site the useful work is short: Article markup on posts, brea
 
 A search engine can read your text, but it has to guess what a given number or name means. Structured data removes the guess. You use the shared vocabulary from schema.org, usually written as JSON-LD, to state it outright.
 
+![Comparison of what schema markup can do, such as label page content and make it eligible for rich results, and what it can't, such as raise rankings.](/images/guides/schema-markup-rich-snippets-guide/1-what-schema-markup-does.webp "Valid markup makes a page a candidate. Google still decides what to show.")
+
 In return, Google may use that information in the listing: a breadcrumb trail in place of a raw URL, a correct date and author on an article, price and availability on a product.
 
 What it can't do:
@@ -729,6 +761,8 @@ A lot of older tutorials still tell you to add FAQPage markup for an expandable 
 ## The rules on star ratings
 
 This is where most bad advice lives, so here is what Google's [review snippet documentation](https://developers.google.com/search/docs/appearance/structured-data/review-snippet) says.
+
+![Checklist of Google's star rating rules: eligible content types only, no self-serving reviews, real visible user ratings, and no fake reviews.](/images/guides/schema-markup-rich-snippets-guide/2-before-you-add-rating-markup.webp "If your site has no working review system, leave rating markup alone.")
 
 Stars are only available for certain kinds of things, including products, recipes, books, movies, courses, events, software, and local businesses. A blog post isn't on that list. Putting rating markup on an ordinary article won't produce stars.
 
@@ -776,6 +810,8 @@ Before you add anything, check what your site already outputs. Two plugins both 
 2. Fix errors first. A missing required property makes the item ineligible. Warnings are for recommended properties and are worth fixing where the information exists.
 3. After publishing, run the page through URL Inspection in Search Console to confirm Google found the structured data.
 4. Check Search Console's rich result reports over the following weeks. They show valid and invalid items across the site for the types Google has detected.
+
+![Four steps to test schema: run the Rich Results Test, fix errors before warnings, use URL Inspection after publishing, then watch rich result reports.](/images/guides/schema-markup-rich-snippets-guide/3-testing-your-markup.webp "A passing test means the markup is valid, not that a rich result will appear.")
 
 Two things trip people up. The test only tells you the markup is valid, not that a rich result will appear. And Google can't read markup on a page it can't crawl, so make sure the page isn't blocked by robots.txt or set to noindex.
 
@@ -842,6 +878,8 @@ So a fast page with a thin answer won't outrank a slower page with a better one.
 
 Two free tools cover it.
 
+![Comparison of PageSpeed Insights field data from real Chrome users over 28 days with lab data from one simulated page load.](/images/guides/core-web-vitals-optimization-guide/1-field-data-vs-lab-data.webp "When the two disagree, trust the field data. Use the lab test to find causes.")
+
 **PageSpeed Insights** (pagespeed.web.dev). Paste in a URL and you get two different kinds of result on one page, which is where most confusion starts:
 
 - **Field data**, at the top. This comes from real Chrome users over the previous 28 days, and it's what the Core Web Vitals assessment is based on.
@@ -868,6 +906,8 @@ Test a typical article page as well as your homepage. Articles are where search 
 ## Fix images first
 
 Images are the biggest payoff on most blogs, because the LCP element is so often the featured image at the top of the post. Five habits cover it:
+
+![Checklist of image habits: resize before upload, use WebP or AVIF, set width and height, lazy-load lower images, never lazy-load the main one.](/images/guides/core-web-vitals-optimization-guide/2-five-image-habits-for-faster-pages.webp "The LCP element is often the featured image at the top of the post.")
 
 1. **Resize before you upload.** A photo straight from a phone or a stock site can be 4,000 pixels wide. Your content column is probably under 800. Export at roughly the largest size it will display (up to double for sharp screens).
 2. **Use a modern format.** WebP or AVIF files are much smaller than the JPEG or PNG equivalent at similar quality. Many platforms and image plugins convert on upload.
@@ -898,6 +938,8 @@ Ads are a real trade-off: they earn money and they're heavy. More ad units usual
 ## Stop the page jumping around
 
 Layout shift almost always comes from something arriving late into a space nobody saved for it.
+
+![Four ways to prevent layout shift: set image dimensions, reserve ad slots, size embed containers, and make banners overlay the page.](/images/guides/core-web-vitals-optimization-guide/3-save-space-for-what-arrives-late.webp "Layout shift almost always comes from something arriving into a space nobody saved for it.")
 
 - **Images:** width and height, as above.
 - **Ads:** reserve a slot with a fixed minimum height, so the text doesn't get pushed down when the ad fills in. Ad networks and ad plugins usually have a setting for this. Avoid ads that insert themselves above content the reader is already looking at.
@@ -989,6 +1031,8 @@ The times are rough. If one step runs over, write down where you stopped and mov
 
 Type site:yourdomain.com into Google and scroll through a few pages of results.
 
+![Checklist of things to look for in a site: search, from tag pages and staging copies to foreign-language spam and duplicate or truncated titles.](/images/guides/diy-seo-audit-1-hour-guide/1-what-to-spot-in-a-site-search.webp "Note each kind of problem once. The Page indexing report gives you the real numbers next.")
+
 Look for things that shouldn't be public. Tag and archive pages, internal search results, test posts, a staging copy of the site, URLs with tracking parameters on the end, or pages in a language you never wrote (a common sign of a hacked site). Note each kind once, without listing every URL.
 
 Then read your titles and descriptions the way a searcher would. Truncated titles, the same title on several pages, and results that show only your site name are all worth a line in the note.
@@ -1021,6 +1065,8 @@ While you're in this part of the menu, open **Sitemaps** and confirm your sitema
 ## Minutes 20–30: the Performance report
 
 Open the Performance report. By default it shows clicks and impressions for the last three months. Tick **Average CTR** and **Average position** above the chart so all four metrics appear.
+
+![Three Performance report checks: compare periods to find pages losing clicks, find near-miss queries, and spot two URLs competing for one search.](/images/guides/diy-seo-audit-1-hour-guide/2-three-checks-in-the-performance-report.webp "Near misses already have Google's attention, so improving them usually pays back faster than new posts.")
 
 First, find what's slipping. Click the date filter, choose the Compare tab, and compare the last three months with the previous period. Go to the **Pages** tab and sort by clicks difference. The pages at the top of the losses are your candidates for an update. A seasonal topic will show a drop that isn't a fault, so check the 16-month view before blaming the page.
 
@@ -1058,6 +1104,8 @@ Five pages is a sample. If you want every URL checked for broken links and dupli
 ## Minutes 50–60: turn the findings into a fix list
 
 This is the step that makes the hour worth it. Go through your note and move every item under one of the three headings, using one test: does this stop a page I care about from being indexed, found or used?
+
+![Decision for each audit finding: if it stops a page being indexed, found or used, fix it this week; if it only helps, schedule it; otherwise ignore it.](/images/guides/diy-seo-audit-1-hour-guide/3-sorting-every-finding.webp "Keep the fix-this-week list to five items. Anything beyond that goes under Schedule.")
 
 **Fix this week** if the answer is yes. Typical examples:
 
@@ -1142,6 +1190,8 @@ Then verify it. Verification is the first tip on Google's list. Google picks the
 
 Google's advice here is plain: keep your business information complete and up to date so it can match you to the right searches. In practice, these are the fields that matter:
 
+![Checklist of Google Business Profile fields: real business name, specific primary category, direct phone, regular and holiday hours, details and real photos.](/images/guides/local-seo-map-pack-mastery-guide/1-business-profile-fields-to-get-right.webp "Complete, accurate information is what lets Google match your profile to the right searches.")
+
 - **Name.** Use your real-world business name, the one on your sign and your website. Adding keywords or a city ("Smith Plumbing Best Emergency Plumber Austin") breaks Google's [guidelines for representing your business](https://support.google.com/business/answer/3038177?hl=en) and puts the profile at risk of suspension.
 - **Primary category.** This is the field I'd spend the most time on, because it tells Google what you are. The guidelines say to pick the fewest categories that describe your core business, and to choose ones that complete the sentence "This business IS a", as opposed to "this business HAS a". Be specific: "Family law attorney" beats "Lawyer" if that's what you do.
 - **Address or service area.** Covered in the next section.
@@ -1153,6 +1203,8 @@ Google's advice here is plain: keep your business information complete and up to
 ## Service-area businesses hide their address
 
 If you travel to customers and don't serve them at your own address (a mobile mechanic, a house cleaner, a plumber working from home), Google treats you as a service-area business. You remove the address from the profile and list the areas you cover instead.
+
+![Decision chart: businesses serving customers at their address show it, those that travel hide it and list service areas, hybrids show both.](/images/guides/local-seo-map-pack-mastery-guide/2-should-your-profile-show-an-address.webp "P.O. boxes and virtual offices you don't actually work from aren't acceptable addresses either way.")
 
 Google's [service-area rules](https://support.google.com/business/answer/9157481?hl=en) allow up to 20 service areas, set by city or postal code, and the total area shouldn't stretch more than about two hours' drive from where you're based. A business that does both, like a bakery that also delivers, is a hybrid and can show its address along with a service area.
 
@@ -1185,6 +1237,8 @@ Then reply. Responding to reviews is on Google's tips list. Thank people briefly
 ## What to fix on your own website
 
 Your site backs up the profile. Three things are worth doing.
+
+![Four cards: a real location or service page, LocalBusiness structured data, page speed and basic SEO, and an optional embedded map.](/images/guides/local-seo-map-pack-mastery-guide/3-website-work-that-backs-up-the-profile.webp "Your site confirms the same details as your profile. It plays a supporting role, not the main one.")
 
 **Build a real location or service page.** It should state the business name, address or service area, phone and hours in plain text, describe what you do there, and answer the questions local customers ask (parking, areas covered, call-out fees). If you serve several towns, only make separate pages when you have something different to say about each one. Pages that swap the city name and nothing else are thin content.
 
@@ -1269,6 +1323,8 @@ For a blog adding one or two languages, I'd use subdirectories. It's one site, o
 
 Hreflang tells Google that a set of URLs are localized versions of the same content, so it can show a searcher the version that matches their language or region. That's all it does. Google's page on [telling it about localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions) describes it as a way to choose between your versions and says nothing about ranking any of them higher. A Spanish page still has to earn its place in Spanish results.
 
+![Checklist of hreflang rules: language code first, every version lists all versions, links go both ways, full URLs and an x-default fallback.](/images/guides/international-seo-hreflang-guide/1-the-hreflang-rules-in-one-place.webp "Hreflang helps Google pick between your versions. It doesn't rank any of them higher.")
+
 Google may find your alternate versions without it, but it says explicit annotation is usually best. The rules are short:
 
 - **Language code first.** Use an ISO 639-1 language code, such as \`es\` or \`de\`. You can add an ISO 3166-1 Alpha 2 region code after a hyphen, as in \`es-MX\`. Language on its own is valid. Region on its own isn't.
@@ -1300,6 +1356,8 @@ Google says the three are equivalent from its side, so choose whichever is easie
 
 **The \`lang\` attribute doesn't set your page's language for Google.** Google states that it uses neither hreflang nor the HTML \`lang\` attribute to detect language. It reads the visible content. So keep each page in one language, navigation included, and don't put translations side by side on the same URL. Still set \`lang\` correctly, since browsers and screen readers rely on it.
 
+![Four cards: the lang attribute doesn't set language for Google, avoid automatic redirects, add visible language links, and the hreflang report is gone.](/images/guides/international-seo-hreflang-guide/2-what-google-ignores-or-advises-against.webp "Google reads the visible content to decide a page's language.")
+
 **Don't redirect visitors automatically by IP address or browser language.** Google's guidance is to avoid it, because those redirects can stop both users and search engines from seeing all your versions. Googlebot crawls mostly from US addresses and doesn't send an \`Accept-Language\` header. A site that pushes US visitors to the English page may never show Google its other versions. Put a visible link to the other languages on every page and let the reader choose.
 
 **Search Console no longer has a hreflang report.** Google deprecated the International Targeting report, although hreflang itself is still supported. Older tutorials still send you there. To check your tags now, view the source of each version and confirm the sets match, or run a crawler that validates hreflang. It's worth adding to [a regular self-audit of your site](/guide/diy-seo-audit-1-hour-guide), since a template change can drop the tags without any warning.
@@ -1315,6 +1373,8 @@ A safer approach is to translate a small number of your best pages and have some
 ## Common hreflang mistakes
 
 **Missing return links.** The English page points to the Spanish one, but the Spanish page doesn't point back, often because it was added later and the older pages were never updated. Google ignores the pair.
+
+![Table of four hreflang mistakes and their fixes: missing return links, invalid codes like en-UK, cross-language canonicals and relative URLs.](/images/guides/international-seo-hreflang-guide/3-common-hreflang-mistakes-and-fixes.webp "A template change can drop the tags without warning, so recheck them in regular audits.")
 
 **Invalid codes.** \`en-UK\` is the classic one. The ISO code for the United Kingdom is \`GB\`, so the correct value is \`en-GB\`. Google also calls out \`EU\` and \`UN\`, which aren't countries. A region code alone fails too: \`be\` is read as the Belarusian language, not as Belgium.
 

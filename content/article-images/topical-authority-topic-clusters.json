@@ -1,0 +1,97 @@
+{
+  "slug": "topical-authority-topic-clusters",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How narrow should the topic be?",
+      "type": "decision",
+      "title": "Is your topic the right size?",
+      "alt": "Decision chart on topic scope: under about eight article-worthy questions is too thin, more than six months of writing is too broad.",
+      "caption": "A rule of thumb for scoping a project. Google publishes no threshold.",
+      "data": {
+        "question": "How many questions deserve their own article?",
+        "branches": [
+          {
+            "answer": "Under about eight",
+            "result": "The topic may be too thin to build a site section around.",
+            "tone": "bad"
+          },
+          {
+            "answer": "A manageable list",
+            "result": "Good scope. Check you know the subject, then map the cluster.",
+            "tone": "good"
+          },
+          {
+            "answer": "Too many to write",
+            "result": "More than you could write well in six months. Cut the topic down.",
+            "tone": "bad"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Mapping the pillar page and supporting articles",
+      "type": "compare",
+      "title": "Pillar page vs supporting article",
+      "alt": "Comparison of a pillar page, an overview linking to every subtopic, and a supporting article, which answers one question fully.",
+      "caption": "Write the map before the articles so gaps and overlaps show up early.",
+      "data": {
+        "columns": [
+          {
+            "label": "Pillar page",
+            "tone": "neutral",
+            "points": [
+              "Overview of the whole topic",
+              "Short answer on each subtopic",
+              "Links out to every article",
+              "The page a newcomer starts on"
+            ]
+          },
+          {
+            "label": "Supporting article",
+            "tone": "neutral",
+            "points": [
+              "Answers one question fully",
+              "Links back to the pillar",
+              "Merge two that answer one search",
+              "Split one that answers three"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How to tell from Search Console whether it's working",
+      "type": "steps",
+      "title": "Check a cluster in Search Console",
+      "alt": "Five steps to check a topic cluster in Search Console: filter the pages, compare periods, watch impressions, read queries, and review each page.",
+      "caption": "Read the trend rather than exact totals, and be patient: some changes take several months.",
+      "data": {
+        "items": [
+          {
+            "title": "Filter to the cluster",
+            "text": "Use \"URLs containing\" for a shared path, or a custom regex listing the slugs."
+          },
+          {
+            "title": "Compare periods",
+            "text": "The last three months against the three months before."
+          },
+          {
+            "title": "Impressions before clicks",
+            "text": "New pages usually get shown for more queries before anyone clicks."
+          },
+          {
+            "title": "Read the Queries tab",
+            "text": "Look for more distinct, specific queries and improving average position."
+          },
+          {
+            "title": "Check each page",
+            "text": "Impressions for a question it doesn't answer well show what to add next."
+          }
+        ]
+      }
+    }
+  ]
+}

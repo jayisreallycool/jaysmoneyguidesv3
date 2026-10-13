@@ -1,0 +1,54 @@
+{
+  "slug": "how-to-start-a-paid-newsletter",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What goes behind the paywall",
+      "type": "cards",
+      "title": "What a paid tier can add",
+      "alt": "Four kinds of paid newsletter content: depth, specifics, access to Q&A or community, and the archive of older issues.",
+      "caption": "The paid tier should add something a reader can describe, while the free tier stays good.",
+      "data": {
+        "items": [
+          {"title": "Depth", "text": "The full analysis, data, templates or step-by-step version."},
+          {"title": "Specifics", "text": "Exact numbers, tools or examples too detailed for everyone."},
+          {"title": "Access", "text": "A Q&A thread, submitted questions or a small community."},
+          {"title": "The archive", "text": "Recent issues free, older ones paid."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Which platform, and what each one takes",
+      "type": "compare",
+      "title": "Percentage cut vs flat monthly fee",
+      "alt": "Comparison of newsletter platforms that take a percentage of paid subscriptions with those that charge a flat monthly fee.",
+      "caption": "A percentage is cheaper when you're small; a flat fee usually wins once paid revenue grows.",
+      "note": "Payment processor fees apply on top either way",
+      "data": {
+        "columns": [
+          {"label": "Percentage cut", "tone": "neutral", "points": ["Free until you earn", "Takes a share of paid subscriptions", "Cheaper when you're small"]},
+          {"label": "Flat monthly fee", "tone": "neutral", "points": ["You pay the plan fee each month", "Takes nothing from subscriptions", "Usually wins as paid revenue grows"]}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Churn: the number that decides whether it lasts",
+      "type": "flow",
+      "title": "Why churn sets your growth floor",
+      "alt": "Example churn flow: 60 paid subscribers, 5% cancel each month, 3 people leave, so 3 new paid subscribers are needed just to stand still.",
+      "caption": "You have to replace cancellations before your paid list can grow at all.",
+      "note": "Made-up numbers from the article's worked example",
+      "data": {
+        "items": [
+          {"label": "60 paid subscribers", "text": "The starting point from the worked example"},
+          {"label": "5% cancel each month", "text": "Cards expire, budgets tighten, people lose interest"},
+          {"label": "3 people leave", "text": "Gone before you count any new sign-ups"},
+          {"label": "3 new paid needed", "text": "Just to stand still each month"}
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

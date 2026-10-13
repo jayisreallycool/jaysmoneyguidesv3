@@ -1,0 +1,83 @@
+{
+  "slug": "free-tech-stack-one-person-business",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Hosting: read the commercial-use terms first",
+      "type": "decision",
+      "title": "Picking a free host",
+      "alt": "Decision chart: if your site earns money through ads, payments or affiliate links, skip Vercel's free Hobby plan and look at Cloudflare Pages.",
+      "caption": "The commercial-use terms matter more than the bandwidth numbers when you choose a free host.",
+      "note": "Read each host's current terms before you rely on a free plan",
+      "data": {
+        "question": "Does your site earn money through ads, payments or affiliate links?",
+        "branches": [
+          {
+            "answer": "Yes",
+            "result": "Skip Vercel's free Hobby plan, which is for non-commercial use. Look at Cloudflare Pages.",
+            "tone": "bad"
+          },
+          {
+            "answer": "No",
+            "result": "Vercel's Hobby plan fits non-commercial personal use. Asking for donations is allowed.",
+            "tone": "good"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Email at your own domain",
+      "type": "compare",
+      "title": "Two free ways to use your domain",
+      "alt": "Comparison of Cloudflare Email Routing, which forwards domain mail to an existing inbox, and Zoho Mail's free plan, a web-only mailbox.",
+      "caption": "Free domain email is where free options are weakest. Google Workspace is the paid, full-mailbox option.",
+      "data": {
+        "columns": [
+          {
+            "label": "Cloudflare routing",
+            "tone": "neutral",
+            "points": [
+              "Free",
+              "Forwards domain mail to your inbox",
+              "No mailbox of its own"
+            ]
+          },
+          {
+            "label": "Zoho Mail free",
+            "tone": "neutral",
+            "points": [
+              "Up to 5 users, 5 GB each, one domain",
+              "Web access only, no IMAP or POP",
+              "Only in select data centers"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What isn't free",
+      "type": "cards",
+      "title": "The costs you can't avoid",
+      "alt": "Three cards on what a free stack still costs: a domain renewed every year, a fee on every payment, and your own time.",
+      "caption": "Before the first sale, the only bill should be the domain.",
+      "data": {
+        "items": [
+          {
+            "title": "The domain",
+            "text": "Paid every year; check the renewal price, not just the first year"
+          },
+          {
+            "title": "Payments",
+            "text": "No monthly fee with Stripe, but a fee on every successful sale"
+          },
+          {
+            "title": "Your time",
+            "text": "Separate free tools take longer to set up and maintain"
+          }
+        ]
+      }
+    }
+  ]
+}

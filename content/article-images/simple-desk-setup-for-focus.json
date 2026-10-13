@@ -1,0 +1,89 @@
+{
+  "slug": "simple-desk-setup-for-focus",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Start with posture, because it's free",
+      "type": "checklist",
+      "title": "Free posture check before you buy",
+      "alt": "Posture checklist for screen, elbows, wrists, feet and back, based on OSHA and Mayo Clinic guidance on a neutral sitting position.",
+      "caption": "Whatever you can't achieve with your current furniture becomes your shopping list.",
+      "data": {
+        "items": [
+          "Screen top at or slightly below eye level, about an arm's length away",
+          "Elbows close to your body, bent between 90 and 120 degrees",
+          "Wrists straight and in line with your forearms",
+          "Feet flat on the floor, or on a footrest",
+          "Lower back supported, upright or leaning back slightly"
+        ]
+      },
+      "note": "No posture is good for hours on end. Adjust, stretch and stand up regularly"
+    },
+    {
+      "slot": "middle",
+      "after": "Screen height",
+      "type": "compare",
+      "title": "Two ways to raise a laptop screen",
+      "alt": "Comparison of two screen-height fixes: a laptop stand with an external keyboard and mouse, or an external monitor on a stand or arm.",
+      "caption": "Raising the laptop without a separate keyboard trades a neck problem for a wrist problem.",
+      "data": {
+        "columns": [
+          {
+            "label": "Laptop stand",
+            "tone": "neutral",
+            "points": [
+              "The cheaper fix",
+              "A stack of books works too",
+              "Needs an external keyboard and mouse"
+            ]
+          },
+          {
+            "label": "External monitor",
+            "tone": "neutral",
+            "points": [
+              "Sits on a stand or arm",
+              "Top edge at or just below eye line",
+              "The pricier of the two fixes"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What can wait",
+      "type": "table",
+      "title": "Things that can wait",
+      "alt": "Table of desk purchases that can wait, including a standing desk, second monitor, accessories, new computer and headphones, with when each helps.",
+      "caption": "Fine things to own, but not before the chair, screen, keyboard and lighting are sorted.",
+      "data": {
+        "headers": [
+          "Item",
+          "When it's worth it"
+        ],
+        "rows": [
+          [
+            "Standing desk",
+            "Later, if you find you want one"
+          ],
+          [
+            "Second monitor",
+            "Comparing documents or watching data"
+          ],
+          [
+            "Cable trays and desk mats",
+            "Nice to look at, no comfort effect"
+          ],
+          [
+            "New computer",
+            "When yours can't run your software"
+          ],
+          [
+            "Noise-cancelling headphones",
+            "A loud home or shared office"
+          ]
+        ]
+      }
+    }
+  ]
+}

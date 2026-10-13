@@ -1,0 +1,68 @@
+{
+  "slug": "permissionless-leverage-content-and-code",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Where the idea comes from",
+      "type": "compare",
+      "title": "Permissioned vs permissionless leverage",
+      "alt": "Comparison of Naval Ravikant's permissioned leverage, capital and labor, with permissionless leverage, code and media you can make without asking.",
+      "caption": "Only the making is permissionless. Getting found still runs through platforms.",
+      "data": {
+        "columns": [
+          {
+            "label": "Permissioned",
+            "tone": "neutral",
+            "points": [
+              "Capital and labor",
+              "Someone has to hand you the money",
+              "Or agree to work for you"
+            ]
+          },
+          {
+            "label": "Permissionless",
+            "tone": "neutral",
+            "points": [
+              "Code and media",
+              "No marginal cost of replication",
+              "You can make it without asking anyone"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What leverage costs",
+      "type": "cards",
+      "title": "What leverage costs",
+      "alt": "Four cards on the costs of leveraged assets: you pay before you know, content decays, code decays, and every asset needs a review date.",
+      "caption": "Upkeep is still far less work than serving every reader or user by hand.",
+      "data": {
+        "items": [
+          { "title": "You pay first", "text": "An article can take months to rank, if at all; a tool can launch to nobody" },
+          { "title": "Content decays", "text": "Prices and details go stale, competitors publish better, results shift" },
+          { "title": "Code decays", "text": "Libraries update, security holes appear, platforms and APIs change rules" },
+          { "title": "Budget for upkeep", "text": "Put a review date on every asset the day you publish it" }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How to decide what to build first",
+      "type": "steps",
+      "title": "Choosing your first asset",
+      "alt": "Five steps to pick a first leveraged asset: list repeated questions, check demand, build the smallest version, give it a window, then review the numbers.",
+      "caption": "Most first assets won't earn much. The first one teaches you how long things take.",
+      "data": {
+        "items": [
+          { "title": "List repeated questions", "text": "Ones you've answered more than twice, for clients, in forums or for yourself" },
+          { "title": "Check others ask too", "text": "Keyword research for content; test the idea before building a tool" },
+          { "title": "Build the smallest version", "text": "One article before an ebook. A spreadsheet before an app" },
+          { "title": "Give it a fixed window", "text": "Put it where people already look and wait, say three months" },
+          { "title": "Review the numbers", "text": "Improve it, leave it or drop it, then set the next review date" }
+        ]
+      }
+    }
+  ]
+}

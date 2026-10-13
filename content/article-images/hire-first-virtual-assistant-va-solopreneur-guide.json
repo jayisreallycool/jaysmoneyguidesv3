@@ -1,0 +1,56 @@
+{
+  "slug": "hire-first-virtual-assistant-va-solopreneur-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "INTRO",
+      "type": "flow",
+      "title": "The order for a first VA hire",
+      "alt": "Five stages of hiring a first virtual assistant: pick a task, document it, post a specific job, run a paid trial, onboard with limited access.",
+      "caption": "Most of the effort sits in the first two stages, before you talk to anyone.",
+      "data": {
+        "items": [
+          {"label": "Pick the task", "text": "One specific, recurring task"},
+          {"label": "Document it", "text": "A screen recording plus a short written checklist"},
+          {"label": "Post a specific job", "text": "Name the task, the hours and the tools"},
+          {"label": "Run a paid trial", "text": "The same small task for two or three people"},
+          {"label": "Onboard the best one", "text": "With limited access to your accounts"}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Run a paid trial task",
+      "type": "steps",
+      "title": "How to run a paid trial task",
+      "alt": "Steps for a VA trial: shortlist two or three people, give the same one to two hour task, pay everyone, then review how they worked.",
+      "caption": "A small mistake with clear communication usually beats getting it right in silence.",
+      "data": {
+        "items": [
+          {"title": "Shortlist two or three people", "text": "Choose them from the people who answered your post."},
+          {"title": "Give everyone the same task", "text": "Take it from the real work and build it on your documentation. One to two hours is plenty."},
+          {"title": "Pay for every trial", "text": "Pay the agreed rate whether or not you hire them."},
+          {"title": "Review more than the result", "text": "Did they follow the document, ask when unclear and deliver when they said they would?"}
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Give access without handing over your accounts",
+      "type": "checklist",
+      "title": "Give access, not your identity",
+      "alt": "Checklist for sharing account access with a VA: no main email password, separate users, password manager sharing, no money access, a shared list.",
+      "caption": "Turn on two-factor authentication for your own accounts before you add anyone.",
+      "data": {
+        "items": [
+          "Never share your main email password; use delegation instead",
+          "Create a separate user with a limited role wherever the tool allows",
+          "Share other logins through a password manager",
+          "Keep banking, payments and ad billing out of scope at first",
+          "Keep a list of everything you've shared"
+        ]
+      }
+    }
+  ]
+}

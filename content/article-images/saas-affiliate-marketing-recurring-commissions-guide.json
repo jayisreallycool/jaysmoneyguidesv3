@@ -1,0 +1,53 @@
+{
+  "slug": "saas-affiliate-marketing-recurring-commissions-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How recurring commissions work",
+      "type": "cards",
+      "title": "Four deals sold as recurring",
+      "alt": "Four affiliate commission structures: lifetime recurring, time-limited recurring, hybrid rates and one-time bounty.",
+      "caption": "\"Recurring\" describes several different deals, so read which one the terms actually promise.",
+      "data": {
+        "items": [
+          {"title": "Lifetime recurring", "text": "Paid as long as the customer pays. Confirm the terms say so."},
+          {"title": "Time-limited recurring", "text": "Paid for a fixed period, then it ends."},
+          {"title": "Hybrid", "text": "A high rate for the first year, then a lower rate afterwards."},
+          {"title": "One-time bounty", "text": "A flat amount or a share of the first payment only."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What to check before you promote a program",
+      "type": "checklist",
+      "title": "Read the affiliate terms for these",
+      "alt": "Checklist of SaaS affiliate terms to check: commission type, attribution window, refunds, payout threshold, promotion rules, termination clauses.",
+      "caption": "The sales page leaves most of this out, so go to the affiliate terms themselves.",
+      "data": {
+        "items": [
+          "Commission type, duration and any drop after year one",
+          "Cookie or attribution window",
+          "What happens on upgrades, downgrades and refunds",
+          "Payout threshold and timing",
+          "Promotion rules, such as brand-name bidding",
+          "Whether existing referrals keep paying after changes"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Content that earns recurring commissions",
+      "type": "compare",
+      "title": "Which searches to write for",
+      "alt": "Comparison of broad definition searches, where readers rarely buy, with comparison and alternatives searches from people choosing a tool.",
+      "caption": "Target people choosing between options, since they're closer to signing up.",
+      "data": {
+        "columns": [
+          {"label": "Broad questions", "tone": "bad", "points": ["\"What is email marketing software\"", "Searchers rarely ready to buy", "Big publishers own the results"]},
+          {"label": "Choosing searches", "tone": "good", "points": ["\"Tool A vs Tool B\"", "\"Tool A alternatives\"", "\"Best X software for a specific use\""]}
+        ]
+      }
+    }
+  ]
+}

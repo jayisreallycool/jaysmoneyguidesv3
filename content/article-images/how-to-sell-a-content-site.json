@@ -1,0 +1,58 @@
+{
+  "slug": "how-to-sell-a-content-site",
+  "images": [
+    {
+      "slot": "top",
+      "after": "How a content site is valued",
+      "type": "flow",
+      "title": "How a sale price gets built",
+      "alt": "Flow from revenue, minus every running cost, to net profit over a set period, multiplied by a risk-based multiple to give the sale price.",
+      "caption": "The profit figure is arithmetic. The multiple is the buyer's judgment about risk.",
+      "note": "36 times monthly profit and 3 times annual profit are the same price.",
+      "data": {
+        "items": [
+          {"label": "Revenue", "text": "Everything the site earned over the period."},
+          {"label": "Minus every cost", "text": "Hosting, tools, writers, editors, software, paid links or ads."},
+          {"label": "Net profit", "text": "Usually the trailing 12 months, sometimes 6."},
+          {"label": "Times a multiple", "text": "Set by how likely the profit is to continue after you leave."},
+          {"label": "Sale price", "text": "Check whether a multiple is quoted on monthly or annual profit."}
+        ],
+        "loop": false
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Where to sell: marketplace, broker or private sale",
+      "type": "table",
+      "title": "Three ways to sell a site",
+      "alt": "Table comparing open marketplaces, brokers or curated marketplaces, and private sales by what you get and what it costs you.",
+      "caption": "For a first sale, I'd lean toward a broker or curated marketplace if the site qualifies.",
+      "data": {
+        "headers": ["Route", "What you get", "What it costs you"],
+        "rows": [
+          ["Open marketplace", "Reach and speed", "Listing and success fees; you vet"],
+          ["Broker or curated", "Vetting, pricing, qualified buyers", "Commission, often exclusivity"],
+          ["Private sale", "No commission", "Your own lawyer and escrow"]
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How the sale works, step by step",
+      "type": "steps",
+      "title": "From listing to handover",
+      "alt": "Six stages of a content site sale: prepare records, value and list, take offers, due diligence, signing with escrow, then transfer and payout.",
+      "caption": "Never hand over a domain against a promise to pay. Escrow exists for exactly this.",
+      "data": {
+        "items": [
+          {"title": "Prepare records", "text": "12 months of profit and loss, proof of earnings, analytics, asset list."},
+          {"title": "Get a valuation and list", "text": "Agree an asking price with the broker or marketplace."},
+          {"title": "Take questions and offers", "text": "Buyers usually sign an NDA; an offer or LOI sets price and timeline."},
+          {"title": "Go through due diligence", "text": "The buyer verifies earnings, traffic, content ownership and backlinks."},
+          {"title": "Sign and fund escrow", "text": "A lawyer reads the asset purchase agreement; money goes to escrow."},
+          {"title": "Transfer, get paid, support", "text": "Hand over assets, escrow pays you, then help for an agreed period."}
+        ]
+      }
+    }
+  ]
+}

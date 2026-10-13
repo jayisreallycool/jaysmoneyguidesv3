@@ -243,8 +243,11 @@ input:focus-visible,
 /* Article images with bottom captions (alt text shown below) */
 .content-figure { margin: 2rem 0; }
 .content-figure .content-img {
-  width: 100%; height: auto; border-radius: 0.75rem;
+  display: block; width: 100%; height: auto; border-radius: 0.75rem;
   border: 1px solid #1e293b;
+  /* explainer graphics are drawn ~540px wide: full width on phones, and on
+     big screens no wider than that so a tall one doesn't fill the window */
+  max-width: 35rem; margin-inline: auto;
 }
 .content-figure .img-caption {
   margin-top: 0.5rem; text-align: center;

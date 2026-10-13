@@ -1,0 +1,89 @@
+{
+  "slug": "productized-services-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Pick the job you've already done many times",
+      "type": "decision",
+      "title": "Can this job be packaged?",
+      "alt": "Decision chart: if you can list the job's steps without saying it depends, check your hours; if not, keep it as custom work.",
+      "caption": "Your first offer is usually narrower than you expect, like a five-email welcome sequence instead of marketing help.",
+      "data": {
+        "question": "Can you write the steps as a numbered list without \"it depends\"?",
+        "branches": [
+          {
+            "answer": "Yes",
+            "result": "Compare hours: if the slowest took three times the fastest, one price will hurt",
+            "tone": "good"
+          },
+          {
+            "answer": "No",
+            "result": "Too variable to package. Keep it as custom work with a quote",
+            "tone": "bad"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "How to say no to out-of-scope requests",
+      "type": "cards",
+      "title": "Three answers to out-of-scope requests",
+      "alt": "Four cards: offer an add-on, quote a separate project, refer it on, and keep a list of priced add-ons for common requests.",
+      "caption": "Deciding your answers in advance means you aren't inventing them under pressure.",
+      "data": {
+        "items": [
+          {
+            "title": "It's an add-on",
+            "text": "Name a price for the extra and ask if they want it added"
+          },
+          {
+            "title": "It's a separate project",
+            "text": "Offer a custom quote once the current package is finished"
+          },
+          {
+            "title": "It's not something you do",
+            "text": "Say so, and point them to the kind of person who does"
+          },
+          {
+            "title": "Keep a priced add-on list",
+            "text": "Covers the requests you hear most and makes yes or no easy"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "A simple delivery process",
+      "type": "flow",
+      "title": "Delivering the same way every time",
+      "alt": "Flow of a productized service delivery: payment and agreement, intake form, confirmed date, work from your list, then check, deliver and close.",
+      "caption": "Writing down the work step in detail is what later lets you speed up or hand routine parts to an assistant.",
+      "data": {
+        "loop": false,
+        "items": [
+          {
+            "label": "Pay and accept",
+            "text": "Client pays and accepts the agreement"
+          },
+          {
+            "label": "Intake form",
+            "text": "Client sends access, files and goals"
+          },
+          {
+            "label": "Confirm and date",
+            "text": "You confirm you have it all and give the delivery date"
+          },
+          {
+            "label": "Do the work",
+            "text": "Follow your own step-by-step list"
+          },
+          {
+            "label": "Check, deliver, close",
+            "text": "Check against \"what you get\", handle the revision, ask for feedback"
+          }
+        ]
+      }
+    }
+  ]
+}

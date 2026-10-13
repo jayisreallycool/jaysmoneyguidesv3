@@ -6,6 +6,7 @@
  *  - never in the first ~150 or last ~150 words
  *  - at least ~250 words of article between any two inserts, so an ad is
  *    never stacked on the referral banner or on another ad
+ *  - never directly under an in-article image (image, then ad, reads as clutter)
  *  - the number of ads follows the article's length: one in a short guide,
  *    two in a medium one, three in a long one — spread top, middle, bottom
  */
@@ -18,10 +19,11 @@ export function layoutArticle(markdown: string, withBanner: boolean): Piece[] {
   const blocks = markdown.split(/\r?\n\r?\n/);
   const words: number[] = [];
   let total = 0;
-  for (const b of blocks) { words.push(total); total += b.split(/\s+/).filter(Boolean).length; }
+  const isImage = (b: string) => /^\[?!\[/.test(b.trim());
+  for (const b of blocks) { words.push(total); if (!isImage(b)) total += b.split(/\s+/).filter(Boolean).length; }
 
   const candidates = blocks
-    .map((b, i) => (i > 0 && /^##\s/.test(b.trim()) ? i : -1))
+    .map((b, i) => (i > 0 && /^##\s/.test(b.trim()) && !isImage(blocks[i - 1]) ? i : -1))
     .filter((i) => i > 0 && words[i] >= MIN_EDGE && total - words[i] >= MIN_EDGE);
 
   const chosen: { at: number; kind: 'ad' | 'banner' }[] = [];

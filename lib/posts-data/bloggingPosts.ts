@@ -53,6 +53,8 @@ Narrow beats broad for a new site. You can widen later, and a tight topic tells 
 
 There are four realistic options. The differences that matter are who handles the technical upkeep and how freely you can earn money.
 
+![Decision chart matching blog goals to platforms: self-hosted WordPress for ads and affiliates, Ghost or Substack for paid readers, a free option to test.](/images/guides/how-to-start-a-blog-that-makes-money/1-which-blog-platform-fits-your-goal.webp "Pick by who handles the upkeep and how freely you can earn, not by features.")
+
 | Platform | Best for | Main trade-off |
 | --- | --- | --- |
 | Self-hosted WordPress | Blogs meant to earn from ads and affiliate links | You handle updates, backups and security |
@@ -90,6 +92,8 @@ A new blog doesn't need more than a basic plan. The main cost for the first year
 ## Step 4: Set up the few pages and settings that matter
 
 You can lose weeks to theme tweaking. This is the list worth finishing before your first article:
+
+![Checklist of blog setup essentials: About and Contact pages, privacy policy, affiliate disclosure, HTTPS, readable theme, Search Console, email signup.](/images/guides/how-to-start-a-blog-that-makes-money/2-finish-these-before-your-first-article.webp "Skip logo design, custom fonts and plugin shopping for now.")
 
 - An About page that says who writes the blog and why a reader should trust it.
 - A Contact page or a visible email address.
@@ -130,6 +134,8 @@ Don't judge the blog in month two against sites that have been publishing for fi
 ## How blogs earn money
 
 There are four main ways, and most blogs that last use more than one.
+
+![Four blog income methods: display ads, affiliate links, your own products such as ebooks or courses, and services like freelancing or coaching.](/images/guides/how-to-start-a-blog-that-makes-money/3-four-ways-a-blog-earns.webp "Most blogs that last use more than one, and results vary widely.")
 
 **Display ads** pay per visit, and the amount per visitor is small, so they only add up with a lot of traffic. Google AdSense doesn't list a minimum traffic number in its [eligibility requirements](https://support.google.com/adsense/answer/9724), though it does require original content and policy compliance. Some other ad networks set their own traffic minimums.
 
@@ -186,6 +192,8 @@ Slow writing usually comes from doing three jobs at once: working out what to sa
 
 The fix is to do those jobs in order. Decide the one question the article answers, outline it, write the answer first, draft the rest without stopping to edit, then edit in separate passes. None of this takes talent, and it gets quicker each time you repeat it.
 
+![Five-stage writing process: decide the one question, outline from reader questions, write the answer first, draft without editing, edit in passes.](/images/guides/write-blog-posts-faster/1-one-job-at-a-time.webp "Doing these jobs in order stops each one from interrupting the other two.")
+
 ## 1. Decide the one question and who's asking
 
 Before you outline, write one sentence: "This article answers [question] for [reader]." For example: "This article answers 'how do I write an affiliate disclosure?' for a blogger who just joined their first program."
@@ -226,6 +234,8 @@ If a section won't come, skip it and write the next one. A stuck section usually
 
 One read-through that tries to catch everything catches very little. Give each pass a single job.
 
+![Three editing passes: cut warm-ups and repeats, check every fact and TK against its source, then read the draft aloud and proofread.](/images/guides/write-blog-posts-faster/2-three-edits-one-job-each.webp "One read-through that tries to catch everything catches very little.")
+
 1. **Cut.** Delete the warm-up before each point, anything said twice, and every sentence the reader wouldn't miss. Check each section against your step 1 sentence.
 2. **Check facts.** Go through the "facts to check" list and every TK. Open the source for each one. If you can't confirm a number, take it out.
 3. **Read it aloud.** You'll hear the sentences that run too long and the ones nobody would say in conversation. Fix those, then proofread.
@@ -249,6 +259,8 @@ Nothing was lost. The first version says the same thing with a run-up in front o
 ## Where AI drafting helps, and where it doesn't
 
 AI tools are useful for the mechanical parts: turning a list of reader questions into an outline, suggesting questions you missed, or producing a rough draft to react to. That can save real time in steps 2 and 4.
+
+![Comparison of where AI tools help with writing, such as outlines and rough drafts, and where they fall short, such as invented facts and padded prose.](/images/guides/write-blog-posts-faster/3-where-ai-drafting-fits.webp "An AI draft still needs all three editing passes, with extra care on the fact check.")
 
 They can't supply what you know. A model will state an invented price or rule as confidently as a real one, and its default prose is the padded "before" paragraph above. So an AI draft needs all three editing passes, with extra care on the second.
 
@@ -326,6 +338,8 @@ If you don't have a list at all, start there. A blog that ranks for a focused to
 
 Keep the free tier good. It's how new readers find you and decide whether you're worth paying, so thinning it out to push upgrades tends to cost you both audiences.
 
+![Four kinds of paid newsletter content: depth, specifics, access to Q&A or community, and the archive of older issues.](/images/guides/how-to-start-a-paid-newsletter/1-what-a-paid-tier-can-add.webp "The paid tier should add something a reader can describe, while the free tier stays good.")
+
 The paid tier should add something a reader can describe, not just "more". Things that usually hold up:
 
 - **Depth:** the full analysis, data, templates or step-by-step version of what the free issue summarises.
@@ -340,6 +354,8 @@ Mention the paid option at the end of free issues that show what you can do. An 
 ## Which platform, and what each one takes
 
 The main difference between platforms is how they charge. Some are free until you earn and then take a percentage. Others charge a monthly fee and take nothing from your subscriptions. A percentage is cheaper when you're small; a flat fee usually wins once paid revenue grows.
+
+![Comparison of newsletter platforms that take a percentage of paid subscriptions with those that charge a flat monthly fee.](/images/guides/how-to-start-a-paid-newsletter/2-percentage-cut-vs-flat-monthly-fee.webp "A percentage is cheaper when you're small; a flat fee usually wins once paid revenue grows.")
 
 These are the terms each platform published at the time of writing. Plans and fees change, so check the linked pages before you commit.
 
@@ -386,6 +402,8 @@ Notice which lever matters most. Doubling the price or the conversion rate is ha
 ## Churn: the number that decides whether it lasts
 
 Churn is the share of paying subscribers who cancel in a given period. Some is normal. Cards expire, budgets tighten, people lose interest.
+
+![Example churn flow: 60 paid subscribers, 5% cancel each month, 3 people leave, so 3 new paid subscribers are needed just to stand still.](/images/guides/how-to-start-a-paid-newsletter/3-why-churn-sets-your-growth-floor.webp "You have to replace cancellations before your paid list can grow at all.")
 
 It matters because you have to replace cancellations before you grow. Using the made-up example again: if 5% of 60 paid subscribers leave each month, that's 3 people, so you need 3 new paid subscribers a month just to stand still.
 
@@ -463,6 +481,8 @@ The short version: body text at 16px or larger, lines of roughly 45–75 charact
 
 **Text size.** There's no official minimum. WCAG, the web accessibility standard published by the W3C, doesn't set one. The 16px figure is convention: it's the default size in every major browser, and it's the floor most designers work from. Plenty of blogs use 17 or 18px for body text, and I'd pick 18px for anything long. If your theme sets body text at 14px, that's the first thing to change.
 
+![Table separating what WCAG sets for text size, line length, line height and tap targets from common design convention.](/images/guides/blog-layout-ux-reader-retention/1-which-numbers-come-from-a-standard.webp "Some values are published rules and some are habit. Knowing which is which tells you where you have room to adjust.")
+
 **Line length.** This one does have a published number. WCAG's Visual Presentation criterion (1.4.8) says a line should be no more than 80 characters wide. It's a Level AAA criterion, the strictest of WCAG's three tiers, so treat it as a sensible ceiling more than a requirement. Typographers go further and commonly recommend about 45–75 characters. That range is long-standing convention, and no standard sets it.
 
 On a phone the screen does this for you. The problem shows up on laptops and tablets, where a theme lets text run the full width of the window. The fix is a maximum width on the article column: around 65ch in CSS, or somewhere near 600–700px at an 18px font size depending on the typeface.
@@ -497,11 +517,15 @@ Short paragraphs help on a phone, where four sentences can fill the screen. Two 
 
 Text that moves while you're reading it is one of the most irritating layout faults, and it's usually caused by an image or an ad loading late and pushing everything down.
 
+![Four cards: the cause of layout shift, fixes for images and ad slots, and Google's Cumulative Layout Shift target of 0.1 or less.](/images/guides/blog-layout-ux-reader-retention/2-reserve-the-space-before-it-loads.webp "Text jumps when something loads late and pushes it down. Holding the gap in advance stops it.")
+
 The fix is to reserve the space in advance. Give every image width and height attributes (or a CSS aspect-ratio) so the browser holds the right-sized gap. For ad slots, set a minimum height on the container so the slot is already there when the ad arrives. Google measures this as Cumulative Layout Shift and treats a score of 0.1 or less as good. The [Core Web Vitals walkthrough](/guide/core-web-vitals-optimization-guide) explains how to find your score and what else moves it, and the [guide to blog images](/guide/free-blog-graphics-and-photography-guide) is useful if oversized images are part of the problem.
 
 ## Pop-ups and ads
 
 Google's documentation on [intrusive interstitials and dialogs](https://developers.google.com/search/docs/appearance/avoid-intrusive-interstitials) is direct about this: don't cover the whole page with an overlay, and don't redirect visitors to a separate page for sign-up or consent. It warns that intrusive dialogs can make content harder for Google to understand, which may lead to poor search performance. Its suggested alternative is a banner that takes up a small fraction of the screen. Interstitials you're legally required to show, such as age gates, are exempt.
+
+![Comparison of acceptable sign-up and ad formats, like in-article forms and slim banners, against full-screen overlays and heavy ad density.](/images/guides/blog-layout-ux-reader-retention/3-pop-ups-and-ads-keep-or-remove.webp "Google's guidance and the Coalition for Better Ads point the same way: the article comes first.")
 
 So a newsletter form inside the article or a slim banner is fine. A full-screen sign-up box that appears the moment someone lands from search is the thing to remove.
 
@@ -600,6 +624,8 @@ This gets much easier when the post was built in clear sections to begin with. I
 
 Don't push every idea into every format. A sequence of steps suits a carousel. A single surprising point suits a short video or one post. The whole answer, condensed, suits an email.
 
+![Three things that change when a blog idea becomes a social post or email: the hook comes first, each piece carries one idea, and link handling differs.](/images/guides/repurpose-blog-posts-social-media/1-what-changes-in-every-format.webp "Whatever the platform, rework these three before you post.")
+
 | Format | Take from the post | What changes |
 | --- | --- | --- |
 | Short video (30–60 sec) | One idea | Hook in the first line, spoken wording, one example. Link in your profile or the description. |
@@ -621,6 +647,8 @@ You'll read a lot of advice about how algorithms treat posts that contain links,
 ## A worked example
 
 This is an illustration. The post is made up.
+
+![Grid showing how a post on picking a blog name becomes a short video, a carousel and an email, and which piece needs the link to finish.](/images/guides/repurpose-blog-posts-social-media/2-one-post-three-pieces.webp "Each piece opens on the idea itself, and none tries to cover the whole post.")
 
 Say the post is "How to pick a blog name you won't regret." The standalone ideas in it:
 
@@ -648,6 +676,8 @@ Each piece opens on the idea itself, none of them tries to cover the whole post,
 ## Will repurposing cause a duplicate content problem?
 
 Social posts, pins and emails won't. They're short, they're new wording, and they aren't competing with your article in search.
+
+![Comparison of short social posts, pins and emails, which cause no duplicate issue, with republishing a full article on another site.](/images/guides/repurpose-blog-posts-social-media/3-where-duplicate-content-comes-in.webp "For most small blogs, a summary that links to the original is the safest route.")
 
 The risk is republishing the *full article* on another site, such as Medium, LinkedIn articles or a partner blog. Google then has two copies and picks one to show, and it may not pick yours. Google's documentation says that [some duplicate content is normal and isn't a spam violation](https://developers.google.com/search/docs/crawling-indexing/canonicalization), so you're not facing a penalty. What's at stake is which copy ranks.
 
@@ -723,6 +753,8 @@ Most small sites end up using all three, added in roughly that order. The rest o
 
 Ads pay a small amount per pageview, so the only way to earn much is to have a lot of pageviews. That makes them a poor first choice for a new blog and a sensible one for a busy site.
 
+![Entry requirements for AdSense, Raptive, Mediavine and Mediavine Journey, from no minimum traffic to set pageview, session or revenue thresholds.](/images/guides/blog-monetization-model-comparison/1-what-each-ad-network-asks-for.webp "AdSense is the usual first step; premium networks set traffic or revenue thresholds.")
+
 To show the shape of it, here's some made-up arithmetic. These are not typical figures. Suppose a site earned $10 for every 1,000 pageviews. At 5,000 pageviews a month, that's $50. At 200,000, it's $2,000. Real rates swing widely by topic, season, reader location and ad network, and yours could be far lower or higher. Whatever the rate, income rises and falls with traffic.
 
 Getting in is easier than most people assume. Google AdSense publishes no minimum traffic number. Its [eligibility requirements](https://support.google.com/adsense/answer/9724) ask for original, high-quality content, compliance with its program policies, and an applicant who is at least 18. Those policies are strict about things like encouraging clicks or building pages mainly to show ads, and Google can disable an account that breaks them.
@@ -745,6 +777,8 @@ Adding a relevant link costs your reader nothing, so there's no reason to wait f
 
 An ebook, template, course or paid newsletter is something you make once and sell yourself. You set the price and keep the sale, minus payment fees, so a small audience can go a long way. Nobody else's commission table or ad rate affects it.
 
+![Steps before making a digital product: watch for repeated reader demand, test the idea with a small paid version, then price it without assuming cheap is safe.](/images/guides/blog-monetization-model-comparison/2-wait-for-evidence-before-you-build.webp "The common failure is making a product nobody asked for, so let readers show you first.")
+
 It's also the most work and the easiest to get wrong. You build the whole thing before earning anything, then you handle refunds, questions and updates. The common failure is making a product nobody asked for.
 
 So wait for evidence. Repeated reader questions on one problem, emails asking whether you offer something, or one article that draws far more engagement than the rest are all decent signs. Then [test the idea before you build it](/guide/validate-a-business-idea), ideally with a small paid version. When you get to pricing, don't assume cheap is safe. The guide on [pricing digital products](/guide/how-to-price-a-digital-product) explains why.
@@ -752,6 +786,8 @@ So wait for evidence. Repeated reader questions on one problem, emails asking wh
 ## Which model fits your situation
 
 **Low traffic, commercial topic.** Affiliate links first. Write the articles that help people choose.
+
+![Five situations matched to a model: affiliate links, an email list, display ads, a digital product, or ads and affiliates when time is short.](/images/guides/blog-monetization-model-comparison/3-which-model-fits-your-blog-now.webp "Match the model to the traffic and topic you have today, not the ones you hope to have.")
 
 **Low traffic, no obvious products.** Skip monetizing for now and build an email list. Ads would earn pennies, and you don't know yet what readers would pay for.
 
@@ -832,6 +868,8 @@ For the calendar, you only need two things from this step: a list of articles, a
 
 Google documents no posting-frequency requirement. Its guidance on [creating helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content) goes the other way: it asks whether you're adding a lot of new content mainly because you think it'll make the site seem "fresh", and answers that it won't help. So "publish three times a week to rank" isn't a rule you need to plan around.
 
+![Three steps for setting a posting pace: time one finished article, count your weekly hours, then divide and plan for about three quarters.](/images/guides/annual-blog-content-calendar-guide/1-work-out-a-pace-from-your-hours.webp "Plan from the hours you actually have, not a number that sounds ambitious.")
+
 My opinion is that a pace you can sustain beats a higher one you abandon. A calendar that assumes four posts a week and collapses in month two leaves you with a few half-finished clusters and nothing to show for the planning.
 
 Work the number out from your hours instead of picking one that sounds ambitious:
@@ -850,6 +888,8 @@ Finish one cluster before starting the next. Five articles on one topic that lin
 
 Either order works, because internal links can be added after the fact. Google publishes no guidance preferring one.
 
+![Decision chart: on a new site publish two or three supporting posts before the pillar; if you know the topic well, the pillar can go first.](/images/guides/annual-blog-content-calendar-guide/2-pillar-first-or-supporting-posts-first.webp "Either order works, because internal links can be added after the fact.")
+
 On a new site I'd publish two or three supporting posts first. They target narrower queries, they're quicker to finish, and writing them shows you what the pillar needs to cover. Then publish the pillar and go back to add links in both directions. The one thing to avoid is leaving supporting posts orphaned for months, so put the pillar no later than the fourth or fifth slot in the cluster.
 
 If you already know the topic well, writing the pillar first is fine too. Put a "links to add" task on the calendar for the week each new post goes live. [Internal linking](/guide/internal-linking-strategy-guide) is the step that gets skipped when it isn't scheduled.
@@ -867,6 +907,8 @@ As a rule of thumb (mine, with no official figure behind it), schedule a seasona
 ## Step 5: Reserve slots for updating old posts
 
 Once you have a dozen or so articles, some will be out of date or sitting just off the first page. Fixing them often takes less time than writing a new one, so give updates a recurring slot. One a month is a reasonable start.
+
+![Comparison of a real update, which corrects facts, fills gaps and replaces stale examples, with a date-only change Google lists as a warning sign.](/images/guides/annual-blog-content-calendar-guide/3-what-counts-as-an-update.webp "Give updates a recurring slot. One a month is a reasonable start.")
 
 An update means changing the content: correcting facts, filling gaps, replacing stale examples. Google's helpful content guidance specifically lists changing a page's date to make it seem fresh, when the content hasn't substantially changed, as a warning sign.
 
@@ -947,6 +989,8 @@ Two things are worth knowing about it. First, it isn't a clinical diagnosis. It'
 
 Before you treat the feeling as noise, ask what, specifically, you'd need to do to feel ready to publish this post.
 
+![Decision chart: if you can name what you need to do before publishing, do it; if you can't and the post is accurate, publish it.](/images/guides/overcome-imposter-syndrome-creators/1-is-the-doubt-pointing-at-something-real.webp "Useful doubt points at a specific gap. Vague doubt about an accurate post is a reason to publish.")
+
 If you can name it, do it. Maybe there's a claim you haven't checked, a step you described but never tried, or a section you paraphrased from someone else without really understanding it. That kind of doubt is useful. It's your judgment telling you the post isn't finished.
 
 If you can't name anything, and the post is accurate and honest about what you know, then more research won't help. You'll just keep polishing a draft that was ready a week ago. Publish it.
@@ -954,6 +998,8 @@ If you can't name anything, and the post is accurate and honest about what you k
 ## "Who am I to write about this?" has a practical answer
 
 Most advice treats this question as a confidence problem. I think it's better treated as a question about what you're claiming.
+
+![Four cards: write from what you've done, say what you have and haven't tested, document instead of posing, and be honest about your level.](/images/guides/overcome-imposter-syndrome-creators/2-claim-only-whats-true.webp "You feel like a fraud when a post implies more than you can back up, so close the gap from that side.")
 
 You feel like a fraud when the post implies more than you can back up. So close that gap from the other side: claim only what's true.
 
@@ -967,6 +1013,8 @@ This is the ethical way to write, and it also lines up with what Google asks for
 ## Habits that make the feeling quieter over time
 
 None of these make the doubt disappear. They give you evidence, and evidence is what the feeling responds to.
+
+![Checklist of five habits: publish small, narrow the topic, keep a record of reader replies, compare against your own earlier work, and fix mistakes openly.](/images/guides/overcome-imposter-syndrome-creators/3-habits-that-build-evidence.webp "These don't make the doubt disappear. They give it evidence to respond to.")
 
 **Publish small.** A 600-word post answering one narrow question is easier to get right and easier to stand behind than a giant guide. If structure is what slows you down, a [repeatable writing framework](/guide/write-blog-posts-faster) takes some of the decisions off your plate.
 
@@ -1029,6 +1077,8 @@ It doesn't work as a link machine. Placing lots of articles on other sites mainl
 
 [Google's spam policies](https://developers.google.com/search/docs/essentials/spam-policies) define link spam as creating links "primarily for the purpose of manipulating search rankings." The examples on that page that touch guest posting are:
 
+![Comparison of guest posting practices Google allows, like labelled sponsored posts, against link spam such as paid followed links and keyword anchors.](/images/guides/guest-posting-strategy-backlinks-traffic/1-guest-posting-vs-link-spam.webp "Treat the link as a small byproduct and the audience as the goal.")
+
 - Exchanging money, goods or services for links, or for posts that contain links.
 - Excessive link exchanges ("Link to me and I'll link to you").
 - Advertorials or native advertising where payment is received for articles with links that pass ranking credit.
@@ -1061,6 +1111,8 @@ I'd skip searching for "write for us" plus your keyword. Those results lean heav
 ## How to judge a site before you pitch
 
 Ten minutes of reading the site is enough. These are the things to look for.
+
+![Decision chart asking whether you would still write for a site if it put a nofollow on your link, with yes meaning a good target and no meaning walk away.](/images/guides/guest-posting-strategy-backlinks-traffic/2-the-nofollow-test.webp "Authority scores are estimates from SEO tool companies. Google doesn't use them.")
 
 | Check | Good sign | Walk away if |
 | --- | --- | --- |
@@ -1098,6 +1150,8 @@ Before you send it, read the site's guidelines and follow them to the letter, in
 ## What to write once you get a yes
 
 Write the article for their readers, at the depth and in the tone the site already uses. Bring something they don't have yet: a process you can explain step by step, an example, or a point of view on a question their existing posts leave open. If you tend to stall on drafts, a [repeatable structure for writing articles](/guide/write-blog-posts-faster) helps you deliver on time, and editors notice who does.
+
+![Checklist for writing a guest post: match the host's tone, add something new, send original work, use plain anchor text and put the honest link in your bio.](/images/guides/guest-posting-strategy-backlinks-traffic/3-writing-the-accepted-guest-post.webp "Exact-match keyword anchors are the pattern Google's policy names.")
 
 Give them original work. Don't send the same article to several sites, and don't hand over a reworded copy of something already on your blog.
 
@@ -1194,6 +1248,8 @@ It's also worth saving the image's page URL and the download date somewhere. If 
 
 Plenty of images on Wikimedia Commons, Flickr and elsewhere carry a [Creative Commons license](https://creativecommons.org/share-your-work/cclicenses/). The letters tell you what you can do:
 
+![Reference grid of Creative Commons terms CC0, BY, SA, NC and ND, what each requires, and how each fits a monetized blog.](/images/guides/free-blog-graphics-and-photography-guide/1-creative-commons-letters-at-a-glance.webp "On a blog with ads or affiliate links, NC images are the ones to skip entirely.")
+
 - **CC0:** the creator has waived their rights. No credit needed.
 - **BY:** you must credit the creator. CC BY allows commercial use and editing.
 - **SA:** if you adapt it, you share your version under the same terms.
@@ -1216,6 +1272,8 @@ When credit is required, give it properly: title, creator, source link and the l
 
 AI image tools are a reasonable option for abstract or decorative images, with three checks.
 
+![Checklist for AI-generated blog images: read commercial terms, avoid real people and logos, don't assume ownership, ask if it adds value.](/images/guides/free-blog-graphics-and-photography-guide/2-checks-before-using-an-ai-image.webp "AI tools suit abstract or decorative images, as long as the terms and subject matter are clear.")
+
 Read the tool's terms for commercial use. Some plans allow it and some don't, and the terms differ between tools and between free and paid tiers.
 
 Don't generate real people or brand logos. A convincing image of a real person raises likeness and deception problems, and a generated logo is still someone's trademark.
@@ -1227,6 +1285,8 @@ I'd also be honest with yourself about value. A generated "person at laptop" add
 ## Make your own graphics instead of decorating with stock
 
 The most useful image in a post is usually one nobody else has. It explains something, and it can't turn up on another site.
+
+![Four kinds of original blog graphics: charts from your own data, annotated screenshots, simple diagrams and your own photos.](/images/guides/free-blog-graphics-and-photography-guide/3-graphics-nobody-else-has.webp "The most useful image in a post explains something and can't turn up on another site.")
 
 - **Charts from your own data.** Any spreadsheet app can produce a clean bar or line chart. Label the axes, cut the gridlines, and say where the numbers came from.
 - **Annotated screenshots.** An arrow and a short label on the exact button beats a paragraph describing where to click.

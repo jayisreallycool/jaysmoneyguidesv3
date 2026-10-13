@@ -1,0 +1,74 @@
+{
+  "slug": "no-code-automation-guide-make-zapier",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Build your first automation, step by step",
+      "type": "steps",
+      "title": "Your first form-to-spreadsheet automation",
+      "alt": "Steps to build a no-code automation: do it by hand, choose the trigger, add the action, map fields, test with real data, turn it on and check history.",
+      "caption": "Slow down on field mapping: a wrong mapping still runs without an error.",
+      "data": {
+        "items": [
+          {"title": "Do it by hand once", "text": "Note which form field goes in which spreadsheet column."},
+          {"title": "Choose the trigger", "text": "Pick your form app and the \"new submission\" event, then connect accounts."},
+          {"title": "Add the action", "text": "Choose \"add row\" and the exact file and sheet, with a header row in place."},
+          {"title": "Map the fields", "text": "Name to Name, email to Email, message to Message."},
+          {"title": "Test with real data", "text": "Use a long message and an accented name, then check every column."},
+          {"title": "Turn it on and check", "text": "Switch it on, submit once more, and find that run in the history."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Zapier vs Make vs n8n",
+      "type": "compare",
+      "title": "How Zapier and Make count usage",
+      "alt": "Comparison of Zapier and Make: Zapier counts successful action steps as tasks, Make charges a credit for every module including the trigger.",
+      "caption": "The free allowances aren't comparable at face value, so count what a run actually uses.",
+      "data": {
+        "columns": [
+          {
+            "label": "Zapier",
+            "tone": "neutral",
+            "points": [
+              "Counts only successful action steps",
+              "Triggers and filters are free",
+              "Simple top-to-bottom list",
+              "Free plan: one trigger, one action"
+            ]
+          },
+          {
+            "label": "Make",
+            "tone": "neutral",
+            "points": [
+              "A credit each time a module acts",
+              "The trigger uses a credit too",
+              "Visual canvas takes longer to learn",
+              "Free plan lets you chain several steps"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "What goes wrong, and how to limit it",
+      "type": "checklist",
+      "title": "Keep automations from failing quietly",
+      "alt": "Checklist for safer automations: failure notifications, monthly run history checks, comparing counts, minimal data, and drafts for customer emails.",
+      "caption": "Nothing announces a broken automation unless you set it up to.",
+      "data": {
+        "items": [
+          "Turn on failure notifications in your tool",
+          "Open the run history once a month",
+          "Compare counts: form submissions against sheet rows",
+          "Don't automate a process you haven't settled",
+          "Send only the fields you need, nothing sensitive",
+          "Mention the services you use in your privacy policy",
+          "Have customer-facing emails create drafts until you trust them"
+        ]
+      }
+    }
+  ]
+}

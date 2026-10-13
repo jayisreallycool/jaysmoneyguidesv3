@@ -1,0 +1,97 @@
+{
+  "slug": "cloud-backups-for-creators-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Why Google Drive, Dropbox and iCloud aren't backups",
+      "type": "compare",
+      "title": "Sync service vs backup service",
+      "alt": "Comparison of a sync service, which copies deletions and overwrites to every device, and a backup service, which keeps older file versions.",
+      "caption": "Keep using sync for convenience, but don't count it as one of your three copies.",
+      "data": {
+        "columns": [
+          {
+            "label": "Sync service",
+            "tone": "bad",
+            "points": [
+              "Keeps every device identical",
+              "A deleted folder is deleted everywhere",
+              "Overwrites and scrambled files sync too",
+              "Short safety net for deleted files"
+            ]
+          },
+          {
+            "label": "Backup service",
+            "tone": "good",
+            "points": [
+              "Runs in the background",
+              "Copies your files to its servers",
+              "Keeps older versions of each file",
+              "Lets you go back to last week's version"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Step 3: Back up the things that aren't on your computer",
+      "type": "cards",
+      "title": "Four things your computer backup misses",
+      "alt": "Four cards: website database and files, email list export, password manager kit and 2FA codes, and phone photos and video.",
+      "caption": "None of these is caught by the cloud backup or the external drive, so each needs its own export.",
+      "data": {
+        "items": [
+          {
+            "title": "Your website",
+            "text": "On WordPress, back up the database and the files, and download a copy."
+          },
+          {
+            "title": "Your email list",
+            "text": "Export subscribers to a CSV monthly into a folder your backups cover."
+          },
+          {
+            "title": "Recovery kit and 2FA codes",
+            "text": "Print them, and don't keep them only on the computer they help you unlock."
+          },
+          {
+            "title": "Phone photos and video",
+            "text": "Copy originals to your computer so both backups pick them up."
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "Test a restore before you need one",
+      "type": "steps",
+      "title": "How to test a restore",
+      "alt": "Five steps to test backups: pick a file from each backup, restore to a new folder, open it, check the website backup, and write down the steps.",
+      "caption": "Until you've restored something, you don't know whether your backups work.",
+      "data": {
+        "items": [
+          {
+            "title": "Pick two files",
+            "text": "One from the cloud backup and one from the external drive."
+          },
+          {
+            "title": "Restore to a different folder",
+            "text": "Restore each file to a different folder from the original."
+          },
+          {
+            "title": "Open them",
+            "text": "Open each restored file to confirm it works."
+          },
+          {
+            "title": "Check the website",
+            "text": "Restore to a staging copy, or at least check the database export is recent and not empty."
+          },
+          {
+            "title": "Write it down",
+            "text": "Note the steps you took and keep the note with your recovery codes."
+          }
+        ]
+      }
+    }
+  ]
+}

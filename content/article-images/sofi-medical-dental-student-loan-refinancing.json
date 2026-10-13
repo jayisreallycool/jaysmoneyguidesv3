@@ -1,0 +1,94 @@
+{
+  "slug": "sofi-medical-dental-student-loan-refinancing",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What you give up: Public Service Loan Forgiveness",
+      "type": "cards",
+      "title": "The four PSLF requirements",
+      "alt": "Four cards summarising PSLF rules: qualifying employer, full-time hours of at least 30 a week, federal Direct Loans only, and 120 qualifying payments.",
+      "caption": "Refinancing with a private lender ends PSLF eligibility for those loans, and it can't be reversed.",
+      "note": "Rules have been changing; check studentaid.gov for what applies to you",
+      "data": {
+        "items": [
+          {
+            "title": "Employer",
+            "text": "Government at any level, a 501(c)(3), or certain public-service non-profits"
+          },
+          {
+            "title": "Hours",
+            "text": "Full-time, meaning an average of at least 30 hours a week"
+          },
+          {
+            "title": "Loans",
+            "text": "Federal Direct Loans only. Private loans never qualify"
+          },
+          {
+            "title": "Payments",
+            "text": "120 under a qualifying plan; they don't have to be consecutive"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "What SoFi offers residents and fellows",
+      "type": "flow",
+      "title": "How the resident refinance works",
+      "alt": "Flow of SoFi's resident refinance as described in the article: small fixed payment in training, unpaid interest added to principal, then regular payments.",
+      "caption": "The low payment during training can leave you owing more when full payments start than when you refinanced.",
+      "note": "Check SoFi's page for current terms and eligibility",
+      "data": {
+        "loop": false,
+        "items": [
+          {
+            "label": "Refinance in training",
+            "text": "MD, DO, DMD or DDS in an approved residency or fellowship"
+          },
+          {
+            "label": "Small fixed payment",
+            "text": "Lasts a capped number of years and may not cover monthly interest"
+          },
+          {
+            "label": "Interest added",
+            "text": "Unpaid interest at the end of residency joins your principal"
+          },
+          {
+            "label": "Regular payments",
+            "text": "You pay over the term you chose"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "A way to sort yourself",
+      "type": "compare",
+      "title": "Unsure where you'll work? Compare the risks",
+      "alt": "Comparison of waiting to refinance, which costs some interest, against refinancing federal loans too early, which can cost forgiveness.",
+      "caption": "Refinancing can be done later at any point. Undoing it can't be done at all.",
+      "data": {
+        "columns": [
+          {
+            "label": "Wait until you know",
+            "tone": "good",
+            "points": [
+              "Costs you some interest",
+              "You can still refinance later",
+              "Federal options stay open"
+            ]
+          },
+          {
+            "label": "Refinance too early",
+            "tone": "bad",
+            "points": [
+              "Could cost forgiveness on the whole balance",
+              "Payments made stop counting toward PSLF",
+              "Can't be converted back to federal"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

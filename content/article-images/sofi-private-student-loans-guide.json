@@ -1,0 +1,70 @@
+{
+  "slug": "sofi-private-student-loans-guide",
+  "images": [
+    {
+      "slot": "top",
+      "after": "Why federal aid comes first",
+      "type": "steps",
+      "title": "Paying for college in the right order",
+      "alt": "Order for covering college costs: complete the FAFSA, use grants and scholarships, take federal loans, try other options, then borrow privately for the gap.",
+      "caption": "A private loan is a reasonable way to cover the last part of the bill, not the first.",
+      "data": {
+        "items": [
+          {"title": "Complete the FAFSA", "text": "Fill it out even if you expect to get little."},
+          {"title": "Use free money first", "text": "Grants, scholarships and work-study."},
+          {"title": "Take federal loans", "text": "Fixed rates, mostly no credit check, and repayment protections."},
+          {"title": "Try other options", "text": "More scholarships, an aid office review, a payment plan, part-time work."},
+          {"title": "Borrow privately for the gap", "text": "Only for whatever is still left."}
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "Fixed or variable rate",
+      "type": "compare",
+      "title": "Fixed or variable rate",
+      "alt": "Comparison of fixed and variable private student loan rates: fixed stays the same, variable follows a market index and can rise or fall.",
+      "caption": "For a loan carried ten years or more, lean fixed unless you expect to pay it off quickly.",
+      "data": {
+        "columns": [
+          {
+            "label": "Fixed rate",
+            "tone": "neutral",
+            "points": [
+              "Same rate for the life of the loan",
+              "Payment is predictable",
+              "Suits loans carried ten years or more"
+            ]
+          },
+          {
+            "label": "Variable rate",
+            "tone": "neutral",
+            "points": [
+              "Tied to a market index",
+              "Often starts lower, can rise or fall",
+              "Check the disclosure's maximum rate"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "How much to borrow",
+      "type": "flow",
+      "title": "Work out your gap",
+      "alt": "Flow for sizing a private student loan: start with cost of attendance, subtract aid and federal loans, subtract family contribution, borrow only the gap.",
+      "caption": "Borrow the gap and no more, and confirm there's no prepayment penalty before you sign.",
+      "note": "Rule of thumb: keep total student debt below expected first-year earnings",
+      "data": {
+        "items": [
+          {"label": "Cost of attendance", "text": "Start with the school's full figure."},
+          {"label": "Minus aid", "text": "Subtract every grant, scholarship and federal loan."},
+          {"label": "Minus family funds", "text": "Subtract what the family can pay from income and savings."},
+          {"label": "The gap", "text": "What's left is the most to borrow privately."}
+        ],
+        "loop": false
+      }
+    }
+  ]
+}

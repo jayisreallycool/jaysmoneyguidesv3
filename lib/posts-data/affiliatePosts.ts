@@ -49,6 +49,8 @@ The demand on the reader's side is just as steady. People want an outside opinio
 
 Google now treats the old shortcuts as spam. Its [spam policies](https://developers.google.com/search/docs/essentials/spam-policies) name "thin affiliation" directly: pages with affiliate links where the descriptions and reviews are copied from the merchant with nothing original added. The same document covers pages produced in bulk to chase rankings. A site built that way is a bad bet.
 
+![Comparison of affiliate approaches that are now a bad bet, like thin copied pages, with ones that can still work, like specific original pages.](/images/guides/is-affiliate-marketing-worth-it/1-what-stopped-working-what-still-can.webp "The model is intact, but the winnable topics have become more specific.")
+
 Competition is heavier too. A page on "best laptops" goes up against publications with testing labs and full editorial teams. One person can't win that, but one person can still write the best page on laptops for architecture students who run CAD software on a tight budget. The winnable topics have become more specific.
 
 Search traffic is also less dependable. Ranking updates move sites up and down, and Google now answers some questions itself with AI summaries above the links. I'd plan for search to be one source of visitors among several.
@@ -63,6 +65,8 @@ I'd also skip any niche you'd find tedious to write about for a year. You won't 
 
 Run these four checks before you buy a domain. Together they take about an afternoon.
 
+![Four steps to judge an affiliate niche: read what ranks, confirm programs pay enough, be honest about your knowledge, and check purchase frequency and price.](/images/guides/is-affiliate-marketing-worth-it/2-four-checks-before-you-buy-a-domain.webp "Together these take about an afternoon. If a niche fails the first two, change the niche.")
+
 **1. Read what already ranks.** Search the terms a buyer in your niche would use and open the top results. If they come from large publishers with original testing, narrow the topic and search again. If they're outdated, vague, or missing things a buyer would obviously want to know, that's your opening. Forum threads ranking near the top are a good sign as well, because they usually mean nobody has written a proper answer yet.
 
 **2. Confirm the programs exist and pay enough.** Search for "[your niche] affiliate program" and look through the big networks such as Awin, Impact and CJ. If an older tutorial sends you to ShareASale, note that [it has been folded into Awin](https://www.awin.com/us/news-and-events/awin-news/shareasale-to-awin-upgrade). Read each program's terms for the commission rate, the cookie window and the payout threshold, because all three differ widely between programs. Where the networks come up empty, you can [approach brands directly](/guide/find-direct-brand-affiliate-deals).
@@ -76,6 +80,8 @@ A niche that passes all four is worth a real attempt. If it fails the first two,
 ## Two things to set up from the first post
 
 Disclose your commissions. The FTC says affiliates should [disclose the relationship clearly and conspicuously](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking), close to the recommendation, and it's a legal expectation as well as a courtesy to readers. The site's [disclosure and FTC compliance guide](/guide/affiliate-disclosure-ftc-compliance-guide) covers how to word it and where to put it.
+
+![Two cards: disclose commissions clearly and close to the recommendation, and start an email list early.](/images/guides/is-affiliate-marketing-worth-it/3-set-these-up-from-the-first-post.webp "Disclosure is a legal expectation, and a list is an audience a ranking change can't take away.")
 
 Start an email list early. It's the one audience a ranking change can't take from you, and a short [email sequence that supports your recommendations](/guide/build-automated-affiliate-email-funnel) is enough to begin with.
 
@@ -126,6 +132,8 @@ If you're still deciding whether to start at all, that's a separate question. I'
 
 AI Overviews and AI Mode put a generated answer above the regular results. Pew Research Center tracked the browsing of 900 US adults in March 2025 and found that [people clicked a traditional result on 8% of visits to a results page with an AI summary](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/), against 15% on pages without one. Links inside the summary itself were clicked on about 1% of visits.
 
+![Comparison of affiliate pages a search summary can replace, like definitions, versus pages built on your own testing and judgment.](/images/guides/affiliate-marketing-trends/1-which-pages-an-ai-summary-can-replace.webp "Look in Search Console for pages where impressions held up but clicks dropped.")
+
 That's one study of one month, and it covers every kind of search, so don't read it as a forecast for your site. I do think it shows which pages are exposed. A page that answers a simple factual question ("what is a cookie window") can be replaced by a summary. A comparison built on your own testing is much harder to replace, because the reader still has to choose and buy somewhere.
 
 Google says there are [no extra requirements or special optimizations](https://developers.google.com/search/docs/appearance/ai-features) for appearing in AI Overviews or AI Mode. A page needs to be indexed and eligible for a snippet, the same as for ordinary results. So I'd skip any paid "AI search optimization" service and do two things instead:
@@ -159,6 +167,8 @@ For the few products that earn most of your commissions, I'd also consider cutti
 
 Chrome's long-planned removal of third-party cookies didn't happen. In April 2025 Google said it would [keep its current approach to third-party cookies in Chrome](https://privacysandbox.google.com/blog/privacy-sandbox-next-steps) and wouldn't roll out a separate prompt asking users to choose.
 
+![Four cards on affiliate tracking: Chrome kept third-party cookies, Safari blocks them, ask how programs track, and shorten the time to purchase.](/images/guides/affiliate-marketing-trends/2-why-a-30-day-cookie-is-the-best-case.webp "Some referred sales are never credited, especially from readers on iPhones.")
+
 Safari is a different story. Its [Intelligent Tracking Prevention](https://webkit.org/tracking-prevention/) blocks all third-party cookies by default and limits how long cookies set by scripts can last, in some cases to 24 hours.
 
 So a "30-day cookie" in a program's terms describes the best case. I'd assume some referred sales are never credited, especially from readers on iPhones, though I can't put a trustworthy number on it. Two responses make sense:
@@ -177,6 +187,8 @@ You don't need to become a full-time creator. One short video showing the produc
 ## Rules on reviews have got stricter
 
 The FTC's [rule on consumer reviews and testimonials](https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers) took effect on October 21, 2024. It prohibits fake reviews, including AI-generated ones attributed to people who don't exist, and it bars a business from misrepresenting that a website it controls offers independent reviews. The FTC can seek civil penalties against knowing violators.
+
+![Checklist for affiliate reviews: no fake or AI reviews, no false claims of testing or independence, and disclosures placed next to recommendations.](/images/guides/affiliate-marketing-trends/3-review-and-disclosure-checks.webp "The FTC rule on consumer reviews took effect on October 21, 2024.")
 
 I'm not a lawyer, and most of that rule is aimed at businesses faking their own reviews. I'd still take it as one more reason never to write "I tested this" about a product you haven't handled.
 
@@ -227,6 +239,8 @@ The short version: a recurring program is usually the better deal when your read
 
 Someone clicks your link and signs up for a paid plan. The company then pays you a percentage of each payment while that customer stays subscribed. If they cancel, drop to a free plan or get a refund, your commission stops or shrinks with it.
 
+![Four affiliate commission structures: lifetime recurring, time-limited recurring, hybrid rates and one-time bounty.](/images/guides/saas-affiliate-marketing-recurring-commissions-guide/1-four-deals-sold-as-recurring.webp "”Recurring” describes several different deals, so read which one the terms actually promise.")
+
 Most physical-product programs pay once per order, and the rates are lower. Amazon's [standard commission rate table](https://affiliate-program.amazon.com/help/node/topic/GRXPHT8U84RAYDXZ) tops out at 10% for a couple of luxury categories, with everyday categories such as home, toys and kitchen at 3% to 4.5%. That program still has its uses, which I cover in my [look at where Amazon Associates fits](/guide/is-amazon-associates-worth-it).
 
 The catch is that "recurring" describes several different deals:
@@ -274,6 +288,8 @@ For a wider view of how payout size and volume trade off, see my comparison of [
 
 Read the affiliate terms themselves. The sales page leaves most of this out.
 
+![Checklist of SaaS affiliate terms to check: commission type, attribution window, refunds, payout threshold, promotion rules, termination clauses.](/images/guides/saas-affiliate-marketing-recurring-commissions-guide/2-read-the-affiliate-terms-for-these.webp "The sales page leaves most of this out, so go to the affiliate terms themselves.")
+
 - **Commission type and duration.** Lifetime, capped or one-time, and whether the rate drops after the first year.
 - **Cookie or attribution window.** How long after a click a signup still counts as yours. Programs vary a lot here.
 - **What happens on upgrades, downgrades and refunds.** Some pay on upgrades; most claw back refunded payments.
@@ -288,6 +304,8 @@ Fit matters more than rate. A tool your readers don't need won't convert at 50%,
 ## Content that earns recurring commissions
 
 People who search "what is email marketing software" are rarely ready to buy, and big publishers own those results anyway. Searches where someone is choosing between options are a better target: "Tool A vs Tool B", "best scheduling software for boutique fitness studios", "Tool A alternatives". My guide to [keyword research based on realistic opportunity](/guide/low-competition-keyword-research) covers how to find the ones a small site can rank for.
+
+![Comparison of broad definition searches, where readers rarely buy, with comparison and alternatives searches from people choosing a tool.](/images/guides/saas-affiliate-marketing-recurring-commissions-guide/3-which-searches-to-write-for.webp "Target people choosing between options, since they're closer to signing up.")
 
 Recurring commissions also change what a good review looks like. You're paid only while the customer stays, so talking someone into a tool that doesn't suit them earns one month and a cancellation. Say who the tool is wrong for. Use a trial account and your own screenshots where you can. If you haven't tested a feature or a pricing tier, say so. Link to the vendor's pricing page and note the date you checked, because SaaS prices and plan names change often.
 
@@ -352,6 +370,8 @@ The arithmetic is worth doing once. A $40 kitchen gadget at 4.5% earns $1.80. A 
 
 Twenty-four hours. Amazon's policies call it a session, and it ends at whichever comes first: 24 hours pass, the customer places an order (digital products aside), or the customer clicks another Associate's link.
 
+![Flow of an Amazon Associates session: a click starts a 24-hour session, the first order earns on everything in it, cart items extend to 89 days.](/images/guides/is-amazon-associates-worth-it/1-how-an-amazon-session-pays-out.webp "You earn on the whole order, but the session closes once that first order is placed.")
+
 There is one extension. If the customer adds a product to their cart during your session, you still earn the commission as long as they complete that order within 89 days of the click.
 
 The useful part is that you earn on what the customer buys in that order, whether or not you linked to it. Someone who clicks through for a coffee grinder and checks out with the grinder, headphones and a garden hose earns you a commission on all three, each at its own category rate. People call this the basket effect, and it's the main reason a 3% program can still be worth having.
@@ -368,6 +388,8 @@ In practice, that means joining too early can work against you. If your site has
 
 Amazon can end your account, so the [Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) are worth reading in full before you build content around the program. These are the ones I'd check first:
 
+![Checklist of Amazon Associates policy rules covering disclosure, prices, reviews, offline use, email, link clarity and incentives.](/images/guides/is-amazon-associates-worth-it/2-rules-to-check-before-you-build.webp "Amazon can end your account, so read the full program policies first.")
+
 - **Disclosure.** Your site has to state, clearly and prominently, "As an Amazon Associate I earn from qualifying purchases." That's Amazon's wording requirement. It sits on top of the FTC's rules on [disclosing affiliate links near the recommendation](/guide/affiliate-disclosure-ftc-compliance-guide), which apply to every program you use.
 - **Prices.** You can show a price or stock status only if Amazon serves it, either through its own link formats or its API. Typing "$39.99" into a post breaks the rule, and Amazon's prices change too often for a typed number to stay right.
 - **Reviews and star ratings.** You can't copy Amazon's customer reviews or star ratings onto your page unless they come through the API.
@@ -383,6 +405,8 @@ Commissions are paid about 60 days after the end of the month in which they were
 ## Who it suits, and who should look elsewhere
 
 Amazon fits best when your readers are about to buy an ordinary physical product, such as kitchen gear, tools, home goods or pet supplies. They already have an account, they trust the checkout, and they may add other things to the order.
+
+![Comparison of good fits for Amazon Associates, like everyday physical products, with poor fits like long research cycles and 1% categories.](/images/guides/is-amazon-associates-worth-it/3-where-amazon-fits-and-where-it-doesnt.webp "Whatever the mix, don't let one program carry the whole site.")
 
 It fits badly when your readers research for days before buying, since the 24-hour window will have closed. It also fits badly in the 1% categories, or when a brand's own program pays several times more for the same product. In those cases it's worth [pitching the brand directly](/guide/find-direct-brand-affiliate-deals) and keeping Amazon for everything else. Software and services are a different business altogether, and [recurring SaaS commissions](/guide/saas-affiliate-marketing-recurring-commissions-guide) work on different maths.
 
@@ -443,6 +467,8 @@ Direct deals also cost time. Each one is a separate login, payment schedule and 
 
 Start with products you already mention. For each one, check three things.
 
+![Decision chart: if the brand runs its own program, if it sits on a network, or if there is no program, each leads to a different pitch.](/images/guides/find-direct-brand-affiliate-deals/1-which-kind-of-program-is-it.webp "Where the sign-up form sends you tells you which pitch to make.")
+
 1. **The site footer.** Look for "Affiliates", "Partners", "Ambassadors" or "Refer a friend". Many brands have a program and never advertise it anywhere else.
 2. **A search for the brand name plus "affiliate program".** This catches sign-up pages that aren't linked from the main site.
 3. **Where the sign-up form sends you.** If you land on a network's domain, the program is hosted there. If you stay on the brand's own site, or on a branded portal run by affiliate software, the brand manages it in-house.
@@ -471,6 +497,8 @@ A general support inbox is the last resort. If that's all you have, ask to be fo
 
 Keep it short enough to read on a phone. It needs four things: who you are, the page the product would go on, honest numbers, and one specific ask. Copy this and replace everything in brackets.
 
+![Four parts of an affiliate pitch email: who you are, the page the product would go on, honest numbers, and one specific ask.](/images/guides/find-direct-brand-affiliate-deals/2-four-things-every-pitch-needs.webp "Keep the whole email short enough to read on a phone.")
+
 > **Subject:** Affiliate partnership: [your site] and [product]
 
 > Hi [first name],
@@ -496,6 +524,8 @@ Mention something true and specific about the product, such as a feature your re
 ## If you don't hear back
 
 Send one follow-up after a week or so. Reply on the same thread with two lines: you're checking the first note arrived, and the offer stands. After that, move on.
+
+![Steps after an unanswered affiliate pitch: wait about a week, send one short follow-up, log it in a sheet, move on, and retry later.](/images/guides/find-direct-brand-affiliate-deals/3-when-a-brand-goes-quiet.webp "Silence usually has more to do with timing and budgets than with your email.")
 
 Silence usually has more to do with timing and budgets than with your email. Keep a simple sheet with the brand, contact, date sent and outcome, and work through several prospects at once so no single reply matters too much. A brand that passed is worth another try once you've published more in their category.
 
@@ -585,6 +615,8 @@ The rest of this guide covers what the FTC actually says, where the disclosure g
 
 The rules come from the FTC's [Endorsement Guides (16 CFR Part 255)](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-255), revised in 2023, and the agency's plain-English FAQ, [Endorsement Guides: What People Are Asking](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking). The FAQ is the more useful read, and it answers affiliate questions directly.
 
+![Four cards: disclose material connections, match the format, make it unavoidable online, and use words people understand.](/images/guides/affiliate-disclosure-ftc-compliance-guide/1-what-a-disclosure-has-to-do.webp "The FTC's test is whether someone reading that recommendation will see and understand the disclosure.")
+
 The Guides themselves don't have the force of law. They explain how the FTC applies Section 5 of the FTC Act, which prohibits deceptive advertising, and the FAQ says practices that conflict with them can lead to enforcement action. So treat them as the standard you'll be measured against.
 
 The core idea is the "material connection." If you have a relationship with a seller that your audience wouldn't expect and that could affect how much weight they give your recommendation, you disclose it. Commissions count. So do free products, payment, and discount codes that earn you something.
@@ -610,6 +642,8 @@ On the page-level question: the FTC's FAQ says a single disclosure can be adequa
 ## Where the disclosure goes on each platform
 
 **Blog posts.** Put one plain sentence at the top of the article, in normal-sized text with normal contrast, before the first affiliate link. Don't hide it behind a link labelled "disclosure" or "legal," which the FTC specifically calls easy to avoid. The same applies to roundups and [buyer's guides built around product comparisons](/guide/write-buyers-guides-that-convert).
+
+![Table of where to place an affiliate disclosure on blog posts, video, social captions and email, and what not to rely on for each.](/images/guides/affiliate-disclosure-ftc-compliance-guide/2-where-the-disclosure-goes.webp "On every platform, the disclosure sits with the recommendation, not somewhere the reader has to go looking.")
 
 **YouTube and other video.** Say it in the video, early, and show it on screen if you can. The FTC's FAQ says a note in the description isn't enough on its own because viewers easily miss it. Keep the written line in the description as well, next to the links. On a livestream, repeat it now and then, since people join partway through. There's more on handling links in a small channel's videos in the [YouTube affiliate guide](/guide/youtube-affiliate-marketing-small-channel-guide).
 
@@ -652,6 +686,8 @@ Many writers add "at no extra cost to you." That's fine when it's accurate. Like
 ## Amazon has its own required sentence
 
 Amazon's rule is contractual and sits on top of the FTC's. The [Associates Program Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement) says you must clearly and prominently state the following on your site, or a substantially similar statement Amazon previously allowed:
+
+![Comparison of the FTC Endorsement Guides and the Amazon Associates agreement: who sets each rule, what wording is needed, and the consequence.](/images/guides/affiliate-disclosure-ftc-compliance-guide/3-ftc-rules-and-amazons-rule.webp "If you're an Amazon Associate, you follow both: the FTC standard and Amazon's contract terms.")
 
 > As an Amazon Associate I earn from qualifying purchases.
 
@@ -712,6 +748,8 @@ Here are the five mistakes I'd check for first, in the order I'd fix them. The f
 
 **What it looks like:** You've joined every program loosely related to your niche. Posts carry six or eight links to products you've never used, and your "reviews" repeat what's on the sales page.
 
+![Four steps to fix promoting too many products: pick three to five, learn them properly, test for a drawback, write one comparison.](/images/guides/5-affiliate-marketing-mistakes-to-avoid/1-cutting-your-product-list-down.webp "A short list you know well beats a long list of links you can't explain.")
+
 **Why it hurts:** You can't know twenty products well enough to say anything a reader couldn't get from the manufacturer. A reader deciding between two options wants to know which one fits their situation and what's wrong with each. A page that can't answer that gives them no reason to click your link over anyone else's.
 
 **The fix:** Pick three to five products that solve your audience's main problem and learn them properly. Use them if you can. If you can't, read the documentation, the pricing page and the complaints in user forums until you can explain who each product is wrong for. Then write one thorough comparison before adding anything new. The guide on [writing buyer's guides that help readers decide](/guide/write-buyers-guides-that-convert) covers how to structure that page.
@@ -731,6 +769,8 @@ Check each program's rules before you put its links in an email. The rules diffe
 ## 3. Chasing traffic spikes
 
 **What it looks like:** Your analytics chart is flat with one or two tall peaks, from a Reddit thread or a short video that took off. You spend the following weeks trying to repeat it.
+
+![Comparison of one-off traffic spikes, which are hard to repeat, with search traffic that keeps arriving from people close to buying.](/images/guides/5-affiliate-marketing-mistakes-to-avoid/2-traffic-spikes-vs-search-traffic.webp "Treat a viral post as a bonus and put your effort into traffic that keeps coming.")
 
 **Why it hurts:** A spike is hard to reproduce and tells you little. Those visitors arrived curious about one post, and few of them were shopping. A big day can also hide a page that converts badly, because the volume covers for it.
 
@@ -754,6 +794,8 @@ While you're in there, look at your affiliate dashboard to see which links got c
 ## 5. Writing for Google first and the reader second
 
 **What it looks like:** The same phrase repeated in every heading. A 400-word introduction before the answer. Articles padded to hit a word count someone said Google prefers.
+
+![Checklist for reader-first articles: answer early, draft like explaining to a friend, use searcher words in headings, cut keyword-only sentences.](/images/guides/5-affiliate-marketing-mistakes-to-avoid/3-write-for-the-reader-first.webp "A reader who has to dig for the answer leaves before reaching your recommendation.")
 
 **Why it hurts:** Google's spam policies list [keyword stuffing](https://developers.google.com/search/docs/essentials/spam-policies) as a violation. Its guidance on helpful content also names writing to a particular word count, and producing content mainly to attract search visits, as warning signs. Even where a page like that ranks, it sells poorly, because a reader who has to dig for the answer leaves before reaching your recommendation.
 
@@ -804,6 +846,8 @@ Most affiliate welcome sequences fail in one of two ways. Either there isn't one
 
 A sequence that works is short: five emails over about ten days. The first delivers what you promised, the next two are useful with nothing to sell, the fourth makes one recommendation tied to a problem you've already been writing about, and the fifth tells people what to expect from you next. The outline is below, along with an example email and the rules you have to follow when an email contains an affiliate link.
 
+![Comparison of failing affiliate welcome sequences with a short five-email sequence that delivers, helps, then makes one recommendation.](/images/guides/build-automated-affiliate-email-funnel/1-why-most-welcome-sequences-fail.webp "A short sequence earns trust before it asks for anything.")
+
 ## A five-email welcome sequence you can copy
 
 Treat the timing as a starting point. Daily emails suit a list that signed up for something urgent; a slower pace suits a hobby niche.
@@ -831,6 +875,8 @@ One recommendation in five emails is deliberate. If every email carries a link, 
 ## What the recommendation email looks like
 
 Here's a short version of email 4. Swap in your own niche and your own honest view of the product. Don't claim you tested something you haven't.
+
+![Checklist for an affiliate recommendation email: tie to a known problem, one product, who should skip it, disclosure before the link.](/images/guides/build-automated-affiliate-email-funnel/2-what-a-good-recommendation-email-does.webp "It should read like advice from someone who knows the topic, not a sales page.")
 
 > **Subject:** The mic I'd pick for a first podcast
 
@@ -889,6 +935,8 @@ I'd skip conditional branches and behavior triggers until the basic five emails 
 ## Keeping the sequence honest over time
 
 An automated sequence keeps sending whatever you wrote, including a link to a product that's been discontinued or a program whose terms have changed. Every few months, subscribe with a spare address and read the whole thing as a new subscriber would. Click every link.
+
+![Steps to audit an automated email sequence: subscribe with a spare address, click every link, review email 4 clicks and drop-off, prune inactive subscribers.](/images/guides/build-automated-affiliate-email-funnel/3-a-check-up-every-few-months.webp "An automated sequence keeps sending whatever you wrote, so read it as a new subscriber would.")
 
 While you're there, look at clicks on email 4 and at where opens fall off. If opens drop sharply after email 1, the freebie attracted people who wanted the download and nothing else, and a better subject line won't fix that. A different freebie might. Change one thing at a time so you can tell what made the difference.
 
@@ -950,6 +998,8 @@ Two mechanical details catch new channels out, both from YouTube's page on [shar
 
 These get confused constantly. A regular affiliate link comes from a program you joined yourself (a software company's program, a retailer, a network) and you paste it into your description. YouTube isn't a party to that deal.
 
+![Comparison of regular affiliate links, which need no Partner Program, with YouTube Shopping affiliate, which has eligibility requirements.](/images/guides/youtube-affiliate-marketing-small-channel-guide/1-affiliate-links-vs-shopping-affiliate.webp "Ordinary affiliate links have no entry gate, so you can start with them today.")
+
 YouTube Shopping affiliate is YouTube's own feature for tagging products in videos, and it does have a gate. At the time of writing, [YouTube's eligibility page](https://support.google.com/youtube/answer/13376398?hl=en) says your channel must be in the YouTube Partner Program, meet its subscriber threshold, and be based in one of a listed set of countries, which includes the United States. Music channels and channels set as made for kids are excluded.
 
 For reference, the standard Partner Program requirement at the time of writing is 1,000 subscribers plus either 4,000 watch hours in the last 12 months or 10 million Shorts views in the last 90 days. YouTube has adjusted the Shopping thresholds more than once, so read the eligibility page for the current numbers before you plan around it.
@@ -959,6 +1009,8 @@ None of this stops you from starting with ordinary affiliate links today.
 ## How to disclose affiliate links in a video
 
 The FTC's position is short: "If making an endorsement in a video, the disclosure should be in the video and not just in the description uploaded with the video." That's from its [guidance for influencers](https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers), which also recommends saying it out loud and showing it on screen, since some people watch without sound and others listen without watching.
+
+![Steps to disclose YouTube affiliate links: say it early, show it on screen, repeat it by the link and tick the paid promotion option.](/images/guides/youtube-affiliate-marketing-small-channel-guide/2-disclosing-affiliate-links-in-a-video.webp "Some people watch without sound and others listen without watching, so cover both.")
 
 In practice I'd do three things:
 
@@ -991,6 +1043,8 @@ Cover products you know well enough to demonstrate. Real clicks through real set
 ## Where to put the links and what to say on camera
 
 Put the affiliate link in the first two lines of the description, with the disclosure beside it, so it's visible before anyone taps "more". A pinned comment with the same link and disclosure helps viewers who never open the description.
+
+![Flow of an affiliate tutorial video: state the outcome, disclose and mention the link once, solve the problem, point to the link at the end.](/images/guides/youtube-affiliate-marketing-small-channel-guide/3-where-the-link-fits-in-a-video.webp "Repeated pitching is the quickest way to lose a viewer who came for instructions.")
 
 On camera, keep it brief:
 
@@ -1058,6 +1112,8 @@ Most established sites end up running both. If you have to pick one to start wit
 
 There's no official cut-off. "Low ticket" usually means inexpensive products people buy without much thought, such as kitchen tools, phone accessories or books. The commission is a small percentage of a small price.
 
+![Comparison: a $2,000 laptop at a 2% rate earns $40, while a $300 software plan at 30% earns $90.](/images/guides/high-ticket-vs-low-ticket-affiliate-marketing/1-a-high-price-isnt-a-high-commission.webp "Check the program's actual rate for the product category before you build content around it.")
+
 "High ticket" means the commission on a single sale is large. Sometimes that's because the product is expensive (equipment, courses, business software). Sometimes it's because the program pays a big share of the sale, or keeps paying each month the customer stays, which is how many software programs work. I've covered that model separately in the guide to [recurring commissions from SaaS programs](/guide/saas-affiliate-marketing-recurring-commissions-guide).
 
 A high price alone doesn't make a product high ticket for you. As plain arithmetic: a $2,000 laptop at a 2% rate earns $40, while a $300 software plan at 30% earns $90. Check the program's actual rate for the product category before you build content around it.
@@ -1092,6 +1148,8 @@ The useful part of this is the break-even. In the example the high-ticket commis
 
 Low ticket makes sense when your traffic is broad or can realistically become broad: search topics with a lot of volume, Pinterest, short-form social. Readers arrive wanting to pick something inexpensive and move on, so roundups and quick comparisons do the job. [Amazon Associates](/guide/is-amazon-associates-worth-it) is where most people start, and its rates differ by product category, so check the current schedule for yours.
 
+![Decision chart: broad traffic suits low ticket, a small specific audience you know well suits high ticket, and neither means start low ticket in one category.](/images/guides/high-ticket-vs-low-ticket-affiliate-marketing/2-which-model-fits-your-site-right-now.webp "Match the model to how your readers already buy, not to the size of the commission.")
+
 High ticket makes sense when your audience is small but specific, and you know the product area well enough to answer the hard questions someone has before spending serious money. A newsletter read by a few hundred people in one profession can be a better fit for a business software program than a general blog with ten times the visitors.
 
 If you have neither much traffic nor deep knowledge of an expensive product category yet, I'd start low ticket in one narrow category. You'll build traffic and learn what your readers click on, and you can add higher-commission offers later without starting over.
@@ -1109,6 +1167,8 @@ Most of these buyers won't purchase on their first visit, so you need a way to s
 ## Refunds and held commissions hurt more at high ticket
 
 Affiliate programs generally cancel the commission when the customer gets a refund, and many hold commissions for a set period before they become payable so that refunds can be caught first. FastSpring, for example, [describes a locking period](https://fastspring.com/blog/lessons-in-affiliate-marketing-order-refunds-action-locking-and-affiliate-action-reversals/) in which a month's sales can still be reversed until the end of the following month. Every program sets its own rules.
+
+![Checklist for comparing high-ticket affiliate programs: refund window, hold period, one-time or recurring payout, and trial cancellations.](/images/guides/high-ticket-vs-low-ticket-affiliate-marketing/3-compare-high-ticket-programs-past-the-rate.webp "A lower rate that's paid reliably can be worth more than a higher one that keeps getting reversed.")
 
 On a $2 commission none of this matters much. On a $100 commission, one reversal is a visible hole in the month, and a long hold period means waiting a couple of months to be paid for work you've already done. Subscription products add another wrinkle, because a customer who cancels during a trial or an early refund window may earn you nothing.
 
@@ -1165,6 +1225,8 @@ Most of the work is judgment you exercise before writing: which products make th
 
 Before you look at a single product, write down the three to five situations your readers are in. For a guide to email tools for bloggers, that might be someone starting a first list with no budget, someone selling digital products, and someone leaving a tool that got expensive as their list grew.
 
+![Flow for planning a buyer's guide: list reader situations, find the best fit for each, label picks by situation, keep the list to four to six.](/images/guides/write-buyers-guides-that-convert/1-situations-first-products-second.webp "A guide with fifteen products is a catalog, and the reader still has to decide.")
+
 Then find the best fit for each situation. This gives every product a reason to be in the guide, and it hands you the "best for" labels without any forcing.
 
 It also sets the length. You need about as many products as you have situations, which usually means four to six. A guide with fifteen products is a catalog, and the reader still has to do the deciding.
@@ -1208,6 +1270,8 @@ The same rule applies to specs. Include a spec only when it changes the decision
 
 Say so. Hardly anyone can buy and use every product in a category, and readers don't expect it. What they can't forgive is finding out that a "hands-on" verdict was assembled from the manufacturer's sales page.
 
+![Comparison of how to present products you used versus products you only researched in a buyer's guide, including labels, evidence and wording.](/images/guides/write-buyers-guides-that-convert/2-used-picks-vs-researched-picks.webp "Admitting you used two of five products beats faking all five.")
+
 Google's guidance on [writing high-quality reviews](https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews) asks for evidence of your own experience, such as visuals, audio or links, and says that when you call something the best overall or best for a purpose, you should explain why with first-hand supporting evidence. The FTC is blunter in its [endorsement FAQ](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking): you can't talk about your experience with a product you haven't tried.
 
 In practice:
@@ -1222,6 +1286,8 @@ A guide where you used two of five products and said so is more useful than one 
 ## Handling prices and availability that go stale
 
 Exact prices are the first thing to go wrong, so keep them out of your sentences. Relative statements last longer: "the cheapest of the five", "roughly double the price of Product A". Then send the reader to the seller for the current number.
+
+![Checklist for updating a buyer's guide: products still sold, plans unchanged, new options, working links, relative prices, honest last-updated date.](/images/guides/write-buyers-guides-that-convert/3-each-time-you-recheck-the-guide.webp "Keep the volatile facts in the summary table so an update is a single pass.")
 
 Some programs don't leave this up to you. [Amazon's Associates Program Policies](https://affiliate-program.amazon.com/help/operating/policies) only allow you to show prices and availability when Amazon serves the link that displays them or when you pull the data through its API, so a hand-typed Amazon price is a compliance problem as well as a stale one. The other [Amazon Associates terms that affect how you write](/guide/is-amazon-associates-worth-it) are covered separately.
 
@@ -1299,6 +1365,8 @@ Pinterest doesn't publish a list of niches that work. My working assumption is t
 
 The relevant page is Pinterest's [Commercial and Branded Content Guidelines](https://policy.pinterest.com/en/commercial-and-branded-content-guidelines), which has a short affiliate section. It describes affiliate links as a way for creators to get paid for their work, so linking a Pin straight to an affiliate URL is permitted. The conditions:
 
+![Checklist of Pinterest's affiliate link conditions: disclose, keep content original, use links in moderation, one real account, and care with shorteners.](/images/guides/pinterest-affiliate-marketing-traffic-guide/1-pinterests-conditions-for-affiliate-links.webp "Affiliate links are allowed on Pinterest, but only when these conditions are met.")
+
 - **Disclose.** The wording is "Be transparent about the commercial nature of your content and about your links and their behavior." Affiliates are also told to follow the paid partnership rules on the same page, which require disclosure of commercial content.
 - **Keep it original and moderate.** Affiliate content "should be original and add unique value", and creating affiliate Pins "repetitively or in large volumes" is listed as prohibited. The phrase Pinterest uses is "use affiliate links in moderation".
 - **One real account.** No fake accounts saving your links, no trading saves with other people, no asking others to pin your affiliate link for you.
@@ -1313,6 +1381,8 @@ Pinterest allowing something doesn't mean your program does. Some programs limit
 ## Pin straight to an affiliate link, or to your own article?
 
 Both are allowed. For a blog, I think your own article is the sturdier destination.
+
+![Decision chart: a single product needing little explanation in a program that permits it can get a direct Pin; otherwise pin to your own article.](/images/guides/pinterest-affiliate-marketing-traffic-guide/2-where-should-this-pin-point.webp "Both are allowed, but a Pin to your own page keeps working when a program changes its terms.")
 
 | Question | Direct affiliate Pin | Pin to your article |
 | --- | --- | --- |
@@ -1330,6 +1400,8 @@ A direct affiliate Pin can still make sense for a single product you'd recommend
 ## Using keywords in Pin titles, descriptions and boards
 
 Pinterest says plainly that text helps discovery: "When you add the right text to your Pins, more people will discover them." Here's where that text goes.
+
+![Four cards on Pinterest keywords: search phrase first in titles, plain sentences in descriptions, specific board names, and phrases from Pinterest search.](/images/guides/pinterest-affiliate-marketing-traffic-guide/3-where-keywords-go-on-pinterest.webp "Text helps people discover your Pins, so put the phrase someone would search where it shows.")
 
 **Title.** Up to 100 characters, and Pinterest's specs say the first 40 or so are what tends to show in feeds. Put the phrase someone would search at the front: "Small home office ideas for renters" rather than "You'll love these ideas".
 

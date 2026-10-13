@@ -1,0 +1,74 @@
+{
+  "slug": "programmatic-seo-guide-for-beginners",
+  "images": [
+    {
+      "slot": "top",
+      "after": "What separates a legitimate programmatic page from a doorway page",
+      "type": "decision",
+      "title": "The name-swap test",
+      "alt": "Decision test: delete the place or product name from two programmatic pages; if you can't tell them apart, it's one page published many times.",
+      "caption": "Second test: would the page still be worth having if search engines didn't exist?",
+      "data": {
+        "question": "Delete the place or product name from two pages. Can you tell which is which?",
+        "branches": [
+          {
+            "answer": "Yes",
+            "result": "Several real data points change per page. Keep going.",
+            "tone": "good"
+          },
+          {
+            "answer": "No",
+            "result": "You have one page published many times. Fix the data first.",
+            "tone": "bad"
+          }
+        ]
+      }
+    },
+    {
+      "slot": "middle",
+      "after": "3. Design a template where the data does the talking",
+      "type": "checklist",
+      "title": "A template that adapts to its data",
+      "alt": "Checklist for a programmatic page template: unique data first, short boilerplate, conditional sections, a notes field, unique titles and internal links.",
+      "caption": "A page that adapts to its data reads like it was made for that entry.",
+      "data": {
+        "items": [
+          "Unique information first: tables, local details, specific numbers",
+          "Shared boilerplate kept short and pushed down the page",
+          "Sections drop out when a row has no data for them",
+          "A field for a short written note on unusual entries",
+          "Its own title, meta description and heading from the data",
+          "Links to related entries and a browsable index page"
+        ]
+      }
+    },
+    {
+      "slot": "bottom",
+      "after": "7. Prune what doesn't earn its place",
+      "type": "cards",
+      "title": "Four fixes for pages that don't earn",
+      "alt": "Four options for programmatic pages that stay unindexed or get no visits: improve the data, merge into a stronger page, add noindex, or delete.",
+      "caption": "A smaller set of useful pages is safer than a large set of marginal ones.",
+      "data": {
+        "items": [
+          {
+            "title": "Improve the data",
+            "text": "Add the missing details the page needs."
+          },
+          {
+            "title": "Merge",
+            "text": "Fold it into a stronger page."
+          },
+          {
+            "title": "Add noindex",
+            "text": "Put a noindex tag on the page."
+          },
+          {
+            "title": "Delete",
+            "text": "Remove it if it stays unindexed or never gets visits."
+          }
+        ]
+      }
+    }
+  ]
+}
