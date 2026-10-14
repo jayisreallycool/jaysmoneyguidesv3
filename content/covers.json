@@ -1,0 +1,287 @@
+{
+  "is-affiliate-marketing-worth-it": {
+    "title": "Is Affiliate Marketing Still Worth It? How to Judge a Niche",
+    "category": "Affiliate Marketing",
+    "icon": "search-check"
+  },
+  "affiliate-marketing-trends": {
+    "title": "Affiliate Marketing Trends: What Changed and What to Do",
+    "category": "Affiliate Marketing",
+    "icon": "trending-up"
+  },
+  "saas-affiliate-marketing-recurring-commissions-guide": {
+    "title": "SaaS Affiliate Programs: Are Recurring Commissions Better?",
+    "category": "Affiliate Marketing",
+    "icon": "repeat"
+  },
+  "is-amazon-associates-worth-it": {
+    "title": "Is Amazon Associates Worth It? The Terms That Matter",
+    "category": "Affiliate Marketing",
+    "icon": "shopping-cart"
+  },
+  "find-direct-brand-affiliate-deals": {
+    "title": "How to Pitch a Brand for a Direct Affiliate Deal (Template)",
+    "category": "Affiliate Marketing",
+    "icon": "handshake"
+  },
+  "affiliate-disclosure-ftc-compliance-guide": {
+    "title": "How to Write an Affiliate Disclosure That Meets FTC Rules",
+    "category": "Affiliate Marketing",
+    "icon": "scale"
+  },
+  "5-affiliate-marketing-mistakes-to-avoid": {
+    "title": "5 Affiliate Marketing Mistakes Beginners Make (and Fixes)",
+    "category": "Affiliate Marketing",
+    "icon": "triangle-alert"
+  },
+  "build-automated-affiliate-email-funnel": {
+    "title": "How to Build an Affiliate Email Welcome Sequence (5 Emails)",
+    "category": "Affiliate Marketing",
+    "icon": "mail"
+  },
+  "youtube-affiliate-marketing-small-channel-guide": {
+    "title": "YouTube Affiliate Marketing on a Small Channel: The Rules",
+    "category": "Affiliate Marketing",
+    "icon": "video"
+  },
+  "high-ticket-vs-low-ticket-affiliate-marketing": {
+    "title": "High-Ticket vs Low-Ticket Affiliate Marketing: Which Fits?",
+    "category": "Affiliate Marketing",
+    "icon": "tags"
+  },
+  "write-buyers-guides-that-convert": {
+    "title": "How to Write a Buyer's Guide (With an Outline to Copy)",
+    "category": "Affiliate Marketing",
+    "icon": "list-checks"
+  },
+  "pinterest-affiliate-marketing-traffic-guide": {
+    "title": "Using Pinterest for Affiliate Marketing and Blog Traffic",
+    "category": "Affiliate Marketing",
+    "icon": "pin"
+  },
+  "seo-checklist": {
+    "title": "SEO Checklist: What to Check First and How to Check It",
+    "category": "SEO",
+    "icon": "list-todo"
+  },
+  "topical-authority-topic-clusters": {
+    "title": "Topical Authority: How to Build a Small-Site Topic Cluster",
+    "category": "SEO",
+    "icon": "workflow"
+  },
+  "internal-linking-strategy-guide": {
+    "title": "Internal Linking for SEO: A How-To and 30-Minute Audit",
+    "category": "SEO",
+    "icon": "network"
+  },
+  "low-competition-keyword-research": {
+    "title": "How to Find Low-Competition Keywords for a New Site",
+    "category": "SEO",
+    "icon": "key-round"
+  },
+  "programmatic-seo-guide-for-beginners": {
+    "title": "Programmatic SEO: How to Do It Without Creating Spam",
+    "category": "SEO",
+    "icon": "database"
+  },
+  "schema-markup-rich-snippets-guide": {
+    "title": "Schema Markup for Blogs: What to Add and How to Test It",
+    "category": "SEO",
+    "icon": "braces"
+  },
+  "core-web-vitals-optimization-guide": {
+    "title": "How to Improve Core Web Vitals on a Small Blog",
+    "category": "SEO",
+    "icon": "gauge"
+  },
+  "diy-seo-audit-1-hour-guide": {
+    "title": "How to Do an SEO Audit Yourself in About an Hour (Free)",
+    "category": "SEO",
+    "icon": "clipboard-check"
+  },
+  "local-seo-map-pack-mastery-guide": {
+    "title": "Local SEO Basics: How to Show Up in the Google Map Pack",
+    "category": "SEO",
+    "icon": "map-pin"
+  },
+  "international-seo-hreflang-guide": {
+    "title": "International SEO: When You Need Hreflang and How to Add It",
+    "category": "SEO",
+    "icon": "globe"
+  },
+  "online-business-first-year-plan": {
+    "title": "How to Start an Online Business: A Realistic First-Year Plan",
+    "category": "Entrepreneurship",
+    "icon": "map"
+  },
+  "cash-flow-for-freelancers": {
+    "title": "Cash Flow for Freelancers: A System for Irregular Income",
+    "category": "Entrepreneurship",
+    "icon": "wallet"
+  },
+  "validate-a-business-idea": {
+    "title": "How to Validate a Business Idea Before You Build It",
+    "category": "Entrepreneurship",
+    "icon": "lightbulb"
+  },
+  "permissionless-leverage-content-and-code": {
+    "title": "Permissionless Leverage: Content or Code, and What to Build",
+    "category": "Entrepreneurship",
+    "icon": "rocket"
+  },
+  "how-to-price-a-digital-product": {
+    "title": "How to Price a Digital Product: A Method You Can Test",
+    "category": "Entrepreneurship",
+    "icon": "tag"
+  },
+  "solopreneur-operating-system-deep-work-schedule": {
+    "title": "A Solopreneur Weekly Schedule Built Around Deep Work",
+    "category": "Entrepreneurship",
+    "icon": "calendar-clock"
+  },
+  "building-a-moat-in-the-age-of-ai": {
+    "title": "How a Small Site Can Compete With AI-Generated Content",
+    "category": "Entrepreneurship",
+    "icon": "shield"
+  },
+  "productized-services-guide": {
+    "title": "Productized Services: Turn Freelance Work Into a Fixed Offer",
+    "category": "Entrepreneurship",
+    "icon": "package"
+  },
+  "hire-first-virtual-assistant-va-solopreneur-guide": {
+    "title": "How to Hire Your First Virtual Assistant, Step by Step",
+    "category": "Entrepreneurship",
+    "icon": "users"
+  },
+  "how-to-sell-a-content-site": {
+    "title": "How to Sell a Content Site: Valuation and the Sale Process",
+    "category": "Entrepreneurship",
+    "icon": "badge-dollar-sign"
+  },
+  "how-to-start-a-blog-that-makes-money": {
+    "title": "How to Start a Blog That Can Make Money, Step by Step",
+    "category": "Blogging",
+    "icon": "pen-line"
+  },
+  "write-blog-posts-faster": {
+    "title": "How to Write Blog Posts Faster Without Making Them Worse",
+    "category": "Blogging",
+    "icon": "timer"
+  },
+  "how-to-start-a-paid-newsletter": {
+    "title": "How to Start a Paid Newsletter (and Whether It's Worth It)",
+    "category": "Blogging",
+    "icon": "newspaper"
+  },
+  "blog-layout-ux-reader-retention": {
+    "title": "Blog Layout Best Practices: Font Size, Line Length, Contrast",
+    "category": "Blogging",
+    "icon": "layout-template"
+  },
+  "repurpose-blog-posts-social-media": {
+    "title": "How to Repurpose a Blog Post for Social Media and Email",
+    "category": "Blogging",
+    "icon": "share-2"
+  },
+  "blog-monetization-model-comparison": {
+    "title": "Blog Monetization: Ads vs Affiliate vs Digital Products",
+    "category": "Blogging",
+    "icon": "coins"
+  },
+  "annual-blog-content-calendar-guide": {
+    "title": "How to Create a Blog Content Calendar From Keyword Research",
+    "category": "Blogging",
+    "icon": "calendar-days"
+  },
+  "overcome-imposter-syndrome-creators": {
+    "title": "Imposter Syndrome as a New Blogger: What Actually Helps",
+    "category": "Blogging",
+    "icon": "sprout"
+  },
+  "guest-posting-strategy-backlinks-traffic": {
+    "title": "Guest Posting for Backlinks: What Still Works Safely",
+    "category": "Blogging",
+    "icon": "link"
+  },
+  "free-blog-graphics-and-photography-guide": {
+    "title": "Free Blog Images: Where to Get Them and Stay Legal",
+    "category": "Blogging",
+    "icon": "image"
+  },
+  "free-tech-stack-one-person-business": {
+    "title": "A Free Tech Stack for a One-Person Online Business",
+    "category": "Tech",
+    "icon": "layers"
+  },
+  "ai-tools-one-person-business": {
+    "title": "AI Tools for a One-Person Business: What to Use for Each Job",
+    "category": "Tech",
+    "icon": "bot"
+  },
+  "wordpress-vs-ghost-vs-nextjs": {
+    "title": "WordPress vs Ghost vs Custom Next.js: Which to Build On",
+    "category": "Tech",
+    "icon": "code-xml"
+  },
+  "build-custom-gpt-ai-assistant-for-blog": {
+    "title": "Custom GPT for Your Blog? What to Build Now Instead",
+    "category": "Tech",
+    "icon": "message-square-text"
+  },
+  "no-code-automation-guide-make-zapier": {
+    "title": "No-Code Automation for Beginners: Zapier vs Make vs n8n",
+    "category": "Tech",
+    "icon": "zap"
+  },
+  "privacy-friendly-web-analytics-fathom-plausible": {
+    "title": "Google Analytics 4 vs Plausible and Fathom for Small Sites",
+    "category": "Tech",
+    "icon": "chart-column"
+  },
+  "simple-desk-setup-for-focus": {
+    "title": "How to Set Up a Simple Desk for Focused Work on a Budget",
+    "category": "Tech",
+    "icon": "monitor"
+  },
+  "cloud-backups-for-creators-guide": {
+    "title": "How to Back Up Your Work as a Creator: The 3-2-1 Setup",
+    "category": "Tech",
+    "icon": "cloud-upload"
+  },
+  "cybersecurity-for-digital-creators": {
+    "title": "How to Protect Your Creator Accounts From Being Hacked",
+    "category": "Tech",
+    "icon": "lock-keyhole"
+  },
+  "self-hosting-beginners-cloud-vps-guide": {
+    "title": "Self-Hosting on a VPS: Should You, and How to Start",
+    "category": "Tech",
+    "icon": "server"
+  },
+  "sofi-personal-loans-guide": {
+    "title": "SoFi Personal Loans: Who They Suit and What to Compare",
+    "category": "SoFi Bank",
+    "icon": "hand-coins"
+  },
+  "sofi-student-loan-refinancing-guide": {
+    "title": "Should You Refinance Student Loans With SoFi?",
+    "category": "SoFi Bank",
+    "icon": "refresh-cw"
+  },
+  "sofi-medical-dental-student-loan-refinancing": {
+    "title": "Student Loan Refinancing for Doctors and Dentists",
+    "category": "SoFi Bank",
+    "icon": "stethoscope"
+  },
+  "sofi-private-student-loans-guide": {
+    "title": "SoFi Private Student Loans: When One Makes Sense",
+    "category": "SoFi Bank",
+    "icon": "graduation-cap"
+  },
+  "sofi-referral-bonus-guide": {
+    "title": "How the SoFi Referral Bonus Works: Who Gets Paid and When",
+    "category": "SoFi Bank",
+    "icon": "gift"
+  }
+}

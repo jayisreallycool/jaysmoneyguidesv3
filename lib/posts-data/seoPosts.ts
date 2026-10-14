@@ -8,7 +8,7 @@ export const SEO_POSTS: BlogPost[] = [
     excerpt: 'A prioritized SEO checklist in six groups. Every item names the free tool to check it with and says whether the advice comes from Google\'s own documentation.',
     category: 'SEO',
     tags: ['SEO Checklist', 'On-Page SEO', 'Technical SEO', 'E-E-A-T'],
-    coverImage: '/images/uploads/seo-that-drives-sales.webp',
+    coverImage: '/images/covers/seo-checklist.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -146,7 +146,7 @@ Once groups 1 and 2 pass, most of the remaining gains come from covering your su
     excerpt: 'Topical authority is SEO shorthand, not a Google ranking factor. Here\'s how to pick a narrow topic, map a pillar and supporting articles, and check the results.',
     category: 'SEO',
     tags: ['Topical Authority', 'SEO Strategy', 'Content Clusters', 'Content Marketing'],
-    coverImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/topical-authority-topic-clusters.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -284,7 +284,7 @@ Pick the narrowest topic you can cover fully, write the cluster map, and publish
     excerpt: 'Link every page you care about from somewhere else on your site, and make the link text describe it. Here\'s how, with a free 30-minute audit.',
     category: 'SEO',
     tags: ['Internal Links', 'On-Page SEO', 'Site Structure'],
-    coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/internal-linking-strategy-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -414,7 +414,7 @@ Run the 30-minute audit once, then let the per-post routine keep things tidy. In
     excerpt: 'Find specific queries a new site can compete for using Google\'s own suggestions and Search Console, then judge each one by reading the results page.',
     category: 'SEO',
     tags: ['Keyword Research', 'Search Intent', 'SEO Strategy', 'Content Planning'],
-    coverImage: '/images/how-to-do-keyword-research-in-2026-finding-zero-competition--seo-guide.webp',
+    coverImage: '/images/covers/low-competition-keyword-research.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -549,7 +549,7 @@ Group the queries you've kept by topic, mark the primary query for each planned 
     excerpt: 'Programmatic SEO works when every page is built on real, distinct data. Here\'s where Google draws the spam line and how to build pages that stay on the right side of it.',
     category: 'SEO',
     tags: ['Programmatic SEO', 'Scalable Growth', 'Automation', 'Advanced SEO'],
-    coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/programmatic-seo-guide-for-beginners.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -690,7 +690,7 @@ Before choosing tools or building a template, fill in ten rows of your dataset b
     excerpt: 'Schema markup makes a page eligible for rich results; it doesn\'t guarantee them. Here\'s what to add on a small site, and what to leave alone.',
     category: 'SEO',
     tags: ['Schema Markup', 'JSON-LD', 'Rich Snippets', 'Technical SEO'],
-    coverImage: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/schema-markup-rich-snippets-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -827,7 +827,7 @@ Add Article and breadcrumb markup through your platform, put one Organization or
     excerpt: 'How to check your Core Web Vitals and fix the usual causes of a slow blog: images, fonts, third-party scripts, ads and layout shift.',
     category: 'SEO',
     tags: ['Page Speed', 'Core Web Vitals', 'Technical SEO', 'Performance'],
-    coverImage: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/core-web-vitals-optimization-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -982,7 +982,7 @@ Make one change, run PageSpeed Insights again, and note what moved. Once images 
     excerpt: 'A one-hour, first-pass SEO audit for small sites using free Google tools, ending with a short list of what to fix this week and what to ignore.',
     category: 'SEO',
     tags: ['SEO Audit', 'Technical SEO', 'Optimization', 'Site Maintenance'],
-    coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/diy-seo-audit-1-hour-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1137,7 +1137,7 @@ This hour tells you what's broken. For the wider list of things worth getting ri
     excerpt: 'How Google picks map pack listings, and the profile, review and website work a local business can do about it. No ranking guarantees.',
     category: 'SEO',
     tags: ['Local SEO', 'Google Business Profile', 'Map Pack', 'Small Business'],
-    coverImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/local-seo-map-pack-mastery-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1274,7 +1274,7 @@ Verify the profile, get the primary category right, and fix your hours. Then set
     excerpt: 'Hreflang only matters once you publish translated or region-specific pages. Here\'s when you need it, how to set it up correctly, and what breaks it.',
     category: 'SEO',
     tags: ['International SEO', 'Hreflang', 'Global Growth', 'Technical SEO'],
-    coverImage: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/international-seo-hreflang-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',

@@ -8,7 +8,7 @@ export const BLOGGING_POSTS: BlogPost[] = [
     excerpt: 'The steps to start a blog in order, from topic and platform to your first 15 articles, with an honest look at how long traffic and income take.',
     category: 'Blogging',
     tags: ['Blogging', 'Content Strategy', 'SEO Fundamentals', 'Blog Monetization'],
-    coverImage: '/images/uploads/launch-your-store-with-confidence.webp',
+    coverImage: '/images/covers/how-to-start-a-blog-that-makes-money.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -163,7 +163,7 @@ Choose the topic, buy the domain, set up the pages in Step 4, and write down you
     excerpt: 'Slow writing comes from planning, drafting and polishing all at once. Here\'s a five-step process, an outline template and a pre-publish checklist.',
     category: 'Blogging',
     tags: ['Content Writing', 'Writing Process', 'Productivity', 'Blogging System'],
-    coverImage: '/images/content-writing-framework-featured.webp',
+    coverImage: '/images/covers/write-blog-posts-faster.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -289,7 +289,7 @@ There's no trick that makes one article fast. What gets faster is the tenth arti
     excerpt: 'A paid newsletter is a small layer on top of a free list that already trusts you. Here\'s how to judge if yours is ready, what platforms take, and how to run the numbers.',
     category: 'Blogging',
     tags: ['Newsletter', 'Recurring Revenue', 'Monetization', 'Substack'],
-    coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/how-to-start-a-paid-newsletter.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -435,7 +435,7 @@ A newsletter is also only one way to earn from an audience. If you're not sure i
     excerpt: 'Body text size, line length, line height, contrast, tap targets and ad density: the values to use, which ones are real standards, and a 10-minute phone check.',
     category: 'Blogging',
     tags: ['UX Design', 'Readability', 'Blog Layout', 'Accessibility'],
-    coverImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/blog-layout-ux-reader-retention.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -569,7 +569,7 @@ Layout takes an afternoon to sort out and then mostly stays sorted. Once a post 
     excerpt: 'A three-step workflow for turning one blog post into short videos, carousels, pins and emails, with a format table and a worked example.',
     category: 'Blogging',
     tags: ['Content Repurposing', 'Social Media', 'Content Strategy'],
-    coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/repurpose-blog-posts-social-media.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -709,7 +709,7 @@ Start with one post and two formats. If the email version is the one you enjoy w
     excerpt: 'Display ads, affiliate links and digital products each suit a different kind of blog. Here\'s how to pick by traffic, topic, trust and time.',
     category: 'Blogging',
     tags: ['Monetization', 'Display Ads', 'Digital Products', 'Affiliate Marketing'],
-    coverImage: '/images/uploads/design-a-funnel-that-sells.webp',
+    coverImage: '/images/covers/blog-monetization-model-comparison.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -825,7 +825,7 @@ Pick the one model that matches the traffic and topic you have today, and give i
     excerpt: 'A step-by-step way to turn a keyword list into a publishing calendar you can keep up with, including a four-column template to copy.',
     category: 'Blogging',
     tags: ['Content Calendar', 'Keyword Research', 'SEO Strategy', 'Blogging System'],
-    coverImage: '/images/uploads/plan-seo-content-that-compounds.webp',
+    coverImage: '/images/covers/annual-blog-content-calendar-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -950,7 +950,7 @@ Don't schedule the whole keyword list. Pick the cluster with the easiest queries
     excerpt: 'You don\'t need to feel like an expert to publish. Write from what you\'ve done, say what you haven\'t tested, and let the evidence build.',
     category: 'Blogging',
     tags: ['Creator Mindset', 'Imposter Syndrome', 'Publishing Confidence'],
-    coverImage: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/overcome-imposter-syndrome-creators.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1044,7 +1044,7 @@ You don't need to settle whether you're "qualified" in general. Pick one narrow 
     excerpt: 'Guest posting still works for reaching readers, not for collecting links. Where Google draws the line, how to vet a site, and a pitch email you can copy.',
     category: 'Blogging',
     tags: ['Guest Posting', 'Link Building', 'Backlinks', 'Outreach'],
-    coverImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/guest-posting-strategy-backlinks-traffic.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1189,7 +1189,7 @@ Pick one site you already read, find the gap in what it has published, and send 
     excerpt: 'Where to find free images you can legally use on a blog that earns money, how to make simple graphics of your own, and how to keep images from slowing your pages.',
     category: 'Blogging',
     tags: ['Visual Design', 'Graphics', 'Canva', 'Blogging Tools'],
-    coverImage: 'https://images.unsplash.com/photo-1542744094-3a31b272c490?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/free-blog-graphics-and-photography-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',

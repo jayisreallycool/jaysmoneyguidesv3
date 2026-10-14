@@ -35,6 +35,8 @@ export async function generateMetadata(
   if (!post) return {};
   const url = `${SITE}/guide/${post.slug}`;
   const description = (post as { metaDescription?: string }).metaDescription ?? post.excerpt;
+  // Branded covers have a JPG twin: some social apps still don't show WebP previews.
+  const shareImage = /^\/images\/covers\/[\w-]+\.webp$/.test(post.coverImage) ? post.coverImage.replace(/\.webp$/, '.jpg') : post.coverImage;
   return {
     // Long titles go out as-is: adding " | JaysMoneyGuides" would push them past
     // what search results show (about 60 characters) and cut the real title.
@@ -47,7 +49,7 @@ export async function generateMetadata(
       url,
       title: post.title,
       description,
-      images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: shareImage, width: 1200, height: 630, alt: post.title }],
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [post.author?.name ?? 'Jay Lopez'],
@@ -56,7 +58,7 @@ export async function generateMetadata(
       card: 'summary_large_image',
       title: post.title,
       description,
-      images: [post.coverImage],
+      images: [shareImage],
     },
   };
 }
@@ -113,17 +115,7 @@ export default async function GuidePage(
       <div className="bg-slate-950 min-h-screen">
 
         {/* ── Hero cover ── */}
-        <div className={`relative w-full h-52 sm:h-72 lg:h-80 overflow-hidden bg-gradient-to-b ${catColor.bg} to-slate-950`}>
-          {post.coverImage && (
-            <Image
-              src={post.coverImage}
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center opacity-20 mix-blend-luminosity"
-            />
-          )}
+        <div className={`relative w-full h-36 sm:h-44 lg:h-48 overflow-hidden bg-gradient-to-b ${catColor.bg} to-slate-950`}>
           {/* gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
 
@@ -207,6 +199,20 @@ export default async function GuidePage(
             </div>
           </header>
 
+          {/* ── Cover ── */}
+          {post.coverImage.startsWith('/images/covers/') && (
+            <figure className="mb-8 -mx-4 sm:mx-0">
+              <Image
+                src={post.coverImage}
+                alt={`Cover: ${post.title}`}
+                width={1200}
+                height={630}
+                priority
+                sizes="(max-width: 640px) 100vw, 768px"
+                className="w-full h-auto sm:rounded-2xl border-y sm:border border-slate-800"
+              />
+            </figure>
+          )}
 
           {/* ── Table of contents ── */}
           <TableOfContents items={toc} />

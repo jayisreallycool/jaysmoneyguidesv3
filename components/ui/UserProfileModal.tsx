@@ -16,6 +16,7 @@ import {
   KeyRound
 } from 'lucide-react';
 import { User, BlogPost } from '@/lib/types';
+import { cardCover } from '@/lib/covers';
 // Inlined from @/lib/admin-config to avoid missing-module errors on partial deploys
 const ADMIN_EMAILS = ['jayisreallycool@gmail.com'];
 const isAdminEmailClient = (email?: string | null) =>
@@ -303,8 +304,8 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                   >
                     <div className="flex items-center gap-3">
                       <img
-                        src={post.coverImage}
-                        alt={post.title}
+                        src={cardCover(post.coverImage)}
+                        alt=""
                         className="w-12 h-12 rounded-xl object-cover shrink-0"
                       />
                       <div>
@@ -344,8 +345,8 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                   >
                     <div className="flex items-center gap-3">
                       <img
-                        src={post.coverImage}
-                        alt={post.title}
+                        src={cardCover(post.coverImage)}
+                        alt=""
                         className="w-12 h-12 rounded-xl object-cover shrink-0"
                       />
                       <div>

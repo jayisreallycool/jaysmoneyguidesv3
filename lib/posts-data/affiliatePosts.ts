@@ -8,7 +8,7 @@ export const AFFILIATE_POSTS: BlogPost[] = [
     excerpt: 'The model still works, but only for specific niches and useful content. Here\'s how to check whether yours has room before you spend anything.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Marketing', 'Business Strategy', 'Niche Selection'],
-    coverImage: '/images/affiliate-marketing-viable-business-infographic.webp',
+    coverImage: '/images/covers/is-affiliate-marketing-worth-it.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -97,7 +97,7 @@ Pick one niche and run the first check today, before you spend anything. Reading
     excerpt: 'The changes that affect affiliate site owners, with sources: AI answers in search, spam policies, network consolidation and tracking. Plus what to do about each.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Marketing', 'Industry Trends', 'E-Commerce', 'SaaS Growth'],
-    coverImage: '/images/affiliate-marketing-2025-opportunity-infographic.webp',
+    coverImage: '/images/covers/affiliate-marketing-trends.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -206,7 +206,7 @@ Take your ten highest-traffic affiliate pages and read each one against Google's
     excerpt: 'Recurring commissions can beat one-time payouts, but churn and 12-month caps change the math. Here\'s how to work out what a program is worth.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Marketing', 'SaaS', 'Recurring Commissions', 'Product Reviews'],
-    coverImage: '/images/affiliate-marketing-guide-cover.webp',
+    coverImage: '/images/covers/saas-affiliate-marketing-recurring-commissions-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -327,7 +327,7 @@ Recurring commissions beat one-time payouts when customers stay and the program 
     excerpt: 'What Amazon\'s affiliate program pays, how the 24-hour window and three-sale approval rule work, and which sites it suits.',
     category: 'Affiliate Marketing',
     tags: ['Amazon Associates', 'Physical Products', 'E-commerce', 'Affiliate Marketing'],
-    coverImage: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/is-amazon-associates-worth-it.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -424,7 +424,7 @@ Look up the rate for your main product category, then work out how many sales a 
     excerpt: 'The steps to a direct affiliate deal: find how a brand runs its program, contact the manager, send a short pitch (template included) and confirm terms in writing.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Deals', 'Brand Partnerships', 'Outreach', 'Monetization'],
-    coverImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/find-direct-brand-affiliate-deals.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -578,7 +578,7 @@ Pick a product you already write about, find its affiliate manager this week and
     excerpt: 'What US rules expect from an affiliate disclosure, where to put it on each platform, and wording you can copy, including Amazon\'s required sentence.',
     category: 'Affiliate Marketing',
     tags: ['FTC Guidelines', 'Affiliate Compliance', 'Legal', 'Trust'],
-    coverImage: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/affiliate-disclosure-ftc-compliance-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -715,7 +715,7 @@ A disclosure you have to remember to add will get left off sooner or later. Buil
     excerpt: 'Five mistakes that stall new affiliate sites, with what each looks like in practice and a specific fix you can apply this week.',
     category: 'Affiliate Marketing',
     tags: ['Affiliate Mistakes', 'Lessons Learned', 'Strategy', 'Beginner Guide'],
-    coverImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/5-affiliate-marketing-mistakes-to-avoid.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -817,7 +817,7 @@ Start with the product list, since cutting it down makes the other four fixes sm
     excerpt: 'A five-email welcome sequence you can copy: what each email does, when the affiliate recommendation appears, and the disclosure and CAN-SPAM rules to follow.',
     category: 'Affiliate Marketing',
     tags: ['Email Marketing', 'Funnels', 'Automation', 'Affiliate Sales'],
-    coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/build-automated-affiliate-email-funnel.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -954,7 +954,7 @@ Write email 4 first. If you can't name one product you'd recommend to a new subs
     excerpt: 'You don\'t need the YouTube Partner Program to use affiliate links. Here are the link and disclosure rules, plus which videos suit them and where the links go.',
     category: 'Affiliate Marketing',
     tags: ['YouTube', 'Video Marketing', 'Affiliate Sales', 'Content Strategy'],
-    coverImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/youtube-affiliate-marketing-small-channel-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1077,7 +1077,7 @@ Pick one product you already use, find one task people search for, and make that
     excerpt: 'Low-ticket offers need volume; high-ticket offers need trust and patience. Here\'s how to tell which fits your traffic and your readers, with a worked example.',
     category: 'Affiliate Marketing',
     tags: ['High Ticket', 'Low Ticket', 'Strategy', 'Niche Selection'],
-    coverImage: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/high-ticket-vs-low-ticket-affiliate-marketing.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1192,7 +1192,7 @@ Match the model to your readers' buying habits and your current traffic, then ru
     excerpt: 'How to pick the products, organize a buyer\'s guide around reader situations, and stay honest about what you haven\'t tested. Includes an outline to copy.',
     category: 'Affiliate Marketing',
     tags: ['Copywriting', 'Buyers Guides', 'Content Structure', 'Conversion'],
-    coverImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/write-buyers-guides-that-convert.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1322,7 +1322,7 @@ Read only the summary table and the first two paragraphs. If a reader could make
     excerpt: 'Pinterest allows affiliate links, with conditions. Here\'s how to tell if it suits your niche, what the rules say, and why pinning to your own article usually holds up better.',
     category: 'Affiliate Marketing',
     tags: ['Pinterest', 'Traffic Generation', 'Social Media', 'Affiliate Marketing'],
-    coverImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fm=webp&fit=crop&w=1200&q=80',
+    coverImage: '/images/covers/pinterest-affiliate-marketing-traffic-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',

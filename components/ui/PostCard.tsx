@@ -3,6 +3,7 @@ import React from 'react';
 import { BlogPostSummary } from '@/lib/types';
 import { Clock, Heart, Bookmark, ArrowRight, Star } from 'lucide-react';
 import { SafeImage } from './SafeImage';
+import { cardCover } from '@/lib/covers';
 
 interface PostCardProps {
   post: BlogPostSummary;
@@ -54,8 +55,8 @@ export const PostCard: React.FC<PostCardProps> = React.memo(({
       {/* Cover image */}
       <div className="relative aspect-[16/9] overflow-hidden bg-slate-950 shrink-0">
         <SafeImage
-          src={post.coverImage || '/jay-affiliate-marketing-guides-hero-800.webp'}
-          alt={post.title}
+          src={cardCover(post.coverImage)}
+          alt=""
           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
           loading="lazy"
           decoding="async"

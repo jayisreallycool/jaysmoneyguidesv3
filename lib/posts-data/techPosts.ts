@@ -8,7 +8,7 @@ export const TECH_POSTS: BlogPost[] = [
     excerpt: 'The free tools that can run a one-person online business, what each free plan limits, and the two costs you can\'t avoid: a domain and payment fees.',
     category: 'Tech',
     tags: ['Tech Stack', 'Solopreneur', 'Software Tools', 'Productivity', 'Free Tools'],
-    coverImage: '/images/my-0-solopreneur-tech-stack-for-2026-the-tools-i-use-to-run--tech-guide.webp',
+    coverImage: '/images/covers/free-tech-stack-one-person-business.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -126,7 +126,7 @@ Before the first sale, the only bill should be the domain. Buy that, put a site 
     excerpt: 'Which AI tools are worth using when you work alone, organised by job, with their failure modes, what to keep out of them and a pre-publish checklist.',
     category: 'Tech',
     tags: ['AI Tools', 'Productivity', 'Automation', 'Workflow', 'Artificial Intelligence'],
-    coverImage: '/images/the-ai-productivity-stack-5-ai-tools-that-save-me-15-hours-e-tech-guide.webp',
+    coverImage: '/images/covers/ai-tools-one-person-business.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -257,7 +257,7 @@ Pick the task you repeat most often and try one free plan on it for a couple of 
     excerpt: 'Which platform fits your blog depends on who publishes and how you earn. A plain comparison of WordPress, Ghost and a custom Next.js build.',
     category: 'Tech',
     tags: ['CMS', 'WordPress', 'Ghost', 'React', 'Next.js', 'Web Development'],
-    coverImage: '/images/uploads/headless-shopify-simplified.webp',
+    coverImage: '/images/covers/wordpress-vs-ghost-vs-nextjs.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -376,7 +376,7 @@ Pick by who will be publishing day to day, since that person lives with the choi
     excerpt: 'Custom GPTs are being retired. Build the same blog assistant with ChatGPT Projects, Claude Projects or a Gemini Gem, with instructions you can copy.',
     category: 'Tech',
     tags: ['Custom GPT', 'AI Assistant', 'Automation', 'Blogging System'],
-    coverImage: '/images/how-to-build-a-custom-gpt-ai-assistant-for-your-blog-content-tech-guide.webp',
+    coverImage: '/images/covers/build-custom-gpt-ai-assistant-for-blog.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -526,7 +526,7 @@ Build the writing assistant this week with the tool you already use, and test it
     excerpt: 'How triggers and actions work, a first automation built step by step, and an honest look at Zapier, Make and n8n, including what breaks.',
     category: 'Tech',
     tags: ['No-Code', 'Automation', 'Zapier', 'Make', 'Productivity'],
-    coverImage: '/images/no-code-automation-101-how-to-connect-apps-and-save-5-hours--tech-guide.webp',
+    coverImage: '/images/covers/no-code-automation-guide-make-zapier.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -638,7 +638,7 @@ Build the form-to-spreadsheet automation, leave it running for two weeks, and ch
     excerpt: 'GA4 is free and powerful but sets cookies. Plausible and Fathom are paid, simpler and cookieless. A plain comparison for small sites, with a pick by situation.',
     category: 'Tech',
     tags: ['Analytics', 'Privacy', 'Fathom', 'Plausible', 'Web Performance'],
-    coverImage: '/images/web-analytics-beyond-google-why-i-switched-to-privacy-friend-tech-guide.webp',
+    coverImage: '/images/covers/privacy-friendly-web-analytics-fathom-plausible.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -759,7 +759,7 @@ Both paid tools offer a trial, and they can run next to GA4 without conflict. Ru
     excerpt: 'A plain guide to setting up a comfortable, low-distraction desk: get your posture right, spend on the few things that matter, skip the rest.',
     category: 'Tech',
     tags: ['Desk Setup', 'Hardware', 'Productivity', 'Ergonomics', 'Workspace'],
-    coverImage: '/images/minimalist-desk-setup-for-maximum-focus-my-2026-hardware-wor-tech-guide.webp',
+    coverImage: '/images/covers/simple-desk-setup-for-focus.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -870,7 +870,7 @@ Spend ten minutes on the posture check today and buy only what fixes a gap you f
     excerpt: 'Sync services like Google Drive aren\'t backups. Here\'s a 3-2-1 setup for one person, the things people forget to back up, and a 15-minute quarterly check.',
     category: 'Tech',
     tags: ['Backups', 'Security', 'Data Protection', 'Creator Tech'],
-    coverImage: '/images/cloud-backups-for-creators-how-to-ensure-you-never-lose-your-tech-guide.webp',
+    coverImage: '/images/covers/cloud-backups-for-creators-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1019,7 +1019,7 @@ If you only do one thing today, install the cloud backup and let it start upload
     excerpt: 'Three things to do today to stop account takeovers, the fake sponsorship email that gets around MFA, and the first steps if you\'ve already been hacked.',
     category: 'Tech',
     tags: ['Security', 'Cybersecurity', 'Account Protection', 'Creator Advice'],
-    coverImage: '/images/cybersecurity-for-digital-creators-how-to-prevent-account-ha-tech-guide.webp',
+    coverImage: '/images/covers/cybersecurity-for-digital-creators.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1138,7 +1138,7 @@ Everything above keeps other people out of your accounts, but it won't bring bac
     excerpt: 'Who self-hosting suits, what to host and what to leave alone, and the first steps: a hardened VPS, Docker, automatic HTTPS and backups.',
     category: 'Tech',
     tags: ['Self-Hosting', 'VPS', 'Docker', 'Open Source', 'Tech Guide'],
-    coverImage: '/images/self-hosting-for-beginners-running-your-own-services-on-clou-tech-guide.webp',
+    coverImage: '/images/covers/self-hosting-beginners-cloud-vps-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',

@@ -24,6 +24,7 @@ const EbookViewer = dynamic(
 );
 
 import type { BlogPostSummary, Product, Category } from '@/lib/types';
+import { cardCover } from '@/lib/covers';
 
 const INITIAL_COUNT = 6;
 const LOAD_STEP = 5;
@@ -240,8 +241,8 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
             <div className="relative w-full sm:w-64 md:w-80 shrink-0 aspect-video sm:aspect-auto sm:min-h-[200px] overflow-hidden bg-slate-950">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={featured.coverImage}
-                alt={featured.title}
+                src={cardCover(featured.coverImage)}
+                alt=""
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 loading="eager"
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -8,7 +8,7 @@ export const ENTREPRENEURSHIP_POSTS: BlogPost[] = [
     excerpt: 'A first-year plan for a one-person online business: validate, build one asset, grow one channel, fix pricing, add systems, with a clear finish line for each stage.',
     category: 'Entrepreneurship',
     tags: ['Entrepreneurship', 'Solopreneur', 'Business Roadmap', 'Revenue Growth'],
-    coverImage: '/images/uploads/launch-faster-stress-less-workflow.webp',
+    coverImage: '/images/covers/online-business-first-year-plan.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -147,7 +147,7 @@ Don't build anything yet. Write down who has the problem and what you'd charge t
     excerpt: 'A simple cash flow system for freelancers and solo business owners: separate accounts, fixed pay, tax savings on every payment, a buffer and a weekly forecast.',
     category: 'Entrepreneurship',
     tags: ['Cash Flow', 'Finance', 'Solopreneur', 'Business Management'],
-    coverImage: '/images/uploads/know-your-dropshipping-margins.webp',
+    coverImage: '/images/covers/cash-flow-for-freelancers.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -292,7 +292,7 @@ Open the accounts and schedule your first fixed transfer this week, then build t
     excerpt: 'Three tests, cheapest first, to find out whether anyone will pay for your digital product idea before you build it, with pass and fail signals for each.',
     category: 'Entrepreneurship',
     tags: ['Idea Validation', 'Product Launch', 'Lean Startup', 'Solopreneur'],
-    coverImage: '/images/uploads/from-idea-to-income-roadmap.webp',
+    coverImage: '/images/covers/validate-a-business-idea.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -431,7 +431,7 @@ A passed pre-sale means you owe real people a product by a date. Build only what
     excerpt: 'Content and code can keep working after you\'ve finished them, but they aren\'t free or maintenance-free. Here\'s what counts, what it costs, and how to pick your first asset.',
     category: 'Entrepreneurship',
     tags: ['Business Leverage', 'Content Strategy', 'Software', 'Solopreneur Mindset'],
-    coverImage: '/images/uploads/build-once-sell-again-revenue-flywheel.webp',
+    coverImage: '/images/covers/permissionless-leverage-content-and-code.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -530,7 +530,7 @@ Pick one repeated question, publish the smallest useful answer to it this month,
     excerpt: 'No price is right for every ebook, course or template. Set a first price from buyer alternatives and comparable products, then test it and compare revenue.',
     category: 'Entrepreneurship',
     tags: ['Pricing Strategy', 'Digital Products', 'Sales'],
-    coverImage: '/images/pricing-strategy-for-digital-products-why-97-out-sells-19-ev-entrepreneurship-guide.webp',
+    coverImage: '/images/covers/how-to-price-a-digital-product.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -666,7 +666,7 @@ Set your first price from the alternatives and the comparable products, then let
     excerpt: 'A sample week for a one-person business: daily focus blocks, set email windows, one planning session and real days off, plus how to adapt it.',
     category: 'Entrepreneurship',
     tags: ['Productivity', 'Time Management', 'Deep Work', 'Solo Business'],
-    coverImage: '/images/uploads/run-your-week-like-a-system.webp',
+    coverImage: '/images/covers/solopreneur-operating-system-deep-work-schedule.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -796,7 +796,7 @@ Put next week's focus blocks, email windows and planning session on your calenda
     excerpt: 'Generic explainers are free to produce now. Here\'s what a writer has to add that a model can\'t, what Google\'s documentation says, and a pre-publish checklist.',
     category: 'Entrepreneurship',
     tags: ['Business Strategy', 'AI and Content', 'Brand Building', 'Trust'],
-    coverImage: '/images/building-a-moat-in-the-age-of-ai-what-cannot-be-automated-entrepreneurship-guide.webp',
+    coverImage: '/images/covers/building-a-moat-in-the-age-of-ai.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -905,7 +905,7 @@ Pick your five most-visited posts and run the checklist on each. Then decide wha
     excerpt: 'A productized service is freelance work sold at a fixed scope, price and timeline. Here\'s how to pick one, write the offer, price it and say no to extras.',
     category: 'Entrepreneurship',
     tags: ['Productized Services', 'Freelancing', 'Business Models'],
-    coverImage: '/images/the-power-of-productized-services-bridge-the-gap-between-fre-entrepreneurship-guide.webp',
+    coverImage: '/images/covers/productized-services-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1060,7 +1060,7 @@ Don't build a pricing page with three tiers yet. Write one offer using the templ
     excerpt: 'The order that makes a first VA hire work: choose one recurring task, write it down, run a paid trial, then onboard with limited account access.',
     category: 'Entrepreneurship',
     tags: ['Delegation', 'Virtual Assistant', 'Hiring', 'Solo Business Growth'],
-    coverImage: '/images/how-to-hire-your-first-virtual-assistant-va-without-wasting--entrepreneurship-guide.webp',
+    coverImage: '/images/covers/hire-first-virtual-assistant-va-solopreneur-guide.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',
@@ -1197,7 +1197,7 @@ You don't need a hiring plan. You need one documented task and a small paid tria
     excerpt: 'A content site sells for a multiple of its net profit. Here\'s how the number is built, what moves it, where to sell, and how the handover works.',
     category: 'Entrepreneurship',
     tags: ['Exit Strategy', 'Business Valuation', 'Selling a Website'],
-    coverImage: '/images/exit-strategy-for-bloggers-how-to-sell-your-niche-site-for-a-entrepreneurship-guide.webp',
+    coverImage: '/images/covers/how-to-sell-a-content-site.webp',
     author: {
       name: 'Jay Lopez',
       role: 'Founder & Lead Strategist',

@@ -8,6 +8,7 @@ import { PostCard } from '@/components/server/PostCard';
 import { JsonLd } from '@/components/server/JsonLd';
 import { SITE, SITE_NAME, categoryPageSchema, categoryItemListSchema, personSchema } from '@/lib/seo';
 import { BookOpen, ArrowRight, Home, ChevronRight, Clock, Star } from 'lucide-react';
+import { cardCover } from '@/lib/covers';
 
 export const dynamicParams = false;
 
@@ -258,8 +259,8 @@ export default async function CategoryPage({
               {featuredPost.coverImage && (
                 <div className="relative w-full sm:w-72 lg:w-80 h-48 sm:h-auto shrink-0 overflow-hidden">
                   <Image
-                    src={featuredPost.coverImage}
-                    alt={featuredPost.title}
+                    src={cardCover(featuredPost.coverImage)}
+                    alt=""
                     fill
                     priority
                     sizes="(max-width: 640px) 100vw, 320px"

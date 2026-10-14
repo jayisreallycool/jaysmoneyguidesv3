@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Clock, ArrowRight, Calendar } from 'lucide-react';
 import type { BlogPost, BlogPostSummary } from '@/lib/types';
+import { cardCover } from '@/lib/covers';
 
 function formatDate(iso: string) {
   try {
@@ -46,8 +47,8 @@ export function PostCard({
       {/* Cover image */}
       <div className="relative aspect-[16/9] bg-slate-950 shrink-0 overflow-hidden">
         <Image
-          src={post.coverImage}
-          alt={post.title}
+          src={cardCover(post.coverImage)}
+          alt=""
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority={priority}
