@@ -31,10 +31,6 @@ import {
   FileText,
   File,
   ArrowRight,
-  Youtube,
-  Gamepad2,
-  Sparkles,
-  type LucideIcon,
 } from 'lucide-react';
 
 const STORE_URL = 'https://the-guide-vault.vercel.app';
@@ -45,8 +41,8 @@ interface FeaturedGuide {
   description: string;
   price: string;
   tag: string;
-  icon: LucideIcon;
-  iconClasses: string;
+  cover: string;
+  href: string;
 }
 
 const FEATURED_GUIDES: FeaturedGuide[] = [
@@ -57,8 +53,8 @@ const FEATURED_GUIDES: FeaturedGuide[] = [
       'Start and grow a faceless channel — niches, scripts, voiceover, thumbnails and monetization, step by step.',
     price: '$14.99',
     tag: 'FEATURED',
-    icon: Youtube,
-    iconClasses: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
+    cover: 'https://guide-vault-assets.vercel.app/faceless-youtube-guide.png',
+    href: 'https://the-guide-vault.vercel.app/#book-faceless-youtube',
   },
   {
     id: 'indie-game-promo-playbook',
@@ -67,8 +63,8 @@ const FEATURED_GUIDES: FeaturedGuide[] = [
       'Get your indie game seen — launch posts, community marketing and a 30-day promo plan that actually ships.',
     price: '$14.99',
     tag: 'NEW',
-    icon: Gamepad2,
-    iconClasses: 'bg-violet-500/15 text-violet-400 border-violet-500/30',
+    cover: 'https://guide-vault-assets.vercel.app/indie-game-promo-playbook.png',
+    href: 'https://the-guide-vault.vercel.app/#book-indie-game-promo-playbook',
   },
   {
     id: 'ai-side-hustles-playbook',
@@ -77,8 +73,8 @@ const FEATURED_GUIDES: FeaturedGuide[] = [
       'Turn AI tools into income — the hustles that work, the setup for each, and how to get your first paying customer.',
     price: '$12.99',
     tag: 'PLAYBOOK',
-    icon: Sparkles,
-    iconClasses: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+    cover: 'https://guide-vault-assets.vercel.app/ai-side-hustles-playbook.png',
+    href: 'https://the-guide-vault.vercel.app/#book-ai-side-hustles-playbook',
   },
 ];
 
@@ -142,7 +138,6 @@ export function GuideVaultSection() {
       {/* Featured guides */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {FEATURED_GUIDES.map((guide) => {
-          const Icon = guide.icon;
           return (
             <div
               key={guide.id}
@@ -153,13 +148,17 @@ export function GuideVaultSection() {
                 {guide.tag}
               </span>
 
-              {/* Icon */}
-              <div
-                className={`w-11 h-11 rounded-xl border flex items-center justify-center ${guide.iconClasses}`}
-                aria-hidden="true"
-              >
-                <Icon className="w-5 h-5" />
-              </div>
+              {/* Cover thumbnail (real Vault cover) — links to the book's own product page */}
+              <Link href={guide.href} className="flex justify-center" aria-label={`View ${guide.title} in the Guide Vault`}>
+                <img
+                  src={guide.cover}
+                  alt={`Cover of ${guide.title} by Jay Lopez`}
+                  width={640}
+                  height={960}
+                  loading="lazy"
+                  className="h-44 w-auto rounded-lg border border-slate-700/60 shadow-lg shadow-black/40 group-hover:border-emerald-500/50 transition-all"
+                />
+              </Link>
 
               {/* Title + description */}
               <div>
@@ -179,7 +178,7 @@ export function GuideVaultSection() {
 
               {/* CTA */}
               <Link
-                href={STORE_URL}
+                href={guide.href}
                 className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 active:scale-95 text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all touch-manipulation"
                 aria-label={`Get the ${guide.title} in the Guide Vault`}
               >
