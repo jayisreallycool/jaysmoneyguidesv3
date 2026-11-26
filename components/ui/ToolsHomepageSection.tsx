@@ -115,7 +115,7 @@ export function ToolsHomepageSection() {
                 Tools & Affiliate Programs
               </h2>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-teal-500/20 text-teal-300 border border-teal-500/30">
-                {TOOLS.length}+ Programs
+                {TOOLS.length} Programs
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-0.5">Programs worth knowing, with how each one pays</p>
@@ -222,7 +222,7 @@ export function ToolsHomepageSection() {
         className="sm:hidden mt-3 flex items-center justify-center gap-1.5 min-h-[44px] text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
         aria-label="View all affiliate programs"
       >
-        View all {TOOLS.length}+ programs <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+        View all {TOOLS.length} programs <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
       </a>
     </section>
   );
