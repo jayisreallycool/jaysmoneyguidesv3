@@ -20,18 +20,6 @@ interface Tool {
 // Same data as ToolsContent — first 4 shown, load more by 5
 const TOOLS: Tool[] = [
   {
-    id: 'shopify',
-    name: 'Shopify',
-    description: 'All-in-one e-commerce platform for dropshipping and online stores',
-    commission: '$200–500+ per signup',
-    payout: 'Recurring commission',
-    category: 'E-Commerce',
-    link: 'https://www.shopify.com/',
-    features: ['Easy setup', 'Dropshipping ready', 'Payment processing', 'Marketing tools'],
-    badge: 'HIGH TICKET',
-    badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  },
-  {
     id: 'semrush',
     name: 'SEMrush',
     description: 'Complete SEO toolkit for keyword research and competitor analysis',
@@ -56,18 +44,6 @@ const TOOLS: Tool[] = [
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
   },
   {
-    id: 'kinsta',
-    name: 'Kinsta',
-    description: 'Premium managed WordPress hosting for professional sites',
-    commission: '$100–150 per referral',
-    payout: 'Recurring annually',
-    category: 'Web Hosting',
-    link: 'https://kinsta.com/',
-    features: ['Premium performance', 'Enterprise support', 'Staging sites', 'Advanced security'],
-    badge: 'PREMIUM',
-    badgeColor: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  },
-  {
     id: 'bluehost',
     name: 'Bluehost',
     description: 'Beginner-friendly WordPress hosting platform',
@@ -78,16 +54,6 @@ const TOOLS: Tool[] = [
     features: ['WordPress optimized', 'SSL included', 'Free domain', '24/7 support'],
     badge: 'POPULAR',
     badgeColor: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  },
-  {
-    id: 'ahrefs',
-    name: 'Ahrefs',
-    description: 'Backlink analysis and SEO research tool',
-    commission: '$7–12 per $100/month plan',
-    payout: 'Recurring monthly',
-    category: 'SEO Tools',
-    link: 'https://ahrefs.com/',
-    features: ['Backlink analysis', 'Site explorer', 'Keyword planner', 'Content ideas'],
   },
   {
     id: 'siteground',
