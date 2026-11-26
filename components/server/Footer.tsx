@@ -26,6 +26,7 @@ const GUIDE_LINKS = [
 ];
 
 const STORE_LINKS = [
+  { label: 'The Guide Vault',                   href: 'https://the-guide-vault.vercel.app',           icon: BookOpen },
   { label: 'eBook Store',                       href: '/#ebooks',                                     icon: ShoppingBag },
   { label: 'Tools & Affiliate Programs',         href: '/tools',                                       icon: Zap },
   { label: 'Free Beginner Ebook',               href: '/ebooks/affiliate-marketing-beginners',        icon: BookOpen },

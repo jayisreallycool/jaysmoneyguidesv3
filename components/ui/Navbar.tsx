@@ -16,6 +16,8 @@ const ADMIN_EMAILS = ['jayisreallycool@gmail.com'];
 const isAdminEmailClient = (email?: string | null) =>
   !!email && ADMIN_EMAILS.includes(email.toLowerCase().trim());
 
+const GUIDE_VAULT_URL = 'https://the-guide-vault.vercel.app';
+
 interface NavbarProps {
   selectedCategory: Category | 'All';
   onSelectCategory: (category: Category | 'All') => void;
@@ -204,6 +206,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button onClick={() => scrollTo('ebooks')} className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer">
               <ShoppingBag className="w-4 h-4 text-emerald-400" aria-hidden="true" /> eBooks
             </button>
+            <a href={GUIDE_VAULT_URL} target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer">
+              <BookOpen className="w-4 h-4 text-emerald-400" aria-hidden="true" /> Guide Vault
+              <span className="text-[9px] px-1 py-px rounded border font-bold text-emerald-300 bg-emerald-500/10 border-emerald-500/20">NEW</span>
+            </a>
             <a href="/tools" className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer">Tools</a>
             <button onClick={() => { openModal('contact'); }} className="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-1.5 cursor-pointer">
               <Mail className="w-4 h-4 text-emerald-400" aria-hidden="true" /> Contact
@@ -430,6 +436,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       {[
                         { icon: BookOpen, label: 'All Blueprints', badge: String(totalPostsCount), action: () => handleSelectCategory('All'), iconColor: 'text-emerald-400' },
                         { icon: ShoppingBag, label: 'eBook Store', badge: 'STORE', badgeClass: 'text-amber-300 bg-amber-500/10 border-amber-500/20', action: () => scrollTo('ebooks'), iconColor: 'text-amber-400' },
+                        { icon: BookOpen, label: 'Guide Vault', badge: 'NEW', badgeClass: 'text-emerald-300 bg-emerald-500/10 border-emerald-500/20', action: close, href: GUIDE_VAULT_URL, iconColor: 'text-emerald-400' },
                         { icon: Zap, label: 'Tools & Programs', badge: '25', action: () => { close(); }, href: '/tools', iconColor: 'text-yellow-400' },
                         { icon: Award, label: 'SoFi Bank Guides', badge: 'NEW', badgeClass: 'text-blue-300 bg-blue-500/10 border-blue-500/20', action: close, href: '/sofi-bank', iconColor: 'text-blue-400' },
                         { icon: Calculator, label: 'ROI Calculator', action: () => scrollTo('affiliate-calculator-section'), iconColor: 'text-emerald-400' },
