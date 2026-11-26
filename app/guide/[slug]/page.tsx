@@ -19,6 +19,9 @@ import {
   CheckCircle2, TrendingUp, ArrowRight, Gift,
 } from 'lucide-react';
 import { AdUnit } from '@/components/client/AdUnit';
+import { ListenToArticle } from '@/components/client/ListenToArticle';
+import { AuthorByline } from '@/components/server/AuthorByline';
+import { ArticleFooter } from '@/components/server/ArticleFooter';
 
 export const dynamicParams = false;
 
@@ -199,6 +202,12 @@ export default async function GuidePage(
             </div>
           </header>
 
+          {/* ── About the author ── */}
+          <AuthorByline name={post.author?.name ?? 'Jay Lopez'} />
+
+          {/* ── Listen to this article (recorded narration or read-aloud) ── */}
+          <ListenToArticle slug={post.slug} />
+
           {/* ── Cover ── */}
           {post.coverImage.startsWith('/images/covers/') && (
             <figure className="mb-8 -mx-4 sm:mx-0">
@@ -254,6 +263,9 @@ export default async function GuidePage(
             {/* Tracks article views → Firestore article_views collection */}
             <ViewTracker slug={post.slug} type="article" />
           </article>
+
+          {/* ── Article footer: affiliate disclosure + sign-off ── */}
+          <ArticleFooter />
 
           {/* ── Topic hub: up to the pillar, or down to every guide in the topic ── */}
           {cluster.length > 0 ? (
