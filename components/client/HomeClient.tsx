@@ -10,6 +10,7 @@ import { StoreSection } from '@/components/ui/StoreSection';
 import { EbooksBanner, BlogIntro, ToolsBanner } from '@/components/ui/SectionIntro';
 import { ReviewsSection, REVIEW_PROMPT_EVENT, type GuideHighlight } from '@/components/ui/ReviewsSection';
 import { ToolsHomepageSection } from '@/components/ui/ToolsHomepageSection';
+import { GuideVaultSection } from '@/components/ui/GuideVaultSection';
 import { CheckoutModal } from '@/components/client/CheckoutModal';
 import { AdUnit } from '@/components/client/AdUnit';
 import dynamic from 'next/dynamic';
@@ -336,6 +337,11 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       {/* 6. Tools & Affiliate Programs */}
       <section id="tools" className="reveal mx-auto max-w-7xl px-4 pb-14" aria-label="Recommended tools and affiliate programs">
         <ToolsHomepageSection />
+      </section>
+
+      {/* 7. The Guide Vault — ebook store */}
+      <section className="reveal mx-auto max-w-7xl px-4 pb-14" aria-label="The Guide Vault ebook store">
+        <GuideVaultSection />
       </section>
 
       {/* Reviews */}
