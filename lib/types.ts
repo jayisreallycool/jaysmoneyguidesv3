@@ -89,6 +89,10 @@ export interface Product {
   pageCount: number;
   /** Path inside the Firebase Storage bucket, e.g. "ebooks/private/foo.pdf" */
   storagePath: string;
+  /** Same book in The Guide Vault (cross-store link) */
+  vaultUrl?: string;
+  /** Same book on Gumroad (cross-store link) */
+  gumroadUrl?: string;
   /** Direct tokenized Firebase Storage download URL */
   downloadUrl?: string;
   /** Firebase Storage download token */

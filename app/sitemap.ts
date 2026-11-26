@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllPosts, getAllCategories } from '@/lib/posts';
+import { PRODUCTS } from '@/lib/products';
 import { SITE } from '@/lib/seo';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -24,6 +25,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly',
   }));
 
+  const ebookRoutes: MetadataRoute.Sitemap = PRODUCTS.map((p) => ({
+    url: `${SITE}/ebooks/${p.slug}`,
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
   const postRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${SITE}/guide/${p.slug}`,
     lastModified: (p as { updatedAt?: string }).updatedAt ?? p.publishedAt,
@@ -31,5 +38,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: p.featured ? 0.9 : 0.8,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...postRoutes];
+  return [...staticRoutes, ...ebookRoutes, ...categoryRoutes, ...postRoutes];
 }

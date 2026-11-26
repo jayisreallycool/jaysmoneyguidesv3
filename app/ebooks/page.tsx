@@ -51,6 +51,21 @@ export default function EbooksPage() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-center">
+          <h2 className="text-xl font-extrabold text-white mb-2">Want the full shelf?</h2>
+          <p className="text-slate-400 mb-4">
+            These 5 guides plus 6 more live in The Guide Vault — Jay&apos;s ebook-only store.
+          </p>
+          <a
+            href="https://the-guide-vault.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm border border-slate-700 hover:border-emerald-500/40 text-slate-300 hover:text-white px-5 py-2.5 rounded-xl transition-colors"
+          >
+            Browse The Guide Vault
+          </a>
+        </div>
       </div>
     </>
   );

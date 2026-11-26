@@ -38,7 +38,7 @@ export async function generateMetadata(
       url,
       title: p.title,
       description: p.subtitle,
-      images: [{ url: p.coverImage, width: 1200, height: 630, alt: `${p.title} — ebook cover by Jay Lopez` }],
+      images: [{ url: p.coverImage, alt: `${p.title} — ebook cover by Jay Lopez` }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -304,6 +304,30 @@ export default async function EbookPage(
                     </p>
                   </div>
                 </div>
+
+                {/* Also available in Jay's other stores */}
+                {(p.vaultUrl || p.gumroadUrl) && (
+                  <>
+                    <div className="border-t border-slate-800 my-5" />
+                    <div className="space-y-2.5">
+                      <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Also available</p>
+                      {p.vaultUrl && (
+                        <a href={p.vaultUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-300 hover:text-emerald-300 transition-colors">
+                          <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                          In The Guide Vault — all 11 guides in one store
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-600 shrink-0" aria-hidden="true" />
+                        </a>
+                      )}
+                      {p.gumroadUrl && (
+                        <a href={p.gumroadUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-300 hover:text-emerald-300 transition-colors">
+                          <BookOpen className="w-4 h-4 text-emerald-400 shrink-0" aria-hidden="true" />
+                          On Gumroad
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-600 shrink-0" aria-hidden="true" />
+                        </a>
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Free guide promo (below buy box — only on paid) */}

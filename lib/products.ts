@@ -29,6 +29,8 @@ export const PRODUCTS: Product[] = [
     previewExcerpt: 'Everything you need to know about affiliate marketing...',
     pageCount: 150,
     storagePath: 'ebooks/downloads/1.JaysMoneyGuides_Affiliate_Marketing_For_Beginners_Vol_1.pdf',
+    vaultUrl: 'https://the-guide-vault.vercel.app/#book-affiliate-marketing-deluxe',
+    gumroadUrl: 'https://jaysmoneyguides.gumroad.com/l/affiliatemarketingdeluxeguide',
     featured: true,
   },
   {
@@ -51,6 +53,8 @@ export const PRODUCTS: Product[] = [
     previewExcerpt: 'The complete guide to ranking higher on Google...',
     pageCount: 200,
     storagePath: 'ebooks/downloads/3.Jaysmoneyguides complete seo guide.pdf',
+    vaultUrl: 'https://the-guide-vault.vercel.app/#book-seo-guide-beginners',
+    gumroadUrl: 'https://jaysmoneyguides.gumroad.com/l/seoguideforbeginners',
     featured: true,
   },
   {
@@ -73,6 +77,8 @@ export const PRODUCTS: Product[] = [
     previewExcerpt: 'Get started with affiliate marketing today...',
     pageCount: 80,
     storagePath: 'ebooks/free/2.jaysmoneyguides Affiliate_Marketing_for_Beginners_free_book.pdf',
+    vaultUrl: 'https://the-guide-vault.vercel.app/#book-affiliate-marketing-beginners',
+    gumroadUrl: 'https://jaysmoneyguides.gumroad.com/l/affiliatemarketingbeginnersguide',
     featured: false,
   },
   {
@@ -95,6 +101,8 @@ export const PRODUCTS: Product[] = [
     previewExcerpt: 'Everything you need to start a blog that actually earns...',
     pageCount: 60,
     storagePath: 'ebooks/downloads/JaysMoneyGuides-How-to-Start-a-Successful-Blog.pdf',
+    vaultUrl: 'https://the-guide-vault.vercel.app/#book-build-successful-blog',
+    gumroadUrl: 'https://jaysmoneyguides.gumroad.com/l/buildasuccessfulblog',
     featured: false,
   },
   {
@@ -117,6 +125,8 @@ export const PRODUCTS: Product[] = [
     previewExcerpt: 'Turn search traffic into a scalable digital business...',
     pageCount: 150,
     storagePath: 'ebooks/downloads/Jaysmoneyguides_SEO & Digital Empire Blueprint.pdf',
+    vaultUrl: 'https://the-guide-vault.vercel.app/#book-seo-digital-empire-blueprint',
+    gumroadUrl: 'https://jaysmoneyguides.gumroad.com/l/seodigitalempireblueprint',
     featured: false,
   },
 ];
