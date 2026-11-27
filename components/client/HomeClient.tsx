@@ -26,7 +26,6 @@ const EbookViewer = dynamic(
 );
 
 import type { BlogPostSummary, Product, Category } from '@/lib/types';
-import { cardCover } from '@/lib/covers';
 
 const INITIAL_COUNT = 6;
 const LOAD_STEP = 5;
@@ -62,8 +61,13 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
   const featured = useMemo(() => posts.find((p) => p.featured) ?? posts[0], [posts]);
   const shuffled = useMemo(() => shuffle(posts, 1), [posts]);
   const filtered = useMemo(
-    () => (category === 'All' ? shuffled : shuffled.filter((p) => p.category === category)),
-    [shuffled, category]
+    () => {
+      const base = category === 'All' ? shuffled : shuffled.filter((p) => p.category === category);
+      // The featured guide already has its own banner above — keep it out of
+      // the grid so no article (or thumbnail) appears twice on the page.
+      return featured ? base.filter((p) => p.id !== featured.id) : base;
+    },
+    [shuffled, category, featured]
   );
   const visible = filtered.slice(0, visibleCount);
   const remaining = filtered.length - visible.length;
@@ -243,7 +247,7 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
             <div className="relative w-full sm:w-64 md:w-80 shrink-0 aspect-video sm:aspect-auto sm:min-h-[200px] overflow-hidden bg-slate-950">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={cardCover(featured.coverImage)}
+                src={featured.coverImage || '/jay-affiliate-marketing-guides-hero-800.webp'}
                 alt=""
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 loading="eager"
