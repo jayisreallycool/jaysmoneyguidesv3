@@ -12,7 +12,7 @@ const YEAR = new Date().getFullYear();
 const STATS = [
   { value: '57', label: 'Free Guides', icon: BookMarked },
   { value: '5',   label: 'eBooks',      icon: BookOpen },
-  { value: '25', label: 'Programs Covered', icon: Star },
+  { value: '20', label: 'Programs Covered', icon: Star },
   { value: '100%', label: 'Free to Read', icon: Gift },
 ];
 

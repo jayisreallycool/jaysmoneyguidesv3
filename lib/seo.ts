@@ -6,6 +6,17 @@ const AUTHOR_NAME = 'Jay Lopez';
 const AUTHOR_URL = `${SITE}/about`;
 const LOGO_URL = `${SITE}/jay-character-small.webp`;
 
+// ─── Jay's public profiles (schema.org sameAs) ──────────────────────────────
+const SOCIAL_PROFILES = [
+  'https://www.tiktok.com/@jaysmoneyguides',
+  'https://www.youtube.com/@Jaysmoneyguideschannel',
+  'https://www.pinterest.com/Jaysmoneyguides/',
+  'https://www.instagram.com/mr.moneyguides/',
+  'https://www.threads.com/@mr.moneyguides',
+  'https://facebook.com/61554205127418',
+  'https://www.producthunt.com/@KingJayGames',
+];
+
 // ─── HowTo schema (tutorial/guide pages with keyTakeaways as steps) ──────────
 export function howToSchema(post: BlogPost) {
   const steps = post.keyTakeaways ?? [];
@@ -205,7 +216,7 @@ export function personSchema() {
     jobTitle: 'Online Business Strategist & Affiliate Marketing Expert',
     description:
       'Jay Lopez is the founder of JaysMoneyGuides, an online business publication covering affiliate marketing, SEO, blogging, and digital income strategies.',
-    sameAs: ['https://www.tiktok.com/@jaysmoneyguides'],
+    sameAs: SOCIAL_PROFILES,
     knowsAbout: [
       'Affiliate Marketing',
       'Search Engine Optimization',
@@ -236,7 +247,7 @@ export function organizationSchema() {
     description:
       'Actionable guides and ebooks on affiliate marketing, SEO, blogging, e-commerce, and smart money moves. By Jay Lopez.',
     founder: { '@type': 'Person', name: AUTHOR_NAME, url: AUTHOR_URL },
-    sameAs: ['https://www.tiktok.com/@jaysmoneyguides'],
+    sameAs: SOCIAL_PROFILES,
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',

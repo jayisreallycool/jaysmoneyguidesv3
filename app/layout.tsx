@@ -116,6 +116,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
         {/* AdSense site ownership — lets AdSense verify the site and match ads.txt */}
         <meta name="google-adsense-account" content={ADSENSE_PUBLISHER} />
+        {/* RSS feed discovery — feed readers and aggregators find /feed.xml from any page */}
+        <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Guides RSS Feed`} href="/feed.xml" />
         {/*
           Consent first. This inline script must stay ABOVE every Google tag: it
           sets Consent Mode v2 defaults from the visitor's stored choice, pauses
