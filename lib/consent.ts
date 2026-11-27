@@ -21,7 +21,7 @@ export const ADSENSE_PUBLISHER = 'ca-pub-6197929752414076';
 export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.startsWith('ca-pub-')
   ? process.env.NEXT_PUBLIC_ADSENSE_CLIENT
   : ADSENSE_PUBLISHER;
-export const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.startsWith('G-') ? process.env.NEXT_PUBLIC_GA_ID : '';
+export const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.startsWith('G-') ? process.env.NEXT_PUBLIC_GA_ID : 'G-41K5TH8RTX';
 
 export const CONSENT_KEY = 'jmg_consent_v2';
 export const CONSENT_VERSION = 2;
