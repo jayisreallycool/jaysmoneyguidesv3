@@ -89,6 +89,16 @@ const TOOLS: Tool[] = [
     badge: 'RECURRING',
     badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
   },
+  {
+    id: 'gumroad',
+    name: 'Gumroad',
+    description: 'Digital product marketplace — promote any product on Discover and earn on every sale',
+    commission: '10% on Discover sales',
+    payout: 'Bi-weekly via Gumroad',
+    category: 'E-Commerce',
+    link: 'https://gumroad.com/discover?a=756220307',
+    features: ['Any Discover product', '7-day cookie', 'No approval needed', 'Ebooks, courses & templates'],
+  },
 ];
 
 const INITIAL = 4;
