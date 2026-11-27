@@ -11,6 +11,7 @@ import { EbooksBanner, BlogIntro, ToolsBanner } from '@/components/ui/SectionInt
 import { ReviewsSection, REVIEW_PROMPT_EVENT, type GuideHighlight } from '@/components/ui/ReviewsSection';
 import { ToolsHomepageSection } from '@/components/ui/ToolsHomepageSection';
 import { GuideVaultSection } from '@/components/ui/GuideVaultSection';
+import { AffiliateRecruitingSection } from '@/components/ui/AffiliateRecruitingSection';
 import { CheckoutModal } from '@/components/client/CheckoutModal';
 import { AdUnit } from '@/components/client/AdUnit';
 import dynamic from 'next/dynamic';
@@ -342,6 +343,11 @@ export function HomeClient({ posts: allPosts, products }: { posts: BlogPostSumma
       {/* 7. The Guide Vault — ebook store */}
       <section className="reveal mx-auto max-w-7xl px-4 pb-14" aria-label="The Guide Vault ebook store">
         <GuideVaultSection />
+      </section>
+
+      {/* 8. Affiliate Program — recruiting */}
+      <section className="reveal mx-auto max-w-7xl px-4 pb-14" aria-label="Affiliate program — earn 40% promoting our guides">
+        <AffiliateRecruitingSection />
       </section>
 
       {/* Reviews */}
